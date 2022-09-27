@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+		@@include('../include/inc_header.html')
+		<!--  sub container -->
+		<div class="container inner_cont">
+			<!-- snb -->
+			@@include('../include/inc_snb.html')
+			<!-- //snb -->
+			<div class="contents">
+				<!-- title -->
+				<div class="title_box mb0 pos_relative">
+					<h4 class="page_title">학급 조사표
+						<a href="#none" class="ml15 btn outline round small point btn_research">
+							<i class="sprite_comm sp_ico_check"></i>
+							조사하기
+						</a>
+						<div class="class_checklist_pop">
+							<ul class="scroll_box" style="height: 263px">
+								<li class="active"><a href="#none">우리반 청소 열글자까지 허용 합니다</a></li>
+								<li class="active"><a href="#none">우리반 우유</a></li>
+								<li class="active"><a href="#none">우리반 발표</a></li>
+								<li class="active"><a href="#none">우리반 발표</a></li>
+								<li><a href="#none">우리반 발표</a></li>
+								<li><a href="#none">우리반 발표</a></li>
+								<li><a href="#none">우리반 발표</a></li>
+							</ul>
+							<div class="btn_full mt30">
+								<a href="#none" class="btn_add"><i class="sprite_comm sp_ico_add_v"></i> 추가하기</a>
+								<a href="#none" class="btn medium disabled"><i class="mr5 sprite_comm sp_ico_detail_cont_w"></i> 작성하기</a><!-- 작성하기 버튼 활성화시 .disabled 제거 -->
+							</div>
+						</div>
+					</h4>
+
+					<div class="search_wrap board">
+						<input class="board_search_input" placeholder="검색하기" type="text">
+						<a href="#none" class="btn_find"></a>
+						<a href="#none" class="btn_clear"></a>
+						<a href="#none" class="btn_filter"></a>
+						@@include('../include/inc_datePicker_type3.html')
+					</div>
+				</div>
+				<div class="qualification mb30">
+					<a href="#none">
+						통계
+						<i class="sprite_comm sp_ico_setting ml5"></i>
+					</a>					
+				</div>
+				<!-- /title -->
+				<!-- sub contents -->
+
+				<!-- pin menu 게시판 아이콘 클래스명
+					
+					학급공지 :: .sp_ico_notice_b
+					앨범 :: .sp_ico_album_b
+					자유게시판 :: .sp_ico_fboard_b
+					과제게시판 :: .sp_ico_homework_b
+					학급 조사표 :: .sp_ico_table_b
+					T셀파 학습도구 :: .sp_ico_tool_b
+				-->
+				<div class="post_box">
+					<a href="#none" class="box_close">닫기</a>
+					<div class="title flex_wrap">
+						<span class="category">
+							<i class="sp_ico_table_v"></i> 학급 조사표
+						</span>
+						<div class="title_bot">
+							<span class="tit_post">우리반 청소</span>
+						</div>
+					</div>
+					<a href="#none" class="btn round mr30">작성하기</a>
+				</div>
+				<!-- //pin menu -->
+				<!-- / sub contents -->
+			</div>
+		</div>
+		<!-- //sub container -->
+		<!-- footer -->
+		@@include('../include/inc_footer.html')
+	</div>
+</body>
+
+</html>

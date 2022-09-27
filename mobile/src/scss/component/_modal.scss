@@ -1,0 +1,370 @@
+/* modal */
+.modal_backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 998;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    //overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+
+    .modal_close {
+        @include ir_pm;
+        @extend .sprite_comm;
+        @extend .sp_ico_close;
+    }
+
+    .modal_content {
+        position: relative;
+        width: 30rem;
+        margin: 0 auto 2rem;
+        color: $black;
+        outline: none;
+        border-radius: 2rem;
+        box-sizing: border-box;
+        background-color: $white;
+        padding-top: 3.3rem;
+
+        .pop_msg {
+            font-size: 1.8rem;
+            line-height: 3rem;
+            font-weight: $font_weight_bold;
+            text-align: center;
+        }
+
+        .pop_txt {
+            text-align: center;
+            line-height: 2.2rem;
+            font-size: 1.4rem;
+        }
+
+        &.modal_full {
+            left:50%; transform: translateX(-50%);
+            margin: 0 !important;
+            padding: 0 0 0 0;
+            width: 100%;
+            max-width: $max_width;
+            height: calc(var(--vh, 1vh) * 100);
+            border-radius: 0;
+            .cont_section {
+                position: relative;
+                height: calc(var(--vh, 1vh) * 100);
+                padding: 5.5rem 0 0;
+                @include scrollTalk;
+                z-index: 0;
+            }
+        }
+    }
+
+    .modal_btn_half {
+        @include flexbox(between, center);
+        border-top: 1px solid $gray_e0;
+        margin-top: 3.2rem;
+        .modal_btn {
+            @include flexbox(center, center);
+            width: calc(50% - 1px);
+            height: 5rem;
+            font-size: 1.5rem;
+            font-weight: $font_weight_medium;
+            color: $black;
+            text-align: center;
+            &.disabled { color: $gray_cc;}
+            &.active { color: $primary;}
+            & + .modal_btn { border-left: 1px solid $gray_e0;}
+        }
+    }
+
+    .modal_btn_full {
+        border-top: 1px solid $gray_e0;
+        margin-top: 3.2rem;
+        .modal_btn {
+            @include flexbox(center, center);
+            width: 100%;
+            height: 5rem;
+            font-size: 1.5rem;
+            color: $black;
+            font-weight: $font_weight_medium;
+            &.disabled { color: $gray_cc;}
+            &.active { color: $primary;}
+        }
+        
+    }
+
+    &.img_modal {
+        .btn_wrap {
+            position: absolute;
+            top: 30px;
+            right: 25px;
+            .img_modal_close {
+                font-size: 0;
+            }
+        }
+        .modal_content {
+            background: transparent;
+            @include flexbox(center, center);
+            padding: 0;
+            box-shadow: none;
+            .img_view {
+                max-width: 100%;
+            }
+        }
+    }
+    // modal 위에 modal 띄울때 
+    + .over_modal {
+        &::after,&::before{ content: ''; display: table; }
+        &::after {
+            width: 100%; height: 100%;
+            position: fixed;
+            top: 0; left: 0;
+            background: rgba(0, 0, 0, .6);
+            z-index: 998;
+            clear: both; 
+        }
+        .modal_content {
+            z-index: 1000;
+        }
+    }
+}
+
+.val_check {
+    position: absolute;
+    top: calc(100% + 1rem);
+    left: 1.5rem;
+    color: #ff6652;
+    font-size: 1.2rem;
+}
+
+.val_check_pink,
+.val_check_red,
+.val_check_primary,
+.val_check_gray {
+    display: block;
+    width: 100%;
+    color: $red;
+    font-size: 1.2rem;
+    margin-top: 0.8rem;
+    margin-left: 0.5rem;
+    word-break:keep-all;    
+}
+
+.val_check_primary {
+    color: $primary;
+}
+
+.val_check_pink {
+    color: $point;
+}
+
+.val_check_gray {
+    color: $gray_66;
+}
+
+// 수신 대상 선택
+.sms_target {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: calc(100% + 20px);
+    width: 340px;
+    padding: 30px;
+    min-height: 200px;
+    background-color: $white;
+    border: 1px solid $gray_e0;
+    border-radius: 10px;
+    z-index: 1100;
+    box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.1);
+
+    .pop_title {
+        font-size: 18px;
+        line-height: 18px;
+        font-weight: $font_weight_bold;
+        text-align: center;
+    }
+
+    .scroll_bar {
+        max-height: 280px;
+        width: 100%;
+        padding-right: 0;
+        @include scroll;
+
+        .check_box {
+            label {
+                font-size: 15px;
+                padding-left: 36px;
+            }
+
+            &.all {
+                margin-bottom: 20px;
+
+                label {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .check_list {
+            margin-left: 14px;
+
+            .check_box {
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+
+
+// 클래스 알림.문자메세지
+.pop_send_title {
+    padding: 26px 0;
+    font-size: 18px;
+    font-weight: $font_weight_bold;
+    text-align: center;
+    border-bottom: 1px solid $gray_e0;
+}
+
+.pop_send_con {
+    @include flexbox(between, start);
+
+    .send_list {
+        width: 100%;
+
+        .send_group {
+            @include flexbox(between, start);
+            padding: 20px 30px;
+            background-color: $gray_fa;
+            border-bottom: 1px solid $gray_e0;
+
+            .check_box label {
+                font-size: 16px;
+                padding-left: 35px;
+            }
+        }
+
+        .scroll_bar {
+            max-height: 260px;
+            padding-right: 35px;
+            @include scroll;
+            margin: 30px 45px;
+
+            .check_list {
+                .check_box {
+                    margin-top: 10px;
+                    line-height: 22px;
+
+                    &:first-child {
+                        margin-top: 0;
+                    }
+
+                    label {
+                        font-size: 15px;
+                        padding-left: 36px;
+                        max-width: 225px;
+
+                        &.ellipsis {
+                            @include ellipsis;
+                        }
+                    }
+
+                }
+
+                .check_time {
+                    width: 82px;
+                    font-size: 15px;
+                    color: $gray_99;
+                    letter-spacing: -.3px;
+
+                    &.unread {
+                        color: $gray_cc;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+    .send_msg {
+        min-width: 338px;
+        padding: 30px 30px 27px;
+        border-left: 1px solid $gray_e0;
+
+        .pop_title {
+            font-size: 18px;
+        }
+
+        .total {
+            font-size: 15px;
+            padding-top: 10px;
+            padding-left: 15px;
+
+            .num {
+                color: $primary;
+            }
+        }
+
+        textarea {
+            min-height: 150px;
+        }
+    }
+
+}
+
+
+// 팝업 옵션리스트
+.pop_opt_list {
+    padding: 3rem;
+    li {
+        margin-bottom: 3rem;
+        text-align: center;
+        line-height: 1;
+        &:last-child{
+            margin-bottom: 0;
+        }
+        a {
+            display: block;
+            font-size: 15px;
+            line-height: 1;
+            letter-spacing: -0.15px;
+            color: $black;
+            &.disabled { color: $gray_cc;}
+        }
+    }
+}
+
+// 게시판 이미지 슬라이드
+.modal_content.swiper {
+    .swiper-pagination {
+        position: initial !important;
+    }
+    .img_board_wrap {
+        padding-top: 3rem;
+        overflow: visible;
+        .swiper-slide { 
+            text-align: center;
+            padding: 0 2rem;
+            img { 
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

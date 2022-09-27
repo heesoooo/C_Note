@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+
+	<!-- 게시글 작성 시 노출되는 팝업 -->
+	<div class="modal" id="commentOption">
+		<div class="modal_content pt0">
+			<ul class="pop_opt_list">
+				<li>
+					<a href="#none">모든 내용을 취소하고 나가기</a>
+				</li>
+				<li>
+					<a href="#none" class="disabled">임시저장 후 나가기</a>
+				</li>
+				<li>
+					<a href="#none">취소</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<script>
+    $(function () {
+        $("#commentOption").modal({ show: true })
+    })
+	</script>
+</body>
+
+</html>

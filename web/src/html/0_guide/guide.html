@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Style Guide & Components</title>
+    @@include('../include/inc_html_head.html')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .components {
+            width: 1200px;
+            padding-top: 30px;
+            margin-left: 250px;
+            padding-left: 50px;
+        }
+
+        .components h1 {
+            background-color: #6255f6;
+            color: #ffffff;
+            height: 80px;
+            line-height: 80px;
+            font-size: 24px;
+            padding: 0 15px;
+        }
+
+        .components .categorys {
+            margin-bottom: 40px;
+            padding-top: 15px;
+            padding-bottom: 20px;
+            color: #001242;
+            font-size: 24px;
+            font-weight: bold;
+            border-bottom: 1px solid #e4e4e4;
+        }
+
+        .components h2.tit {
+            padding-bottom: 15px;
+            font-size: 20px;
+            font-weight: 300;
+        }
+
+        .components h2.tit span {
+            font-size: 14px;
+            color: #666666;
+            padding-left: 15px;
+        }
+
+        .components .component-area>h2 span {
+            margin-left: 5px;
+            font-size: 16px;
+            letter-spacing: -0.5px;
+            color: #646464;
+        }
+
+        .components .component-area>h3 {
+            margin: 50px 0 20px;
+        }
+
+        .components .component-area>h3:first-child {
+            margin-top: 0;
+        }
+
+        .components .component-area h3 span {
+            display: inline-block;
+            padding: 0 15px 0 5px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .components .component-area dl dt {
+            font-size: 12px;
+            color: #666666;
+            line-height: 25px;
+            margin-bottom: 10px
+        }
+
+        .components .sticky {
+            position: fixed;
+            left: 0;
+            top: 0;
+            max-width: 250px;
+            height: 100%;
+            border-right: 1px solid #aaa;
+            background-color: #fff;
+        }
+
+        .components .sticky a {
+            display: block;
+            height: 60px;
+            padding-left: 20px;
+            font-size: 20px;
+            color: #7c7c7c;
+            line-height: 60px;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+        }
+
+        .components .sticky a:hover {
+            color: #6255f6;
+        }
+
+        .components .sticky a.active {
+            color: #6255f6;
+            text-decoration: underline;
+        }
+
+        .component-area {
+            margin: 0 0 40px;
+            padding: 70px;
+            background-color: #fbfbfb;
+        }
+
+        .icon_box {
+            display: flex;
+            flex-wrap: wrap;
+            width: 1000px;
+        }
+
+        .icon_box li {
+            display: flex;
+            margin-right: 10px;
+            align-items: center;
+            justify-content: space-between;
+            width: 322px;
+            margin-bottom: 20px;
+            padding: 15px 20px;
+            background-color: #ededed;
+            border-radius: 10px;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex_start {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        /* components style */
+    </style>
+</head>
+
+<body>
+    <div class="components">
+        <div class="sticky">
+            <div class="inner">
+                <h1>Components</h1>
+                <a href="#category1">typography</a>
+                <a href="#category2">form</a>
+                <a href="#category3">search</a>
+                <a href="#category4">button</a>
+                <a href="#category5">icon</a>
+                <a href="#category6">datePicker</a>
+                <a href="#category7">popup</a>
+                <a href="#category8">table</a>
+                <a href="#category9">snb</a>
+                <a href="#category10">editor</a>
+                <a href="#category11">tab</a>
+            </div>
+        </div>
+
+        <!-- TYPOGRAPHY -->
+        <h2 id="category1" class="categorys">#TYPOGRAPHY</h2>
+        <div class="component-area">
+            <div class="flex" style="margin-bottom:80px">
+                <h3><span style="width:200px">Font/Type</span></h3>
+                <dl style="width:40%">
+                    <dt>Korean</dt>
+                    <dd style="font-size:50px;font-weight:500;">노토산스 CJK KR</dd>
+                </dl>
+                <dl style="width:40%">
+                    <dt>Number & English </dt>
+                    <dd style="font-size:60px;line-height:70px;font-weight:300;">Montserrat</dd>
+                </dl>
+            </div>
+
+            <div class="flex">
+                <h3><span style="width:200px">Font/Weight</span></h3>
+                <dl style="width:27%">
+                    <dt>$font_weight_bold</dt>
+                    <dd class="ft26" style="font-weight:700;">
+                        <span>노토산스 CJK KR</span><br>
+                        <span style="font-weight:700;">Montserrat</span>
+                    </dd>
+                </dl>
+                <dl style="width:27%">
+                    <dt>$font_weight_medium</dt>
+                    <dd class="ft26" style="font-weight:500;">
+                        <span>노토산스 CJK KR</span><br>
+                        <span style="font-weight:500;">Montserrat</span>
+                    </dd>
+                </dl>
+                <dl style="width:27%">
+                    <dt>$font_weight_regular</dt>
+                    <dd class="ft26" style="font-weight:400;">
+                        <span>노토산스 CJK KR</span><br>
+                        <span style="font-weight:300;">Montserrat</span>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <!-- /TYPOGRAPHY -->
+
+        <!-- form -->
+        <h2 id="category2" class="categorys">#form</h2>
+
+        <h2 class="tit">Menu - dropdown</h2>
+        <div class="component-area">
+            <div class="dropdown_wrap">
+                <div class="dropdown">
+                    <a class="menu" href="#none">
+                        <i class="sprite_comm sp_ico_more"></i>
+                    </a>
+                    <ul class="menu_list">
+                        <li><a href="#none"><i class="sprite_comm sp_ico_edit_off mr10"></i>게시물 수정하기</a></li>
+                        <li><a href="#none"><i class="sprite_comm sp_ico_pin_off mr10"></i>게시물 공지하기</a></li>
+                        <li><a href="#none" class="btn_sms"><i class="sprite_comm sp_ico_share_off mr10"></i>SMS
+                                발송하기</a></li>
+                        <li><a href="#none"><i class="sprite_comm sp_ico_del_off mr10"></i>삭제하기</a></li>
+                    </ul>
+                    <!-- 수신 대상 선택 팝업 -->
+                    <div id="popSms" class="sms_target" style="display: none">
+                        <div class="pop_title mb40">수신 대상 선택</div>
+                        <div class="scroll_bar">
+                            <div class="check_box all">
+                                <input type="checkbox" id="check1">
+                                <label for="check1">전체 선택</label>
+                            </div>
+                            <ul class="check_list">
+                                <li class="check_box">
+                                    <input type="checkbox" id="check2-1" checked>
+                                    <label for="check2-1">김천재 학부모(김상민)</label>
+                                </li>
+                                <li class="check_box">
+                                    <input type="checkbox" id="check2-2">
+                                    <label for="check2-2">나천재 학부모(김지언)</label>
+                                </li>
+                                <li class="check_box">
+                                    <input type="checkbox" id="check2-3">
+                                    <label for="check2-3">다천재 학부모(권현주)</label>
+                                </li>
+                                <li class="check_box">
+                                    <input type="checkbox" id="check2-4">
+                                    <label for="check2-4">라천재 학부모(정재훈)</label>
+                                </li>
+                                <li class="check_box">
+                                    <input type="checkbox" id="check2-5">
+                                    <label for="check2-5">마천재 학부모(윤석배)</label>
+                                </li>
+                                <li class="check_box">
+                                    <input type="checkbox" id="check2-6">
+                                    <label for="check2-6">바천재 학부모(김교육)</label>
+                                </li>
+                                <li class="check_box">
+                                    <input type="checkbox" id="check2-7">
+                                    <label for="check2-7">사천재 학부모(김교육)</label>
+                                </li>
+                                <li class="check_box">
+                                    <input type="checkbox" id="check2-7">
+                                    <label for="check2-7">사천재 학부모(김교육)</label>
+                                </li>
+                                <li class="check_box">
+                                    <input type="checkbox" id="check2-7">
+                                    <label for="check2-7">사천재 학부모(김교육)</label>
+                                </li>
+                                <li class="check_box">
+                                    <input type="checkbox" id="check2-7">
+                                    <label for="check2-7">사천재 학부모(김교육)</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn_half mt30">
+                            <a href="#none" class="btn medium outline">취소</a>
+                            <a href="#none" class="btn medium">완료</a>
+                        </div>
+                        <!-- 유효성 검사 메세지 -->
+                        <span class="val_check_point">수신 대상을 선택해 주세요.</span>
+                    </div>
+
+                </div>
+            </div>
+            <script>
+
+            </script>
+        </div>
+
+        <h2 class="tit">Select box</h2>
+        <div class="component-area">
+            <div class="select_half select_wrap" style="width:740px">
+                <div class="select_box">
+                    <a class="select" href="#none">년도</a>
+                    <div class="option_list">
+                        <div class="scroll_bar">
+                            <a href="#none">2022</a>
+                            <a href="#none">2021</a>
+                            <a href="#none">2020</a>
+                            <a href="#none">2019</a>
+                            <a href="#none">2018</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="select_box">
+                    <a class="select" href="#none">선택</a>
+                    <div class="option_list">
+                        <div class="scroll_bar">
+                            <a href="#none">1학년</a>
+                            <a href="#none">2학년</a>
+                            <a href="#none">3학년</a>
+                            <a href="#none">4학년</a>
+                            <a href="#none">5학년</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="tit">Select box</h2>
+        <div class="component-area">
+            <div class="select_wrap mb10" style="width:310px">
+                <div class="select_box">
+                    <a class="select sm" href="#none">최근순</a>
+                    <div class="option_list">
+                        <div class="scroll_bar">
+                            <a href="#none">최근순</a>
+                            <a href="#none">과거순</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="select_box disabled">
+                    <a class="select sm mt20" href="#none">최근순</a>
+                    <div class="option_list">
+                        <div class="scroll_bar">
+                            <a href="#none">option1</a>
+                            <a href="#none">option2</a>
+                            <a href="#none">option3</a>
+                            <a href="#none">option4</a>
+                            <a href="#none">option5</a>
+                            <a href="#none">option6</a>
+                            <a href="#none">option7</a>
+                            <a href="#none">option8</a>
+                            <a href="#none">option9</a>
+                            <a href="#none">option10</a>
+                            <a href="#none">option11</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="tit">Input</h2>
+        <div class="component-area">
+            <h3><span>1박스 </span></h3>
+            <div class="input_full" style="width:740px">
+                <input type="text" placeholder="placeholder" value="안녕하세요.">
+            </div>
+            <h3><span>2박스</span></h3>
+            <div class="input_half" style="width:740px">
+                <input type="text" placeholder="placeholder" value="">
+                <input type="text" placeholder="placeholder" value="안녕하세요.">
+            </div>
+            <h3><span>Default / Completed</span></h3>
+            <input type="text" placeholder="내용을 입력하세요.">
+            <input type="text" placeholder="내용을 입력하세요." value="천재교육">
+            <h3><span>input.my_focus / input.error / disabled </span></h3>
+            <input class="my_focus" type="text" placeholder="내용을 입력하세요." value="천재교육">
+            <input class="error" type="text" placeholder="내용을 입력하세요." value="천재교육">
+            <input type="text" placeholder="내용을 입력하세요." value="천재교육" disabled>
+        </div>
+
+        <h2 class="tit">Textarea</h2>
+        <div class="component-area">
+
+            <h3><span>Default</span></h3>
+            <textarea placeholder="클래스를 간단하게 소개해주세요.(최대 50자 이내)"></textarea>
+            <h3><span>textarea.my_focus</span></h3>
+            <textarea class="my_focus" type="text" placeholder="내용을 입력하세요.">뛰노는 남는 위하여 생명을 하는 돋고, 있는가? 공자는 미묘한 곧 열락의 힘차게 있다. 새 이상의 얼마나 이상의 갑 동산에는 따뜻한 타오르고 사막이다. 청춘 몸이 못할 무엇이 튼튼하며, 되려니와, 것이다. 
+    </textarea>
+            <h3><span>disabled</span></h3>
+            <textarea type="text" placeholder="내용을 입력하세요." value="천재교육" disabled></textarea>
+        </div>
+
+        <h2 class="tit">Tag</h2>
+        <div class="component-area">
+            <h3><span>.tag.tag_medium </span><span>.tag.tag_regular </span></h3>
+            <span class="tag tag_medium mr10">2023</span>
+            <span class="tag tag_regular">필독</span>
+            <h3><span>.tag.tag_medium.red </span><span>.tag.tag_regular.red </span></h3>
+            <span class="tag tag_medium red mr10">2023</span>
+            <span class="tag tag_regular red">필독</span>
+        </div>
+
+        <h2 class="tit">Checkbox</h2>
+        <div class="component-area flex">
+            <div class="check_box mr20">
+                <input type="checkbox" id="check1" checked>
+                <label for="check1">One</label>
+            </div>
+            <div class="check_box mr20">
+                <input type="checkbox" id="check2">
+                <label for="check2">Two</label>
+            </div>
+            <div class="check_box mr20">
+                <input type="checkbox" id="check3" disabled>
+                <label for="check3">Three</label>
+            </div>
+            <div class="check_box circle">
+                <input type="checkbox" id="check4" checked>
+                <label for="check4">Circle</label>
+            </div>
+        </div>
+
+        <h2 class="tit">Radio Button</h2>
+        <div class="component-area flex">
+            <div class="radio_box">
+                <input type="radio" id="radio1" name="radio_btn" checked="">
+                <label for="radio1" class="mr20">김천재 선생님</label>
+                <input type="radio" id="radio2" name="radio_btn">
+                <label for="radio2">이천재 선생님</label>
+            </div>
+        </div>
+
+        <h2 class="tit">Toggle</h2>
+        <div class="component-area">
+            <label class="switch mr20">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+            <label class="switch mr20">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <label class="switch mr20">
+                <input type="checkbox" disabled>
+                <span class="slider"></span>
+            </label>
+
+        </div>
+
+        <!-- /form -->
+
+        <!-- search -->
+        <h2 id="category3" class="categorys">#search</h2>
+        <h2 class="tit">상단 게시물 검색 (검색하기 필터)</h2>
+        <div class="component-area">
+            <div class="search_wrap board">
+                <input class="board_search_input" placeholder="검색하기" type="text">
+                <a href="#none" class="btn_find"></a>
+                <a href="#none" class="btn_clear"></a>
+                <a href="#none" class="btn_filter"></a>
+                @@include('../include/inc_datePicker_type3.html')
+            </div>
+
+        </div>
+
+        <h2 class="tit">학교 검색</h2>
+        <div class="component-area">
+            <div class="search_wrap school">
+                <input class="school_search_input" placeholder="검색하기" type="text">
+                <a href="#none" class="btn_find"></a>
+                <div class="search_school_list">
+                    <div class="scroll_bar">
+                        <a href="#none">
+                            <p class="sc_name">이천가산초등학교</p>
+                            <p class="sc_address">경기 이천시 부발읍 가산리</p>
+                        </a>
+                        <a href="#none">
+                            <p class="sc_name">가산초등학교</p>
+                            <p class="sc_address">경기 포천시 가산면 마산리 407</p>
+                        </a>
+                        <a href="#none">
+                            <p class="sc_name">가산초등학교</p>
+                            <p class="sc_address">강원 춘천시 동면 지내리 136-2번지</p>
+                        </a>
+                        <a href="#none">
+                            <p class="sc_name">가산초등학교</p>
+                            <p class="sc_address">강원 춘천시 동면 지내리 136-2번지</p>
+                        </a>
+                        <a href="#none">
+                            <p class="sc_name">가산초등학교</p>
+                            <p class="sc_address">강원 춘천시 동면 지내리 136-2번지</p>
+                        </a>
+                    </div>
+                    <div class="add_new_school">
+                        <span class="msg">학교가 검색 결과에 없다면,신규 학교를 등록해주세요.</span>
+                        <a class="btn" href="#none">신규 학교 등록</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="tit">search bar</h2>
+        <div class="component-area">
+            <div class="search_wrap default">
+                <input class="default_input" placeholder="검색하기" type="text">
+                <a href="#none" class="btn_find"></a>
+            </div>
+        </div>
+        <!-- /search -->
+
+
+        <!-- button -->
+        <h2 id="category4" class="categorys">#Button</h2>
+        <h2 class="tit">States</h2>
+        <div class="component-area">
+            <h3>
+                <span>.btn.medium</span>
+                <span>.btn.medium.outline</span>
+                <span>.btn.medium.disabled</span>
+                <span>.btn.medium.disabled.outline</span>
+            </h3>
+            <a href="#none" class="btn medium">완료</a>
+            <a href="#none" class="btn medium outline">취소</a>
+            <a href="#none" class="btn medium disabled">완료</a>
+            <a href="#none" class="btn medium disabled outline">취소</a>
+        </div>
+
+        <h2 class="tit">하단버튼 - Modal <span>Font_16px</span></h2>
+        <div class="component-area">
+            <h3><span>1버튼</span></h3>
+            <div class="btn_full" style="width:308px"><a href="#none" class="btn medium">일정 추가하기</a></div>
+            <h3><span>2버튼</span></h3>
+            <div class="btn_half" style="width:308px">
+                <a href="#none" class="btn medium outline">취소</a>
+                <a href="#none" class="btn medium">완료</a>
+            </div>
+        </div>
+
+        <h2 class="tit">하단버튼 - 전체화면 <span>Font_18px</span></h2>
+        <div class="component-area">
+            <h3><span>1버튼 </span></h3>
+            <div class="btn_full" style="width:740px"><a href="#none" class="btn large">일정 추가하기</a></div>
+            <h3><span>2버튼</span></h3>
+            <div class="btn_half" style="width:740px">
+                <a href="#none" class="btn large outline">취소</a>
+                <a href="#none" class="btn large">완료</a>
+            </div>
+        </div>
+
+        <h2 class="tit">일반 버튼 <span>Font_15px</span></h2>
+        <div class="component-area">
+            <h3>
+                <span>.btn</span>
+                <span>.btn.outline</span>
+            </h3>
+            <a href="#none" class="btn">신규 학교 등록</a>
+            <a href="#none" class="btn outline">사진 올리기</a>
+
+        </div>
+        
+        <h2 class="tit">Round Button</h2>
+        <div class="component-area">
+            <h3><span>.btn.round.large</span></h3>
+            <a href="#none" class="btn round large"><i class="sprite_comm sp_ico_pen mr10"></i>게시판 글쓰기</a>
+            <h3><span>.btn.outline.round.large</span></h3>
+            <a href="#none" class="btn outline round large"><i class="sprite_comm sp_ico_invite_lg_v mr10"></i>초대하기</a>
+            <h3>
+                <span>.btn.outline.round.h50</span>
+                <span>.btn.outline.round.h50.point</span>
+                <span>.btn.round.h50.point</span>
+            </h3>
+            <a href="#none" class="btn outline round h50"><i class="sprite_comm sp_ico_invite_lg_v mr10"></i>초대하기</a>
+            <a href="#none" class="btn outline round h50 point"><i class="sprite_comm sp_ico_leave_p mr10"></i>탈퇴하기</a>
+            <a href="#none" class="btn round h50 point"><i class="sprite_comm sp_ico_comment_w mr10"></i>T톡하기</a>
+            <h3>
+                <span>.btn.outline.round.small</span>
+                <span>.btn.outline.round.small.third</span>
+            </h3>
+            <a href="#none" class="btn outline round small"><i class="sprite_comm sp_ico_write_pen mr5"></i>글쓰기</a>
+            <a href="#none" class="btn outline round small third"><i class="sprite_comm sp_ico_board mr5"></i>판서</a>
+        </div>
+
+        <h2 class="tit">Etc Button</h2>
+        <div class="component-area">
+            <h3>
+                <span>.btn.etc</span>
+                <span>.btn.etc.disabled</span>
+            </h3>
+            <a href="#none" class="btn etc">등록</a>
+            <a href="#none" class="btn etc disabled">등록</a>
+            <h3>
+                <span>.btn.action</span>
+                <span>.btn.action.inactive</span>
+            </h3>
+            <a href="#none" class="btn action inactive">
+                <i class="sprite_comm sp_ico_save"></i>
+                <span>임시저장</span>
+            </a>
+            <a href="#none" class="btn action mt15">
+                <i class="sprite_comm sp_ico_send"></i>
+                <span>발송하기</span>
+            </a>
+        </div>
+        <!-- /button -->
+
+        <!-- icon -->
+        <h2 id="category5" class="categorys">#icon</h2>
+        <h2 class="tit">icon</h2>
+        <div class="component-area">
+            <h3><span style="color:#6255f6">.sprite_comm</span><span>공통클래스</span></h3>
+            <ul class="icon_box">
+                <li><span class="sprite_comm sp_brand"></span><strong class="ml20">.sp_brand</strong></li>
+                <li><span class="sprite_comm sp_ico_foot_book"></span><strong class="ml20">.sp_ico_foot_book</strong></li>
+                <li><span class="sprite_comm sp_ico_foot_edu"></span><strong class="ml20">.sp_ico_foot_edu</strong></li>
+                <li><span class="sprite_comm sp_ico_add_class"></span><strong class="ml20">.sp_ico_add_class</strong></li>
+                <li><span class="sprite_comm sp_ico_album_b"></span><strong class="ml20">.sp_ico_album_b</strong></li>
+                <li><span class="sprite_comm sp_ico_album_v"></span><strong class="ml20">.sp_ico_album_v</strong></li>
+                <li><span class="sprite_comm sp_ico_basic_profile"></span><strong class="ml20">.sp_ico_basic_profile</strong></li>
+                <li><span class="sprite_comm sp_ico_calendar"></span><strong class="ml20">.sp_ico_calendar</strong></li>
+                <li><span class="sprite_comm sp_ico_comment"></span><strong class="ml20">.sp_ico_comment</strong></li>
+                <li><span class="sprite_comm sp_ico_comment_close"></span><strong class="ml20">.sp_ico_comment_close</strong></li>
+                <li><span class="sprite_comm sp_ico_close_dim"></span><strong class="ml20">.sp_ico_close_dim</strong></li>
+                <li><span class="sprite_comm sp_ico_close_pop"></span><strong class="ml20">.sp_ico_close_pop</strong></li>
+                <li><span class="sprite_comm sp_ico_tip_x"></span><strong class="ml20">.sp_ico_tip_x</strong></li>
+                <li><span class="sprite_comm sp_ico_crown"></span><strong class="ml20">.sp_ico_crown</strong></li>
+                <li><span class="sprite_comm sp_ico_crown_blue"></span><strong class="ml20">.sp_ico_crown_blue</strong></li>
+                <li><span class="sprite_comm sp_ico_del_off"></span><strong class="ml20">.sp_ico_del_off</strong></li>
+                <li><span class="sprite_comm sp_ico_del_on"></span><strong class="ml20">.sp_ico_del_on</strong></li>
+                <li><span class="sprite_comm sp_ico_edit_off"></span><strong class="ml20">.sp_ico_edit_off</strong></li>
+                <li><span class="sprite_comm sp_ico_edit_on"></span><strong class="ml20">.sp_ico_edit_on</strong></li>
+                <li><span class="sprite_comm sp_ico_fboard_b"></span><strong class="ml20">.sp_ico_fboard_b</strong></li>
+                <li><span class="sprite_comm sp_ico_fboard_v"></span><strong class="ml20">.sp_ico_fboard_v</strong></li>
+                <li><span class="sprite_comm sp_ico_edit"></span><strong class="ml20">.sp_ico_edit</strong></li>
+                <li><span class="sprite_comm sp_ico_file_g"></span><strong class="ml20">.sp_ico_file_g</strong></li>
+                <li><span class="sprite_comm sp_ico_file_v"></span><strong class="ml20">.sp_ico_file_v</strong></li>
+                <li><span class="sprite_comm sp_ico_filter"></span><strong class="ml20">.sp_ico_filter</strong></li>
+                <li><span class="sprite_comm sp_ico_filter_on"></span><strong class="ml20">.sp_ico_filter_on</strong></li>
+                <li><span class="sprite_comm sp_ico_head_search"></span><strong class="ml20">.sp_ico_head_search</strong></li>
+                <li><span class="sprite_comm sp_ico_head_search_off"></span><strong class="ml20">.sp_ico_head_search_off</strong></li>
+                <li><span class="sprite_comm sp_ico_head_alarm"></span><strong class="ml20">.sp_ico_head_alarm</strong></li>
+                <li><span class="sprite_comm sp_ico_homework_b"></span><strong class="ml20">.sp_ico_homework_b</strong></li>
+                <li><span class="sprite_comm sp_ico_homework_v"></span><strong class="ml20">.sp_ico_homework_v</strong></li>
+                <li><span class="sprite_comm sp_ico_input_clear"></span><strong class="ml20">.sp_ico_input_clear</strong></li>
+                <li><span class="sprite_comm sp_ico_like"></span><strong class="ml20">.sp_ico_like</strong></li>
+                <li><span class="sprite_comm sp_ico_more"></span><strong class="ml20">.sp_ico_more</strong></li>
+                <li><span class="sprite_comm sp_ico_more_reple"></span><strong class="ml20">.sp_ico_more_reple</strong></li>
+                <li><span class="sprite_comm sp_ico_notice_b"></span><strong class="ml20">.sp_ico_notice_b</strong></li>
+                <li><span class="sprite_comm sp_ico_notice_v"></span><strong class="ml20">.sp_ico_notice_v</strong></li>
+                <li><span class="sprite_comm sp_ico_pen"></span><strong class="ml20">.sp_ico_pen</strong></li>
+                <li><span class="sprite_comm sp_ico_print"></span><strong class="ml20">.sp_ico_print</strong></li>
+                <li><span class="sprite_comm sp_ico_pin_b"></span><strong class="ml20">.sp_ico_pin_b</strong></li>
+                <li><span class="sprite_comm sp_ico_pin_off"></span><strong class="ml20">.sp_ico_pin_off</strong></li>
+                <li><span class="sprite_comm sp_ico_pin_on"></span><strong class="ml20">.sp_ico_pin_on</strong></li>
+                <li><span class="sprite_comm sp_ico_save"></span><strong class="ml20">.sp_ico_save</strong></li>
+                <li><span class="sprite_comm sp_ico_send"></span><strong class="ml20">.sp_ico_send</strong></li>
+                <li><span class="sprite_comm sp_ico_close"></span><strong class="ml20">.sp_ico_close</strong></li>
+                <li><span class="sprite_comm sp_ico_scrap"></span><strong class="ml20">.sp_ico_scrap</strong></li>
+                <li><span class="sprite_comm sp_ico_scrap_on"></span><strong class="ml20">.sp_ico_scrap_on</strong></li>
+                <li><span class="sprite_comm sp_ico_search_b"></span><strong class="ml20">.sp_ico_search_b</strong></li>
+                <li><span class="sprite_comm sp_ico_search_disabled"></span><strong class="ml20">.sp_ico_search_disabled</strong></li>
+                <li><span class="sprite_comm sp_ico_search_g"></span><strong class="ml20">.sp_ico_search_g</strong></li>
+                <li><span class="sprite_comm sp_ico_search_v"></span><strong class="ml20">.sp_ico_search_v</strong></li>
+                <li><span class="sprite_comm sp_ico_search_clear"></span><strong class="ml20">.sp_ico_search_clear</strong></li>
+                <li><span class="sprite_comm sp_ico_share_off"></span><strong class="ml20">.sp_ico_share_off</strong></li>
+                <li><span class="sprite_comm sp_ico_share_on"></span><strong class="ml20">.sp_ico_share_on</strong></li>
+                <li><span class="sprite_comm sp_ico_table_b"></span><strong class="ml20">.sp_ico_table_b</strong></li>
+                <li><span class="sprite_comm sp_ico_table_v"></span><strong class="ml20">.sp_ico_table_v</strong></li>
+                <li><span class="sprite_comm sp_ico_tool_b"></span><strong class="ml20">.sp_ico_tool_b</strong></li>
+                <li><span class="sprite_comm sp_ico_tool_v"></span><strong class="ml20">.sp_ico_tool_v</strong></li>
+                <li><span class="sprite_comm sp_ico_write_pen"></span><strong class="ml20">.sp_ico_write_pen</strong></li>
+                <li><span class="sprite_comm sp_ico_board"></span><strong class="ml20">.sp_ico_board</strong></li>
+                <li><span class="sprite_comm sp_ico_user"></span><strong class="ml20">.sp_ico_user</strong></li>
+                <li><span class="sprite_comm sp_ico_view"></span><strong class="ml20">.sp_ico_view</strong></li>
+                <li><span class="sprite_comm sp_ico_invite"></span><strong class="ml20">.sp_ico_invite</strong></li>
+                <li><span class="sprite_comm sp_ico_invite_lg_v"></span><strong class="ml20">.sp_ico_invite_lg_v</strong></li>
+                <li><span class="sprite_comm sp_ico_leave"></span><strong class="ml20">.sp_ico_leave</strong></li>
+                <li><span class="sprite_comm sp_ico_top"></span><strong class="ml20">.sp_ico_top</strong></li>
+                <li><span class="sprite_comm sp_ico_board2"></span><strong class="ml20">.sp_ico_board2</strong></li>
+                <li><span class="sprite_comm sp_ico_edit_board"></span><strong class="ml20">.sp_ico_edit_board</strong></li>
+                <li><span class="sprite_comm sp_ico_setting"></span><strong class="ml20">.sp_ico_setting</strong></li>
+                <!-- <li></li> -->
+                <li><span class="sprite_comm sp_ico_next_disable"></span><strong class="ml20">.sp_ico_next_disable</strong></li>
+                <li><span class="sprite_comm sp_ico_next_on"></span><strong class="ml20">.sp_ico_next_on</strong></li>
+                <li><span class="sprite_comm sp_ico_prev_disable"></span><strong class="ml20">.sp_ico_prev_disable</strong></li>
+                <li><span class="sprite_comm sp_ico_prev_on"></span><strong class="ml20">.sp_ico_prev_on</strong></li>
+            </ul>
+        </div>
+
+        <h2 class="tit">img</h2>
+        <div class="component-area">
+            <h3><span>.empty.no_class</span> </h3>
+            <div class="empty no_class"> </div>
+            <h3><span>.empty.no_data</span> </h3>
+            <div class="empty no_data"> </div>
+            <h3><span>.empty.no_result</span> </h3>
+            <div class="empty no_result"> </div>
+            <h3><span>.empty.no_school</span> </h3>
+            <div class="empty no_school"> </div>
+            <h3><span>.empty.leave</span> </h3>
+            <div class="empty leave"> </div>
+            <h3><span>.empty.delete</span> </h3>
+            <div class="empty delete"> </div>
+            <h3><span>.empty.no_post</span> </h3>
+            <div class="empty no_post"> </div>
+        </div>
+        <!-- /icon -->
+
+        <!-- datepicker -->
+        <h2 id="category6" class="categorys">#datePicker</h2>
+        <div class="component-area">
+
+            <!-- 달력 & 일정 관련 모달창 -->
+            <!-- ******************************************************************
+			!!! td.day .schedule_info 추가시 일정등록 표기 css확인가능
+		    ******************************************************************** -->
+            <p>td.day :: .schedule_info 추가시 일정등록 표기 css확인가능</p>
+
+            <div class="pt20 pb20">
+                <h3 class="mb10"><span>1. 우리반 일정</span></h3>
+                @@include('../include/inc_datePicker_type1.html')
+            </div>
+
+            <div class="pt20 pb20">
+                <h3 class="mb10"><span>2. 우리반 일정 - 일정 등록하기</span></h3>
+                @@include('../include/inc_datePicker_type2.html')
+            </div>
+
+            <div class="pt20 pb20">
+                <h3 class="mb10"><span>3.검색하기 - 필터</span></h3>
+                <a href="#category3" class="btn outline ml10">검색하기 필터 보기</a>
+            </div>
+
+
+            <div class="pt20 pb20">
+                <h3 class="mb10"><span>4. 글 작성하기 - 예약하기</span></h3>
+                @@include('../include/inc_datePicker_type4.html')
+            </div>
+        </div>
+
+        <!-- popup -->
+        <h2 id="category7" class="categorys">#popup</h2>
+
+        <h2 class="tit">게시글 보기</h2>
+        <div class="component-area">
+            <a href="#none" class="btn" data-target="pop7">w910</a>
+            <div class="modal" id="pop7">
+                <div class="modal_content w910">
+                    <div class="notice_view_header">
+                        <!-- notice_view_header 게시판 아이콘 클래스명
+                            학급공지 :: .sp_ico_notice_v
+                            앨범 :: .sp_ico_album_v
+                            자유게시판 :: .sp_ico_fboard_v
+                            과제게시판 :: .sp_ico_homework_v
+                            학급 조사표 :: .sp_ico_table_v
+                            T셀파 학습도구 :: .sp_ico_tool_v
+                        -->
+                        <div class="title">
+                            <h4><i class="sp_ico_notice_v"></i> 학급공지</h4>
+                            <!--학급공지 .sp_ico_notice_v -->
+                            <span class="date">2022.04.01 금요일</span>
+                            <span class="bar"></span>
+                            <span class="writer">김천재 선생님</span>
+                        </div>
+                        <div class="btn_icon">
+                            <a href="#" class="btn_scrap">
+                                <i class="sprite_comm sp_ico_scrap"></i>
+                            </a>
+                            <div class="dropdown_wrap">
+                                <div class="dropdown">
+                                    <a class="menu" href="#none">
+                                        <i class="sprite_comm sp_ico_more"></i>
+                                    </a>
+                                    <ul class="menu_list">
+                                        <li><a href="#none"><i class="sprite_comm sp_ico_edit_off mr10"></i>게시물 수정하기</a></li>
+                                        <li><a href="#none"><i class="sprite_comm sp_ico_pin_off mr10"></i>게시물 공지하기</a></li>
+                                        <li><a href="#none"><i class="sprite_comm sp_ico_share_off mr10"></i>SMS 발송하기</a></li>
+                                        <li><a href="#none"><i class="sprite_comm sp_ico_del_off mr10"></i>삭제하기</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="notice_view_body radius">
+                        <div class="bbs_area">
+                            <p class="view_target">수신 대상 : 학부모, 학생</p>
+                            <p class="notice_title">6.3(금) - 주간학습안내 첨부</p>
+                            <!-- 에디터에서 입력한 내용 노출-->
+                            <p>
+                                1. 현충일 - 태극기(조기) 달기 - 나라를 위해 목숨 바친 국군장병들과 현재 나라를 지켜주는 국군 아저씨들에게 감사하기<br>
+                                2. 오늘 - 공사차량 후문 출입으로 오후 3:30 이후 출입 불가 - 정문 통행<br>
+                                3. 영어 수행평가 - 다음주 수요일 실시<br>
+                                4. 화요일 - 아침 방송 조회(8시 45분까지 등교)<br>
+                                5. 업사이클 작품 활동 - 학급 티 입기<br>
+                                6. 여름철 식중독 조심, 찬 음식이나 음료 많이 먹지 않기<br>
+                            </p>
+                            <!-- 첨부파일 -->
+                            <div class="attach_list">
+                                <ul>
+                                    <li>
+                                        <a href="#none"><i class="sprite_comm sp_ico_file_g"></i>1학년 3반_6월 6일 ~ 6월
+                                            10일(15주).pdf</a>
+                                    </li>
+                                    <li>
+                                        <a href="#none"><i class="sprite_comm sp_ico_file_g"></i>1학년 3반_6월 6일 ~ 6월
+                                            10일(15주).pdf</a>
+                                    </li>
+                                    <li>
+                                        <a href="#none"><i class="sprite_comm sp_ico_file_g"></i>1학년 3반_6월 6일 ~ 6월
+                                            10일(15주).pdf</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="post_status">
+                            <div class="icon_left">
+
+                                <a href="#none" class="active">
+                                    <!-- .active 시 primary color -->
+                                    <i class="sprite_comm sp_ico_like"></i> 좋아요 <span class="num">23</span>
+                                </a>
+                                <a href="#none">
+                                    <i class="sprite_comm sp_ico_comment"></i> 댓글 <span class="num">23</span>
+                                </a>
+                                <a href="#none">
+                                    <i class="sprite_comm sp_ico_view"></i> <span class="num">23</span>읽음
+                                </a>
+                            </div>
+                            <a href="#none" onclick="window.print();return false;">
+                                <i class="sprite_comm sp_ico_print"></i> 인쇄하기
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="tit">게시글 작성</h2>
+        <div class="component-area">
+            <a href="#none" class="btn b_w1200" data-target="pop1">w1200</a>
+            <div class="modal" id="pop1">
+                <div class="modal_content w1200">
+                    <div class="left_section">
+                        <div class="con_box">
+                            <!-- 게시글 설정 -->
+                            <div class="board_settings">
+                                <h4>게시글 설정</h4>
+                                <ul class="setting_list">
+                                    <li>
+                                        <div class="title">
+                                            <strong class="category">공지</strong>
+                                            <p class="summary">게시물을 공지합니다.</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <div class="title">
+                                            <strong class="category">중요</strong>
+                                            <p class="summary">게시물을 강조합니다.</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <div class="title">
+                                            <strong class="category">학부모</strong>
+                                            <p class="summary">게시물을 공지합니다.</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox" checked="">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <div class="title">
+                                            <strong class="category">학생</strong>
+                                            <p class="summary">학생에게 발송합니다.</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox" checked="">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </li>
+                                </ul>
+                                <div class="btn_full select_receiver">
+                                    <a href="#none" class="btn medium btn_select_receiver">수신 대상 선택하기</a>
+                                    <div class="modal" style="display: none" id="popReceiver">
+                                        <div class="modal_content pop_select_receiver w340">
+                                            <div class="pop_title mb40">수신 대상 선택</div>
+                                            <div class="scroll_bar">
+                                                <div class="check_box all">
+                                                    <input type="checkbox" id="check1">
+                                                    <label for="check1">전체 선택</label>
+                                                </div>
+                                                <div class="ml15 mb30">
+                                                    <div class="check_box all">
+                                                        <input type="checkbox" id="check1">
+                                                        <label for="check1">학부모 전체 선택</label>
+                                                    </div>
+                                                    <ul class="check_list">
+                                                        <li class="check_box">
+                                                            <input type="checkbox" id="check2-1" checked="">
+                                                            <label for="check2-1">김천재 학부모(김상민)</label>
+                                                        </li>
+                                                        <li class="check_box">
+                                                            <input type="checkbox" id="check2-2">
+                                                            <label for="check2-2">나천재 학부모(김지언)</label>
+                                                        </li>
+                                                        <li class="check_box">
+                                                            <input type="checkbox" id="check2-3">
+                                                            <label for="check2-3">다천재 학부모(권현주)</label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="ml15">
+                                                    <div class="check_box all">
+                                                        <input type="checkbox" id="check1">
+                                                        <label for="check1">학생 전체 선택</label>
+                                                    </div>
+                                                    <ul class="check_list">
+                                                        <li class="check_box">
+                                                            <input type="checkbox" id="check2-1" checked="">
+                                                            <label for="check2-1">김천재 학부모(김상민)</label>
+                                                        </li>
+                                                        <li class="check_box">
+                                                            <input type="checkbox" id="check2-2">
+                                                            <label for="check2-2">나천재 학부모(김지언)</label>
+                                                        </li>
+                                                        <li class="check_box">
+                                                            <input type="checkbox" id="check2-3">
+                                                            <label for="check2-3">다천재 학부모(권현주)</label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="btn_half mt30">
+                                                <a href="#none" class="btn medium outline cancle">취소</a>
+                                                <a href="#none" class="btn medium">완료</a>
+                                            </div>
+                                            <!-- 유효성 검사 메세지 -->
+                                            <span class="val_check_point">수신 대상을 선택해 주세요.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <script>
+                                    //수신 대상 선택하기
+                                    $(".btn_select_receiver").on("click", function (e) {
+                                        e.preventDefault();
+                                        $("#popReceiver").show();
+                                    })
+                                    $(".pop_select_receiver .cancle").on("click", function (e) {
+                                        e.preventDefault();
+                                        $("#popReceiver").hide();
+                                    })
+                                </script>
+                                <p class="noti">발송 대상을 선택할 수 있습니다.</p>
+                            </div>
+                            <!-- /게시글 설정 -->
+                        </div>
+                        <div class="con_box mt20">
+                            <!-- 게시글 예약하기 -->
+                            <div class="board_reserve">
+                                <h4>예약하기</h4>
+                                <ul class="setting_list">
+                                    <li>
+                                        <div class="title">
+                                            <strong class="category">예약</strong>
+                                            <p class="summary">원하는 시간에 게시할 수 있습니다.</p>
+                                        </div>
+                                        <label class="switch">
+                                            <input type="checkbox" id="rsvToggle">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </li>
+                                </ul>
+                                <p class="reserve_time">
+                                    <i class="sprite_comm sp_ico_reserve_on"></i> <span>2022.04.01 (오전 09:00)</span>
+                                </p>
+                                <div id="popRsv" class="pop_reserve" style="display: none">
+                                    <!-- .calendar_modal -->
+                                    <div class="calendar_modal">
+                                        <div id="datepicker10" data-date="2022.06.04"></div>
+                                        <input type="hidden" id="my_hidden_input">
+                                        <script>
+                                            $('#datepicker10').datepicker({
+                                                weekStart: 1,
+                                            });
+                                            $('#datepicker').on('changeDate', function () {
+                                                $('#my_hidden_input').val(
+                                                    $('#datepicker').datepicker('getFormattedDate')
+                                                );
+                                            });
+                                        </script>
+
+                                        <div class="reserv_time flex_between">
+                                            <input type="text" class="sm" placeholder="2022.04.06">
+
+                                            <div class="select_wrap">
+                                                <div class="select_box">
+                                                    <a class="select sm" href="#none"><span>11</span> <span>시</span></a>
+                                                    <div class="option_list">
+                                                        <div class="scroll_bar">
+                                                            <a href="#none">1</a>
+                                                            <a href="#none">2</a>
+                                                            <a href="#none">3</a>
+                                                            <a href="#none">4</a>
+                                                            <a href="#none">5</a>
+                                                            <a href="#none">6</a>
+                                                            <a href="#none">7</a>
+                                                            <a href="#none">8</a>
+                                                            <a href="#none">9</a>
+                                                            <a href="#none">10</a>
+                                                            <a href="#none">11</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="select_wrap">
+                                                <div class="select_box">
+                                                    <a class="select sm" href="#none"><span>10</span> <span>분</span></a>
+                                                    <div class="option_list">
+                                                        <div class="scroll_bar">
+                                                            <a href="#none">1</a>
+                                                            <a href="#none">2</a>
+                                                            <a href="#none">3</a>
+                                                            <a href="#none">4</a>
+                                                            <a href="#none">5</a>
+                                                            <a href="#none">6</a>
+                                                            <a href="#none">7</a>
+                                                            <a href="#none">8</a>
+                                                            <a href="#none">9</a>
+                                                            <a href="#none">10</a>
+                                                            <a href="#none">11</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="btn_half">
+                                            <a href="#none" class="btn medium outline cancle">취소</a>
+                                            <a href="#none" class="btn medium">완료</a>
+                                        </div>
+
+                                        <p class="no_select">
+                                            선택할 수 없는 예약 시간입니다.
+                                        </p>
+                                    </div>
+                                    <!-- ./ -->
+                                </div>
+                            </div>
+                            <script>
+                                $(function () {
+                                    $(".switch").click(function () {
+                                        if ($(".switch input").is(":checked")) {
+                                            $("#popRsv").show();
+                                        } else {
+                                            $("#popRsv").hide();
+                                        }
+                                    });
+                                    $(".pop_reserve .cancle").on("click", function (e) {
+                                        $(this).parent().parent().hide();
+                                    })
+                                })
+                            </script>
+                            <!-- /게시글 예약하기 -->
+                        </div>
+                    </div>
+                    <div class="center_section">
+                        <!-- 게시글 쓰기 -->
+                        <div class="board_write_wrap">
+                            <h4>학급공지 쓰기 <span class="time_info">2022년 04월 01일 오전 9시 00분 게시 예정</span></h4>
+                            <div class="board_write_body">
+
+                                <div class="input_subject">
+                                    <input type="text" placeholder="제목을 입력하세요.">
+                                </div>
+
+                                <div class="editor_area">
+                                    <!-- 에디터 -->
+                                    <div id="boardEditor"></div>
+                                </div>
+                                <script>
+                                    // editor
+                                    ClassicEditor
+                                        .create( document.querySelector( '#boardEditor' ) )
+                                        .catch( error => {
+                                            console.error( error );
+                                     } );
+                                </script>
+
+                                <div class="file_upload">
+                                    <!-- 사진올리기 -->
+                                    <div class="row">
+                                        <dl>
+                                            <dt class="tit"><i class="sprite_comm sp_ico_album_v_sm"></i> 사진 올리기 (앨범)
+                                            </dt>
+                                            <dd class="file_add_area">
+                                                <span class="text">사진 파일을 여기에 올려 놓거나, + 버튼을 클릭하세요.</span>
+                                            </dd>
+                                        </dl>
+                                        <input type="file" class="input_file_button" id="inputFile">
+                                        <label for="inputFile"></label>
+                                    </div>
+                                    <div class="row">
+                                        <ul class="list_photo">
+                                            <li>
+                                                <span class="img"></span>
+                                                <a href="#none" class="delete">삭제</a>
+                                            </li>
+                                            <li>
+                                                <span class="img"></span>
+                                                <a href="#none" class="delete">삭제</a>
+                                            </li>
+                                            <li>
+                                                <span class="img"></span>
+                                                <a href="#none" class="delete">삭제</a>
+                                            </li>
+                                            <li>
+                                                <span class="img"></span>
+                                                <a href="#none" class="delete">삭제</a>
+                                            </li>
+                                            <li>
+                                                <span class="img"></span>
+                                                <a href="#none" class="delete">삭제</a>
+                                            </li>
+                                            <li>
+                                                <span class="img"></span>
+                                                <a href="#none" class="delete">삭제</a>
+                                            </li>
+                                            <li>
+                                                <span class="img"></span>
+                                                <a href="#none" class="delete">삭제</a>
+                                            </li>
+                                            <li>
+                                                <span class="img"></span>
+                                                <a href="#none" class="delete">삭제</a>
+                                            </li>
+                                            <li>
+                                                <span class="img"></span>
+                                                <a href="#none" class="delete">삭제</a>
+                                            </li>
+                                            <li>
+                                                <span class="img"></span>
+                                                <a href="#none" class="delete">삭제</a>
+                                            </li>
+                                            <li>
+                                                <span class="img"></span>
+                                                <a href="#none" class="delete">삭제</a>
+                                            </li>
+                                            <li>
+                                                <span class="img"></span>
+                                                <a href="#none" class="delete">삭제</a>
+                                            </li>
+                                        </ul>
+                                        <input type="file" class="input_file_button" id="inputFile">
+                                        <label for="inputFile"></label>
+                                    </div>
+
+                                    <!-- 문서올리기 -->
+                                    <div class="row">
+                                        <dl>
+                                            <dt class="tit"><i class="sprite_comm sp_ico_file_v"></i> 문서 파일 올리기</dt>
+                                            <dd class="file_add_area">
+                                                <span class="text">문서 파일을 여기에 올려 놓거나, + 버튼을 클릭하세요.</span>
+                                            </dd>
+                                        </dl>
+                                        <input type="file" class="input_file_button" id="inputFile2">
+                                        <label for="inputFile2"></label>
+                                    </div>
+                                    <div class="row">
+                                        <ul class="list_document">
+                                            <li>
+                                                <span class="name">체육활동_피구.hwp</span>
+                                                <a href="#none" class="delete">삭제</a>
+                                            </li>
+                                            <li>
+                                                <span class="name">체육활동_발야구.pdf</span>
+                                                <a href="#none" class="delete">삭제</a>
+                                            </li>
+                                            <li>
+                                                <span class="name">파일 여기까지!!!! 아래줄로 내려주세요.pdf</span>
+                                                <a href="#none" class="delete">삭제</a>
+                                            </li>
+                                            <li>
+                                                <span class="name">체육활동_피구.hwp</span>
+                                                <a href="#none" class="delete">삭제</a>
+                                            </li>
+                                            <li>
+                                                <span class="name">체육활동_피구.hwp</span>
+                                                <a href="#none" class="delete">삭제</a>
+                                            </li>
+                                            <li>
+                                                <span class="name">체육활동_발야구.pdf</span>
+                                                <a href="#none" class="delete">삭제</a>
+                                            </li>
+                                            <li>
+                                                <span class="name">파일 여기까지!!!! 아래줄로 내려주세요.pdf</span>
+                                                <a href="#none" class="delete">삭제</a>
+                                            </li>
+                                            <li>
+                                                <span class="name">체육활동_피구.hwp</span>
+                                                <a href="#none" class="delete">삭제</a>
+                                            </li>
+                                        </ul>
+                                        <input type="file" class="input_file_button" id="inputFile2">
+                                        <label for="inputFile2"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /게시글 쓰기 -->
+                    </div>
+                    <div class="right_section">
+                        <a href="#none" class="btn action inactive close">
+                            <i class="sprite_comm sp_ico_close"></i>
+                            <span>닫기</span>
+                        </a>
+                        <a href="#none" class="btn action inactive mt15">
+                            <i class="sprite_comm sp_ico_save"></i>
+                            <span>임시저장</span>
+                        </a>
+                        <a href="#none" class="btn action mt15">
+                            <i class="sprite_comm sp_ico_send"></i>
+                            <span>발송하기</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <h2 class="tit">w470</h2>
+        <div class="component-area">
+            <a href="#none" class="btn b1_w470" data-target="pop2">w470 - 가입요청</a>
+            <a href="#none" class="btn b2_w470" data-target="pop3">w470 - 휴대폰인증</a>
+            <a href="#none" class="btn b3_w470" data-target="pop4">w470 - 취소삭제</a>
+            <a href="#none" class="btn b3_w470" data-target="pop4-1">w470 - 확인</a>
+
+            <div class="modal click_dimm_none" id="pop2">
+                <div class="modal_content w470">
+                    <a href="#none" class="modal_close" data-dismiss="modal"><i
+                            class="sprite_comm sp_ico_close_pop"></i></a>
+                    <div class="pop_title">클래스 가입 요청 중</div>
+                    <div class="empty no_data mt40"> </div>
+                    <p class="pop_msg ft16 mt30">
+                        가입 신청이 완료되었습니다.<br>선생님의 승인을 기다려 주세요.
+                    </p>
+                    <div class="btn_full">
+                        <a href="#none" class="btn medium mt40">확인</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal click_dimm_none" id="pop3">
+                <div class="modal_content w470">
+                    <a href="#none" class="modal_close" data-dismiss="modal"><i
+                            class="sprite_comm sp_ico_close_pop"></i></a>
+                    <div class="pop_title">휴대폰 인증</div>
+                    <p class="pop_txt ft16 mt30">현재 등록되어 있는 휴대폰 번호를 입력하세요.</p>
+                    <div class="search_wrap default mt15">
+                        <input class="default_input" placeholder="검색하기" type="text">
+                        <a href="#none" class="btn_find"></a>
+                        <span class="val_check">등록된 번호와 일치하지 않습니다.</span>
+                    </div>
+                    <div class="btn_full mt70">
+                        <a href="#none" class="btn medium">완료</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="pop4">
+                <div class="modal_content w470">
+                    <a href="#none" class="modal_close" data-dismiss="modal"><i
+                            class="sprite_comm sp_ico_close_pop"></i></a>
+                    <p class="pop_msg ft18 mb35">
+                        삭제하면 로그인을 할 수 없습니다.<br>
+                        해당 계정을 삭제하시겠습니까?
+                    </p>
+                    <div class="btn_half">
+                        <a href="#none" class="btn medium outline">취소</a>
+                        <a href="#none" class="btn medium">삭제</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="pop4-1">
+                <div class="modal_content w470">
+                    <a href="#none" class="modal_close" data-dismiss="modal"><i
+                            class="sprite_comm sp_ico_close_pop"></i></a>
+                    <p class="pop_msg ft18 mb35">해당 내용을 삭제하시겠습니까?</p>
+                    <div class="btn_full">
+                        <a href="#none" class="btn medium">확인</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--popup-->
+
+        <!-- table -->
+        <h2 id="category8" class="categorys">#table</h2>
+        <div class="component-area">
+
+            <div class="mb30" style="width:910px">
+                <h3 class="mb10"><span>공지</span></h3>
+                <div class="pin_menu_box">
+                    <a href="#none" class="board_tit">
+                        <span class="title">
+                            <span class="category"><i class="sp_ico_homework_b"></i> T셀파 학습도구</span>
+                            <!-- 과제 게시판 .sp_ico_homework_b -->
+                            <span class="tag tag_regular">필독</span>
+                            <span class="text">자화상 그리기 - 4.5일까지 제출 자화상 그리기 - 4.5일까지 제출자화상 그리기 - 4.5일까지 제출자화상 그리기 -
+                                4.5일까지 제출자화상 그리기 - 4.5일까지 제출</span>
+                        </span>
+                        <span class="date">2022.04.01</span>
+                    </a>
+                    <a href="#none" class="btn_pin">
+                        <i class="sprite_comm sp_ico_pin_b"></i>
+                    </a>
+                </div>
+                <div class="pin_menu_box">
+                    <a href="#none" class="board_tit">
+                        <span class="title">
+                            <span class="category"><i class="sp_ico_album_b"></i> 앨범</span><!-- 앨범 .sp_ico_album_b -->
+                            <span class="text">우리반 체험 학습 앨범</span>
+                        </span>
+                        <span class="date">2022.04.01</span>
+                    </a>
+                    <a href="#none" class="btn_pin">
+                        <i class="sprite_comm sp_ico_pin_b"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mb30" style="width:910px">
+                <h3 class="mb10"><span>게시물</span></h3>
+                <div class="notice_view_header">
+                    <!-- notice_view_header 게시판 아이콘 클래스명
+          
+              학급공지 :: .sp_ico_notice_v
+              앨범 :: .sp_ico_album_v
+              자유게시판 :: .sp_ico_fboard_v
+              과제게시판 :: .sp_ico_homework_v
+              학급 조사표 :: .sp_ico_table_v
+              T셀파 학습도구 :: .sp_ico_tool_v
+
+          -->
+                    <div class="title">
+                        <h4><i class="sp_ico_notice_v"></i> 학급공지</h4>
+                        <!--학급공지 .sp_ico_notice_v -->
+                        <span class="date">2022.04.01 금요일</span>
+                        <span class="bar"></span>
+                        <span class="writer">김천재 선생님</span>
+                    </div>
+                    <div class="btn_icon">
+                        <a href="#" class="btn_scrap">
+                            <i class="sprite_comm sp_ico_scrap"></i>
+                        </a>
+                        <div class="dropdown_wrap">
+                            <div class="dropdown">
+                                <a class="menu" href="#none">
+                                    <i class="sprite_comm sp_ico_more"></i>
+                                </a>
+                                <ul class="menu_list">
+                                    <li><a href="#none"><i class="sprite_comm sp_ico_edit_off mr10"></i>게시물 수정하기</a>
+                                    </li>
+                                    <li><a href="#none"><i class="sprite_comm sp_ico_pin_off mr10"></i>게시물 공지하기</a></li>
+                                    <li><a href="#none"><i class="sprite_comm sp_ico_share_off mr10"></i>SMS 발송하기</a>
+                                    </li>
+                                    <li><a href="#none"><i class="sprite_comm sp_ico_del_off mr10"></i>삭제하기</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="notice_view_body">
+                    <div class="bbs_area">
+                        <p class="view_target">수신 대상 : 학부모, 학생</p>
+                        <p class="notice_title">6.3(금) - 주간학습안내 첨부</p>
+                        <!-- 에디터에서 입력한 내용 노출-->
+                        <p>
+                            1. 현충일 - 태극기(조기) 달기 - 나라를 위해 목숨 바친 국군장병들과 현재 나라를 지켜주는 국군 아저씨들에게 감사하기<br>
+                            2. 오늘 - 공사차량 후문 출입으로 오후 3:30 이후 출입 불가 - 정문 통행<br>
+                            3. 영어 수행평가 - 다음주 수요일 실시<br>
+                            4. 화요일 - 아침 방송 조회(8시 45분까지 등교)<br>
+                            5. 업사이클 작품 활동 - 학급 티 입기<br>
+                            6. 여름철 식중독 조심, 찬 음식이나 음료 많이 먹지 않기<br>
+                        </p>
+                        <!-- 첨부파일 -->
+                        <div class="attach_list">
+                            <ul>
+                                <li>
+                                    <a href="#none"><i class="sprite_comm sp_ico_file_g"></i>1학년 3반_6월 6일 ~ 6월
+                                        10일(15주).pdf</a>
+                                </li>
+                                <li>
+                                    <a href="#none"><i class="sprite_comm sp_ico_file_g"></i>1학년 3반_6월 6일 ~ 6월
+                                        10일(15주).pdf</a>
+                                </li>
+                                <li>
+                                    <a href="#none"><i class="sprite_comm sp_ico_file_g"></i>1학년 3반_6월 6일 ~ 6월
+                                        10일(15주).pdf</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="post_status">
+                        <div class="icon_left">
+                            <a href="#none" class="active">
+                                <!-- .active 시 primary color -->
+                                <i class="sprite_comm sp_ico_like"></i> 좋아요 <span class="num">23</span>
+                            </a>
+                            <a href="#none">
+                                <i class="sprite_comm sp_ico_comment"></i> 댓글 <span class="num">23</span>
+                            </a>
+                            <a href="#none">
+                                <i class="sprite_comm sp_ico_view"></i> <span class="num">23</span>읽음
+                            </a>
+                        </div>
+                        <a href="#none" onclick="window.print();return false;">
+                            <i class="sprite_comm sp_ico_print"></i> 인쇄하기
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb30" style="width:910px">
+                <h3 class="mb10"><span>댓글</span></h3>
+                <div class="reply_wrap">
+                    <div class="reply_list">
+                        <!-- 첫번째 댓글 -->
+                        <div class="reply depth_1">
+                            <div class="reply_view">
+                                <figure class="profile">
+                                    <img src="../../img/profile_test.jpg" alt="">
+                                </figure>
+                                <div class="article">
+                                    <span class="usr_name">이천재 학부모</span>
+                                    <p class="text">늘 먼저 일등으로 확인해주시는 천재 학부모님^^ 빠른 확인 감사합니다 앞으로도 열심히 하겠습니다 열심히 하겠
+                                        습니다. 점검이 얼른 완료 되었으면 좋겠습니다. 첫번째로 와서 공지 확인 했습니다^^ 화이팅 하세요~</p>
+                                    <span class="date">2022.04.08 15:32</span> <a href="#none"
+                                        class="btn_write_reply">답글쓰기</a>
+                                </div>
+                                <div class="dropdown_wrap">
+                                    <div class="dropdown">
+                                        <a class="menu" href="#none">
+                                            <i class="sprite_comm sp_ico_more_reple"></i>
+                                        </a>
+                                        <ul class="menu_list sm">
+                                            <li><a href="#none"><i class="sprite_comm sp_ico_edit_off mr10"></i>수정하기</a>
+                                            </li>
+                                            <li><a href="#none"><i class="sprite_comm sp_ico_del_off mr10"></i>삭제하기</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 재 댓글 -->
+                            <div class="re_comment">
+                                <figure class="profile">
+                                    <!-- 이미지 등록하지 않아도 기본이미지 보임 -->
+                                </figure>
+                                <dl class="recomment_box">
+                                    <dt>이천재 학부모님에게 댓글을 남깁니다.</dt>
+                                    <dd>
+                                        <textarea maxlength="100" placeholder="댓글을 남겨주세요. (최대 100자)"></textarea>
+                                        <div class="btn_wrap">
+                                            <a href="#none">취소</a>
+                                            <a href="#none">등록</a>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <!-- 두번째 댓글 -->
+                        <div class="reply depth_2">
+                            <div class="reply_view">
+                                <figure class="profile">
+                                    <!-- 이미지 등록하지 않아도 기본이미지 보임 -->
+                                </figure>
+                                <div class="article">
+                                    <span class="usr_name">이천재 학부모</span>
+                                    <p class="text">늘 먼저 일등으로 확인해주시는 천재 학부모님^^ 빠른 확인 감사합니다 앞으로도 열심히 하겠습니다 열심히 하겠
+                                        습니다. 점검이 얼른 완료 되었으면 좋겠습니다. 첫번째로 와서 공지 확인 했습니다^^ 화이팅 하세요~</p>
+                                    <span class="date">2022.04.08 15:32</span> <a href="#none"
+                                        class="btn_write_reply">답글쓰기</a>
+                                </div>
+                                <div class="dropdown_wrap">
+                                    <div class="dropdown">
+                                        <a class="menu" href="#none">
+                                            <i class="sprite_comm sp_ico_more_reple"></i>
+                                        </a>
+                                        <ul class="menu_list sm">
+                                            <li><a href="#none"><i class="sprite_comm sp_ico_edit_off mr10"></i>수정하기</a>
+                                            </li>
+                                            <li><a href="#none"><i class="sprite_comm sp_ico_del_off mr10"></i>삭제하기</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 재 댓글 -->
+                            <div class="re_comment">
+                                <figure class="profile">
+                                    <img src="../../img/profile_test.jpg" alt="">
+                                </figure>
+                                <dl class="recomment_box">
+                                    <dt><span>이천재 학부모</span>님에게 댓글을 남깁니다.</dt>
+                                    <dd>
+                                        <textarea maxlength="100" placeholder="댓글을 남겨주세요. (최대 100자)"></textarea>
+                                        <div class="btn_wrap">
+                                            <a href="#none">취소</a>
+                                            <a href="#none">등록</a>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <!-- ./ -->
+                        </div>
+                        <!-- 세번째 댓글 -->
+                        <div class="reply depth_3">
+                            <div class="reply_view">
+                                <figure class="profile">
+                                    <img src="../../img/profile_test.jpg" alt="">
+                                </figure>
+                                <div>
+                                    <span class="usr_name">이천재 학부모</span>
+                                    <p class="text">늘 먼저 일등으로 확인해주시는 천재 학부모님^^ 빠른 확인 감사합니다 앞으로도 열심히 하겠습니다 열심히 하겠
+                                        습니다. 점검이 얼른 완료 되었으면 좋겠습니다. 첫번째로 와서 공지 확인 했습니다^^ 화이팅 하세요~</p>
+                                    <span class="date">2022.04.08 15:32</span>
+                                    <!-- 세번째 부턴 더이상 댓글쓰기 불가
+                              <a href="#none" class="btn_write_reply">답글쓰기</a> -->
+                                </div>
+                                <div class="dropdown_wrap">
+                                    <div class="dropdown">
+                                        <a class="menu" href="#none">
+                                            <i class="sprite_comm sp_ico_more_reple"></i>
+                                        </a>
+                                        <ul class="menu_list sm">
+                                            <li><a href="#none"><i class="sprite_comm sp_ico_edit_off mr10"></i>수정하기</a>
+                                            </li>
+                                            <li><a href="#none"><i class="sprite_comm sp_ico_del_off mr10"></i>삭제하기</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reply_box">
+                        <figure class="profile">
+                            <img src="../../img/profile_test.jpg" alt="">
+                        </figure>
+                        <textarea maxlength="100" placeholder="댓글을 남겨주세요. (최대 100자)"></textarea>
+                        <a href="#none" class="btn large disabled">등록</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /table -->
+
+        <!-- SNB -->
+        <h2 id="category9" class="categorys">#SNB</h2>
+        <div class="component-area" style="width:370px">
+            @@include('../include/inc_snb.html')
+        </div>
+        <!-- /SNB -->
+
+        <!-- editor -->
+        <h2 id="category10" class="categorys">#Editor</h2>
+        <div class="component-area">
+            <div id="editor">
+                <p>This is some sample content.</p>
+            </div>
+            <script>
+                ClassicEditor
+                    .create( document.querySelector( '#editor' ) )
+                    .catch( error => {
+                        console.error( error );
+                    } );
+            </script>
+        </div>
+        <!-- /editor -->
+
+        <!-- tab -->
+        <h2 id="category11" class="categorys">#Tab</h2>
+        <div class="component-area">
+
+            <div class="class_tab mb55">
+                <a href="#none" class="tab_links active">관리자 설정</a>
+                <a href="#none" class="tab_links">게시판 설정</a>
+                <a href="#none" class="tab_links">정보수정</a>
+                <a href="#none" class="tab_links">클래스 삭제</a>
+            </div>
+            <div id="tab1" class="tabcontent"></div>
+            <div id="tab2" class="tabcontent"></div>
+            <div id="tab3" class="tabcontent"></div>
+            <div id="tab4" class="tabcontent"></div>
+
+
+
+
+        </div>
+        <!-- /tab -->
+
+
+        <!-- script -->
+        <script type="text/javascript">
+            $(document).ready(function () {
+                //sticky
+                $('.sticky a').click(function (event) {
+                    event.preventDefault();
+                    $('html,body').animate({
+                        scrollTop: $(this.hash).offset().top
+                    }, 400);
+                });
+
+            });
+            $(window).scroll(function () {
+                //sticky
+                $('.categorys').each(function () {
+                    var doc_scroll_top = $(window).scrollTop() + 30,
+                        categorys = $(this),
+                        category_id = categorys.attr('id'),
+                        category_top = categorys.offset().top,
+                        components_top = $('h1').offset().top;
+
+                    if (components_top > $(window).scrollTop()) {
+                        $('.sticky a').removeClass('active');
+                    } else if (category_top <= doc_scroll_top) {
+                        $(".sticky a[href='#" + category_id + "']").addClass('active').siblings('a')
+                            .removeClass('active');
+                    } else if ($(document).height() - $(window).height() === $(window).scrollTop()) {
+                        $('.sticky a:last-child').addClass('active').siblings('a').removeClass(
+                        'active');
+                    }
+                });
+
+                if ($('.sticky').length) snb_xscroll();
+            });
+
+            function snb_xscroll() {
+                var window_scroll = $(window);
+                $('.sticky').css('left', -window_scroll.scrollLeft());
+            }
+        </script>
+        <!-- /script -->
+</body>
+
+</html>

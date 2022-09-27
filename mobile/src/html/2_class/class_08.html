@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+        <div class="search_header">
+            <a href="#none" class="history_back">뒤로가기</a>
+            <div class="search_wrap">
+                <input type="text" placeholder="학교 또는 우리반 이름 검색">
+                <a href="#none" class="btn_clear"></a>
+            </div>
+            <a href="#none" class="btn_search">검색</a>
+        </div>
+		<!-- /header -->
+        
+        
+		<!-- content -->
+        <div class="container">
+		    <!-- list view item -->
+            <div class="search_result_wrap">
+                <div class="filter_detail">
+                    <a href="#none" class="sprite_comm sp_ico_close_g close">close</a>
+                    <div class="filter_line">
+                        <span class="tit">정렬</span>
+                        <a class="order" href="#none">최신순</a>
+                        <a class="order on" href="#none">과거순</a>
+                    </div>
+                    <div class="filter_line">
+                        <span class="tit">기간</span>
+                        <div class="calendar_wrap">
+                            <input class="inp_datepicker" placeholder="22.08.29" id='datetimepicker4'>
+                            <span>~</span>
+                            <input class="inp_datepicker" placeholder="22.08.30" id='datetimepicker5'>
+                        </div>                       
+                    </div>
+                </div>
+                <div class="search_result">
+                    <p class="result_txt"><span>'공지'</span> 검색결과</p>
+                    <a href="#none" class="btn_filter">필터</a>
+                </div>
+                <!-- 검색결과 없을경우 -->
+                <!-- <p class="empty_msg mt150">검색 결과가 없습니다.</p> -->
+            </div>
+
+
+            <div class="list_view_item">
+                <div class="notice_view_header">
+                    <span class="title">
+                        <strong class="tag">학급공지</strong>
+                        <span class="date">05.29 금</span>
+                        <span class="bar"></span>
+                        <span class="writer">김천재 선생님</span>
+                    </span>
+                    <span class="view_num">
+                        <em>26</em> 읽음
+                    </span>
+                </div>
+
+                <div class="notice_view_body">
+                    <div class="bbs_area">
+                        <a href="#none">
+                            <p class="view_target">수신 대상 : 학부모, 학생</p>
+                            <p class="hashtag">#예약 #중요</p>
+                            <p class="notice_title">5월 30일 공지사항</p>
+                            <!-- 에디터에서 입력한 내용 노출-->
+                            <p class="content">
+                                1. 현충일 - 태극기(조기) 달기 - 나라를 위해 목숨 바친 국군장병들과 현재 나라를 지켜주는 국군 아저씨들에게 감사하기<br>
+                                2. 오늘 - 공사차량 후문 출입으로 오후 3:30 이후 출입 불가 - 정문 통행<br>
+                                3. 영어 수행평가 - 다음주 수요일 실시<br>
+                                4. 화요일 - 아침 방송 조회(8시 45분까지 등교)<br>
+                                5. 업사이클 작품 활동 - 학급 티 입기<br>
+                                6. 여름철 식중독 조심, 찬 음식이나 음료 많이 먹지 않기<br>
+                            </p>
+                            <!-- 첨부파일 -->
+                            <span class="attach">
+                                <i class="sprite_comm sp_ico_clip"></i>첨부파일 2개
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="post_status">
+                        <div class="icon_left">
+                            <a href="#none" class="active mr20">
+                                <!-- .active 시 primary color -->
+                                <i class="sprite_comm sp_ico_like"></i> 좋아요 <span class="num">23</span>
+                            </a>
+                            <a href="#none">
+                                <i class="sprite_comm sp_ico_comment"></i> 댓글 <span class="num">23</span>
+                            </a>
+                        </div>
+                        <a href="#none" class="btn_scrap">
+                            <i class="sprite_comm sp_ico_scrap_off"></i> 스크랩
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- / -->
+
+            <!-- list view item -->
+            <div class="list_view_item">
+                <div class="notice_view_header">
+                    <span class="title">
+                        <strong class="tag">학급공지</strong>
+                        <span class="date">05.29 금</span>
+                        <span class="bar"></span>
+                        <span class="writer">김천재 선생님</span>
+                    </span>
+                    <span class="view_num">
+                        <em>26</em> 읽음
+                    </span>
+                </div>
+
+                <div class="notice_view_body">
+                    <div class="bbs_area">
+                        <a href="#none">
+                            <p class="view_target">수신 대상 : 학부모, 학생</p>
+                            <p class="hashtag">#예약 #중요</p>
+                            <p class="notice_title">5월 30일 공지사항</p>
+                            <!-- 에디터에서 입력한 내용 노출-->
+                            <p class="content">
+                                1. 현충일 - 태극기(조기) 달기 - 나라를 위해 목숨 바친 국군장병들과 현재 나라를 지켜주는 국군 아저씨들에게 감사하기<br>
+                                2. 오늘 - 공사차량 후문 출입으로 오후 3:30 이후 출입 불가 - 정문 통행<br>
+                                3. 영어 수행평가 - 다음주 수요일 실시<br>
+                                4. 화요일 - 아침 방송 조회(8시 45분까지 등교)<br>
+                                5. 업사이클 작품 활동 - 학급 티 입기<br>
+                                6. 여름철 식중독 조심, 찬 음식이나 음료 많이 먹지 않기<br>
+                            </p>
+
+                            <div class="img_wrap">
+                                <figure><img src="../../img/test_img.jpg" alt="test img"></figure>
+                            </div>						
+                        </a>
+                    </div>
+
+                    <div class="post_status">
+                        <div class="icon_left">
+                            <a href="#none" class="active mr20">
+                                <!-- .active 시 .num 색상변경  -->
+                                <i class="sprite_comm sp_ico_like"></i> 좋아요 <span class="num">23</span>
+                            </a>
+                            <a href="#none">
+                                <i class="sprite_comm sp_ico_comment"></i> 댓글 <span class="num">23</span>
+                            </a>
+                        </div>
+                        <a href="#none" class="btn_scrap on"> <!-- .on 추가시 scrap on -->
+                            <i class="sprite_comm sp_ico_scrap_off"></i> 스크랩
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- / -->
+
+        </div>
+        <!-- /content -->
+	</div>
+        
+
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker4').datetimepicker({
+                format: 'L',
+                format: 'YY.MM.DD',
+            });
+            $('#datetimepicker5').datetimepicker({
+                useCurrent: false, //Important! See issue #1075
+                format: 'L',
+                format: 'YY.MM.DD'
+            });
+            $("#datetimepicker4").on("dp.change", function (e) {
+                $('#datetimepicker5').data("DateTimePicker").minDate(e.date);
+            });
+            $("#datetimepicker5").on("dp.change", function (e) {
+                $('#datetimepicker4').data("DateTimePicker").maxDate(e.date);
+            });
+        });
+
+        
+        // 검색 필터
+        $(function(){
+            $(".search_result .btn_filter").on("click", function(e){
+                e.preventDefault();
+                $(this).hide();
+                $(this).parent().prev(".filter_detail").slideDown();
+            });
+            $(".filter_detail .close").on("click", function(e){
+                e.preventDefault();
+                $(this).parent(".filter_detail").slideUp();
+                $(this).parent().next().find('.btn_filter').show();
+            });
+        })
+    </script>
+</body>
+
+</html>

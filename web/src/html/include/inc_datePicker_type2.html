@@ -1,0 +1,72 @@
+﻿    <!-- .calendar_modal -->
+    <div class="calendar_modal_flex">
+        <div class="calendar_modal">
+            <div id="datepicker2" data-date="2022.06.04"></div>
+            <input type="hidden" id="my_hidden_input">
+            <script>
+                $('#datepicker2').datepicker({
+                    weekStart: 1,
+                });
+                $('#datepicker').on('changeDate', function() {
+                    $('#my_hidden_input').val(
+                        $('#datepicker').datepicker('getFormattedDate')
+                    );
+                });
+            </script>
+            <div class="schedule_list_wrap">
+                <ul class="schedule_list scroll_box">
+                    <li>
+                        <span class="date">2022.06.11</span>
+                        <p class="content">
+                            오늘의 생일자 - 김상민, 김지영, 정재훈<br>
+                            2교시 과학 수행평가
+                        </p>
+                    </li>
+                    <li>
+                        <span class="date">2022.06.12</span>
+                        <p class="content">
+                            오늘의 생일자 - 김상민, 김지영, 정재훈<br>
+                            2교시 과학 수행평가
+                        </p>
+                    </li>
+                    <li>
+                        <span class="date">2022.06.13</span>
+                        <p class="content">
+                            오늘의 생일자 - 김상민, 김지영, 정재훈<br>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="btn_full mt30">
+                <a href="#none" class="btn medium btn_plan_add">일정 추가하기</a>
+            </div>
+        </div>
+        <!-- ./ -->
+
+        <!-- .calendar_modal.plus -->
+        <div class="calendar_modal plus ml20">
+            <h4 class="title">일정 등록하기</h4>
+            <!-- 220818 ::  입력창 설명글 placeholder로 변경-->
+            <textarea class="w100p input_schedule" placeholder="공유할 일정을 입력해 주세요. (100자 이내)"></textarea>
+            <div class="btn_half mt30">
+                <a href="#none" class="btn medium outline close">닫기</a>
+                <a href="#none" class="btn medium">등록</a>
+            </div>
+        </div>
+    </div>
+    <!-- ./ -->
+
+    <script>
+        $(function(){
+            $(".calendar_modal + .plus").hide();
+            $(".btn_plan_add").on("click", function(){
+                $(".calendar_modal + .plus").show();
+                return false;
+            });
+            $(".plus .close").on("click", function(){
+                $(".calendar_modal_flex").hide();
+                return false;
+            });
+        })
+    </script>

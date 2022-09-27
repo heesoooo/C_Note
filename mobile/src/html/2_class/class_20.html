@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<!-- header -->
+        <div class="sub_header">
+            <a href="#none" class="history_back">뒤로가기</a>
+            <h2 class="sub_title">미확인자 PUSH</h2>
+            <div class="btn_wrap">
+                <a href="#none"><span class="count">16</span> 선택</a>
+            </div>
+        </div>
+		<!-- /header -->
+
+            <!-- contents -->
+            <div class="container">
+                <div class="member_list_wrap">
+                    <!-- 정렬 체크 박스 -->
+					<div class="sort_type_chk">
+						<div class="check_box">
+							<input type="checkbox" id="typeCheck1" checked>
+							<label for="typeCheck1">읽지 않은 인원</label>
+						</div>
+						<div class="check_box">
+							<input type="checkbox" id="typeCheck2">
+							<label for="typeCheck2">학생</label>
+						</div>
+						<div class="check_box">
+							<input type="checkbox" id="typeCheck3">
+							<label for="typeCheck3">학부모</label>
+						</div>
+					</div>
+
+                    <div class="member_list_top">
+                        <p class="title">학생 3명</p>
+                    </div>
+                    <ul>
+                        <li class="member_list">
+                            <div class="flex_start_center">
+                                <span class="profile">
+                                    <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                                </span>
+                                <p class="name">
+                                    <span>김천재</span>
+                                    <span class="badge badge_gray_full">1</span>
+                                </p>
+                            </div>
+                            <div class="flex_start_center">
+                                <span class="unread mr20">읽지 않음</span>
+                                <div class="check_box txt_none"><!-- label 텍스트 없을 시 .txt_none 추가 -->
+                                    <input type="checkbox" id="member4" checked>
+                                    <label for="member4"></label>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="member_list">
+                            <div class="flex_start_center">
+                                <span class="profile">
+                                    <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                                </span>
+                                <p class="name">
+                                    <span>이천재</span>
+                                    <span class="badge badge_gray_full">2</span>
+                                </p>
+                            </div>
+                            <div class="flex_start_center">
+                                <span class="date mr20">2022.06.29 18:35</span>
+                                <div class="check_box txt_none"><!-- label 텍스트 없을 시 .txt_none 추가 -->
+                                    <input type="checkbox" id="member5">
+                                    <label for="member5"></label>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="member_list">
+                            <div class="flex_start_center">
+                                <span class="profile">
+                                    <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                                </span>
+                                <p class="name">
+                                    <span>황천재</span>
+                                    <span class="badge badge_gray_full">3</span>
+                                </p>
+                            </div>
+                            <div class="flex_start_center">
+                                <span class="unread mr20">읽지 않음</span>
+                                <div class="check_box txt_none"><!-- label 텍스트 없을 시 .txt_none 추가 -->
+                                    <input type="checkbox" id="member6" checked>
+                                    <label for="member6"></label>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="member_list_top">
+                        <p class="title">학부모 3명</p>
+                    </div>
+                    <ul>
+                        <li class="member_list">
+                            <div class="flex_start_center">
+                                <span class="profile">
+                                    <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                                </span>
+                                <p class="name">
+                                    <span>나희도</span>
+                                    <span class="badge badge_blue">부</span>
+                                </p>
+                            </div>
+                            <div class="flex_start_center">
+                                <span class="date mr20">2022.06.29 18:35</span>
+                                <div class="check_box txt_none"><!-- label 텍스트 없을 시 .txt_none 추가 -->
+                                    <input type="checkbox" id="member1">
+                                    <label for="member1"></label>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="member_list">
+                            <div class="flex_start_center">
+                                <span class="profile">
+                                    <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                                </span>
+                                <p class="name">
+                                    <span>백이진</span>
+                                    <span class="badge badge_pink">모</span>
+                                </p>
+                            </div>
+                            <div class="flex_start_center">
+                                <span class="date mr20">2022.06.29 18:35</span>
+                                <div class="check_box txt_none"><!-- label 텍스트 없을 시 .txt_none 추가 -->
+                                    <input type="checkbox" id="member2">
+                                    <label for="member2"></label>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="member_list">
+                            <div class="flex_start_center">
+                                <span class="profile">
+                                    <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                                </span>
+                                <p class="name">
+                                    <span>고유림</span>
+                                    <span class="badge badge_gray">기타</span>
+                                </p>
+                            </div>
+                            <div class="flex_start_center">
+                                <span class="date mr20">2022.06.29 18:35</span>
+                                <div class="check_box txt_none"><!-- label 텍스트 없을 시 .txt_none 추가 -->
+                                    <input type="checkbox" id="member3">
+                                    <label for="member3"></label>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /contents -->	
+        </div>
+    </div>
+    <!-- /. -->
+
+
+
+        <!-- 내용작성 팝업 -->
+	<div class="modal" id="writeMsg">
+		<div class="modal_content modal_full"> <!-- 너비/높이 100% 팝업은 .modal_full 추가 -->
+			<!-- header -->
+			<div class="sub_header center">
+				<a href="#none" class="modal_close" data-dismiss="modal">뒤로가기</a>
+				<h2 class="sub_title">내용 작성</h2>
+                <div class="btn_wrap">
+                    <a href="#none"><span class="count">16</span> 선택</a>
+                </div>
+			</div>
+			<!-- /header -->
+
+			<!-- contents -->
+			<div class="cont_section">
+                <div class="class_write_wrap">
+                    <textarea class="write_area" placeholder="내용을 입력하세요.(500자 이내)"></textarea>
+                </div>
+			</div>
+			<!-- /contents -->	
+		</div>
+	</div>
+	<!-- /. -->
+
+
+	<script>
+$(function () {
+            $("#writeMsg").modal({ show: true });
+        })
+	</script>
+</body>
+
+</html>

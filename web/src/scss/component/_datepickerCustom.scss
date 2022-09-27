@@ -1,0 +1,78 @@
+﻿// 클릭시 datepicker 실행 input
+input{
+	&.inp_datepicker{
+		margin:0;padding:0 3px;width:128px;height:23px;border:0;background:url(../../img/ico_datepicker.png) no-repeat 98% 1px;@include ff-mont;font-size:16px;cursor:pointer;
+		&.ico_left {background-position: 0 50%; padding-left: 30px;}
+		&::placeholder{color:$black;}
+		&:focus{outline:none;}
+	}
+}
+// 달력 감싼 모달
+.calendar_modal_flex{display: flex; justify-content: flex-start; align-items: flex-start;}
+.calendar_modal{padding:40px 30px 30px;width:370px;border-radius:10px;box-shadow:0px 5px 10px 0 rgba(0,0,0,0.1);border:solid 1px #e0e0e0;background-color:#fff;
+.schedule_list_wrap{margin-top:13px;padding-top:27px;border-top:1px solid $gray_e0;}
+//일정 리스트
+.schedule_list{max-height:135px;margin-right:11px; text-align: left;
+	li{margin-bottom:22px;padding:0 11px;
+		&:last-child{margin-bottom:0;}
+	}
+	.date{display:block;margin-bottom:5px;font-size:16px;color:$point;line-height:1;}
+	.content{font-size:15px;line-height:24px;letter-spacing:-0.15px;color:$gray_66;}
+}
+// 달력 옆에 붙은 모달
++ .plus{width:340px;padding:31px;
+	.title{margin-bottom:38px;text-align:center;font-size:18px;font-weight:$font_weight_bold;line-height:1;letter-spacing:-0.18px;}
+}
+// schedule 입력 textarea
+textarea.input_schedule{padding:15px;height:150px;line-height:24px;font-size:15px;color:$gray_99;letter-spacing:-.19px;border-radius:6px;border:solid 1px $gray_e0;background-color:$white;
+	&::placeholder{color:$gray_99;}
+}
+.flex_between{@include flexbox(between,center);}
+.flex_start{@include flexbox(start,start);}
+.reserv_time{margin:13px 0 30px;
+	input{width:132px;text-align:center;font-size:16px;
+		&::placeholder{@include ff-mont;color:$black;}
+	}
+	.select_wrap{width:78px;
+		.select_box{.select{justify-content:center;font-size:16px;
+				&::after{content:none;}
+			}
+		}
+	}
+}
+.no_select{margin-top:20px;font-size:14px;letter-spacing:-.14px;text-align:center;color:$point;}
+}
+// datePicker Custom
+.datepicker{padding:0;
+.datepicker-switch{height:42px;line-height:1;vertical-align:top;font-size:18px;font-weight:500;letter-spacing:-.18px;color:$primary;text-align:left;
+	&:hover{background-color:transparent;}
+}
+table{width:100%;
+	tr{th,td{&.dow,&.day{padding:0;height:44px;line-height:44px;font-size:16px;}
+		&.dow{font-weight:450;}}
+		td{font-weight:$font_weight_regular;
+			&.active{border-radius:50%;
+				.focus,.highlighted,.highlighted.focus,.highlighted:focus,.highlighted:hover,&:focus,&:hover{border-radius:50%;}
+			}
+			&.day{@include ff-mont;transition: all .1s ease-in;
+				&:hover{border-radius:50%;}
+				&.schedule_info{position:relative;
+					&::before{position:absolute;top:8px;right:8px;content:'';width:4px;height:4px;background-color:$point;border-radius:50%;}
+				}
+			}
+			&.focused{border-radius:50%;}
+		}
+	}
+	&:first-child>thead tr:nth-child(3){border:0;}
+}
+.prev,.next{height:42px;font-size:0;border:0;background-position:100% 9.5%;background-repeat:no-repeat;
+	&:hover{background-color:transparent;}
+}
+.prev{background-image:url(../../img/ico_datepicker_prev.png)}
+.next{background-image:url(../../img/ico_datepicker_next.png)}
+}
+.datepicker-inline{width:100%;}
+.datepicker-dropdown{min-width:370px;padding:28px;margin-top:0;box-shadow:0px 5px 10px 0 rgba(0,0,0,0.1);border-radius:10px;
+&::before,&::after{content:none;}
+}
+.right_modal{top:0;right:0;}

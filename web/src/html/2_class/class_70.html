@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('../include/inc_html_head.html')
+    <title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+
+    <!-- modal :: 설문 생성 팝업 -->
+    <div class="modal" id="surveyWrite">
+
+        <div class="survey_top">
+            <a href="#none" class="btn_modal_close" data-dismiss="modal">
+                <i class="sprite_comm sp_ico_close_dim"></i>
+            </a>
+            <div class="btn_wrap">
+                <!-- 220906 :: 버튼 활성화시 .active 추가 -->
+                <a href="#none" class="btn btn_fix active">임시저장</a>
+                <a href="#none" class="btn_fix">설문시작</a>
+            </div>
+        </div>
+        <div class="modal_content w1090">
+            <div class="left_section">
+                <!-- 220913 :: 마감일 선택박스 위치변경 및 수정 -->
+                <div class="con_box pb20">
+                    <!-- 설문 마감일 선택 -->
+                    <div class="board_reserve">
+                        <h4 class="mb20">마감일 설정 (필수)</h4>
+                        <ul class="setting_list">
+                            <li>
+                                <p class="summary">설문 마감일을 선택할 수 있습니다.</p>
+                            </li>
+                        </ul>
+                        <p class="reserve_time deadline_check">
+                            <i class="sprite_comm sp_ico_reserve_on"></i>
+                            <input class="inp_datepicker" id="my_hidden_input" placeholder="마감일 선택">
+                        </p>
+
+                    </div>
+                    <!-- 예약 달력 팝업 -->
+                    <div id="popDdl" class="pop_deadline" style="display: none">
+                        <!-- .calendar_modal -->
+                        <div class="calendar_modal">
+                            <div id="datepicker6" data-date="2022.09.13"></div>
+                            <!-- <input type="hidden" id="my_hidden_input"> -->
+                            <script>
+                                $('#datepicker6').datepicker({
+                                    weekStart: 1,
+                                    format: 'yyyy.mm.dd',
+                                });
+                                $('#datepicker6').on('changeDate', function() {
+                                    $('#my_hidden_input').val(
+                                        $('#datepicker6').datepicker('getFormattedDate')
+                                    );
+                                    $("#popDdl").hide();
+                                });
+                            </script>		
+                        </div>
+                        <!-- ./ -->
+                    </div>
+                    <script>
+                        $(".board_reserve .deadline_check").click(function() {
+                            $(this).parent().next("#popDdl").show();
+                        });
+                    </script>
+                    <!-- /설문 마감일 선택 -->
+                </div>
+
+                <!-- 220913 :: .mt20 클래스 추가 -->
+                <div class="con_box mt20">
+                    <!-- 게시글 설정 -->
+                    <div class="board_settings">
+                        <h4>게시글 설정</h4>
+                        <ul class="setting_list">
+                            <li>
+                                <div class="title">
+                                    <strong class="category">공지</strong>
+                                    <p class="summary">게시물을 공지합니다.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <div class="title">
+                                    <strong class="category">중요</strong>
+                                    <p class="summary">게시물을 강조합니다.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <div class="title">
+                                    <strong class="category">학부모</strong>
+                                    <p class="summary">게시물을 공지합니다.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked="">
+                                    <span class="slider"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <div class="title">
+                                    <strong class="category">학생</strong>
+                                    <p class="summary">학생에게 발송합니다.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked="">
+                                    <span class="slider"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <div class="title">
+                                    <strong class="category">설문결과 공유 </strong>
+                                    <p class="summary">설문결과를 공유합니다.</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" checked="">
+                                    <span class="slider"></span>
+                                </label>
+                            </li>
+                        </ul>
+                        <div class="btn_full select_receiver">
+                            <a href="#none" class="btn medium btn_select_receiver">수신 대상 선택하기</a>
+
+                            <!-- 수신 대상 선택 팝업 -->
+                            <div id="popReceiver" class="pop_select_receiver" style="display: none">
+                                <div class="pop_title mb40">수신 대상 선택</div>
+                                <div class="scroll_bar">
+                                    <div class="check_box all">
+                                        <input type="checkbox" id="check0">
+                                        <label for="check0">전체 선택</label>
+                                    </div>
+                                    <div class="ml15 mb30">
+                                        <div class="check_box all">
+                                            <input type="checkbox" id="check1">
+                                            <label for="check1">학부모 전체 선택</label>
+                                        </div>
+                                        <ul class="check_list">
+                                            <li class="check_box">
+                                                <input type="checkbox" id="check2-1" checked="">
+                                                <label for="check2-1">김천재 학부모(김상민)</label>
+                                            </li>
+                                            <li class="check_box">
+                                                <input type="checkbox" id="check2-2">
+                                                <label for="check2-2">나천재 학부모(김지언)</label>
+                                            </li>
+                                            <li class="check_box">
+                                                <input type="checkbox" id="check2-3">
+                                                <label for="check2-3">다천재 학부모(권현주)</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="ml15">
+                                        <div class="check_box all">
+                                            <input type="checkbox" id="check2">
+                                            <label for="check2">학생 전체 선택</label>
+                                        </div>
+                                        <ul class="check_list">
+                                            <li class="check_box">
+                                                <input type="checkbox" id="check2-1" checked="">
+                                                <label for="check2-1">김천재 학부모(김상민)</label>
+                                            </li>
+                                            <li class="check_box">
+                                                <input type="checkbox" id="check2-2">
+                                                <label for="check2-2">나천재 학부모(김지언)</label>
+                                            </li>
+                                            <li class="check_box">
+                                                <input type="checkbox" id="check2-3">
+                                                <label for="check2-3">다천재 학부모(권현주)</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="btn_half mt30">
+                                    <a href="#none" class="btn medium outline cancle">취소</a>
+                                    <a href="#none" class="btn medium">완료</a>
+                                </div>
+                                <!-- 유효성 검사 메세지 -->
+                                <span class="val_check_point">수신 대상을 선택해 주세요.</span>
+                            </div>
+                        </div>
+                        <script>
+                            //수신 대상 선택하기
+                            $(".btn_select_receiver").on("click", function (e) {
+                                e.preventDefault();
+                                $("#popReceiver").show();
+                            })
+                            $(".pop_select_receiver .cancle").on("click", function (e) {
+                                e.preventDefault();
+                                $("#popReceiver").hide();
+                            })
+                        </script>
+                        <p class="noti">발송 대상을 선택할 수 있습니다.</p>
+                    </div>
+                    <!-- /게시글 설정 -->
+                </div>
+
+            </div>
+            <div class="center_section">
+                <!-- 설문지 쓰기 -->
+                <div class="survey_create_header">
+                    <div class="input_subject">
+                        <input type="text" placeholder="설문지 제목을 입력하세요.">
+                    </div>
+                    <div class="input_des">
+                        <textarea placeholder="설문지에 대한 설명을 입력하세요.(100자 이내)" rows="1" onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
+                    </div>
+                </div>
+
+                <div class="survey_create_wrap">
+                    <div class="survey_create">
+                        <!-- 질문 순서 -->
+                        <div class="row survey_order">
+                            <div>
+                                <a href="#none" class="up" onclick="moveUp(this)">위로</a>
+                                <a href="#none" class="down on" onclick="moveDown(this)">아래로</a>
+                            </div>
+                            <div>
+                                <a href="#none" class="copy mr10">복사</a>
+                                <a href="#none" class="delete">삭제</a>
+                            </div>
+                        </div>
+                        <!-- 질문 입력 -->
+                        <div class="row survey_question">
+                            <div class="input_question">
+                                <span class="number">1.</span>
+                                <input type="text" placeholder="질문입력">
+                            </div>
+                            <div class="flex_start_center">
+                                <input type="file" class="input_file_button" id="inputFile">
+                                <label for="inputFile">이미지</label>
+                                <div class="select_box">
+                                    <a class="select sm" href="#none">객관식</a>
+                                    <!-- 220822 :: 스타일 삭제 -->
+                                    <div class="option_list">
+                                        <div class="scroll_bar">
+                                            <a href="#none">객관식</a>
+                                            <a href="#none">단답형</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 객관식 텍스트 작성 -->
+                        <div class="survey_answer">
+                            <div class="check_box circle">
+                                <input type="checkbox" id="checkbox1" disabled>
+                                <label for="checkbox1">객관식 1 입력</label>
+                            </div>
+                            <div class="check_box circle">
+                                <input type="checkbox" id="checkbox2" disabled>
+                                <label for="checkbox2">객관식 2 입력</label>
+                            </div>
+                            <div class="check_box circle">
+                                <input type="checkbox" id="checkbox3" disabled>
+                                <label for="checkbox3">객관식3 입력</label>
+                            </div>
+                            <div class="check_box circle">
+                                <input type="checkbox" id="checkbox4" disabled>
+                                <label for="checkbox4">기타
+                                    <a href="#none" class="delete sprite_comm sp_ico_file_del ml10"></a>
+                                </label>
+                            </div>
+                            
+                            <div class="flex_between_center mt35">
+                                <div class="btn_wrap">
+                                    <a href="#none" class="btn outline round mr10"><i class="sprite_comm sp_ico_add"></i> 객관식 추가</a>
+                                    <a href="#none" class="btn outline round"><i class="sprite_comm sp_ico_add"></i> 기타 추가</a>
+                                </div>
+                                <div class="flex_between_center">
+                                    <span class="mr10">필수</span>
+                                    <label class="switch mr20">
+                                        <input type="checkbox" checked="">
+                                        <span class="slider"></span>
+                                    </label>
+
+                                    <span class="mr10">복수답변</span>
+                                    <label class="switch">
+                                        <input type="checkbox" checked="">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- <div class="btn_full mt40">
+                                <a href="#none" class="btn large">새로 추가</a>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <div class="survey_create">
+                        <!-- 질문 순서 -->
+                        <div class="row survey_order">
+                            <div>
+                                <a href="#none" class="up on" onclick="moveUp(this)">위로</a>
+                                <a href="#none" class="down on" onclick="moveDown(this)">아래로</a>
+                            </div>
+                            <div>
+                                <a href="#none" class="copy mr10">복사</a>
+                                <a href="#none" class="delete">삭제</a>
+                            </div>
+                        </div>
+                        <!-- 질문 입력 -->
+                        <div class="row survey_question">
+                            <div class="input_question">
+                                <span class="number">2.</span>
+                                <input type="text" placeholder="질문입력">
+                            </div>
+                            <div class="flex_start_center">
+                                <input type="file" class="input_file_button" id="inputFile">
+                                <label for="inputFile">이미지</label>
+                                <div class="select_box">
+                                    <a class="select sm" href="#none">객관식</a>
+                                    <div class="option_list">
+                                        <div class="scroll_bar">
+                                            <a href="#none">객관식</a>
+                                            <a href="#none">단답형</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 객관식 텍스트 작성 -->
+                        <div class="survey_answer">
+                            <div class="check_box circle">
+                                <input type="checkbox" id="checkbox2-1" disabled>
+                                <label for="checkbox2-1">서울우유 기본</label>
+                            </div>
+                            <!-- 인풋박스가 있을경우 .check_input 추가 -->
+                            <div class="check_box circle check_input">
+                                <input type="checkbox" id="checkbox5" disabled>
+                                <label for="checkbox5" class="input_full">
+                                    <input type="text" placeholder="텍스트 입력">
+                                    <a href="#none" class="delete sprite_comm sp_ico_file_del ml15"></a>
+                                </label>
+                            </div>
+
+                            <div class="flex_between_center mt35">
+                                <div class="btn_wrap">
+                                    <a href="#none" class="btn outline round mr10"><i class="sprite_comm sp_ico_add"></i> 객관식 추가</a>
+                                    <a href="#none" class="btn outline round"><i class="sprite_comm sp_ico_add"></i> 기타 추가</a>
+                                </div>
+                                <div class="flex_between_center">
+                                    <span class="mr10">필수</span>
+                                    <label class="switch mr20">
+                                        <input type="checkbox" checked="">
+                                        <span class="slider"></span>
+                                    </label>
+
+                                    <span class="mr10">복수답변</span>
+                                    <label class="switch">
+                                        <input type="checkbox" checked="">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="survey_create">
+                        <!-- 질문 순서 -->
+                        <div class="row survey_order">
+                            <div>
+                                <a href="#none" class="up on" onclick="moveUp(this)">위로</a>
+                                <a href="#none" class="down on" onclick="moveDown(this)">아래로</a>
+                            </div>
+                            <div>
+                                <a href="#none" class="copy mr10">복사</a>
+                                <a href="#none" class="delete">삭제</a>
+                            </div>
+                        </div>
+                        <!-- 질문 입력 -->
+                        <div class="row survey_question">
+                            <div class="input_question">
+                                <span class="number">3.</span>
+                                <input type="text" placeholder="질문입력">
+                            </div>
+                            <div class="flex_start_center">
+                                <input type="file" class="input_file_button" id="inputFile">
+                                <label for="inputFile">이미지</label>
+                                <div class="select_box">
+                                    <a class="select sm" href="#none">객관식</a>
+                                    <div class="option_list">
+                                        <div class="scroll_bar">
+                                            <a href="#none">객관식</a>
+                                            <a href="#none">단답형</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 객관식 텍스트 작성 -->
+                        <div class="survey_answer">
+                            <div class="add_img">
+                                <div class="img_view">
+                                    <img src="https://via.placeholder.com/900x300.png">
+                                </div>
+                                <div class="dropdown_wrap">
+                                    <div class="dropdown">
+                                        <a class="menu" href="#none">
+                                            <i class="sprite_comm sp_ico_more"></i>
+                                        </a>
+                                        <ul class="menu_list" style="display: none;">
+                                            <li><a href="#none"><i class="sprite_comm sp_ico_del_off mr10"></i>이미지 삭제</a></li>
+                                            <li><a href="#none"><i class="sprite_comm sp_ico_edit_off mr10"></i>이미지 교체</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="check_box circle">
+                                <input type="checkbox" id="checkbox2-1" disabled>
+                                <label for="checkbox2-1">객관식1 입력</label>
+                            </div>
+                            <div class="check_box circle">
+                                <input type="checkbox" id="checkbox2-2" disabled>
+                                <label for="checkbox2-2">객관식2 입력</label>
+                            </div>
+
+                            <div class="flex_between_center mt35">
+                                <div class="btn_wrap">
+                                    <a href="#none" class="btn outline round mr10"><i class="sprite_comm sp_ico_add"></i> 객관식 추가</a>
+                                    <a href="#none" class="btn outline round"><i class="sprite_comm sp_ico_add"></i> 기타 추가</a>
+                                </div>
+                                <div class="flex_between_center">
+                                    <span class="mr10">필수</span>
+                                    <label class="switch mr20">
+                                        <input type="checkbox" checked="">
+                                        <span class="slider"></span>
+                                    </label>
+
+                                    <span class="mr10">복수답변</span>
+                                    <label class="switch">
+                                        <input type="checkbox" checked="">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="btn_full mt40">
+                                <a href="#none" class="btn large">새로 추가</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="survey_create">
+                        <!-- 질문 순서 -->
+                        <div class="row survey_order">
+                            <div>
+                                <a href="#none" class="up on" onclick="moveUp(this)">위로</a>
+                                <a href="#none" class="down" onclick="moveDown(this)">아래로</a>
+                            </div>
+                            <div>
+                                <a href="#none" class="copy mr10">복사</a>
+                                <a href="#none" class="delete">삭제</a>
+                            </div>
+                        </div>
+                        <!-- 질문 입력 -->
+                        <div class="row survey_question">
+                            <div class="input_question">
+                                <span class="number">4.</span>
+                                <input type="text" placeholder="질문입력">
+                            </div>
+                            <div class="flex_start_center">
+                                <input type="file" class="input_file_button" id="inputFile">
+                                <label for="inputFile">이미지</label>
+                                <div class="select_box">
+                                    <a class="select sm" href="#none">단답형</a>
+                                    <div class="option_list">
+                                        <div class="scroll_bar">
+                                            <a href="#none">객관식</a>
+                                            <a href="#none">단답형</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 단답형 텍스트 작성 -->
+                        <div class="survey_answer">
+                            <div class="check_box circle">
+                                <input type="checkbox" id="checkbox4-1" disabled>
+                                <label for="checkbox4-1">
+                                    <textarea class="short_answer" rows="1" placeholder="답변을 입력(10자 이내)"></textarea>
+                                </label>
+                            </div>
+                            <div class="check_box circle">
+                                <input type="checkbox" id="checkbox4-1" disabled>
+                                <label for="checkbox4-1">
+                                    입력한 답변(10자 이내)
+                                </label>
+                            </div>
+                            <div class="flex_between_center mt35">
+                                <div class="btn_wrap">
+                                </div>
+                                <div class="flex_between_center">
+                                    <span class="mr10">필수</span>
+                                    <label class="switch mr20">
+                                        <input type="checkbox" checked="">
+                                        <span class="slider"></span>
+                                    </label>
+
+                                    <span class="mr10">장문형</span>
+                                    <label class="switch">
+                                        <input type="checkbox" checked="">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="survey_create">
+                        <!-- 질문 순서 -->
+                        <div class="row survey_order">
+                            <div>
+                                <a href="#none" class="up on" onclick="moveUp(this)">위로</a>
+                                <a href="#none" class="down" onclick="moveDown(this)">아래로</a>
+                            </div>
+                            <div>
+                                <a href="#none" class="copy mr10">복사</a>
+                                <a href="#none" class="delete">삭제</a>
+                            </div>
+                        </div>
+                        <!-- 질문 입력 -->
+                        <div class="row survey_question">
+                            <div class="input_question">
+                                <span class="number">5.</span>
+                                <input type="text" placeholder="질문입력">
+                            </div>
+                            <div class="flex_start_center">
+                                <input type="file" class="input_file_button" id="inputFile">
+                                <label for="inputFile">이미지</label>
+                                <div class="select_box">
+                                    <a class="select sm" href="#none">단답형</a>
+                                    <div class="option_list">
+                                        <div class="scroll_bar">
+                                            <a href="#none">객관식</a>
+                                            <a href="#none">단답형</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 단답형(장문형) 텍스트 작성 -->
+                        <div class="survey_answer">
+
+                            <div class="check_box circle">
+                                <input type="checkbox" id="checkbox4-2" disabled>
+                                <label for="checkbox4-2">
+                                    <textarea class="long_answer" placeholder="답변을 입력(100자 이내)" rows="1" onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
+                                </label>
+                            </div>
+                            <div class="check_box circle">
+                                <input type="checkbox" id="checkbox4-2" disabled>
+                                <label for="checkbox4-2">
+                                    입력한 답변(100자 이내)<br>
+                                    두줄이 됩니다. 
+                                </label>
+                            </div>
+
+                            <div class="flex_between_center mt35">
+                                <div class="btn_wrap"></div>
+                                <div class="flex_between_center">
+                                    <span class="mr10">필수</span>
+                                    <label class="switch mr20">
+                                        <input type="checkbox" checked="">
+                                        <span class="slider"></span>
+                                    </label>
+
+                                    <span class="mr10">장문형</span>
+                                    <label class="switch">
+                                        <input type="checkbox" checked="">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="btn_full mt40">
+                                <a href="#none" class="btn large">새로 추가</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- /설문지 쓰기 -->
+
+                <script>
+
+                </script>
+            </div>
+        </div>
+    </div>
+    <!-- /modal :: 설문 생성 팝업 -->
+    <script>
+        $('#surveyWrite').modal({show: true});
+
+        function moveUp(el){
+            var $item = $(el).closest('.survey_create');
+            $item.prev().before($item);
+        }
+
+        function moveDown(el){
+            var $item = $(el).closest('.survey_create');
+            $item.next().after($item);
+        }
+
+        // textarea 높이값 자동으로 늘어나도록
+        function resize(obj) {
+            obj.style.height = "1px";
+            obj.style.height = (obj.scrollHeight)+"px";
+        }
+
+        $('.long_answer').keyup(function (e){
+            var content = $(this).val();       
+            if(content.length > 100) {
+                $(this).val($(this).val().substring(0, 100));
+            }
+        });
+        $('.short_answer').keyup(function (e){
+            var content = $(this).val();       
+            if(content.length > 10) {
+                $(this).val($(this).val().substring(0, 10));
+            }
+        });
+        
+    </script>
+</body>
+
+</html>

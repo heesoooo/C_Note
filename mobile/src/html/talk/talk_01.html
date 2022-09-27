@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>T_TALK</title>
+</head>
+
+<body>
+	<div class="talk_wrap">
+		<!-- header -->
+		@@include('../include/inc_talk_header.html')
+		<!-- /header -->
+		
+		<!-- nav tab -->
+		<div class="talk_nav_tab">
+			<ul>
+				<li rel="T_Opponent" class="on"><span>대화상대</span></li>
+				<li rel="T_chatList"><span>채팅목록 <em class="new">999+</em></span></li>
+				<li rel="T_callList"><span>통화목록 <em class="new">99</em></span></li>
+			</ul>
+		</div>
+		<!-- /nav tab -->
+	
+		<div class="tab_cont_wrap">			
+			@@include('../include/inc_talk_nav01.html')
+			@@include('../include/inc_talk_nav02.html')
+			@@include('../include/inc_talk_nav03.html')
+		</div>
+		@@include('../include/inc_main_tab_bar.html')
+	</div>
+	
+
+	<script>
+		$(function(){
+			mo_talk.navTab();
+			mo_talk.selectClass();
+		});
+	</script>
+	
+</body>
+
+</html>

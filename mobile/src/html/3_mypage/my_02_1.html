@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+        <div class="sub_header">
+            <a href="#none" class="history_back">뒤로가기</a>
+            <h2 class="sub_title">서비스 탈퇴</h2>
+            <div class="btn_wrap">
+                <a href="#none">확인</a>				
+            </div>
+        </div>
+		<!-- /header -->
+        
+		<!-- content -->
+        <div class="container">
+
+            <div class="mypage_wrap">
+                <div class="my_leave inner">
+                    <p class="leave_tit">우리반 T회원 탈퇴</p>
+                    <p class="leave_txt">
+                        우리반 T셀파를 이용해 주셔서 감사드립니다.<br>
+                        아래 회원 정보를 확인하시면, 탈퇴처리가 진행됩니다.
+                    </p>
+                    <div class="id_box">
+                        <span>아이디</span>
+                        <span class="bar"></span>
+                        <span class="id">chunjae@naver.com</span>
+                    </div>
+
+                    <div class="check_box t_left">
+                        <input type="checkbox" id="check1" checked="">
+                        <label for="check1">&nbsp;</label>
+                        <p class="agree"><a href="#none">유의사항</a>을 확인하였으며, 이에 동의합니다.</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- /content -->
+	</div>
+
+
+    <div class="modal" id="leavePop">
+        <div class="modal_content">
+            <p class="pop_txt">
+                탈퇴한 회원정보는 탈퇴 즉시 삭제되어, <br>
+                복구가 불가 하오니 신중하게 선택해주세요. 
+            </p>
+            <div class="modal_btn_full">
+                <a href="#none" class="modal_btn" data-dismiss="modal">닫기</a>
+            </div>
+        </div>
+    </div>
+	<script>
+        $(function () {
+            $("#leavePop").modal({ show: true });
+        })
+	</script>
+</body>
+
+</html>

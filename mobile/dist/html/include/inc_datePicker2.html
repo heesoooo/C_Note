@@ -1,0 +1,34 @@
+<!-- datetimepicker 팝업 -->
+<div class="modal" id="datePicker2">
+    <div class="calendar modal_content">
+        <!-- td.day :: .schedule_info 추가시 일정등록 표기 css확인가능-->
+
+        <div class="form-group">
+            <div class="row">
+                <div>
+                    <div id="datetimepicker2"></div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker2').datetimepicker({
+                format: 'L',
+                format: 'YYYY.MM.DD',
+                inline: true
+            });
+        });
+        </script>
+        <div class="modal_btn_full mt0">
+            <!-- 활성화시 .active 추가 / 비활성화시 .disabled 추가 -->
+            <a href="#none" class="modal_btn disabled">확인</a>
+        </div>
+    </div>
+</div>
+<!-- /. -->
+
+<script>
+    // $(function () {
+    //     $("#datePicker2").modal({ show: true })
+    // })
+</script>

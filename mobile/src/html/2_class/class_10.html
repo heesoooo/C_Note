@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+        <div class="sub_header">
+            <a href="#none" class="history_back">뒤로가기</a>
+            <h2 class="sub_title">학급 공지</h2>
+            <div class="btn_wrap">
+                <!-- 활성화시 .disabled 삭제 -->
+                <a href="#none" class="disabled">완료</a>				
+            </div>
+        </div>
+		<!-- /header -->
+        
+		<!-- content -->
+        <div class="container">
+            <div class="board_write_wrap">
+                <input type="text" class="title_input" placeholder="제목을 입력하세요.">
+                <div class="editor_wrap">
+                    <div id="editor">
+                        <p>This is some sample content.</p>
+                    </div>
+                    <script>
+                        ClassicEditor
+                            .create( document.querySelector( '#editor' ) )
+                            .catch( error => {
+                                console.error( error );
+                            } );
+                    </script>
+                </div>
+                <div class="setting_list">
+                    <div class="attached_file last">
+                        <div class="upload_file">
+                            <p class="txt">
+                                파일첨부
+                                <i class="sprite_comm sp_ico_clip_g ml5"></i>
+                            </p>
+                            <input type="file" class="upload_file_button" id="inputFile">
+                            <label for="inputFile"></label>
+                        </div>
+                        <!-- 이미지 첨부 -->
+                        <ul class="list_photo">
+                            <li>
+                                <span class="img">
+                                    <img src="https://via.placeholder.com/100x155.png">
+                                </span>
+                                <a href="#none" class="delete">삭제</a>
+                            </li>
+                            <li>
+                                <span class="img"></span>
+                                <a href="#none" class="delete">삭제</a>
+                            </li>
+                            <li>
+                                <span class="img"></span>
+                                <a href="#none" class="delete">삭제</a>
+                            </li>
+                            <li>
+                                <span class="img"></span>
+                                <a href="#none" class="delete">삭제</a>
+                            </li>
+                            <li>
+                                <span class="img"></span>
+                                <a href="#none" class="delete">삭제</a>
+                            </li>
+                            <li>
+                                <span class="img"></span>
+                                <a href="#none" class="delete">삭제</a>
+                            </li>
+                            <li>
+                                <span class="img"></span>
+                                <a href="#none" class="delete">삭제</a>
+                            </li>
+                        </ul>
+
+                        <!-- 파일 첨부 -->
+                        <ul class="file_list">
+                            <li>
+                                <i class="sprite_comm sp_ico_clip_g"></i>
+                                <span class="file_name">이미지 캡쳐1.img</span>
+                                <a href="#none" class="delete">삭제</a>
+                            </li>
+                            <li>
+                                <i class="sprite_comm sp_ico_clip_g"></i>
+                                <span class="file_name">이미지 캡쳐1.img</span>
+                                <a href="#none" class="delete">삭제</a>
+                            </li>
+                            <li>
+                                <i class="sprite_comm sp_ico_clip_g"></i>
+                                <span class="file_name">이미지 캡쳐1.img</span>
+                                <a href="#none" class="delete">삭제</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <ul class="setting_detail">
+                        <li class="list_item">
+                            <p class="title">상단 공지 기능</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </li>
+                        <li class="list_item">
+                            <p class="title">중요 표시 기능</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </li>
+                    </ul>
+                    <div class="setting_top">
+                        <p class="title">수신대상</p>
+                    </div>
+                    <ul class="setting_detail">
+                        <li class="list_item">
+                            <p class="title">그룹 선택</p>
+                            <div class="check_box">
+                                <input type="checkbox" id="check1" checked>
+                                <label for="check1">학생</label>
+                                <input type="checkbox" id="check1-3">
+                                <label for="check1-3">학부모</label>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#none" class="list_item">
+                                <p class="list_txt">개별 선택</p>
+                                <i class="more">바로가기</i>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="setting_top">
+                        <p class="title">예약하기</p>
+                    </div>
+                    <ul class="setting_detail">
+                        <li class="list_item">
+                            <p class="title">예약 설정</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </li>
+                        <li class="list_item">
+                            <p class="title point">예약일 선택</p>
+                            <a href="#none" class="deadline btn medium round outline">22.08.25 오후11:00</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /contents-->
+	</div>
+
+	<script>
+	</script>
+</body>
+
+</html>

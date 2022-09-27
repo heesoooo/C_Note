@@ -1,0 +1,885 @@
+@import "../component/_mixin";
+
+.form_create_class {
+    width: 740px;
+    margin: 0 auto;
+
+    .info_dec {
+        margin-top: 55px;
+
+        .tit {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 9px;
+            font-size: 18px;
+            letter-spacing: -0.18px;
+            color: $black;
+
+            &.essential {
+                &::before {
+                    position: absolute;
+                    content: '';
+                    width: 5px;
+                    height: 5px;
+                    background: $point;
+                    top: 3px;
+                    right: -9px;
+                    border-radius: 50%;
+                }
+            }
+
+            em {
+                font-size: 14px;
+                font-style: normal;
+                line-height: 1.71;
+                letter-spacing: -.14px;
+                color: $gray_99;
+            }
+        }
+
+        .upload_img {
+            @include flexbox(start, center);
+
+            .img {
+                margin-right: 36px;
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+                background: url(../../img/basic_profile_lg.png) no-repeat 0 0;
+
+                img {
+                    width: 90px;
+                    height: 90px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+            }
+
+            /* input file */
+            input[type=file] {
+                &.input_file_button {
+                    +label {
+                        cursor: pointer;
+                        position: relative;
+                    }
+                }
+            }
+        }
+    }
+
+    .half_box {
+        @include flexbox(between, start);
+
+        .info_dec {
+            width: calc(50% - 10px);
+        }
+    }
+
+    .thirds_box {
+        @include flexbox(between, start);
+
+        .info_dec {
+            width: calc(33% - 7px);
+        }
+    }
+}
+
+.search_result {
+    width: 1100px;
+    margin: 0 auto;
+
+    .result_search_line {
+        border: none;
+    }
+}
+
+.main_search_tab {
+    border-bottom: 1px solid $gray_bb;
+
+    .tab_links {
+        display: inline-block;
+        margin-bottom: -1px;
+        padding: 16px 20px 23px;
+        line-height: 35px;
+        font-size: 20px;
+        color: $black;
+        background-color: transparent;
+        font-weight: $font_weight_medium;
+        border-bottom: 4px solid transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+
+        &.active {
+            color: $primary;
+            border-bottom: 4px solid $primary;
+        }
+
+        &+.tab_links {
+            margin-left: 40px;
+        }
+    }
+}
+
+.main_search_list {
+
+    li {
+        width: 100%;
+        padding: 30px 40px;
+        @include flexbox(between, center);
+        border-bottom: 1px solid $gray_e0;
+
+        .btn.medium {
+            min-width: 110px;
+
+            &.waiting {
+                padding: 0 13px;
+                background-color: $gray_f2;
+                color: $gray_66;
+            }
+        }
+
+        .myclass {
+            color: $primary;
+            background-color: transparent;
+            cursor: pointer;
+        }
+    }
+
+    .profile {
+        overflow: hidden;
+        position: relative;
+        width: 70px;
+        min-width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background-color: $gray_e0;
+        background-size: 70px;
+
+        img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+    }
+
+    .info {
+        text-align: left;
+        margin-left: 24px;
+
+        .class {
+            font-size: 18px;
+            color: $black;
+            margin-bottom: 5px;
+
+            span {
+                color: $primary;
+            }
+        }
+
+        .class_info {
+            font-size: 15px;
+            color: $gray_99;
+
+            .bar {
+                display: inline-block;
+                margin: 0 10px;
+                width: 1px;
+                height: 12px;
+                background: rgba(0, 0, 0, .3);
+            }
+        }
+    }
+}
+
+
+// 메인페이지
+.main_container {
+    width: 100%;
+    min-width: 1240px;
+    padding: 131px 0 0;
+    background-color: #f5f5f5;
+    box-sizing: border-box;
+
+    .contents {
+        @include flexbox(start, start);
+        position: relative;
+        width: 1240px;
+        margin: 0 auto;
+        padding: 0 20px 50px;
+    }
+
+    .main_left_section {
+        width: 760px;
+        .welcome_title {
+            @include flexbox(between, center);
+            margin: 4px 0 17px;
+            font-size: 26px;
+            letter-spacing: -.65px;
+            .btn {
+                height: 36px;
+                line-height: 32px;
+                padding: 0 18px;
+                font-size: 14px;
+                font-weight: $font_weight_regular;
+                margin-top: 1px;
+                box-shadow: none;
+            }
+        }
+    }
+
+    .main_right_section {
+        width: 400px;
+        margin-left: 40px;
+    }
+
+    //메인 하단 링크
+    .main_bottom_section {
+        background-color: $white;
+        height: 92px;
+        border-top: 1px solid $gray_e0;
+        .main_bottom {
+            @include flexbox(center, center);
+            padding: 15px 0;
+            li + li { border-left: 1px solid $gray_e0;}
+            .link_item {
+                @include flexbox(end, center);
+                flex-direction: column;
+                width: 300px;
+                height: 60px;
+                text-align: center;
+                img { margin-bottom: 5px;}
+                .txt { font-size: 14px; color: $gray_66; padding-bottom: 3px;}
+            }
+        }
+    }
+
+
+    //article 공통
+    .article {
+        width: 100%;
+        background-color: $white;
+        border-radius: 10px;
+        border: 1px solid $gray_e0;
+    
+        & + .article {
+            margin-top: 20px;
+        }
+    
+    
+        .article_top {
+            @include flexbox(between, center);
+            height: 50px;
+            padding: 0 20px;
+            border-bottom: 1px solid $gray_e0;
+        }
+    
+        .title {
+            font-size: 16px;
+            font-weight: $font_weight_bold;
+            letter-spacing: -.3px;
+        }
+    
+        .more {
+            font-size: 14px;
+            color: $gray_99;
+    
+            &::after {
+                content: '';
+                margin-left: 8px;
+                @extend .sprite_comm;
+                @extend .sp_ico_more_arrow;
+            }
+        }
+    
+        .inner { padding: 23px 20px;}
+        
+        // 공유 인기 영상, 
+        // 연수원 추천강좌, 
+        // 클래스 100배 활용하기 콘텐츠 리스트
+        .con_list {
+            @include flexbox(between, start);
+            .img {
+                overflow: hidden;
+                position: relative;
+                width: 224px;
+                height: 125px;
+                margin-bottom: 14px;
+                background-color: $gray_f5;
+                border-radius: 10px;
+                img {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px;
+                }
+                &.movie {
+                    position: relative;
+                    .run_time {
+                        position: absolute;
+                        bottom: 10px;
+                        right: 15px;
+                        font-size: 14px;
+                        color: $white;
+                    }
+                }
+                &.movie::after {
+                    content: '';
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, .3);
+                    background-image: url('../../img/ico_play_btn.png');
+                    background-repeat: no-repeat;
+                    background-position: left 15px bottom 13px;
+                }
+            }
+            .con_title {
+                font-size: 16px;
+                color: $primary;
+                font-weight: $font_weight_bold;
+                margin-bottom: 6px;
+            }
+            .con_text {
+                max-width: 224px;
+                @include ellipsis(2);
+                font-size: 14px;
+                line-height: 20px;
+                color: $gray_66;
+            }
+            .con_link {
+                font-size: 16px;
+                color: $black;
+                font-weight: $font_weight_bold;
+                letter-spacing: -0.2px;
+            }
+        }
+    
+
+    
+    
+        // swiper button
+        .swiper-button-next,
+        .swiper-button-prev {
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            background-color: $white;
+            border: 1px solid $gray_e0;
+            top: 41px;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 1;
+            &::after { display: none;}
+            &.swiper-button-disabled {
+                opacity: 1;
+            }
+        }
+        .swiper-button-prev {
+            border-radius: 6px 0 0 6px;
+            background-image: url('../../img/ico_noti_prev_on.png');
+            &.swiper-button-disabled {
+                background-image: url('../../img/ico_noti_prev_off.png');
+            }
+        }
+        .swiper-button-next {
+            border-radius: 0 6px 6px 0;
+            background-image: url('../../img/ico_noti_next_on.png');
+            &.swiper-button-disabled {
+                background-image: url('../../img/ico_noti_next_off.png');
+            } 
+        }
+    }
+        
+    
+    // 우리반 정보 article
+    .main_article {
+        position: relative;
+        padding: 34px 0 31px;
+        border: 1px solid $primary;
+        height: 275px;
+        &::before {
+            position: absolute;
+            top: -1px;
+            left: 26px;
+            content: '우리반';
+            width: 65px;
+            height: 51px;
+            padding-top: 6px;
+            font-size: 14px;
+            color: $white;
+            background-image: url('../../img/badge_ourclass_bg.png');
+            text-align: center;
+            z-index: 5;
+        }
+        .ourclass { padding-left: 62px; padding-right: 50px; }
+        .profile_area {
+            @include flexbox(start, center);
+            margin-top: 3px;
+            .info {
+                .class {
+                    width: 150px;
+                    line-height: 33px;
+                    margin-top: 9px;
+                    font-size: 24px;
+                    color: $black;
+                    font-weight: $font_weight_bold;
+                    letter-spacing: -0.3px;
+                }
+    
+                .name {
+                    font-size: 16px;
+                    font-weight: $font_weight_regular;
+                    color: $gray_66;
+                    margin-top: 7px;
+                    i {
+                        vertical-align: middle;
+                        margin-bottom: 3px;
+                        margin-right: 7px;
+                    }
+                }
+            }
+    
+            .profile {
+                overflow: hidden;
+                position: relative;
+                margin-right: 29px;
+                margin-left: 21px;
+                width: 110px;
+                height: 110px;
+                min-width: 110px;
+                border-radius: 50%;
+                background: #f5f5f5 url(../../img/basic_profile_xl.png) no-repeat 50% 101%;
+                background-size: 110px;
+    
+                img {
+                    position: relative;
+                    width: 110px;
+                    height: 110px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+            }
+        }
+    
+        .shortcut_area {
+            @include flexbox(between, center);
+            width: 315px;
+            margin-top: 40px;
+            .shortcut {
+                text-align: center;
+                width: 52px;
+                i { height: 30px;}
+                p {
+                    font-size: 14px;
+                    color: $black;
+                    padding-top: 3px;
+                    &.new::after {
+                        content: '';
+                        display: inline-block;
+                        position: absolute;
+                        background-color: $point;
+                        width: 5px;
+                        height: 5px;
+                        border-radius: 50%;
+                        margin-left: 2px;
+                        margin-top: 4px;
+                    }
+                }
+            }
+        }
+    
+        .schedule_area {
+            width: 300px;
+            padding-left: 32px;
+            border-left: 1px solid $gray_e0;
+            .date {
+                width: 55px;
+                height: 24px;
+                line-height: 22px;
+                font-size: 13px;
+                color: $point;
+                font-weight: $font_weight_bold;
+                border: 1px solid $point;
+                border-radius: 12px;
+                text-align: center;
+                box-sizing: border-box;
+            }
+            .title {
+                font-size: 20px;
+                margin-top: 10px;
+            }
+            .schedule_list {
+                margin-top: 10px;
+                line-height: 27px;
+                & > li {
+                    @include flexbox(start, center);
+                }
+                .time {
+                    font-size: 15px;
+                    color: #aeaeae;
+                    font-weight: $font_weight_regular;
+                    padding-right: 7px;
+                }
+                .text {
+                    @include ellipsis;
+                    max-width: 212px;
+                    font-size: 15px;
+                    letter-spacing: -0.2px;
+                    position: relative;
+                    padding-right: 9px;
+                    &.new::before {
+                        content: '';
+                        display: inline-block;
+                        position: absolute;
+                        background-color: $point;
+                        width: 5px;
+                        height: 5px;
+                        border-radius: 50%;
+                        margin-top: 4px;
+                        right: 0;
+                    }
+                }
+            }
+            .link {
+                margin-top: 30px;
+                a {
+                    font-size: 16px;
+                    font-weight: $font_weight_bold;
+                    color: $black;
+                }
+                .bar {
+                    display: inline-block;
+                    margin: 0 13px;
+                    width: 1px;
+                    height: 12px;
+                    background: rgba(0, 0, 0, .3);
+                }
+            }
+        }
+        
+        .swiper-button-prev.main_swiper_btn {
+            left: 687px;
+        }
+        .swiper-button-next.main_swiper_btn {
+            right: 20px;
+        }
+
+
+        //메인 클래스 없을때
+        &.no_class {
+            &::before {
+                display: none;
+            }
+        }
+        .new_class {
+            @include flexbox(start, start);
+            margin-top: 13px;
+            margin-left: 70px;
+            .text {
+                font-size: 24px;
+                padding-top: 23px;
+            }
+            .btn {
+                font-size: 15px;
+                padding: 0 20px;
+                box-shadow: none;
+            }
+        }
+    
+    }
+    
+    // T셀파 클래스 공지사항
+    .notice_article {
+        @include flexbox(start, center);
+        padding: 16px 20px;
+        height: 60px;
+        .title { margin-right: 20px;}
+        .noti_text {
+            @include ellipsis;
+            width: 496px;
+            font-size: 14px;
+            color: $gray_66;
+            margin-right: 20px;
+        }
+        .noti_date {
+            font-size: 14px;
+            color: #aeaeae;
+            letter-spacing: -1px;
+        }
+    }
+
+    // 공유 인기 영상
+    .movie_article {
+        height: 304px;
+    }
+    // 연수원 추천 강좌
+    .recomm_article {
+        height: 276px;
+    }
+
+    //클래스 100배 활용하기
+    .quick_article {
+        height: 143px;
+    }
+    
+    // 학교별 안내 
+    .class_article {
+        position: relative;
+        height: 143px;
+        .info_list {
+            li {
+                @include flexbox(between, center);
+                & + li {
+                    padding-top: 5px;
+                }
+            }
+            &.inner { padding: 20px;}
+        }
+        .text { 
+            width: 290px;
+            @include ellipsis;
+            font-size: 15px;
+            color: $gray_66;
+        }
+        .date {
+            font-size: 15px;
+            color: #aeaeae;
+            letter-spacing: -1px;
+        }
+        .swiper-button-prev.noti_swiper_btn {
+            left: 327px;
+            top: 33px;
+        }
+        .swiper-button-next.noti_swiper_btn {
+            right: 20px;
+            top: 33px;
+        }
+        
+    }
+    
+    
+    // 이미지 슬라이드 배너
+    .slide_banner {
+        .slide_banner_img {
+            display: block;
+            width: 100%;
+            height: 171px;
+            border-radius: 10px;
+            
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+            }
+        }
+        .swiper-pagination {
+            position: absolute;
+            bottom: 11px;
+            z-index: 100;
+            left: 20px;
+            z-index: 5;
+            &-bullet {
+                margin: 0 4px;
+            } 
+            &-bullet-active {
+                width: 16px;
+                background-color: $white;
+                border-radius: 4px;
+            }
+        }
+        
+    }
+    
+    // 온라인 퀴즈 배너
+    .online_quiz_banner {
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 30px;
+            height: 30px;
+            right: 20px;
+            background-color: $white;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 50%;
+            margin-top: -15px;
+            &::after { display: none;}
+            &.swiper-button-disabled { opacity: .6;}
+        }
+        .swiper-button {
+            &-next {
+                background-image: url('../../img/ico_ban_next.png');
+            }
+            &-prev {
+                background-image: url('../../img/ico_ban_prev.png');
+                left: 20px;
+            }
+        }
+        
+        .quiz_banner_area {
+            display: block;
+            height: 200px;
+            line-height: 20px;
+            border-radius: 10px;
+            padding: 19px;
+            box-sizing: border-box;
+            .title {
+                font-size: 16px;
+                color: $black;
+                font-weight: $font_weight_bold;
+            }
+            &.banner1 {
+                background-color: #ffe2f9;
+                img { padding-left: 27px; padding-top: 5px;}
+            }
+            .quiz_contents {
+                @include flexbox(between, start);
+                margin-top: 19px;
+                .quiz_title {
+                    width: 188px;
+                    font-size: 16px;
+                    color: $black;
+                    font-weight: $font_weight_bold;
+                    padding-top: 8px;
+                }
+                .quiz_date {
+                   font-size: 14px;
+                   color: #aeaeae; 
+                   padding-top: 4px;
+                   letter-spacing: -.5px;
+                }
+                .quiz_rate {
+                    margin-top: 20px;
+                    color: $black;
+                    font-size: 15px;
+                }
+                .rate {
+                    color: $point;
+                    font-weight: $font_weight_bold;
+                    padding-left: 5px;
+                }
+                .graph_item {
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    width: 140px;
+                    margin-top: 8px;
+    
+                    .graph_background {
+                        position: relative;
+                        width: 100%;
+                        height: 10px;
+                        background-color: rgba(255, 255, 255,.4);
+                        border-radius: 5px;
+                        & > .graph_bar {
+                            background-color: $point;
+                            display: block;
+                            height: 10px;
+                            border-radius: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // 학급운영 물품 베스트
+    .best_item_article {
+        height: 402px;
+        .best_item_list {
+            li {
+                & + li { margin-top: 17px;}
+                a { @include flexbox(between, start);}
+            }
+            .img {
+                overflow: hidden;
+                position: relative;
+                min-width: 140px;
+                height: 90px;
+                margin-right: 15px;
+                border-radius: 10px;
+                border: 1px solid $gray_e0;
+                img {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px;
+                }
+            }
+            .item {
+                @include ellipsis(2);
+                width: 195px;
+                font-size: 14px;
+                color: $gray_66;
+                margin: 12px 10px 5px 0;
+            }
+            .discount {
+                font-size: 16px;
+                color: $red;
+                font-weight: $font_weight_medium;
+                margin-right: 4px;
+                letter-spacing: -.5px;
+            }
+            .price {
+                font-size: 16px;
+                color: $black;
+                font-weight: $font_weight_medium;
+            }
+        }
+    }
+
+    //자주 묻는 질문
+    .qna_article {
+        height: 201px;
+        .qna_list {
+            li {
+                @include flexbox(start, center);
+                & + li {
+                    padding-top: 4px;
+                }
+            }
+            &.inner { padding: 20px;}
+            .category { 
+                margin-right: 10px;
+                color: $primary;
+                font-weight: $font_weight_medium;
+                letter-spacing: -.7px;
+            }
+            .text { 
+                width: 270px;
+                @include ellipsis;
+                font-size: 15px;
+                color: $gray_66;
+            }
+        }
+    
+    }
+
+    // 우측 이미지 배너
+    .quick_banner {
+        position: absolute;
+        top: 0;
+        right: -165px;
+        text-align: center;
+        li { margin-bottom: 30px;}
+        .text {
+            font-size: 15px;
+            color: $black;
+            line-height: 21px;
+            padding-top: 3px;
+            letter-spacing: -.5px;
+        }
+        @media all and (max-width:1240px) {
+            display: none;
+        }
+    }   
+
+}    
+
+
+
+    
+
+
+

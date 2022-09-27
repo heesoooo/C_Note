@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('../include/inc_html_head.html')
+    <title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        @@include('../include/inc_header.html')
+
+        <!--  sub container -->
+        <div class="container inner_cont">
+
+            <!-- snb -->
+            <div class="snb">
+                       
+                <div class="snb_list">
+                    <h3 class="mt10">고객센터</h3>
+                    <ul>
+                        <li class="active"><a href="#none">공지사항</a></li>
+                        <li><a href="#none">자주 묻는 질문</a></li>
+                        <li><a href="#none">문의하기</a></li>
+                        <li><a href="#none">문의내역</a></li>
+                    </ul>
+                </div>
+          
+            </div>
+            <!-- //snb -->
+
+
+            <div class="contents">
+
+                <!-- title -->
+                <div class="title_box">
+                    <h4 class="page_title">공지사항</h4>
+                </div>
+                <!--// title -->
+
+                <!-- sub contents -->
+                <div class="notice_list_wrap">
+                    <table class="tbl_list empty" cellpadding="0" cellspacing="0">
+                        <colgroup>
+                            <col style="width:9%">
+                            <col style="width:9%">
+                            <col>
+                            <col style="width:18%">
+                            <col style="width:9%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">번호</th>
+                                <th scope="col">분류</th>
+                                <th scope="col">제목</th>
+                                <th scope="col">작성날짜</th>
+                                <th scope="col">상태</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <!-- 220818 :: 문구 변경 -->
+                                <td colspan="5">등록된 공지가 없습니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- 페이징 -->
+                    <div class="paging mt60">
+                        <a href="javascript:void(0);" class="pprev"><i></i></a> 
+                        <a href="javascript:void(0);" class="prev"><i></i></a> 
+                        <!-- 해당페이지에서 .on 추가 -->
+                        <a href="javascript:void(0);" class="on">1 </a>
+                        <!-- 화살표 활성화시 .active 추가 -->
+                        <a href="javascript:void(0);" class="next"><i></i></a>
+                        <a href="javascript:void(0);" class="nnext"><i></i></a>
+                    </div>
+                </div>
+                <!--// sub contents -->
+
+            </div>
+        </div>
+        <!-- //sub container -->
+
+        <!-- footer -->
+        @@include('../include/inc_footer.html')
+
+
+        <script>
+        
+        </script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+        <div class="sub_header">
+            <a href="#none" class="history_back">뒤로가기</a>
+            <h2 class="sub_title">교사 발급 계정</h2>
+        </div>
+		<!-- /header -->
+        
+		<!-- content -->
+        <div class="container">
+
+            <div class="mypage_wrap">
+                <div class="form_modify">
+                    <div class="info_dec">
+                        <div class="upload_img pt30">
+                            <span class="img">
+                                <!-- <img src="" alt=""> -->
+                            </span>
+                            <input type="file" class="input_file_button" id="imgEdit">
+                            <label for="imgEdit" class="sprite_comm sp_ico_edit"></label>
+                        </div>
+                    </div>
+                    <div class="info_dec">
+                        <span class="tit">이름</span>
+                        <div class="input_full">
+                            <input type="text" value="백이진">
+                        </div>
+                    </div>
+                    <div class="info_dec">
+                        <span class="tit">구분</span>
+                        <div class="input_full">
+                            <input type="text" value="교사 발급 계정" disabled>
+                        </div>
+                    </div>
+                    <div class="info_dec">
+                        <span class="tit">비밀번호</span>
+                        <div class="input_btn">
+                            <input type="password" placeholder="" value="비밀번호" disabled>
+                            <a href="#none" class="btn" data-target="changePassword">비밀번호 변경</a>
+                        </div>
+                        <div class="signature mt25">
+                            <span class="txt">등록된 서명이 없습니다.</span>
+                        </div>
+                        <a href="#none" class="btn mt15">등록하기</a>
+                    </div>
+                    
+                    <div class="info_dec">
+                        <span class="tit">계정 정보</span>
+                        <div class="info_box">
+                            <span class="txt">chunjae12 (2020.02.02 등록) *2020.02.02 만료 예정</span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- /content -->
+	</div>
+
+
+    <!-- 비밀번호 변경 팝업 -->
+	<div class="modal" id="changePassword">
+		<div class="modal_content modal_full"> <!-- 너비/높이 100% 팝업은 .modal_full 추가 -->
+			<!-- header -->
+			<div class="sub_header center">
+				<a href="#none" class="modal_close" data-dismiss="modal">뒤로가기</a>
+				<h2 class="sub_title">비밀번호 변경</h2>    
+				<div class="btn_wrap">
+					<a href="#none">확인</a>
+				</div>
+			</div>
+			<!-- /header -->
+			<!-- contents -->
+			<div class="cont_section">
+                <div class="inner">
+                    <div class="info_dec mt25">
+                        <span class="tit">현재 비밀번호</span>
+                        <div class="input_full">
+                            <input type="password" value="비밀번호" class="error">
+                        </div>
+                        <span class="val_check_red">현재 비밀번호가 일치하지 않습니다.</span>
+                    </div>
+                    <div class="info_dec">
+                        <span class="tit">새 비밀번호</span>
+                        <div class="input_full">
+                            <input type="password" value="비밀번호">
+                        </div>
+                    </div>
+                    <div class="info_dec mt25">
+                        <span class="tit">현재 비밀번호 확인</span>
+                        <div class="input_full">
+                            <input type="password" value="비밀번호" class="error">
+                        </div>
+                        <span class="val_check_red">현재 비밀번호가 일치하지 않습니다.</span>
+                    </div>
+                </div>
+			</div>
+			<!-- /contents -->	
+		</div>
+	</div>
+	<!-- /비밀번호 변경 팝업 -->
+	<script>
+        $(function () {
+            $("#changePassword").modal({ show: true });
+        })
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 메인</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+		@@include('../include/inc_logo_header.html')
+
+		<!-- contents -->
+		<div class="container inner_cont">
+			<div class="contents">
+				<!-- title -->
+				<div class="title_box mb0">
+					<h2 class="page_title login_title">나의 SNS 계정 찾기</h2>
+				</div>
+				<!-- /title -->
+
+				<!-- sub contents -->
+				<!-- 회원가입 이력 있을 시 / 카카오 -->
+				<div class="login_box mb30">
+					<h3>안녕하세요. 김천재님!</h3>
+					<p class="found_sns">카카오 계정으로 회원가입 한 이력이 있습니다.</p>
+					<div class="login_inner">
+						<div class="btn_sns_list">
+							<div class="btn_full">
+								<a href="#none" class="btn h50 kakao_login"><i class="sprite_comm sp_ico_kakao"></i>카카오로 시작하기</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 회원가입 이력 있을 시 / 네이버 -->
+				<div class="login_box mb30">
+					<h3>안녕하세요. 김천재님!</h3>
+					<p class="found_sns">네이버 계정으로 회원가입 한 이력이 있습니다.</p>
+					<div class="login_inner">
+						<div class="btn_sns_list">
+							<div class="btn_full">
+								<a href="#none" class="btn h50 naver_login"><i class="sprite_comm sp_ico_naver"></i>네이버로 시작하기</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 회원가입 이력 없을 시 -->
+				<div class="login_box">
+					<h3>해당 번호는 회원가입 한 이력이 없습니다.
+					</h3>
+					<p class="found_sns">T셀파 클래스에 가입해 보세요!</p>
+					<div class="login_inner">
+						<div class="btn_sns_list">
+							<div class="btn_full">
+								<a href="#none" class="btn h50 kakao_login mb10"><i class="sprite_comm sp_ico_kakao"></i>카카오로 시작하기</a>
+								<a href="#none" class="btn h50 naver_login"><i class="sprite_comm sp_ico_naver"></i>네이버로 시작하기</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /sub contents -->
+			</div>
+		</div>
+		<!-- /contents -->
+
+		<!-- footer -->
+		@@include('../include/inc_footer.html')
+	</div>
+</body>
+
+</html>

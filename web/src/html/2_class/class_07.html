@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('../include/inc_html_head.html')
+    <title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        @@include('../include/inc_header.html')
+        <!--  sub container -->
+        <div class="container inner_cont">
+            <!-- snb -->
+            @@include('../include/inc_snb.html')
+            <!-- //snb -->
+            <div class="contents">
+                <!-- title -->
+                <div class="title_box">
+                    <h4 class="page_title">전체</h4>
+                    
+                    <div class="search_wrap board">
+                        <input class="board_search_input" placeholder="검색하기" type="text">
+                        <a href="#none" class="btn_find"></a>
+                        <a href="#none" class="btn_clear"></a>
+                        <a href="#none" class="btn_filter"></a>
+                        @@include('../include/inc_datePicker_type3.html')
+                    </div>
+                </div>
+                <!-- /title -->
+                <!-- sub contents -->
+                <!-- 등록된 게시물이 없을 때 -->
+                <div class="empty_box">
+                    <figure class="empty no_data"></figure>
+                    <p class="strength">
+                        <strong>등록된 게시물</strong>이 없습니다.
+                    </p>
+                </div>
+                <!-- /등록된 게시물이 없을 때 -->
+                <!-- / sub contents -->
+            </div>
+        </div>
+        <!-- //sub container -->
+        <!-- footer -->
+        @@include('../include/inc_footer.html')
+    </div>
+  </body>
+
+</html>

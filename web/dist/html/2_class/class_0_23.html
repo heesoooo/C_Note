@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=1200">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+
+    <!-- 교사 발급 계정 일괄 생성 popup -->
+    <div class="modal pop_member_info" id="createAllAccount">
+        <div class="modal_content w720">
+            <a href="#none" class="modal_close" data-dismiss="modal"><i class="sprite_comm sp_ico_close_pop"></i></a>
+            <h4 class="pop_title mb40">교사 발급 계정 일괄 생성</h4>
+
+
+            <ol class="create_all_account">
+                <li>1. 엑셀 파일을 다운로드 받습니다.</li>
+                <li>
+                    2. 아래 규칙에 맞게 엑셀에 입력해주세요.
+
+                    <div class="rule_box">
+                        <ul>
+                            <li>반 번호 : 1~99까지 입력 가능 </li>
+                            <li>이름 : 한글, 영문 소문자 10자 이내</li>
+                            <li>아이디 : 영문 소문자 10자 이내</li>
+                            <li>비밀번호 숫자 4~8자리</li>
+                        </ul>
+                    </div>
+                    <div class="btn_half mt20 bor_b">
+                        <a href="#none" class="btn medium outline">엑셀 파일 다운로드</a>
+                        <input type="file" class="input_file_button" id="registFile">
+                        <label for="registFile" class="btn medium outline">파일 업로드</label>
+                    </div>
+                
+                </li>
+                <li>
+                    3. 유효성 결과를 확인하고 수정해주세요.
+                    <p class="total">총 <span>99</span>건</p>
+                    
+                    <div class="tbl_wrap scroll_box">
+                        <table cellpadding="0" cellspacing="0">
+                            <!-- 220720 :: col 너비 변경되었습니다. -->
+                            <colgroup>
+                                <col style="width:13%">
+                                <col style="width:27%">
+                                <col style="width:30%">
+                                <col style="width:15%">
+                                <col style="width:15%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">반 번호</th>
+                                    <th scope="col">이름</th>
+                                    <th scope="col">아이디</th>
+                                    <th scope="col">비밀번호 <a href="#none" class="password_view">비밀번호 보기/숨기기</a></th>
+                                    <th scope="col">삭제</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="row"><input type="number" value="9" class="class_num"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text" value="chunjaechun"></td>
+                                    <td>
+                                        <input type="password" value="1234567" class="inp_error password"><!-- 220720 :: 잘못입력된 인풋에 .inp_error 추가해주세요 -->
+                                        <div class="error_msg">
+                                            <span>
+                                                잘못 입력되었습니다.
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td><a href="#none" class="btn">삭제</a></td>
+                                </tr>
+                                <tr> 
+                                    <td scope="row">
+                                        <input type="number" value="99" class="class_num inp_error"><!-- 220720 :: 잘못입력된 인풋에 .inp_error 추가해주세요 -->
+                                        <div class="error_msg">
+                                            <span>
+                                                잘못 입력되었습니다.
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td><input type="text" value="이름"></td>
+                                    <td><input type="text" value="chunjae5"></td>
+                                    <td><input type="password" value="asdfqwer" class="password"></td>
+                                    <td><a href="#none" class="btn">삭제</a></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row"><input type="number" value="3" class="class_num"></td>
+                                    <td><input type="text" value="이름"></td>
+                                    <td><input type="text" value="chunjae6"></td>
+                                    <td><input type="password" value="******" class="password"></td>
+                                    <td><a href="#none" class="btn">삭제</a></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row"><input type="number" value="4" class="class_num"></td>
+                                    <td><input type="text" value="이름"></td>
+                                    <td><input type="text" value="chunjae1"></td>
+                                    <td><input type="password" value="******" class="password"></td>
+                                    <td><a href="#none" class="btn">삭제</a></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row"><input type="number" value="5" class="class_num"></td>
+                                    <td><input type="text" value="이름"></td>
+                                    <td><input type="text" value="chunjae2"></td>
+                                    <td><input type="password" value="******" class="password"></td>
+                                    <td><a href="#none" class="btn">삭제</a></td>
+                                </tr>
+                                <tr>
+                                    <td scope="row"><input type="number" value="6" class="class_num"></td>
+                                    <td><input type="text"></td>
+                                    <td><input type="text" value="chunjaechun"></td>
+                                    <td><input type="password" value="******" class="password"></td>
+                                    <td><a href="#none" class="btn">삭제</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </li>
+            </ol>
+            <div class="btn_full">
+                <a href="#none" class="btn medium disabled">저장</a> <!-- 수정완료시 .disabled 제거 -->
+            </div>
+        </div>
+    </div>
+    <script>
+        // 교사 발급 계정 일괄 생성
+        $("#createAllAccount").modal({show:true});
+
+        // 220720 비밀번호 숨김 토글
+        $(".password_view").on("click", function(e){
+            e.preventDefault();
+            $(this).toggleClass('off');
+        })
+    </script>
+    <!-- /교사 발급 계정 일괄 생성 popup -->
+
+    
+
+</body>
+
+</html>

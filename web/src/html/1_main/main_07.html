@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('../include/inc_html_head.html')
+    <title>우리반티셀파 - 메인</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        @@include('../include/inc_header.html')
+
+        <!-- contents -->
+        <div class="container inner_cont">
+            <div class="contents">
+                <!-- title -->
+                <div class="title_box">
+                    <h4 class="page_title">클래스, 학교 검색</h4>
+                    <div class="inner">
+                        <div class="main_search_wrap mt45">
+                            <div class="input_full">
+                                <input type="text" placeholder="클래스, 학교찾기">
+                                <a href="#none" class="btn_clear"></a>
+                                <a href="#none" class="btn_find"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /title -->
+
+                <!-- sub contents -->
+                <div class="search_result">
+                    <div class="result_search_line">
+                        <p><strong>‘가산초’</strong> 검색 결과 총 54건</p>
+                    </div>
+                    <!-- class tab -->
+                    <div class="main_search_tab">
+                        <a href="#none" class="tab_links active">클래스(54)</a>
+                        <a href="#none" class="tab_links">학교(9)</a>
+                    </div>
+                    <!-- /class tab -->
+
+                    <!-- tabcontent -->
+                    <ul class="main_search_list tabcontent">
+                        <li>
+                            <div class="flex_start_center">
+                                <figure class="profile">
+                                    <!-- <img src="../../img/profile_test.jpg" alt=""> -->
+                                </figure>
+                                <div class="info">
+                                    <p class="class">서울 <span>가산초</span>등학교 1학년 2반</p>
+                                    <p class="class_info">
+                                        구성원 22명
+                                        <span class="bar"></span>
+                                        김*재 선생님
+                                        <span class="bar"></span>
+                                        2022
+                                    </p>
+                                </div>
+                            </div>
+                            <a href="#none" class="btn medium">가입</a>
+                        </li>
+                        <li>
+                            <div class="flex_start_center">
+                                <figure class="profile">
+                                    <!-- <img src="../../img/profile_test.jpg" alt=""> -->
+                                </figure>
+                                <div class="info">
+                                    <p class="class">서울 <span>가산초</span>등학교 1학년 4반</p>
+                                    <p class="class_info">
+                                        구성원 22명
+                                        <span class="bar"></span>
+                                        김*재 선생님
+                                        <span class="bar"></span>
+                                        2022
+                                    </p>
+                                </div>
+                            </div>
+                            <a href="#none" class="btn medium waiting">가입 대기 중</a>
+                        </li>
+                        <li>
+                            <div class="flex_start_center">
+                                <figure class="profile">
+                                    <!-- <img src="../../img/profile_test.jpg" alt=""> -->
+                                </figure>
+                                <div class="info">
+                                    <p class="class">서울 <span>가산초</span>등학교 1학기 전교어린이회</p>
+                                    <p class="class_info">
+                                        구성원 22명
+                                        <span class="bar"></span>
+                                        김*재 선생님
+                                        <span class="bar"></span>
+                                        2022
+                                    </p>
+                                </div>
+                            </div>
+                            <a href="#none" class="btn medium myclass">내 클래스</a>
+                        </li>
+                        <li>
+                            <div class="flex_start_center">
+                                <figure class="profile">
+                                    <!-- <img src="../../img/profile_test.jpg" alt=""> -->
+                                </figure>
+                                <div class="info">
+                                    <p class="class">서울 <span>가산초</span>등학교 1학기 전교어린이회</p>
+                                    <p class="class_info">
+                                        구성원 22명
+                                        <span class="bar"></span>
+                                        김*재 선생님
+                                        <span class="bar"></span>
+                                        2022
+                                    </p>
+                                </div>
+                            </div>
+                            <a href="#none" class="btn medium">가입</a>
+                        </li>
+                    </ul>
+                    <!--// tabcontent -->
+
+                </div>
+                <!-- /sub contents -->
+
+            </div>
+        </div>
+        <!-- /contents -->
+
+        <!-- footer -->
+        @@include('../include/inc_footer.html')
+
+
+        <!-- popup -->
+        <div class="modal" id="joinRequest">
+            <div class="modal_content w430">
+                <a href="#none" class="modal_close" data-dismiss="modal"><i
+                        class="sprite_comm sp_ico_close_pop"></i></a>
+                <div class="pop_title">클래스 가입 요청
+                </div>
+                <p class="pop_txt ft16 mt30">자녀의 이름(본명)을 입력하세요.</p>
+                <div class="input_full mt15">
+                    <input placeholder="자녀 이름" type="text">
+                </div>
+
+                <div class="search_child_list mt25">
+                    <p class="pop_txt ft16 mt40">자녀와 관계를 선택해 주세요.</p>
+                    <div class="flex_between_start mt15">
+                        <label class="radio_button">
+                            <input type="radio" name="radio_btn">
+                            <span>아버지</span>
+                        </label>
+                        <label class="radio_button">
+                            <input type="radio" name="radio_btn">
+                            <span>어머니</span>
+                        </label>
+                        <label class="radio_button">
+                            <input type="radio" name="radio_btn">
+                            <span>기타 보호자</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="btn_half mt40">
+                    <!-- 버튼 활성화 시 disabled 삭제-->
+                    <a href="#none" class="btn medium outline">취소</a>
+                    <a href="#none" class="btn medium disabled">가입요청</a>
+                </div>
+            </div>
+        </div>
+        <!--// popup -->
+    </div>
+    <script>
+        $('#joinRequest').modal({
+            show: true
+        });
+    </script>
+</body>
+
+</html>

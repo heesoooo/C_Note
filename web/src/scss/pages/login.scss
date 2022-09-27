@@ -1,0 +1,303 @@
+@import "../component/_mixin";
+.contents {
+	.title_box {
+		.page_title {
+			&.login_title {
+				margin-bottom: 42px;
+			}
+		}
+	}
+}
+.login_box {
+	width: 900px;
+	margin: 0 auto;
+	padding: 41px 0 50px;
+	border: 1px solid $gray_e0;
+	border-radius: 20px;
+	text-align: center;
+	h3 {
+		font-size: 23px;
+		font-weight: $font_weight_bold;
+		letter-spacing: -.92px;
+		&.login_sns {
+			font-size: 24px;
+			letter-spacing: -.96px;
+		}
+	}
+	.welcome {
+		margin-top: 6px;
+		color: $gray_66;
+		font-size: 14px;
+		line-height: 20px;
+		letter-spacing: -.35px;
+	}
+}
+.login_inner {
+	width: 350px;
+	margin: 0 auto;
+	
+	.login_field {
+		margin: 27px 0 10px;
+	}
+	.check_box {
+		width: 120px;
+		text-align: left;
+		input[type=checkbox]+label {
+			padding-left: 30px;
+			color: $gray_66;
+			font-size: 13px;
+			letter-spacing: -.33px;
+		}
+	}
+	> .btn_full {
+		margin-top: 21px;
+		a {
+			font-size: 16px;
+			font-weight: $font_weight_medium;
+			letter-spacing: -.32px;
+		}
+	}
+}
+.login_sns {
+	padding-bottom: 4px;
+}
+.btn_sns_list {
+	.btn {
+		font-size: 16px;
+		&.naver_login {
+			color: #fefefe;
+			letter-spacing: -.32px;
+			background-color: #42be6f;
+		}
+		&.kakao_login {
+			color: #191919;
+			background-color: #fee22b;
+		}
+		i {
+			margin-right: 4px;
+		}
+	}
+}
+.btn_login {
+	display: block;
+	color:  $gray_99;
+	&.btn_find_account {
+		margin-top: 25px;
+		font-size: 14.5px;
+		letter-spacing: -.36px;
+	}
+	&.btn_show_terms {
+		margin-left: 11px;
+		padding-bottom: 2px;
+		font-size: 15px;
+		letter-spacing: -.15px;
+	}
+	> span {
+		border-bottom: 1px solid $gray_99;
+	}
+}
+
+// 학부모 회원가입
+.container {
+	.contents {
+		.title_box {
+			&.create_login_title {
+				margin-bottom: 83px;
+			}
+		}
+	}
+}
+.create_login_inner {
+	width: 740px;
+	margin: 0 auto;
+}
+.form_create_login {
+	.info_dec {
+		margin-bottom: 54px;
+		> .tit {
+			display: block;
+			margin-bottom: 7px;
+			font-size: 18px;
+			letter-spacing: -.18px;
+		}
+		.input_full {
+			input {
+				&:disabled {
+					background-color: $gray_f2;
+				}
+			}
+		}
+	}
+	.phone_wrap {
+		@include flexbox(between, center);
+		input {
+			width: calc(100% - 146px);
+		}
+		> .btn {
+			width: 136px;
+			margin-left: 10px;
+			padding: 0;
+		}
+	}
+	.check_box {
+		@include flexbox(center, center);
+		padding-top: 5px;
+		text-align: center;
+		input[type=checkbox]+label {
+			padding-left: 35px;
+			font-size: 16px;
+			letter-spacing: -.16px;
+		}
+	}
+	.text_guide {
+		margin: 13px 0 57px;
+		color: $point;
+		font-size: 15px;
+		text-align: center;
+		letter-spacing: -.15px;
+	}
+	.join_num_wrap {
+		input[type=text] {
+			margin: 13px 0 54px;
+		}
+	}
+	.btn_half {
+		a {
+			letter-spacing: -.18px;
+		}
+	}
+}
+// 회원가입 완료
+.join_finish_box {
+	.join_finish {
+		height: 145px;
+		background-image: url(../../img/ico_board_no.png);
+		+p {
+			&.strength {
+				margin: 61px 0 43px;
+				line-height: 40px;
+				letter-spacing: -.6px;
+				font-weight: $font_weight_bold;
+			}
+		}
+	}
+	.btn {
+		width: 240px;
+		letter-spacing: -.18px;
+	}
+}
+
+// 로그인전 메인
+.container {
+	&.before_login {
+		padding: 0;
+		background: url(../../img/before_login_bg.png) no-repeat 50% 0;
+		width: 100%; min-width: 1240px;
+		min-height: 1038px;
+		.title_box  {
+			margin-top: 140px;
+			margin-bottom: 103px;
+			.page_title {
+				font-size: 40px;
+				line-height: 1;
+				span {
+					display: block;
+					margin-bottom: 22px;
+					font-size: 24px;
+					font-weight: $font_weight_medium;
+					letter-spacing: -0.24px;
+					color: $gray_66;
+				}
+				em {
+					font-style: normal;
+					color: $primary;
+				}
+			}
+		}
+		.login_type_box {
+			@include flexbox(center, center);
+		}
+		.box_type {
+			@include flexbox(start, center);
+			flex-direction: column;
+			margin: 0 15px;
+			padding: 0 35px;
+			width: 360px;
+			height: 410px;
+			border-width: 1px;
+			border-style: solid;
+			border-radius: 20px;
+			text-align: center;
+			background-color: $white;
+			transition-delay: .5s;
+			transition: all .3s;
+			&:hover {
+				transform: translateY(-30px);
+				box-shadow: 0px 35px 25px 0 var(--box-shadow-color);
+			}
+			.mem_type {
+				margin: 27px 0 11px;
+				font-size: 30px;
+				font-weight: $font_weight_bold;
+				line-height: 1;
+				letter-spacing: -.18px;
+			}
+			.desc {
+				font-size: 18px;
+				line-height: 24px;
+				color: $gray_99;
+			}
+			.btn {
+				margin-top: 34px;
+				font-size: 20px;
+				box-shadow: none;
+			}
+			&.teacher {
+				padding-top: 51px;
+				border-color: $primary;
+				--box-shadow-color: rgba(98, 85, 246, 0.15);
+				.mem_type{color: $primary;}
+				.btn {background-color: $primary;}
+			}
+			&.parent {
+				padding-top: 50px;
+				border-color: #02c3c5;
+				--box-shadow-color: rgba(1, 228, 220, 0.15);
+				.mem_type{margin-top: 30px;color: #02c3c5;}
+				.btn {margin-top: 36px;background-color: #02c3c5;}
+			}
+			&.student {
+				padding-top: 34px;
+				border-color: $point;
+				--box-shadow-color: rgba(255, 97, 175, 0.15);
+				.mem_type{margin-top: 32px;color: $point;}
+				.btn {margin-top: 37px;background-color: $point;}
+			}
+		}
+	}
+}
+// 나의 sns 계정 찾기
+.sns_found_field {
+    margin: 25px 0 38px;
+    input {
+        &:disabled {
+            color: $gray_e0;
+            background-color: $gray_f2;
+        }
+    }
+    .flex_between_start {
+        .btn{
+            &.h50 {
+                min-width: 84px;
+                padding: 0;
+            }
+        }
+    }
+}
+// 나의 sns 계정찾기 완료
+.found_sns {
+    margin: 20px 0 27px;
+    color: $gray_66;
+    font-size: 17px;
+    letter-spacing: -.17px;
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=1200">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+	<title>우리반티셀파 - 서브</title>
+</head>
+<body>
+
+    <!-- 교사 발급 계정 만들기 (학생) popup -->
+
+    <!-- 220714 :: backdrop 클릭시 팝업창 닫히지 않게 하려면 .modal에 .click_dimm_none 추가해주세요  -->
+    <div class="modal pop_member_info click_dimm_none" id="createNewAccount">
+        <div class="modal_content w470">
+            <a href="#none" class="modal_close" data-dismiss="modal"><i class="sprite_comm sp_ico_close_pop"></i></a>
+            <h4 class="pop_title mb40">교사 발급 계정 만들기 (학생)</h4>
+            <div class="upload_img">
+                <span class="img">
+                  <!-- <img src="" alt=""> -->
+
+                  <input type="file" class="input_file_button" id="imgEdit">
+                  <label for="imgEdit" class="sprite_comm sp_ico_edit"></label>
+                </span>
+                <a href="#none" class="btn outline mt25"><i class="sprite_comm sp_ico_del_off mr5"></i>삭제</a>
+            </div>
+            <div class="info_dec">
+                <span class="tit">이름</span>
+                <div class="input_full">
+                    <!-- 220818 :: placeholder 숫자 추가 -->
+                    <input type="text" placeholder="한글, 영문, 숫자">
+                </div>
+            </div>
+            <div class="info_dec">
+                <span class="tit">아이디</span>
+                <div class="flex_between_start">
+                    <div class="input_full mr10">
+                        <input type="text" placeholder="영문 소문자, 숫자">
+                    </div>
+                    <a href="#none" class="btn h50">중복확인</a>
+                </div>
+            </div>
+            <div class="info_dec">
+                <span class="tit">아이디</span>
+                <div class="flex_between_start">
+                    <div class="input_full mr10">
+                        <input type="text" value="chunjae" class="error">
+                        <span class="val_check_red">이미 사용중인 아이디입니다 </span>
+                    </div>
+                    <a href="#none" class="btn h50">중복확인</a>
+                </div>
+            </div>
+            <div class="info_dec">
+                <span class="tit">아이디</span>
+                <div class="input_full">
+                    <div class="flex_between_start">
+                        <div class="input_full mr10">
+                            <input type="text" value="chunjae">
+                            <span class="val_check_primary">사용 가능한 아이디입니다. </span>
+                        </div>
+                        <a href="#none" class="btn h50">중복확인</a>
+                    </div>
+                </div>
+            </div>
+            <div class="info_dec">
+                <span class="tit">비밀번호</span>
+                <div class="input_full">
+                    <!-- 220818 :: placeholder 변경 -->
+                    <input type="password" placeholder="영문 소문자, 숫자, 특수기호 4-8자리">
+                </div>
+            </div>
+            <div class="info_dec">
+                <span class="tit">비밀번호 확인</span>
+                <div class="input_full">
+                    <input type="password" value="****" class="error">
+                    <span class="val_check_red">비밀번호가 일치하지 않습니다.</span>
+                </div>
+            </div>
+            <div class="info_dec">
+                <span class="tit">반번호</span>
+                <div class="input_full">
+                    <input type="text" placeholder="숫자">
+                </div>
+            </div>
+
+            <div class="btn_half">
+                <a href="#none" class="btn outline medium">취소</a>
+                <a href="#none" class="btn medium disabled">확인</a> <!-- 입렵완료시 .disabled 제거 -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 교사 발급 계정 만들기 (학생)
+        $("#createNewAccount").modal({
+            show:true
+        });
+    </script>
+    <!-- /교사 발급 계정 만들기 (학생) popup -->
+
+
+</body>
+
+</html>

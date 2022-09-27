@@ -1,0 +1,7 @@
+# Dependency directories
+node_modules/
+program/
+psd/
+*.pptx
+package-lock.json
+index.html

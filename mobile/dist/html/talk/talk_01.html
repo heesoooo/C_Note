@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+	<title>T_TALK</title>
+</head>
+
+<body>
+	<div class="talk_wrap">
+		<!-- header -->
+		<div class="sub_header">
+    <a href="#none" class="btn_sel_class">우리반 선택</a>
+    
+    <div class="btn_wrap"> 
+        <a href="#none" class="btn_search">대화상대 검색</a>
+        <a href="#none" class="btn_timepicker">상담시간 설정</a>
+    </div>
+</div>
+
+<!-- 상담시간 설정 버튼만 있는 경우
+<div class="sub_header right">
+    <a href="#none" class="btn_timepicker">상담시간 설정</a>
+</div> -->
+<div class="sub_expand_tab">
+    <h3>우리반 선택</h3>
+    <ul>
+        <li class="active"><a href="#none">가산초등학교 1학년 1반</a></li>
+        <li><a href="#none">구로초등학교 2학년 1반</a></li>
+        <li><a href="#none">대림초등학교 2학년 3반</a></li>
+        <li><a href="#none">대청초등학교 5학년 4반</a></li>
+        <li><a href="#none">대륜초등학교 5학년 5반</a></li>
+        <li><a href="#none">까치울초등학교 5학년 5반</a></li>
+    </ul>
+</div>
+		<!-- /header -->
+		
+		<!-- nav tab -->
+		<div class="talk_nav_tab">
+			<ul>
+				<li rel="T_Opponent" class="on"><span>대화상대</span></li>
+				<li rel="T_chatList"><span>채팅목록 <em class="new">999+</em></span></li>
+				<li rel="T_callList"><span>통화목록 <em class="new">99</em></span></li>
+			</ul>
+		</div>
+		<!-- /nav tab -->
+	
+		<div class="tab_cont_wrap">			
+			<!-- 대화상대 리스트 -->
+<div class="tab_cont_item" id="T_Opponent">
+    <div class="conversate_list_wrap opponent_list">
+        <!-- 우리반 프로필 -->
+        <div class="class_profile">
+            <figure class="profile">
+                <!-- <img src="" alt=""> -->
+            </figure>
+
+            <div class="class_info">
+                <strong class="tit">가산 초등학교 1학년 1반</strong>
+                <div class="btn_wrap">
+                    <a href="#none" class="btn round outline primary small">1:1 일괄 메시지</a>
+                    <a href="#none" class="btn round outline primary small">전체공지</a>
+                </div>
+            </div>
+        </div>
+        <!-- /우리반 프로필 -->
+        
+        <!-- 가입한 대화 상대가 없을때 -->
+        <!-- <div class="class_no_person">
+            우리반에 가입한 대화 상대가 없습니다.
+        </div> -->
+        <!-- / -->
+
+        <!-- group1 -->
+        <div class="list_item">
+            <div class="list_title">
+                <span class="group_tit">선생님 <em>1</em>명</span>
+            </div>
+            <div class="list_cont">
+                <ul>
+                    <li>
+                        <span class="profile teacher"><!-- <img src="" alt=""> --></span><!-- 선생님 프로필 기본이미지 다름 :: .teacher -->
+                        <span class="name">교생 선생님</span>
+                        <div class="btn_talk_call">
+                            <a href="#none" class="t_talk"><i></i>Talk</a>
+                            <a href="#none" class="t_call block"><i></i>call</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /group1 -->
+        <!-- group2 -->
+        <div class="list_item">
+            <div class="list_title">
+                <span class="group_tit">학생 <em>3</em>명</span>
+            </div>
+            <div class="list_cont">
+                <ul>
+                    <li>
+                        <span class="profile">
+                            <img src="../../img/img_sample.png" alt="">
+                        </span>
+                        <span class="name">박호용 <em class="badge badge_gray_full">15</em></span>
+                        <div class="btn_talk_call">
+                            <a href="#none" class="t_talk"><i></i>Talk</a>
+                            <a href="#none" class="t_call"><i></i>call</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="profile">
+                            <!-- <img src="" alt=""> -->
+                        </span>
+                        <span class="name">이희수 <em class="badge badge_gray_full">17</em></span>
+                        <div class="btn_talk_call">
+                            <a href="#none" class="t_talk"><i></i>Talk</a>
+                            <a href="#none" class="t_call"><i></i>call</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="profile">
+                            <!-- <img src="" alt=""> -->
+                        </span>
+                        <span class="name">권현주 <em class="badge badge_gray_full">1</em></span>
+                        <div class="btn_talk_call">
+                            <a href="#none" class="t_talk"><i></i>Talk</a>
+                            <a href="#none" class="t_call"><i></i>call</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /group2 -->
+        <!-- group3 -->
+        <div class="list_item">
+            <div class="list_title">
+                <span class="group_tit">학부모 <em>10</em>명</span>
+            </div>
+            <div class="list_cont">
+                <ul>
+                    <li>
+                        <span class="profile">
+                            <!-- <img src="" alt=""> -->
+                        </span>
+                        <span class="name">김황 <em class="badge badge_blue">부</em></span>
+                        <div class="btn_talk_call">
+                            <a href="#none" class="t_talk"><i></i>Talk</a>
+                            <a href="#none" class="t_call"><i></i>call</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="profile">
+                            <!-- <img src="" alt=""> -->
+                        </span>
+                        <span class="name">신지민 <em class="badge badge_pink">모</em></span>
+                        <div class="btn_talk_call">
+                            <a href="#none" class="t_talk"><i></i>Talk</a>
+                            <a href="#none" class="t_call"><i></i>call</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="profile">
+                            <!-- <img src="" alt=""> -->
+                        </span>
+                        <span class="name">신진하 <em class="badge badge_gray">기타</em></span>
+                        <div class="btn_talk_call">
+                            <a href="#none" class="t_talk"><i></i>Talk</a>
+                            <a href="#none" class="t_call"><i></i>call</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="profile">
+                            <!-- <img src="" alt=""> -->
+                        </span>
+                        <span class="name">강인준 <em class="badge badge_blue">부</em></span>
+                        <div class="btn_talk_call">
+                            <a href="#none" class="t_talk"><i></i>Talk</a>
+                            <a href="#none" class="t_call"><i></i>call</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="profile">
+                            <!-- <img src="" alt=""> -->
+                        </span>
+                        <span class="name">김홍민 <em class="badge badge_pink">모</em></span>
+                        <div class="btn_talk_call">
+                            <a href="#none" class="t_talk"><i></i>Talk</a>
+                            <a href="#none" class="t_call"><i></i>call</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="profile">
+                            <!-- <img src="" alt=""> -->
+                        </span>
+                        <span class="name">김상민 <em class="badge badge_gray">기타</em></span>
+                        <div class="btn_talk_call">
+                            <a href="#none" class="t_talk"><i></i>Talk</a>
+                            <a href="#none" class="t_call"><i></i>call</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="profile">
+                            <!-- <img src="" alt=""> -->
+                        </span>
+                        <span class="name">조은지 <em class="badge badge_blue">부</em></span>
+                        <div class="btn_talk_call">
+                            <a href="#none" class="t_talk"><i></i>Talk</a>
+                            <a href="#none" class="t_call"><i></i>call</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="profile">
+                            <!-- <img src="" alt=""> -->
+                        </span>
+                        <span class="name">이희준 <em class="badge badge_pink">모</em></span>
+                        <div class="btn_talk_call">
+                            <a href="#none" class="t_talk"><i></i>Talk</a>
+                            <a href="#none" class="t_call"><i></i>call</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="profile">
+                            <!-- <img src="" alt=""> -->
+                        </span>
+                        <span class="name">박초희 <em class="badge badge_gray">기타</em></span>
+                        <div class="btn_talk_call">
+                            <a href="#none" class="t_talk"><i></i>Talk</a>
+                            <a href="#none" class="t_call"><i></i>call</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="profile">
+                            <!-- <img src="" alt=""> -->
+                        </span>
+                        <span class="name">윤석배 <em class="badge badge_gray">기타</em></span>
+                        <div class="btn_talk_call">
+                            <a href="#none" class="t_talk"><i></i>Talk</a>
+                            <a href="#none" class="t_call"><i></i>call</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /group3 -->
+    </div>
+</div>
+<!-- //대화상대 리스트 -->
+			
+<!-- 대화목록 리스트 -->
+<div class="tab_cont_item" id="T_chatList">
+	<div class="conversate_list_wrap chat_list">
+		<!-- group1 -->
+		<div class="list_item">
+			<div class="list_title">
+				<span class="group_tit">상단 고정 목록</span>
+			</div>
+			<div class="list_cont">
+				<ul>
+					<li>
+						<span class="profile notice"> <!-- 공지방일 경우 .notice 추가 -->
+							<!-- <img src="" alt=""> -->
+						</span>
+						<div class="info">
+							<div class="col">
+								<span class="name">
+									<span>학생 학부모 공지방</span>
+								</span>
+								<span class="chat">
+									선생님 내일 등교하나요?
+								</span>
+							</div>
+							<div class="time_count">
+								<span class="time">방금전</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<span class="profile notice"> <!-- 공지방일 경우 .notice 추가 -->
+							<!-- <img src="" alt=""> -->
+						</span>
+						<div class="info">
+							<div class="col">
+								<span class="name">
+									<span>학생 공지방</span>
+								</span>
+								<span class="chat">
+									내일 미술 시간 준비물 알려드립니다 물감, 연필, 파레트 붓 파스텔 색연필 물통
+								</span>
+							</div>
+							<div class="time_count">
+								<span class="time">5분전</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<span class="profile notice"> <!-- 공지방일 경우 .notice 추가 -->
+							<!-- <img src="" alt=""> -->
+						</span>
+						<div class="info">
+							<div class="col">
+								<span class="name">
+									<span>학생 학부모 공지방</span>
+								</span>
+								<span class="chat">
+									선생님 내일 등교하나요?
+								</span>
+							</div>
+							<div class="time_count">
+								<span class="time">1시간전</span>
+								<span class="count">999+</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- /group1 -->
+		
+		<!-- group2 -->
+		<div class="list_item">
+			<div class="list_title">
+				<span class="group_tit">채딩 목록</span>
+			</div>
+			<div class="list_cont">
+				<ul>
+					<li>
+						<span class="profile">
+							<!-- <img src="" alt=""> -->
+						</span>
+						<div class="info">
+							<div class="col">
+								<span class="name">
+									<span>김지언, 박초희, 김지언, 박초희</span><em class="num">2</em>
+								</span>
+								<span class="chat">
+									선생님 내일 수학 준비물
+								</span>
+							</div>
+							<div class="time_count">
+								<span class="time">4.13</span>
+								<span class="count">28</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<span class="profile">
+							<!-- <img src="" alt=""> -->
+						</span>
+						<div class="info">
+							<div class="col">
+								<span class="name">
+									<span>김지언, 박초희, 김지언, 박초희</span><em class="num">2</em>
+								</span>
+								<span class="chat">
+									선생님 내일 수학 준비물 무엇인가요? 각도기, 자, 연필이
+								</span>
+							</div>
+							<div class="time_count">
+								<span class="time">4월 13일</span>
+								<span class="count">28</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<span class="profile">
+							<!-- <img src="" alt=""> -->
+						</span>
+						<div class="info">
+							<div class="col">
+								<span class="name">
+									<span>교생 선생님</span>
+									<em class="badge badge_gray_full">15</em>
+								</span>
+								<span class="chat">
+									환한 네 미소처럼. 넌 날 빛나게 해. 존재만으로 환한 네 미소처럼. 넌 날 빛나게 해. 넌 날 빛나게 해. 넌 날 빛나게 해
+								</span>
+							</div>
+							<div class="time_count">
+								<span class="time">68분전</span>
+								<span class="count">28</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- /group2 -->					
+		
+		<!-- 상단 고정목록이 없는 경우 -->
+		<div class="list_item">
+			<div class="list_cont">
+				<ul>
+					<li>
+						<span class="profile notice"> <!-- 공지방일 경우 .notice 추가 -->
+							<!-- <img src="" alt=""> -->
+						</span>
+						<div class="info">
+							<div class="col">
+								<span class="name">학부모 공지방</span>
+								<span class="chat">
+									선생님 내일 등교하나요?
+								</span>
+							</div>
+							<div class="time_count">
+								<span class="time">방금전</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<span class="profile notice"> <!-- 공지방일 경우 .notice 추가 -->
+							<!-- <img src="" alt=""> -->
+						</span>
+						<div class="info">
+							<div class="col">
+								<span class="name">
+									<span>학부모 공지방</span>
+								</span>
+								<span class="chat">
+									선생님 내일 등교하나요?
+								</span>
+							</div>
+							<div class="time_count">
+								<span class="time">방금전</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<span class="profile">
+							<!-- <img src="" alt=""> -->
+						</span>
+						<div class="info">
+							<div class="col">
+								<span class="name">
+									<span>정재훈, 김지영, 고인돌</span>
+									<em class="num">3</em>
+								</span>
+								<span class="chat">
+									선생님 내일 수학 준비물 무엇인가요? 각도기, 자, 연필이선생님 내일 수학 준비물 무엇인가요? 각도기, 자, 연필이
+								</span>
+							</div>
+							<div class="time_count">
+								<span class="time">방금전</span>
+								<span class="count">999+</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<span class="profile">
+							<!-- <img src="" alt=""> -->
+						</span>
+						<div class="info">
+							<div class="col">
+								<span class="name">
+									<span>정재훈, 김지영, 고인돌</span>
+									<em class="num">3</em>
+								</span>
+								<span class="chat">
+									선생님 내일 수학 준비물 무엇인가요? 각도기, 자, 연필이
+								</span>
+							</div>
+							<div class="time_count">
+								<span class="time">방금전</span>
+								<span class="count">99+</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<span class="profile">
+							<!-- <img src="" alt=""> -->
+						</span>
+						<div class="info">
+							<div class="col">
+								<span class="name">
+									<span>정재훈, 김지영, 고인돌</span>
+									<em class="num">3</em>
+								</span>
+								<span class="chat">
+									선생님 내일 수학 준비물 무엇인가요? 각도기, 자, 연필이
+								</span>
+							</div>
+							<div class="time_count">
+								<span class="time">방금전</span>
+								<span class="count">99+</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- /상단 고정목록이 없는 경우 -->
+	</div>
+</div>
+<!-- //대화목록 리스트 -->
+			
+<!-- 통화목록 리스트 -->
+<div class="tab_cont_item" id="T_callList">
+	<div class="conversate_list_wrap call_list">
+		<div class="list_item">
+			<div class="list_cont">
+				<ul>
+					<li>
+						<span class="call_status incoming_call"> <!-- 수신 .incoming_call -->
+							수신
+						</span>
+						<div class="info">
+							<span class="name">교생 선생님</span>
+							<em class="school_info">가산가산 초등학교 1학년 1반</em>
+						</div>
+						<div class="time_wrap">
+							<span class="time">오전 8:27</span>
+							<a href="#none" class="btn_detail_call">통화내역 상세 버튼</a>
+						</div>
+					</li>
+					<li>
+						<span class="call_status outgoing_call"> <!-- 수신 .outgoing_call -->
+							발신
+						</span>
+						<div class="info">
+							<span class="name">신지민 <em class="badge badge_pink">모</em></span>
+							<em class="school_info">가산 초등학교 1학년 1반</em>
+						</div>
+						<div class="time_wrap">
+							<span class="time">오전 8:27</span>
+							<a href="#none" class="btn_detail_call">통화내역 상세 버튼</a>
+						</div>
+					</li>
+					<li>
+						<span class="call_status missed_call"> <!-- 부재중 .missed_call -->
+							부재중
+						</span>
+						<div class="info">
+							<div class="info">
+								<span class="name">신지민 <em class="badge badge_blue">부</em></span>
+								<em class="school_info">가산 초등학교 1학년 1반</em>
+							</div>
+						</div>
+						<div class="time_wrap">
+							<span class="time">오전 8:27</span>
+							<a href="#none" class="btn_detail_call">통화내역 상세 버튼</a>
+						</div>
+					</li>
+					<li>
+						<span class="call_status incoming_call"> <!-- 수신 .incoming_call -->
+							수신
+						</span>
+						<div class="info">
+							<span class="name">교생 선생님</span>
+							<em class="school_info">가산 초등학교 1학년 1반</em>
+						</div>
+						<div class="time_wrap">
+							<span class="time">오후 5:40</span>
+							<a href="#none" class="btn_detail_call">통화내역 상세 버튼</a>
+						</div>
+					</li>
+					<li>
+						<span class="call_status outgoing_call"> <!-- 수신 .outgoing_call -->
+							발신
+						</span>
+						<div class="info">
+							<span class="name">신지민 <em class="badge badge_pink">모</em></span>
+							<em class="school_info">가산 초등학교 1학년 1반</em>
+						</div>
+						<div class="time_wrap">
+							<span class="time">오후 5:40</span>
+							<a href="#none" class="btn_detail_call">통화내역 상세 버튼</a>
+						</div>
+					</li>
+					<li>
+						<span class="call_status missed_call"> <!-- 부재중 .missed_call -->
+							부재중
+						</span>
+						<div class="info">
+							<div class="info">
+								<span class="name">신지민 <em class="badge badge_blue">부</em></span>
+								<em class="school_info">가산 초등학교 1학년 1반</em>
+							</div>
+						</div>
+						<div class="time_wrap">
+							<span class="time">어제</span>
+							<a href="#none" class="btn_detail_call">통화내역 상세 버튼</a>
+						</div>
+					</li>
+					<li>
+						<span class="call_status incoming_call"> <!-- 수신 .incoming_call -->
+							수신
+						</span>
+						<div class="info">
+							<span class="name">교생 선생님</span>
+							<em class="school_info">가산 초등학교 1학년 1반</em>
+						</div>
+						<div class="time_wrap">
+							<span class="time">오후 5:40</span>
+							<a href="#none" class="btn_detail_call">통화내역 상세 버튼</a>
+						</div>
+					</li>
+					<li>
+						<span class="call_status outgoing_call"> <!-- 수신 .outgoing_call -->
+							발신
+						</span>
+						<div class="info">
+							<span class="name">신지민 <em class="badge badge_pink">모</em></span>
+							<em class="school_info">가산 초등학교 1학년 1반</em>
+						</div>
+						<div class="time_wrap">
+							<span class="time">오후 5:40</span>
+							<a href="#none" class="btn_detail_call">통화내역 상세 버튼</a>
+						</div>
+					</li>
+					<li>
+						<span class="call_status missed_call"> <!-- 부재중 .missed_call -->
+							부재중
+						</span>
+						<div class="info">
+							<div class="info">
+								<span class="name">신지민 <em class="badge badge_blue">부</em></span>
+								<em class="school_info">가산 초등학교 1학년 1반</em>
+							</div>
+						</div>
+						<div class="time_wrap">
+							<span class="time">어제</span>
+							<a href="#none" class="btn_detail_call">통화내역 상세 버튼</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- 녹음 목록 이동 버튼 -->
+		<a href="#" class="btn_record_list">녹음 목록 이동 버튼</a>
+		<!-- /녹음 목록 이동 버튼 -->
+	</div>
+</div>
+<!-- //통화목록 리스트 -->
+		</div>
+		<div class="main_tab_bar">
+    <ul>
+        <li class="tab_main on"><a href="#none"><i class="sprite_comm sp_ico_tab_main_off"></i>홈</a></li>
+        <li class="tab_class"><a href="#none"><i class="sprite_comm sp_ico_tab_class_off"></i>우리반</a></li>
+        <li class="tab_talk"><a href="#none"><i class="sprite_comm sp_ico_tab_talk_off "></i>T톡</a></li>
+        <li class="tab_schedule"><a href="#none"><i class="sprite_comm sp_ico_tab_schedule_off"></i>일정</a></li>
+        <li class="tab_more"><a href="#none"><i class="sprite_comm sp_ico_tab_more_off"></i>더보기</a></li>
+    </ul>
+</div>
+	</div>
+	
+
+	<script>
+		$(function(){
+			mo_talk.navTab();
+			mo_talk.selectClass();
+		});
+	</script>
+	
+</body>
+
+</html>

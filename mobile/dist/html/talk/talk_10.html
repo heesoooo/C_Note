@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+    <title>T_TALK</title>
+</head>
+
+<body>
+    <div class="talk_wrap">
+        <!-- header -->
+        <div class="search_header">
+            <a href="#none" class="history_back">뒤로가기</a>
+            <div class="search_wrap">
+                <input type="text" placeholder="이름 검색">
+                <a href="#none" class="btn_clear"></a>
+            </div>
+            <a href="#none" class="btn_search">검색</a>
+        </div>
+        <!-- //header -->
+
+        <!-- 이름검색 -->
+        <div class="container search_name_wrap">
+            <div class="conversate_list_wrap chat_list">
+               
+                <!-- 검색 전 / 후 결과없을시 -->
+                <div class="class_no_person">
+                    이름을 검색하세요.<br>
+                    검색 결과가 없습니다.
+                </div>
+                <!-- / -->
+
+                <div class="list_item">
+                    <div class="list_cont">
+                        <ul>
+                            <li>
+                                <span class="profile notice">
+                                    <!-- 공지방일 경우 .notice 추가 -->
+                                    <!-- <img src="" alt=""> -->
+                                </span>
+                                <div class="info">
+                                    <div class="col">
+                                        <span class="name">학부모 공지방</span>
+                                        <span class="chat">
+                                            선생님 내일 등교하나요?
+                                        </span>
+                                    </div>
+                                    <div class="time_count">
+                                        <span class="time">방금전</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="profile notice">
+                                    <!-- 공지방일 경우 .notice 추가 -->
+                                    <!-- <img src="" alt=""> -->
+                                </span>
+                                <div class="info">
+                                    <div class="col">
+                                        <span class="name">
+                                            <span>학부모 공지방</span>
+                                        </span>
+                                        <span class="chat">
+                                            선생님 내일 등교하나요?
+                                        </span>
+                                    </div>
+                                    <div class="time_count">
+                                        <span class="time">방금전</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="profile">
+                                    <!-- <img src="" alt=""> -->
+                                </span>
+                                <div class="info">
+                                    <div class="col">
+                                        <span class="name">
+                                            <span>정재훈, 김지영, 고인돌</span>
+                                            <em class="num">3</em>
+                                        </span>
+                                        <span class="chat">
+                                            선생님 내일 수학 준비물 무엇인가요? 각도기, 자, 연필이선생님 내일 수학 준비물 무엇인가요? 각도기, 자, 연필이
+                                        </span>
+                                    </div>
+                                    <div class="time_count">
+                                        <span class="time">방금전</span>
+                                        <span class="count">999+</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="profile">
+                                    <!-- <img src="" alt=""> -->
+                                </span>
+                                <div class="info">
+                                    <div class="col">
+                                        <span class="name">
+                                            <span>정재훈, 김지영, 고인돌</span>
+                                            <em class="num">3</em>
+                                        </span>
+                                        <span class="chat">
+                                            선생님 내일 수학 준비물 무엇인가요? 각도기, 자, 연필이
+                                        </span>
+                                    </div>
+                                    <div class="time_count">
+                                        <span class="time">방금전</span>
+                                        <span class="count">99+</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="profile">
+                                    <!-- <img src="" alt=""> -->
+                                </span>
+                                <div class="info">
+                                    <div class="col">
+                                        <span class="name">
+                                            <span>정재훈, 김지영, 고인돌</span>
+                                            <em class="num">3</em>
+                                        </span>
+                                        <span class="chat">
+                                            선생님 내일 수학 준비물 무엇인가요? 각도기, 자, 연필이
+                                        </span>
+                                    </div>
+                                    <div class="time_count">
+                                        <span class="time">방금전</span>
+                                        <span class="count">99+</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="profile">
+                                    <!-- <img src="" alt=""> -->
+                                </span>
+                                <div class="info">
+                                    <div class="col">
+                                        <span class="name">
+                                            <span>김지언, 박초희, 김지언, 박초희</span><em class="num">2</em>
+                                        </span>
+                                        <span class="chat">
+                                            선생님 내일 수학 준비물
+                                        </span>
+                                    </div>
+                                    <div class="time_count">
+                                        <span class="time">4.13</span>
+                                        <span class="count">28</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="profile">
+                                    <!-- <img src="" alt=""> -->
+                                </span>
+                                <div class="info">
+                                    <div class="col">
+                                        <span class="name">
+                                            <span>김지언, 박초희, 김지언, 박초희</span><em class="num">2</em>
+                                        </span>
+                                        <span class="chat">
+                                            선생님 내일 수학 준비물 무엇인가요? 각도기, 자, 연필이
+                                        </span>
+                                    </div>
+                                    <div class="time_count">
+                                        <span class="time">4월 13일</span>
+                                        <span class="count">28</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="profile">
+                                    <!-- <img src="" alt=""> -->
+                                </span>
+                                <div class="info">
+                                    <div class="col">
+                                        <span class="name">
+                                            <span>교생 선생님</span>
+                                            <em class="badge badge_gray_full">15</em>
+                                        </span>
+                                        <span class="chat">
+                                            환한 네 미소처럼. 넌 날 빛나게 해. 존재만으로 환한 네 미소처럼. 넌 날 빛나게 해. 넌 날 빛나게 해. 넌 날 빛나게 해
+                                        </span>
+                                    </div>
+                                    <div class="time_count">
+                                        <span class="time">68분전</span>
+                                        <span class="count">28</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

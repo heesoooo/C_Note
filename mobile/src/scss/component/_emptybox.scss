@@ -1,0 +1,62 @@
+﻿// 가입 완료 및 데이터 없을 때 화면
+.empty_box {
+    text-align: center;
+    .empty {
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        margin-top: 8rem;
+        &.leave {
+            background-image: url('../../img/img_leave.png');
+            height: 13.2rem;
+        }
+        &.class {
+            background-image: url('../../img/img_class.png');
+            height: 13.2rem;
+        }
+        &.join_finish {
+            background-image: url('../../img/img_class_02.png');
+            height: 13.2rem;
+        }
+    }
+    .empty_msg {
+        margin-top: 3.8rem;
+        font-size: 1.8rem;
+        font-weight: $font_weight_medium;
+        text-align: center;
+        color: $black;
+    }
+    .empty_txt {
+        margin-top: 0.9rem;
+        line-height: 2rem;
+        font-size: 1.3rem;
+        color: $gray_99;
+        text-align: center;
+    }
+    .btn.round.primary {
+        box-shadow: 0px 7.5px 10px 0 rgba(98, 85, 246, 0.07);
+        font-weight: $font_weight_bold;
+        font-size: 1.5rem;
+    }
+    .under_line {
+        display: inline-block;
+        margin-top: 2.3rem;
+        line-height: 1.7rem;
+        font-size: 1.3rem;
+        color: $gray_99;
+        border-bottom: 1px solid $gray_99;
+    }
+
+    .btn.medium {
+        height: 3.4rem;
+        line-height: 3.4rem;
+    }
+}
+.empty_msg {
+    margin-top: 20rem;
+    font-size: 1.3rem;
+    line-height: 2.1rem;
+    color: $gray_66;
+    text-align: center;
+}

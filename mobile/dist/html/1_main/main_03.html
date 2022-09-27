@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+        <div class="sub_header">
+            <a href="#none" class="history_back">뒤로가기</a>
+            <h2 class="sub_title">초대코드로 가입</h2>
+            <div class="btn_wrap">
+                <a href="#none">확인</a>				
+            </div>
+        </div>
+		<!-- /header -->
+        
+		<!-- content -->
+        <div class="container inner">
+            <div class="info_dec mt30">
+                <span class="tit">선생님께 전달받은 초대코드 6자리 입력</span>
+                <div class="input_code input_full">
+                    <input placeholder="" type="tel" maxlength="1">
+                    <input placeholder="" type="tel" maxlength="1">
+                    <input placeholder="" type="tel" maxlength="1">
+                    <input placeholder="" type="tel" maxlength="1">
+                    <input placeholder="" type="tel" maxlength="1">
+                    <input placeholder="" type="tel" maxlength="1">
+                </div>
+                <span class="val_check_red">초대코드를 다시 확인해주세요.</span>
+            </div>
+            <div class="info_dec">
+                <span class="tit essential">자녀의 이름(본명)</span> <!-- 필수 입력 표기시 .essential 추가 -->
+                <div class="input_full">
+                    <input type="text">
+                </div>
+            </div>
+            <div class="info_dec">
+                <span class="tit essential">자녀와의 관계</span> <!-- 필수 입력 표기시 .essential 추가 -->
+                <div class="inp_radio_type">
+                    <ul>
+                        <li>
+                            <input type="radio" id="relation1" name="relation" checked>
+                            <label for="relation1">아버지</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="relation2" name="relation">
+                            <label for="relation2">어머니</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="relation3" name="relation">
+                            <label for="relation3">기타 보호자</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+	</div>
+
+	<script>
+        //초대코드 입력
+        $(document).on("keypress keyup keydown", "input[type=tel]", function(e){
+            if (/[a-z|ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g.test(this.value)) { //한글 막기
+                e.preventDefault();
+                this.value = "";
+            } else if (e.which != 8 && e.which != 0 //영문 e막기
+                && e.which < 48 || e.which > 57    //숫자키만 받기
+                && e.which < 96 || e.which > 105) { //텐키 받기
+                e.preventDefault();
+                this.value = "";
+            } else if (this.value.length >= this.maxLength) { //1자리 이상 입력되면 다음 input으로 이동시키기
+                this.value = this.value.slice(0, this.maxLength);
+                if ($(this).next("input").length > 0) {
+                    $(this).next().focus();
+                } else {
+                    $(this).blur();
+                }
+            }
+        });  
+	</script>
+</body>
+
+</html>

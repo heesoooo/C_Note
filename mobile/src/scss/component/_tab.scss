@@ -1,0 +1,19 @@
+.tab_list {
+    display: flex;
+    text-align: center;
+    .tab_links {
+        flex:1;
+        padding-top: 2.5rem;
+        padding-bottom: 2.3rem;
+        font-size: 1.6rem;
+        color: $black;
+        line-height: 1;        
+        border-bottom: 1px solid $gray_e0;
+        &.active { 
+            color: $primary;
+            border-bottom: 0.2rem solid $primary;
+            font-weight: $font_weight_medium;
+        }
+    }
+}
+

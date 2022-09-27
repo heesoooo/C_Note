@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=1200">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+
+	<!-- modal :: 과제 제출 하기 팝업 -->
+    <div class="modal" id="submitHW">
+		<div class="modal_content flex_between_start bg_transparent" style="width:910px;">
+
+			<div class="center_section" style="width:800px;">
+				<!-- 게시글 쓰기 -->
+				<div class="board_write_wrap">
+					<h4>과제 제출 하기</h4>
+					<div class="board_write_body">
+						<div class="text_area">
+							<textarea placeholder="내용을 입력하세요. (500자 이내)"></textarea>
+						</div>
+						<div class="file_upload">
+							<!-- 문서올리기 -->
+							<div class="row">
+								<dl>
+									<dt class="tit"><i class="sprite_comm sp_ico_file_v"></i> 과제 파일 올리기</dt>
+									<dd class="file_add_area">
+										<span class="text">제출할 파일을 여기에 올려 놓거나, + 버튼을 클릭하세요.</span>
+									</dd>
+								</dl>
+								<input type="file" class="input_file_button" id="inputFile2">
+								<label for="inputFile2"></label>
+							</div>
+							<div class="row">
+								<ul class="list_document">
+									<li>
+										<span class="name">체육활동_피구.hwp</span>
+										<a href="#none" class="delete">삭제</a>
+									</li>
+									<li>
+										<span class="name">체육활동_발야구.pdf</span>
+										<a href="#none" class="delete">삭제</a>
+									</li>
+									<li>
+										<span class="name">파일 여기까지!!!! 아래줄로 내려주세요.pdf</span>
+										<a href="#none" class="delete">삭제</a>
+									</li>
+									<li>
+										<span class="name">체육활동_피구.hwp</span>
+										<a href="#none" class="delete">삭제</a>
+									</li>
+								</ul>
+								<input type="file" class="input_file_button" id="inputFile2">
+								<label for="inputFile2"></label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="right_section">
+				<a href="#none" class="btn action inactive" data-dismiss="modal">
+					<i class="sprite_comm sp_ico_close"></i>
+					<span>닫기</span>
+				</a>
+				<a href="#none" class="btn action mt15 inactive"><!-- a.inactive 제거시 활성화 됨 -->
+					<i class="sprite_comm sp_ico_send"></i>
+					<span>제출하기</span>
+				</a>
+				<a href="#none" class="btn action mt15"><!-- a.inactive 추가시 비활성화 됨 -->
+					<i class="sprite_comm sp_ico_send"></i>
+					<span>제출하기</span>
+				</a>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- /modal -->
+	<script>
+		$('#submitHW').modal({show: true});
+	</script>
+  </body>
+
+</html>

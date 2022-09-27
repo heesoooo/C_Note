@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('../include/inc_html_head.html')
+    <title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        @@include('../include/inc_header.html')
+
+        <!--  sub container -->
+        <div class="container inner_cont">
+
+            <!-- snb -->
+            <div class="snb">
+                       
+                <div class="snb_list">
+                    <h3>마이페이지</h3>
+                    <ul>
+                        <li class="active"><a href="#none">개인 정보</a></li>
+                        <li><a href="#none">나의 학교</a></li>
+                        <li><a href="#none">나의 클래스</a></li>
+                        <li><a href="#none">내 소식</a></li>
+                        <li><a href="#none">나의 스크랩</a></li>
+                    </ul>
+                </div>
+          
+            </div>
+            <!-- //snb -->
+
+
+            <div class="contents">
+
+                <!-- title -->
+                <div class="title_box">
+                    <h4 class="page_title">우리반 T회원 탈퇴</h4>
+                </div>
+                <!--// title -->
+
+                <!-- sub contents -->
+                <div class="mypage_leave_wrap">
+
+                    <div class="my_info">
+
+                        <p class="leave_info">
+                            우리반 T셀파를 이용해 주셔서 감사드립니다.<br>
+                            아래 회원 정보를 입력하시면, 탈퇴처리가 진행됩니다.
+                        </p>
+
+                        <div class="info_dec">
+                            <span class="tit">아이디</span>
+                            <p class="id">chunjae@naver.com</p>
+                        </div>
+                        <div class="info_dec">
+                            <span class="tit">비밀번호 입력</span>
+                            <div class="input_full">
+                                <input type="password" placeholder="비밀번호를 입력해주세요." value="">
+                                <span class="val_check_red">비밀번호가 일치하지 않습니다.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="leave_notice">
+                        <p>유의사항 확인</p>
+                        <p class="val_check_point mt10">탈퇴한 회원정보는 탈퇴 즉시 삭제되어, 복구가 불가 하오니 신중하게 선택해주세요.</p>
+                    </div>
+    
+                    <div class="check_box">
+                        <input type="checkbox" id="check1">
+                        <label for="check1">해당 내용을 확인하였으며, 이에 동의합니다. </label>
+                    </div>
+    
+                    <div class="btn_half mb100">
+                        <a href="#none" class="btn outline large">취소</a>
+                        <!-- 버튼 활성화 시 disabled 삭제-->
+                        <a href="#none" class="btn large disabled">확인</a>
+                    </div>
+                </div>
+
+                <!--// sub contents -->
+
+            </div>
+        </div>
+        <!-- //sub container -->
+
+        <!-- footer -->
+        @@include('../include/inc_footer.html')
+
+
+        <script>
+        </script>
+    </div>
+</body>
+
+</html>

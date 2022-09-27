@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('../include/inc_html_head.html')
+    <title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+
+    <!-- popup -->
+    <div class="modal" id="certifyPhoneNumber">
+        <div class="modal_content w470">
+            <a href="#none" class="modal_close" data-dismiss="modal"><i class="sprite_comm sp_ico_close_pop"></i></a>
+            <div class="pop_title">휴대폰 인증</div>
+            <p class="pop_txt ft16 mt30">
+                현재 등록되어있는 휴대폰 번호를 입력하세요.
+            </p>
+
+            <div class="input_full mt15">
+                <input type="text" placeholder="휴대폰 번호의 숫자만 입력하세요.">
+            </div>
+
+            <div class="input_full mt15">
+                <!-- 에러일 경우 error 클래스 추가-->
+                <input type="text" class="error" value="908989">
+            </div>
+            <span class="val_check_red">등록된 번호와 일치하지 않습니다.</span>
+
+            <div class="btn_full mt40">
+                <!-- 버튼 활성화 시 disabled 삭제-->
+                <a href="#none" class="btn medium disabled btn_test">확인</a>
+            </div>
+        </div>
+    </div>
+    <!--// popup -->
+
+
+    <script>
+        $('#certifyPhoneNumber').modal({
+            show: true
+        });
+
+    </script>
+
+</body>
+
+</html>

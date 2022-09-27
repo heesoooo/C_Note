@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 메인</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+		@@include('../include/inc_logo_header.html')
+
+		<!-- contents -->
+		<div class="container inner_cont">
+			<div class="contents">
+				<!-- title -->
+				<div class="title_box mb0">
+					<h2 class="page_title login_title">로그인</h2>
+				</div>
+				<!-- /title -->
+
+				<!-- sub contents -->
+				<div class="login_box mb30">
+					<h3>선생님이 만들어준 계정으로 로그인하기</h3>
+					<p class="welcome">
+						선생님께서 아이디와 비밀번호를 발급해 준 경우,<br>
+						정보를 잊어버린 학생은 선생님께 문의하세요.
+					</p>
+					<div class="login_inner">
+						<ul class="login_field">
+							<li class="input_full mb10">
+								<input type="text" id="id" placeholder="아이디">
+							</li>
+							<li class="input_full">
+								<input type="text" id="password" placeholder="비밀번호">
+							</li>
+						</ul>
+						<div class="check_box mr20">
+							<input type="checkbox" id="check2">
+							<label for="check2">아이디 저장</label>
+						</div>
+						<div class="btn_full"><a href="#none" class="btn h50">로그인</a></div>
+					</div>
+				</div>
+				<div class="login_box">
+					<h3 class="login_sns mb20">학부모 계정으로 시작하기</h3>
+					<div class="login_inner">
+						<div class="btn_sns_list">
+							<div class="btn_full ">
+								<a href="#none" class="btn h50 mb10 naver_login"><i class="sprite_comm sp_ico_naver"></i>네이버로 시작하기</a>
+								<a href="#none" class="btn h50 kakao_login"><i class="sprite_comm sp_ico_kakao"></i>카카오로 시작하기</a>
+							</div>
+						</div>
+						<a href="#none" class="btn_login btn_find_account">
+							<span>나의 SNS 계정 찾기</span>
+						</a>
+					</div>
+				</div>
+				<!-- /sub contents -->
+			</div>
+		</div>
+		<!-- /contents -->
+
+		<!-- footer -->
+		@@include('../include/inc_footer.html')
+	</div>
+</body>
+
+</html>

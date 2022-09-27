@@ -1,0 +1,38 @@
+.paging {
+    text-align:center; 
+    font-size:0; 
+    margin-bottom: 40px;
+    & a {
+        display: inline-block; 
+        font-size: 16px; 
+        color: $gray_99; 
+        margin-right: 4px;
+        width: 32px; height: 32px;
+        line-height: 30px;
+        &.on {
+            color:$primary; 
+            font-weight: $font_weight_medium;
+            background-color: $gray_f5; 
+            border-radius: 50%; 
+        }
+        i { @extend .sprite_comm;}
+        &.pprev { 
+            margin-right: 0;
+            &.active i { @extend .sp_ico_page_pprev_b;}
+        }
+        &.prev { 
+            margin-left: -8px; 
+            i { @extend .sp_ico_page_prev;}
+            &.active i { @extend .sp_ico_page_prev_b;}
+        }
+        &.next { 
+            margin-right: -9px; 
+            i { @extend .sp_ico_page_next;}
+            &.active i { @extend .sp_ico_page_next_b;}
+        }
+        &.nnext { 
+            &.active i { @extend .sp_ico_page_nnext_b;}
+            
+        }
+    }
+} 

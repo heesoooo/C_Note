@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('../include/inc_html_head.html')
+    <title>우리반티셀파 - 메인</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        @@include('../include/inc_header.html')
+
+        <!-- contents -->
+        <div class="container inner_cont">
+            <div class="contents">
+                <!-- title -->
+                <div class="title_box">
+                    <h4 class="page_title">클래스, 학교 검색</h4>
+                    <div class="inner">
+                        <div class="main_search_wrap mt45">
+                            <div class="input_full">
+                                <input type="text" placeholder="클래스, 학교찾기">
+                                <a href="#none" class="btn_clear"></a>
+                                <a href="#none" class="btn_find"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /title -->
+
+                <!-- sub contents -->
+                <div class="search_result">
+                    <div class="result_search_line">
+                        <p><strong>‘가산초’</strong> 검색 결과 총 0건</p>
+                    </div>
+
+                    <!-- 검색 : 결과 값이 모두 없을 경우 -->
+                    <div class="empty_box">
+                        <figure class="empty no_result"></figure>
+                        <p class="strength">
+                            <strong>가산초</strong>에 대한 결과가 없습니다.
+                            <span class="sm">검색어를 다시 확인해주세요.</span>
+                        </p>
+                    </div>
+                    <!-- / -->
+
+                    <!-- 검색 : 결과 값이 클래스 혹은 학교에만 있을 경우 -->
+                    <!-- class tab -->
+                    <div class="main_search_tab">
+                        <a href="#none" class="tab_links active">클래스(54)</a>
+                        <a href="#none" class="tab_links">학교(9)</a>
+                    </div>
+                    <!-- /class tab -->
+
+                    <div class="empty_box">
+                        <figure class="empty no_result"></figure>
+                        <p class="strength">
+                            <strong>가산초</strong>에 대한 결과가 없습니다.
+                            <span class="sm">검색어를 다시 확인해주세요.</span>
+                        </p>
+                    </div>
+                    <!-- / -->
+             
+                </div>
+                <!-- /sub contents -->
+
+            </div>
+        </div>
+        <!-- /contents -->
+
+        <!-- footer -->
+        @@include('../include/inc_footer.html')
+        <!--// popup -->
+    </div>
+
+</body>
+
+</html>

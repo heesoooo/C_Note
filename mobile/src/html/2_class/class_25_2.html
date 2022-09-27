@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+
+    <!-- 설문통계 팝업 - 주관식 답변 페이지 -->
+	<div class="modal" id="likePop">
+		<div class="modal_content modal_full swiper"> <!-- 너비/높이 100% 팝업은 .modal_full 추가 -->
+			<!-- header -->
+			<div class="sub_header center">
+				<a href="#none" class="modal_close" data-dismiss="modal">닫기</a>
+				<h2 class="sub_title">설문통계</h2>
+			</div>
+			<!-- /header -->
+
+			<!-- contents -->
+			<div class="cont_section">
+				<div class="survey_statistics">
+                    <ul>
+                        <!-- 교사화면 -->
+                        <li class="answer_list">
+                            <div class="answer_txt">
+                                우유 종류를 더 늘려주세요. 다른 맛도 더 먹어 보고싶어요. 
+                                매번 기타 우유 신청란에 신청하니 번거로워요. 급식당번이
+                                돌아가는 날짜가 너무 빠른 것 같아요 조금 더 늘려주시면
+                                안될까요 
+                            </div>
+                            <div class="member_list">
+                                <div class="flex_start_center">
+                                    <span class="profile">
+                                        <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                                    </span>
+                                    <p class="name">
+                                        <span>김천재</span><span class="badge badge_gray_full">1</span>
+                                    </p>
+                                </div>
+                                <p class="date">2022.08.22 18:35</p>
+                            </div>
+                        </li>
+                        <li class="answer_list">
+                            <div class="answer_txt">
+                                우유 종류를 더 늘려주세요. 다른 맛도 더 먹어 보고싶어요. 
+                                매번 기타 우유 신청란에 신청하니 번거로워요. 급식당번이
+                                돌아가는 날짜가 너무 빠른 것 같아요 조금 더 늘려주시면
+                                안될까요 
+                            </div>
+                            <div class="member_list">
+                                <div class="flex_start_center">
+                                    <span class="profile">
+                                        <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                                    </span>
+                                    <p class="name">
+                                        <span>이천재</span><span class="badge badge_gray_full">15</span>
+                                    </p>
+                                </div>
+                                <p class="date">2022.08.22 18:35</p>
+                            </div>
+                        </li>
+                        <li class="answer_list">
+                            <div class="answer_txt">
+                                우유 종류를 더 늘려주세요. 다른 맛도 더 먹어 보고싶어요. 
+                                매번 기타 우유 신청란에 신청하니 번거로워요. 급식당번이
+                                돌아가는 날짜가 너무 빠른 것 같아요 조금 더 늘려주시면
+                                안될까요 
+                            </div>
+                            <div class="member_list">
+                                <div class="flex_start_center">
+                                    <span class="profile">
+                                        <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                                    </span>
+                                    <p class="name">
+                                        <span>백이진</span><span class="badge badge_pink">모</span>
+                                    </p>
+                                </div>
+                                <p class="date">2022.08.22 18:35</p>
+                            </div>
+                        </li>
+
+                        <!-- 학생, 학부모 화면 -->
+                        <li class="answer_list">
+                            <div class="answer_txt">
+                                우유 종류를 더 늘려주세요. 다른 맛도 더 먹어 보고싶어요. 
+                                매번 기타 우유 신청란에 신청하니 번거로워요. 급식당번이
+                                돌아가는 날짜가 너무 빠른 것 같아요 조금 더 늘려주시면
+                                안될까요 
+                            </div>
+                        </li>
+                        <li class="answer_list">
+                            <div class="answer_txt">
+                                우유 종류를 더 늘려주세요. 다른 맛도 더 먹어 보고싶어요. 
+                                매번 기타 우유 신청란에 신청하니 번거로워요. 급식당번이
+                                돌아가는 날짜가 너무 빠른 것 같아요 조금 더 늘려주시면
+                                안될까요 
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+			</div>
+			<!-- /contents -->	
+		</div>
+	</div>
+	<!-- ./ -->
+
+	<script>
+		$(function () {
+            $("#likePop").modal({ show: true, overlayDrop: false});
+		})
+	</script>
+</body>
+
+</html>

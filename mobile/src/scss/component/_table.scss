@@ -1,0 +1,51 @@
+﻿.tbl_default {
+    width: 100%;
+    border-radius: .7rem;
+    border-collapse: separate;
+    thead {
+        th {
+            padding: 1.2rem 0;
+            background: $gray_f2;
+            font-size: 1.4rem;
+            font-weight: $font_weight_regular;
+            letter-spacing: -0.35px;
+            color: $black;
+            text-align: center;
+            border-top: 1px solid $gray_e0;
+            border-bottom: 1px solid $gray_e0;
+            &:first-child {
+                border-left: 1px solid $gray_e0;
+                border-radius: .7rem 0 0 0;
+            }
+            &:last-child {
+                border-right: 1px solid $gray_e0;
+                border-radius: 0 .7rem 0 0;
+            }
+        }
+    }
+    tbody {
+        tr {
+            &:last-child {
+                td {
+                    &:first-child {
+                        border-radius: 0 0 0 .7rem;
+                    }
+                    &:last-child {
+                        border-radius: 0 0 .7rem 0;
+                    }
+                }
+            }
+        }
+        td {
+            padding: 1.5rem 0;
+            text-align: center;
+            border-bottom: 1px solid $gray_e0;
+            &:first-child {
+                border-left: 1px solid $gray_e0;
+            }
+            &:last-child {
+                border-right: 1px solid $gray_e0;
+            }
+        }
+    }
+}

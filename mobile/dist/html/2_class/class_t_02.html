@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+    <!-- 교사 발급 계정 -->
+    <div class="modal" id="viewResearchOpt">
+        <div class="modal_content modal_full"> <!-- 너비/높이 100% 팝업은 .modal_full 추가 -->
+            <!-- header -->
+            <div class="sub_header center">
+                <a href="#none" class="modal_close" data-dismiss="modal">close</a>
+                <h2 class="sub_title">조사표 만들기</h2>
+                <div class="btn_wrap">
+                    <a href="#none">저장</a>
+                </div>
+            </div>
+            <!-- /header -->
+            <!-- contents -->
+            <div class="cont_section">
+
+                <!-- 조사표만들기 -->
+                <div class="create_research_list">
+                    <div class="inner">
+                        <div class="info_dec">
+                            <span class="tit">제목</span>
+                            <div class="input_full active">
+                                <input type="text" value="우리반 우유" class="inp_clear">
+                                <a href="#none" class="btn_clear"></a>
+                            </div>
+                        </div>
+                        <div class="info_dec">
+                            <span class="tit">대상</span>
+                            <div class="inp_radio_type thirds">
+                                <ul>
+                                    <li>
+                                        <input type="radio" id="relation1" name="target" checked="">
+                                        <label for="target1">학부모</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="target2" name="target">
+                                        <label for="target2">학생</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="target3" name="target">
+                                        <label for="target3">전체</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="info_dec">
+                            <span class="tit">입력방식</span>
+                            <div class="inp_radio_type thirds">
+                                <ul>
+                                    <li>
+                                        <input type="radio" id="inp_system1" name="inp_system" checked="">
+                                        <label for="inp_system1">O X</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="inp_system2" name="inp_system">
+                                        <label for="inp_system2">상∙중∙하</label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" id="inp_system3" name="inp_system">
+                                        <label for="inp_system3">5점 척도</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- / -->
+
+            </div>
+            <!-- /contents -->	
+        </div>
+    </div>
+    <!-- ./ -->
+
+    <script>
+        $(function () {
+            $("#viewResearchOpt").modal({show: true})
+        })
+    </script>
+</body>
+
+</html>

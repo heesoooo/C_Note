@@ -1,0 +1,592 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('../include/inc_html_head.html')
+    <title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        @@include('../include/inc_header.html')
+        <!--  sub container -->
+        <div class="container inner_cont">
+            <!-- snb -->
+            @@include('../include/inc_snb.html')
+            <!-- //snb -->
+            <div class="contents">
+                <!-- title -->
+                <div class="title_box mb0">
+                    <h4 class="page_title">과제게시판
+                        <a href="#none" class="ml15 btn outline round small mr10">
+                            <i class="sprite_comm sp_ico_write_pen mr5"></i>글쓰기
+                        </a>
+                    </h4>
+                    <div class="search_wrap board">
+                        <input class="board_search_input" placeholder="검색하기" type="text">
+                        <a href="#none" class="btn_find"></a>
+                        <a href="#none" class="btn_clear"></a>
+                        <a href="#none" class="btn_filter"></a>
+                        @@include('../include/inc_datePicker_type3.html')
+                    </div>
+                </div>
+                <div class="qualification mb40">
+                    읽기(학부모, 학생), 댓글(학부모)
+                    <!-- 220822 ::  a태그 추가 -->
+                    <a href="#none">
+                        <i class="sprite_comm sp_ico_setting ml10"></i>
+                    </a>
+                </div>
+                <!-- /title -->
+
+                <!-- sub contents -->
+                <div class="notice_view_header">
+                <!-- notice_view_header 게시판 아이콘 클래스명
+                    학급공지 :: .sp_ico_notice_v
+                    앨범 :: .sp_ico_album_v
+                    자유게시판 :: .sp_ico_fboard_v
+                    과제게시판 :: .sp_ico_homework_v
+                    학급 조사표 :: .sp_ico_table_v
+                    T셀파 학습도구 :: .sp_ico_tool_v
+                -->
+                    <div class="title">
+                        <h4>
+                            <i class="sp_ico_homework_v"></i>
+                            과제게시판
+                            <span class="tag tag_regular red ml10">4월 28일까지</span>
+                            <span class="tag tag_regular ml5">중요</span>
+                        </h4>
+
+                        <span class="date">2022.04.01 금요일</span>
+                        <span class="bar"></span>
+                        <span class="writer">김천재 선생님</span>
+                    </div>
+                    <div class="btn_icon">
+                        <a href="#" class="btn_scrap">
+                            <i class="sprite_comm sp_ico_scrap"></i>
+                        </a>
+                        <div class="dropdown_wrap">
+                            <div class="dropdown">
+                                <a class="menu" href="#none">
+                                    <i class="sprite_comm sp_ico_more"></i>
+                                </a>
+                                <ul class="menu_list">
+                                    <li><a href="#none"><i class="sprite_comm sp_ico_edit_off mr10"></i>게시물 수정하기</a>
+                                    </li>
+                                    <li><a href="#none"><i class="sprite_comm sp_ico_pin_off mr10"></i>게시물 공지하기</a></li>
+                                    <li><a href="#none" class="btn_sms"><i
+                                                class="sprite_comm sp_ico_share_off mr10"></i>SMS 발송하기</a></li>
+                                    <li><a href="#none"><i class="sprite_comm sp_ico_del_off mr10"></i>삭제하기</a></li>
+                                </ul>
+                                <!-- 수신 대상 선택 팝업 -->
+                                <div id="popSms" class="sms_target" style="display: none">
+                                    <div class="pop_title mb40">수신 대상 선택</div>
+                                    <div class="scroll_bar">
+                                        <div class="check_box all">
+                                            <input type="checkbox" id="check1">
+                                            <label for="check1">전체 선택</label>
+                                        </div>
+                                        <ul class="check_list">
+                                            <li class="check_box">
+                                                <input type="checkbox" id="check2-1" checked>
+                                                <label for="check2-1">김천재 학부모(김상민)</label>
+                                            </li>
+                                            <li class="check_box">
+                                                <input type="checkbox" id="check2-2">
+                                                <label for="check2-2">나천재 학부모(김지언)</label>
+                                            </li>
+                                            <li class="check_box">
+                                                <input type="checkbox" id="check2-3">
+                                                <label for="check2-3">다천재 학부모(권현주)</label>
+                                            </li>
+                                            <li class="check_box">
+                                                <input type="checkbox" id="check2-4">
+                                                <label for="check2-4">라천재 학부모(정재훈)</label>
+                                            </li>
+                                            <li class="check_box">
+                                                <input type="checkbox" id="check2-5">
+                                                <label for="check2-5">마천재 학부모(윤석배)</label>
+                                            </li>
+                                            <li class="check_box">
+                                                <input type="checkbox" id="check2-6">
+                                                <label for="check2-6">바천재 학부모(김교육)</label>
+                                            </li>
+                                            <li class="check_box">
+                                                <input type="checkbox" id="check2-7">
+                                                <label for="check2-7">사천재 학부모(김교육)</label>
+                                            </li>
+                                            <li class="check_box">
+                                                <input type="checkbox" id="check2-7">
+                                                <label for="check2-7">사천재 학부모(김교육)</label>
+                                            </li>
+                                            <li class="check_box">
+                                                <input type="checkbox" id="check2-7">
+                                                <label for="check2-7">사천재 학부모(김교육)</label>
+                                            </li>
+                                            <li class="check_box">
+                                                <input type="checkbox" id="check2-7">
+                                                <label for="check2-7">사천재 학부모(김교육)</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="btn_half mt30">
+                                        <a href="#none" class="btn medium outline">취소</a>
+                                        <a href="#none" class="btn medium">완료</a>
+                                    </div>
+                                    <!-- 유효성 검사 메세지 -->
+                                    <span class="val_check_point">수신 대상을 선택해 주세요.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="notice_view_body">
+                    <div class="bbs_area">
+                        <p class="view_target">수신 대상 : 학부모, 학생</p>
+                        <p class="notice_title">6.3(금) - 주간학습안내 첨부</p>
+                        <!-- 에디터에서 입력한 내용 노출-->
+                        <p>
+                            1. 현충일 - 태극기(조기) 달기 - 나라를 위해 목숨 바친 국군장병들과 현재 나라를 지켜주는 국군 아저씨들에게 감사하기<br>
+                            2. 오늘 - 공사차량 후문 출입으로 오후 3:30 이후 출입 불가 - 정문 통행<br>
+                            3. 영어 수행평가 - 다음주 수요일 실시<br>
+                            4. 화요일 - 아침 방송 조회(8시 45분까지 등교)<br>
+                            5. 업사이클 작품 활동 - 학급 티 입기<br>
+                            6. 여름철 식중독 조심, 찬 음식이나 음료 많이 먹지 않기<br>
+                        </p>
+                        <!-- 첨부파일 -->
+                        <div class="attach_list">
+                            <ul>
+                                <li>
+                                    <a href="#none"><i class="sprite_comm sp_ico_file_g"></i>1학년 3반_6월 6일 ~ 6월
+                                        10일(15주).pdf</a>
+                                </li>
+                            </ul>
+                            <div class="mt20">
+                                <!-- 학생용 페이지에 들어갈 버튼-->
+                                <a href="#none" class="btn outline round secondary">
+                                    <i class="sprite_comm sp_ico_edit_board mr5"></i>
+                                    과제 제출하기 
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="view_status">
+                        <a href="#none" class="download_all">
+                            <i class="sprite_comm sp_ico_download_all mr5"></i> 제출된 과제 일괄 다운로드
+                        </a>
+                        <div class="view_status_top">
+                            <span class="pr25">과제 현황 보기</span>
+                            <span class="submit_status">
+                                과제 제출 
+                                <strong>20</strong> 
+                                <span class="slash">&#47;</span> 
+                                <span class="total">32</span>
+                            </span>
+                        </div>
+                        <ul class="view_status_list">
+                            <li class="submit unsubmitted">
+                                <div class="flex_between_center">
+                                    <figure class="profile">
+                                        <!-- <img src="" alt=""> -->
+                                    </figure>
+                                    <span class="name">김상민 학생</span>
+                                    <em class="badge badge_gray_full">1</em>
+                                    <a href="#none" class="check">과제 보기</a>
+                                </div>
+                                <div>
+                                    <span class="submit_text">미제출</span>
+                                    <a href="#none" class="download">
+                                        <i></i>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="submit">
+                                <div class="flex_between_center">
+                                    <figure class="profile">
+                                        <!-- <img src="" alt=""> -->
+                                    </figure>
+                                    <span class="name">김상민 학생</span>
+                                    <em class="badge badge_gray_full">2</em>
+                                    <a href="#none" class="check">과제 보기</a>
+                                </div>
+                                <div>
+                                    <span class="submit_text">2022.04.08 15:32 제출</span>
+                                    <a href="#none" class="download">
+                                        <i></i>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="submit">
+                                <div class="flex_between_center">
+                                    <figure class="profile">
+                                        <!-- <img src="" alt=""> -->
+                                    </figure>
+                                    <span class="name">김천재 학생</span>
+                                    <em class="badge badge_gray_full">3</em>
+                                    <a href="#none" class="check">과제 보기</a>
+                                </div>
+                                <div class="submit_status">
+                                    <span class="submit_text">2022.04.08 15:32 제출</span>
+                                    <a href="#none" class="download">
+                                        <i></i>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="post_status">
+                        <div class="icon_left">
+                            <a href="#none" class="active">
+                                <!-- .active 시 primary color -->
+                                <i class="sprite_comm sp_ico_like"></i> 좋아요 <span class="num">23</span>
+                            </a>
+                            <a href="#none">
+                                <i class="sprite_comm sp_ico_comment"></i> 댓글 <span class="num">23</span>
+                            </a>
+                            <a href="#none">
+                                <i class="sprite_comm sp_ico_view"></i> <span class="num">23</span>읽음
+                            </a>
+                        </div>
+                        <a href="#none" onclick="window.print();return false;">
+                            <i class="sprite_comm sp_ico_print"></i> 인쇄하기
+                        </a>
+                    </div>
+                </div>
+                <div class="reply_wrap">
+                    <div class="reply_list">
+                        <!-- 첫번째 댓글 -->
+                        <div class="reply depth_1">
+                            <div class="reply_view">
+                                <figure class="profile">
+                                    <img src="../../img/profile_test.jpg" alt="">
+                                </figure>
+                                <div class="article">
+                                    <span class="usr_name">이천재 학부모</span>
+                                    <p class="text">늘 먼저 일등으로 확인해주시는 천재 학부모님^^ 빠른 확인 감사합니다 앞으로도 열심히 하겠습니다 열심히 하겠
+                                        습니다. 점검이 얼른 완료 되었으면 좋겠습니다. 첫번째로 와서 공지 확인 했습니다^^ 화이팅 하세요~</p>
+                                    <span class="date">2022.04.08 15:32</span> <a href="#none"
+                                        class="btn_write_reply">답글쓰기</a>
+                                </div>
+                                <div class="dropdown_wrap">
+                                    <div class="dropdown">
+                                        <a class="menu" href="#none">
+                                            <i class="sprite_comm sp_ico_more_reple"></i>
+                                        </a>
+                                        <ul class="menu_list sm">
+                                            <li><a href="#none"><i class="sprite_comm sp_ico_edit_off mr10"></i>수정하기</a>
+                                            </li>
+                                            <li><a href="#none"><i class="sprite_comm sp_ico_del_off mr10"></i>삭제하기</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 재 댓글 -->
+                            <div class="re_comment">
+                                <figure class="profile">
+                                    <!-- 이미지 등록하지 않아도 기본이미지 보임 -->
+                                </figure>
+                                <dl class="recomment_box">
+                                    <dt>이천재 학부모님에게 댓글을 남깁니다.</dt>
+                                    <dd>
+                                        <textarea maxlength="100" placeholder="댓글을 남겨주세요. (최대 100자)"></textarea>
+                                        <div class="btn_wrap">
+                                            <a href="#none">취소</a>
+                                            <a href="#none">등록</a>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <!-- 두번째 댓글 -->
+                        <div class="reply depth_2">
+                            <div class="reply_view">
+                                <figure class="profile">
+                                    <!-- 이미지 등록하지 않아도 기본이미지 보임 -->
+                                </figure>
+                                <div class="article">
+                                    <span class="usr_name">이천재 학부모</span>
+                                    <p class="text">늘 먼저 일등으로 확인해주시는 천재 학부모님^^ 빠른 확인 감사합니다 앞으로도 열심히 하겠습니다 열심히 하겠
+                                        습니다. 점검이 얼른 완료 되었으면 좋겠습니다. 첫번째로 와서 공지 확인 했습니다^^ 화이팅 하세요~</p>
+                                    <span class="date">2022.04.08 15:32</span> <a href="#none"
+                                        class="btn_write_reply">답글쓰기</a>
+                                </div>
+                                <div class="dropdown_wrap">
+                                    <div class="dropdown">
+                                        <a class="menu" href="#none">
+                                            <i class="sprite_comm sp_ico_more_reple"></i>
+                                        </a>
+                                        <ul class="menu_list sm">
+                                            <li><a href="#none"><i class="sprite_comm sp_ico_edit_off mr10"></i>수정하기</a>
+                                            </li>
+                                            <li><a href="#none"><i class="sprite_comm sp_ico_del_off mr10"></i>삭제하기</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 재 댓글 -->
+                            <div class="re_comment">
+                                <figure class="profile">
+                                    <img src="../../img/profile_test.jpg" alt="">
+                                </figure>
+                                <dl class="recomment_box">
+                                    <dt><span>이천재 학부모</span>님에게 댓글을 남깁니다.</dt>
+                                    <dd>
+                                        <textarea maxlength="100" placeholder="댓글을 남겨주세요. (최대 100자)"></textarea>
+                                        <div class="btn_wrap">
+                                            <a href="#none">취소</a>
+                                            <a href="#none">등록</a>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <!-- ./ -->
+                        </div>
+                        <!-- 세번째 댓글 -->
+                        <div class="reply depth_3">
+                            <div class="reply_view">
+                                <figure class="profile">
+                                    <img src="../../img/profile_test.jpg" alt="">
+                                </figure>
+                                <div>
+                                    <span class="usr_name">이천재 학부모</span>
+                                    <p class="text">늘 먼저 일등으로 확인해주시는 천재 학부모님^^ 빠른 확인 감사합니다 앞으로도 열심히 하겠습니다 열심히 하겠
+                                        습니다. 점검이 얼른 완료 되었으면 좋겠습니다. 첫번째로 와서 공지 확인 했습니다^^ 화이팅 하세요~</p>
+                                    <span class="date">2022.04.08 15:32</span>
+                                    <!-- 세번째 부턴 더이상 댓글쓰기 불가
+                                <a href="#none" class="btn_write_reply">답글쓰기</a> -->
+                                </div>
+                                <div class="dropdown_wrap">
+                                    <div class="dropdown">
+                                        <a class="menu" href="#none">
+                                            <i class="sprite_comm sp_ico_more_reple"></i>
+                                        </a>
+                                        <ul class="menu_list sm">
+                                            <li><a href="#none"><i class="sprite_comm sp_ico_edit_off mr10"></i>수정하기</a>
+                                            </li>
+                                            <li><a href="#none"><i class="sprite_comm sp_ico_del_off mr10"></i>삭제하기</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reply_box">
+                        <figure class="profile">
+                            <img src="../../img/profile_test.jpg" alt="">
+                        </figure>
+                        <textarea maxlength="100" placeholder="댓글을 남겨주세요. (최대 100자)"></textarea>
+                        <a href="#none" class="btn large disabled">등록</a>
+                    </div>
+                </div>
+            </div>
+            <!--// sub contents -->
+        </div>
+        <!-- // container -->
+        <!-- footer -->
+        @@include('../include/inc_footer.html')
+    </div>
+    <!-- modal :: 과제게시판 보기 팝업 -->
+	<div class="modal" id="homeWork">
+		<a href="#none" class="modal_close_dim">
+			<i class="sprite_comm sp_ico_close_dim"></i>
+		</a>
+		<div class="modal_content w910">
+			<div class="notice_view_header">
+				<div class="title">
+					<h4>과제 제출 정보</h4>
+				</div>
+			</div>
+			<div class="notice_view_body">
+				<div class="bbs_area">
+					<p class="notice_title">2학년 6반 24번 김상민 학생</p>
+					<!-- 에디터에서 입력한 내용 노출-->
+					<p>
+						1. 현충일 - 태극기(조기) 달기 - 나라를 위해 목숨 바친 국군장병들과 현재 나라를 지켜주는 국군 아저씨들에게 감사하기<br>
+						2. 오늘 - 공사차량 후문 출입으로 오후 3:30 이후 출입 불가 - 정문 통행<br>
+						3. 영어 수행평가 - 다음주 수요일 실시<br>
+						4. 화요일 - 아침 방송 조회(8시 45분까지 등교)<br>
+						5. 업사이클 작품 활동 - 학급 티 입기<br>
+						6. 여름철 식중독 조심, 찬 음식이나 음료 많이 먹지 않기<br>
+					</p>
+					<!-- 첨부파일 -->
+					<div class="attach_list">
+						<ul>
+							<li>
+								<a href="#none"><i class="sprite_comm sp_ico_file_g"></i>1학년 3반_6월 6일 ~ 6월 10일(15주).pdf</a>
+							</li>
+							<li>
+								<a href="#none"><i class="sprite_comm sp_ico_file_g"></i>1학년 3반_6월 6일 ~ 6월 10일(15주).pdf</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+            <div class="reply_wrap">
+                <div class="reply_list">
+                    <!-- 첫번째 댓글 -->
+                    <div class="reply depth_1">
+                        <div class="reply_view">
+                            <figure class="profile">
+                                <img src="../../img/profile_test.jpg" alt="">
+                            </figure>
+                            <div class="article">
+                                <span class="usr_name">이천재 교사</span>
+                                <p class="text">
+                                    <img src="../../img/stamp_step01_lg.png" alt="점점 좋아지고 있어요!">
+                                </p>
+                                <span class="date">2022.04.08 15:32</span>
+                            </div>
+                            <div class="dropdown_wrap">
+                                <div class="dropdown">
+                                    <a class="menu" href="#none">
+                                        <i class="sprite_comm sp_ico_more_reple"></i>
+                                    </a>
+                                    <ul class="menu_list sm">
+                                        <li><a href="#none"><i class="sprite_comm sp_ico_del_off mr10"></i>삭제하기</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 두번째 댓글 -->
+                    <div class="reply depth_1">
+                        <div class="reply_view">
+                            <figure class="profile">
+                                <img src="../../img/profile_test.jpg" alt="">
+                            </figure>
+                            <div class="article">
+                                <span class="usr_name">이천재 교사</span>
+                                <p class="text">
+                                    <img src="../../img/stamp_step02_lg.png" alt="잘했어요!">
+                                </p>
+                                <span class="date">2022.04.08 15:32</span>
+                            </div>
+                            <div class="dropdown_wrap">
+                                <div class="dropdown">
+                                    <a class="menu" href="#none">
+                                        <i class="sprite_comm sp_ico_more_reple"></i>
+                                    </a>
+                                    <ul class="menu_list sm">
+                                        <li><a href="#none"><i class="sprite_comm sp_ico_del_off mr10"></i>삭제하기</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 세번째 댓글 -->
+                    <div class="reply depth_1">
+                        <div class="reply_view">
+                            <figure class="profile">
+                                <img src="../../img/profile_test.jpg" alt="">
+                            </figure>
+                            <div class="article">
+                                <span class="usr_name">이천재 교사</span>
+                                <p class="text">
+                                    <img src="../../img/stamp_step03_lg.png" alt="완벽해요!">
+                                </p>
+                                <span class="date">2022.04.08 15:32</span>
+                            </div>
+                            <div class="dropdown_wrap">
+                                <div class="dropdown">
+                                    <a class="menu" href="#none">
+                                        <i class="sprite_comm sp_ico_more_reple"></i>
+                                    </a>
+                                    <ul class="menu_list sm">
+                                        <li><a href="#none"><i class="sprite_comm sp_ico_del_off mr10"></i>삭제하기</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 네번째 댓글 -->
+                    <div class="reply depth_1">
+                        <div class="reply_view">
+                            <figure class="profile">
+                                <!-- <img src="../../img/profile_test.jpg" alt=""> -->
+                            </figure>
+                            <div class="article">
+                                <span class="usr_name">김지언 학부모</span>
+                                <p class="text">
+                                    첫번째로 와서 확인 했습니다^^ 화이팅 하세요~
+                                </p>
+                                <span class="date">2022.04.08 15:32</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reply_box">
+                    <figure class="profile">
+                        <img src="../../img/profile_test.jpg" alt="">
+                    </figure>
+                    <!-- 이모티콘 삽입가능한 텍스트박스 -->
+                    <div class="stamp_comment_box">
+                       
+                        <textarea maxlength="100" placeholder="댓글을 남겨주세요. (최대 100자)"></textarea>
+                        <a href="#none" class="btn_stamp">이모티콘 버튼</a>
+                      
+                        <!-- 스탬프 리스트 박스 -->
+                        <div class="stamp_list_box">
+                            <a href="#none" class="stamp">
+                                <img src="../../img/stamp_step01_md.png" alt="점점 좋아지고 있어요!">
+                            </a>
+                            <a href="#none" class="stamp">
+                                <img src="../../img/stamp_step02_md.png" alt="잘했어요!">
+                            </a>
+                            <a href="#none" class="stamp">
+                                <img src="../../img/stamp_step03_md.png" alt="완벽해요!">
+                            </a>
+                        </div>
+                        <!-- 스탬프 클릭 후 삽입 미리보기 -->
+                        <div class="insert_stamp_preview">
+                            <img src="../../img/stamp_step01_sm.png" alt="점점 좋아지고 있어요!">
+                            <!-- <img src="../../img/stamp_step02_sm.png" alt="잘했어요!">
+                            <img src="../../img/stamp_step03_sm.png" alt="완벽해요!"> -->
+                            <a href="#none" class="btn_del_stamp">지우기</a>
+                        </div>
+                    </div>
+                    <a href="#none" class="btn large disabled">등록</a> <!-- .disabled 제거시 버튼 활성화 -->
+                </div>
+            </div>
+		</div>
+	</div>
+	<!-- /modal :: 과제게시판 보기 팝업 -->
+    <script>
+        $(function(){
+			$(".view_status_top").on("click", function(e){
+				e.preventDefault();
+				$(this).toggleClass("close");
+				$(this).prev(".download_all").toggleClass("show");
+				$(this).next(".view_status_list").stop().slideToggle();
+			});
+
+            $('#homeWork').modal({ show: true });
+
+
+            // 스탬프 이모티콘 추가
+            $(".stamp_comment_box .btn_stamp").on("click", function(){
+                $(this).next(".stamp_list_box").toggle();
+            })
+            $(".stamp_list_box .stamp").on("click", function(){
+                $(this).parent().hide();
+                $(".insert_stamp_preview").show();
+                $(".stamp_comment_box .btn_stamp").addClass("off");
+            })            
+            $(".insert_stamp_preview .btn_del_stamp").on("click", function(){
+                $(this).parent().hide();
+                $(".stamp_comment_box .btn_stamp").removeClass("off");
+            })
+
+		})
+        
+    </script>
+</body>
+
+</html>

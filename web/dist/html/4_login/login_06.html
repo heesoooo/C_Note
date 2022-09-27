@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=1200">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+	<title>우리반티셀파 - 메인</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+		<!-- logo만 있는 header -->
+<div class="logo_header_wrap ver2"> <!-- 20220720 :: ver2 add -->
+    <div class="inner_cont">
+        <h1 class="brand"><a href="/">T셀파 CLASS</a></h1>
+    </div>
+</div>
+<!-- /logo만 있는 header -->
+
+		<!-- contents -->
+		<div class="container inner_cont">
+			<div class="contents">
+				<!-- title -->
+				<!-- /title -->
+
+				<!-- sub contents -->
+				<div class="join_finish_box">
+					<figure class="empty join_finish"></figure>
+					<p class="strength">
+						회원가입 완료!<br>
+                        <!-- 220818 :: 우리반 T셀파로 변경 -->
+						<strong>우리반 T셀파 가입</strong>을 환영합니다!
+					</p>
+					<div class="btn_wrap t_center">
+						<a href="#none" class="btn outline round large"><i class="sprite_comm sp_ico_in mr10"></i>클래스로 이동하기</a>
+                    </div>
+				</div>
+
+				<!-- /sub contents -->
+			</div>
+		</div>
+		<!-- /contents -->
+
+		<!-- footer -->
+		<footer>
+	<div class="terms">
+		<div class="inner_cont">
+			<ul>
+				<li><a href="#none">회사소개</a></li>
+				<li><a href="#none">이용약관</a></li>
+                <!-- 220818 :: 개인정보처리방침 bold 처리-->
+				<li><a href="#none"><strong>개인정보처리방침</strong></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="groups">
+		<div class="inner_cont">
+			<div class="item">
+				<h2 class="company_edu">천재교육</h2>
+				<p class="address">
+					대표 : 오병목 &nbsp;&nbsp;&nbsp; 주소 : 서울시 금천구 가산로 9길 54<br>
+					사업자등록번호 : 119-81-19350<br>
+					부가통신사업신고 : 016712
+				</p>
+			</div>
+			<div class="item">
+				<h2 class="company_book">천재교과서</h2>
+				<p class="address">
+					대표 : 박정과, 윤문현 &nbsp;&nbsp;&nbsp; 주소 : 서울시 금천구 가산디지털1로 16 (2011호)<br>
+					사업자등록번호 : 119-81-70643<br>
+					부가통신사업신고 : 016712
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<a href="#none" class="btn_top"><i></i>TOP</a>
+         
+            
+<!-- 220906 배너 추가 -->
+<div class="sub_quick_banner">
+	<ul>
+		<li>
+			<a href="#none">
+				<img src="../../img/main_quick_ban_n02.png" alt="banner">
+				<p class="text">우리반 AI. 수학</p>
+			</a>
+		</li>
+		<li>
+			<a href="#none">
+				<img src="../../img/main_quick_ban_n03.png" alt="banner">
+				<p class="text">하루하나</p>
+			</a>
+		</li>
+	</ul>
+</div>
+<!-- //220906 배너 추가 -->
+
+<script>
+	$(function(){
+		// top btn
+		$('.btn_top').click(function(){
+			$('html,body').animate( { scrollTop:0 },'slow' );
+			return false;
+		});
+		// scroll시 top button 위치 제어
+		$(window).on('scroll', function (){
+			var nDocH = $(document).height()
+			var nWinH = $(window).height()
+			var nMaxH = nDocH - nWinH
+			var scrollTop = $(window).scrollTop()
+			if (scrollTop > 50) {
+				$('.btn_top').css({'opacity' : 1})
+			} else {
+				$('.btn_top').css({'opacity' : 0})
+			}
+			if (scrollTop > nMaxH - 272 + 20) {
+				$('.btn_top').css({'bottom' : scrollTop - (nMaxH - 430)})
+			} else {
+				$('.btn_top').css({'bottom' : '45px'})
+			}
+		})
+	})
+</script>
+	</div>
+</body>
+
+</html>

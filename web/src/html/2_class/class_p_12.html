@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+		@@include('../include/inc_header.html')
+		<!--  sub container -->
+		<div class="container inner_cont">
+			<!-- snb -->
+			@@include('../include/inc_snb.html')
+			<!-- //snb -->
+			<div class="contents">
+				<!-- title -->
+				<div class="title_box">
+					<h4 class="page_title">클래스 정보</h4>
+				</div>
+				<!-- /title -->
+
+				<!-- sub contents -->
+				<div class="form_parent_class">
+					<div class="info_dec">
+						<div class="input_full">
+							<span class="tit">클래스 선생님</span>
+							<input type="text" placeholder="" value="김천재 선생님" disabled>
+						</div>
+						<div class="input_full">
+							<span class="tit">클래스 가입일</span>
+							<input type="text" placeholder="" value="2022년 06월 25일" disabled>
+						</div>
+					</div>
+
+					<h3 class="form_title mt55">연동된 자녀 계정</h3>
+					<div class="info_dec">
+						<div class="input_full">
+							<span class="tit">이름</span>
+							<input type="text" placeholder="" value="김해법" disabled>
+						</div>
+						<div class="input_full">
+							<span class="tit">번호</span>
+							<input type="text" placeholder="" value="12" disabled>
+						</div>
+					</div>
+
+					<div class="empty_connect mt100">
+						<div class="strength">
+							<strong>아직 연동된 자녀계정</strong>이 없습니다.
+							<p class="txt">계정을 연동해보세요.</p>
+						</div>
+						<a href="#none" class="btn large outline round">
+							<span class="sprite_comm sp_ico_invite_lg_v mr5"></span>
+							자녀 계정 연동하기
+						</a>
+					</div>
+
+					<div class="class_leave mt100">
+						<span>클래스를 사용하지 않는다면?</span>
+						<a href="#none" class="leave_btn">클래스 탈퇴하기</a>
+					</div>
+				</div>
+				<!--// sub contents -->
+
+			</div>
+			<!--// contents -->
+		</div>
+		<!-- // container -->
+		<!-- footer -->
+		@@include('../include/inc_footer.html')
+	</div>
+
+	<script>
+
+	</script>
+</body>
+
+</html>

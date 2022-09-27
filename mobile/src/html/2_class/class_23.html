@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+        <div class="sub_header">
+            <a href="#none" class="history_back">뒤로가기</a>
+            <h2 class="sub_title">설문현황</h2>
+        </div>
+		<!-- /header -->
+        
+		<!-- content -->
+        <div class="container">
+            <div class="member_list_wrap">
+                <div class="fix_top_bar blue">
+                    8월 우유 급식 설문조사 
+                </div>
+                <div class="submit_status">
+                   <span>제출현황 :</span>
+                   <span><strong>36</strong>/60(60.00%)</span>
+
+                    <a href="#none" class="unsubmit btn outline small round point">미제출 알림</a>
+                </div>
+
+                <ul>
+                    <li class="member_list">
+                        <!-- 클릭시 팝업 노출 -->
+                        <a href="#none" class="flex_start_center" data-target="subminHomeWork">
+                            <span class="profile">
+                                <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                            </span>
+                            <p class="name">
+                                <span>김천재</span>
+                                <span class="badge badge_gray_full">1</span>
+                            </p>
+                        </a>
+                        <p class="date red">2022.06.29 18:35</p>
+                    </li>
+                    <li class="member_list">
+                        <a href="#none" class="flex_start_center">
+                            <span class="profile">
+                                <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                            </span>
+                            <p class="name">
+                                <span>이천재</span>
+                                <span class="badge badge_gray_full">2</span>
+                            </p>
+                        </a>
+                        <p class="date red">2022.06.29 18:35</p>
+                    </li>
+                    <li class="member_list">
+                        <a href="#none" class="flex_start_center">
+                            <span class="profile">
+                                <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                            </span>
+                            <p class="name">
+                                <span>황천재</span>
+                                <span class="badge badge_gray_full">3</span>
+                            </p>
+                        </a>
+                        <p class="unsubmitted">미제출</p>
+                    </li>
+                    <li class="member_list">
+                        <a href="#none" class="flex_start_center">
+                            <span class="profile">
+                                <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                            </span>
+                            <p class="name">
+                                <span>나희도</span>
+                                <span class="badge badge_blue">부</span>
+                            </p>
+                        </a>
+                        <p class="unsubmitted">미제출</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /content -->
+	</div>
+
+    <!-- 과제 제출 내용 팝업 -->
+	<div class="modal" id="subminHomeWork">
+		<div class="modal_content modal_full"> <!-- 너비/높이 100% 팝업은 .modal_full 추가 -->
+			<!-- header -->
+			<div class="sub_header center">
+				<a href="#none" class="modal_close" data-dismiss="modal">닫기</a>
+				<h2 class="sub_title">설문통계</h2>
+			</div>
+			<!-- /header -->
+
+			<!-- contents -->
+			<div class="cont_section">
+                <div class="survey_wrap">
+                    <ul class="survey_question_list">
+                        <li class="survey_question">
+                            <p class="question">
+                                <span class="q_txt">1. 신청하고 싶은 우유 체크</span>
+                                <span class="tag tag_pink">복수응답</span>
+                                <span class="tag tag_red ml5">필수</span>
+                            </p>
+                            <div class="img_box">
+                                <img src="https://via.placeholder.com/320x185.png">
+                            </div>
+                            <ul class="multiple_choice">
+                                <li class="check_box circle">
+                                    <input type="checkbox" id="check1">
+                                    <label for="check1">서울우유 기본</label>
+                                </li>
+                                <li class="check_box circle">
+                                    <input type="checkbox" id="check2">
+                                    <label for="check2">매일 소화가 잘되는 우유</label>
+                                </li>
+                                <!-- 인풋박스가 있을경우 .check_input 추가 -->
+                                <li class="check_box circle check_input">
+                                    <input type="checkbox" id="check3" checked>
+                                    <label for="check3" class="input_full">
+                                        <p class="etc">기타</p>
+                                        <input type="text" placeholder="기타 답변 작성" value="매일 우유 초코맛">
+                                    </label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="survey_question">
+                            <p class="question">
+                                <span class="q_txt">2. 기타 다른 우유 급식 신청란</span>
+                            </p>
+                            <div class="survey_answer">
+                                <p class="answer">비피더스 사과 신청</p>
+                            </div>
+                        </li>
+                        <li class="survey_question">
+                            <p class="question">
+                                <span class="q_txt">3. 건의사항</span>
+                            </p>
+                            <div class="survey_answer">
+                                <p class="answer">
+                                    우유 종류를 더 늘려주세요. 다른 맛도 더 먹어 보고싶어요. 
+                                    매번 기타 우유 신청란에 신청하니 번거로워요. 급식당번이
+                                    돌아가는 날짜가 너무 빠른 것 같아요 조금 더 늘려주시면
+                                    안될까요 
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+			</div>
+			<!-- /contents -->	
+		</div>
+	</div>
+	<!-- /. -->
+
+
+	<script>
+        $(function () {
+            $("#subminHomeWork").modal({ show: true });
+        })
+	</script>
+    
+    <script>
+    </script>
+</body>
+
+</html>

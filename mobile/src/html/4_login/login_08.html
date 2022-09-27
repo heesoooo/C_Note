@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 로그인</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+		<div class="sub_header">
+			<a href="#none" class="history_back">뒤로가기</a>
+			<h2 class="sub_title">회원가입 안내</h2>
+		</div>
+		<!-- /header -->
+
+		<!-- content -->
+		<div class="container inner">
+			<div class="login_wrap">
+				<div class="info_dec">
+					<!-- 필수 입력 표기시 .essential 추가 -->
+					<span class="tit essential">아이디</span>
+					<div class="input_full">
+						<input type="text" placeholder="네이버로 로그인 or 카카오로 로그인" disabled="">
+					</div>
+				</div>
+				<div class="info_dec">
+					<!-- 이름 작성 전 -->
+					<span class="tit essential">이름</span>
+					<div class="input_full">
+						<input type="text" placeholder="이름을 입력하세요.">
+					</div>
+					<!-- 이름 작성 후 -->
+					<div class="input_full">
+						<input type="text" placeholder="이름을 입력하세요." value="김천재">
+					</div>
+				</div>
+				<div class="info_dec">
+					<!-- 인증번호 발송 전 -->
+					<span class="tit essential">휴대폰 번호</span>
+					<div class="input_btn">
+						<input type="text" placeholder="숫자만 입력" value="01012345678">
+						<a href="#none" class="btn">인증번호 발송</a>
+					</div>
+					<span class="val_check_red">이미 사용중인 번호입니다.</span>
+					<!-- 인증번호 발송 후 -->
+					<div class="input_btn">
+						<input type="text" placeholder="숫자만 입력" value="01057578989">
+						<a href="#none" class="btn">재발송</a>
+					</div>
+					<span class="val_check_primary">인증번호를 발송하였습니다.</span>
+				</div>
+				<div class="info_dec">
+					<!-- 인증번호 발송 전 -->
+					<span class="tit essential">인증번호</span>
+					<div class="input_full">
+						<input type="text" placeholder="인증번호 6자리" disabled="">
+					</div>
+					<!-- 인증번호 발송 후 -->
+					<div class="input_full">
+						<input type="text" placeholder="인증번호 6자리">
+						<span class="time">3:00</span>
+					</div>
+					<span class="val_check_red">인증번호 입력 시간이 지났습니다. <br>재발송 버튼을 클릭하여 다시 번호를 인증하세요.</span>
+				</div>
+				<div class="check_box">
+					<input type="checkbox" id="check2">
+					<label for="check2">회원가입에 필요한 내용을 확인하였으며, 동의합니다. </label>
+				</div>
+				<a href="#none" class="btn_show_terms">이용약관 보기</a>
+				<!-- 인증번호 입력 완료 시 disabled 클래스 삭제해주세요 -->
+				<a href="#none" class="btn disabled btn_login">확인</a>
+			</div>
+		</div>
+		<!-- /content -->
+		
+	</div>
+
+	<script>
+	</script>
+</body>
+
+</html>

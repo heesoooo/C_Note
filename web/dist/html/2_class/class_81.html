@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=1200">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+    <title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+
+    <!-- modal :: 설문 통계 팝업 -->
+    <div class="modal" id="surveyWrite">
+
+        <div class="survey_top">
+            <h2>12번 김천재 설문지</h2>
+            <a href="#none" class="btn_modal_close">
+                <i class="sprite_comm sp_ico_close_dim"></i>
+            </a>
+            <!-- 220914 :: 설문 제출 버튼 추가 -->
+            <div class="btn_wrap">
+                <a href="#none" class="btn btn_fix active">설문 제줄</a>
+            </div>
+        </div>
+        <div class="modal_content w800 bg_transparent">
+            <!-- 220914 :: 제출 현황 추가 -->
+            <span class="survey_status">
+                제출 현황
+                <span class="bar"></span>
+                <strong>20</strong> 
+                <span class="slash">/</span> 
+                <span class="total">32</span>
+            </span>
+            <!-- 설문지 -->
+            <div class="survey_create_wrap">
+                <div class="survey_create survey_view">
+                    <!-- 질문 -->
+                    <div class="row survey_question">
+                        <div class="input_question">
+                            <span class="number">1.</span>
+                            <span class="input_answer essential">우유 선택</span>
+                            <!-- 220914 :: 필수, 복수선택 추가 -->
+                            <span class="tag tag_regular red ml5">필수</span>
+                            <span class="tag tag_regular pink ml5">복수선택</span>
+                        </div>
+                        <p class="question_type">객관식</p>
+                    </div>
+                    <!-- 설문 문항 -->
+                    <div class="survey_answer">
+                        <div class="check_box circle">
+                            <input type="checkbox" id="milk1" checked>
+                            <label for="milk1">서울우유</label>
+                        </div>
+                        <div class="check_box circle">
+                            <input type="checkbox" id="milk2">
+                            <label for="milk2">매일 소화가 잘되는 우유</label>
+                        </div>
+                        <!-- 인풋박스가 있을경우 .check_input 추가 -->
+                        <div class="check_box circle check_input">
+                            <input type="checkbox" id="milk3">
+                            <label for="milk3" class="input_full">
+                                <p class="etc">기타</p>
+                                <input type="text" placeholder="텍스트 입력" value="비피더스 사과맛">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="survey_create survey_view">
+                    <!-- 질문 -->
+                    <div class="row survey_question">
+                        <div class="input_question">
+                            <span class="number">2.</span>
+                            <span class="input_answer">기타 신청 사항</span>
+                        </div>
+                        <p class="question_type">단답형</p>
+                    </div>
+                    <!-- 설문 문항 -->
+                    <div class="survey_answer">
+                        <div class="check_box circle">
+                            <input type="checkbox" id="etc1">
+                            <label for="etc1">응답하지 않음</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="survey_create survey_view">
+                    <!-- 질문 -->
+                    <div class="row survey_question">
+                        <div class="input_question">
+                            <span class="number">3.</span>
+                            <span class="input_answer">우유 급식 건의 사항(자유롭게 적어주세요)</span>
+                        </div>
+                        <p class="question_type">장문형</p>
+                    </div>
+                    <!-- 설문 문항 -->
+                    <div class="survey_answer">
+                        <div class="check_box circle">
+                            <input type="checkbox" id="checkbox4-2">
+                            <label for="checkbox4-2">
+                                <textarea class="long_answer" placeholder="답변을 입력(100자 이내)" rows="1" onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="survey_create survey_view">
+                    <!-- 질문 -->
+                    <div class="row survey_question">
+                        <div class="input_question">
+                            <span class="number">4.</span>
+                            <span class="input_answer essential">이미지 설문</span>
+                        </div>
+                        <p class="question_type">객관식</p>
+                    </div>
+                    <!-- 설문 문항 -->
+                    <div class="survey_answer">
+                        <div class="add_img">
+                            <div class="img_view">
+                                <img src="../../img/sample1.png" alt="sample">
+                                <img src="../../img/sample2.png" alt="sample">
+                            </div>
+                        </div>
+                        <div class="check_box circle">
+                            <input type="checkbox" id="img1" checked>
+                            <label for="img1">왼쪽</label>
+                        </div>
+                        <div class="check_box circle">
+                            <input type="checkbox" id="img2">
+                            <label for="img2">오른쪽</label>
+                        </div>
+                        <div class="check_box circle">
+                            <input type="checkbox" id="img3">
+                            <label for="img3">기타</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /설문지 -->
+        </div>
+    </div>
+    <!-- /modal :: 설문 통계 팝업 -->
+    <script>
+
+        $(function(){
+			$(".more").on("click", function(e){
+				e.preventDefault();
+				$(this).toggleClass("close");
+				$(this).parent().next(".total_list_wrap").stop().slideToggle();
+			});
+
+            $('#surveyWrite').modal({ show: true });
+
+            $('.long_answer').keyup(function (e){
+                var content = $(this).val();       
+                if(content.length > 100) {
+                    $(this).val($(this).val().substring(0, 100));
+                }
+            });
+            $('.short_answer').keyup(function (e){
+                var content = $(this).val();       
+                if(content.length > 10) {
+                    $(this).val($(this).val().substring(0, 10));
+                }
+            });
+		})
+
+        // textarea 높이값 자동으로 늘어나도록
+        function resize(obj) {
+            obj.style.height = "1px";
+            obj.style.height = (obj.scrollHeight)+"px";
+        }
+
+    </script>
+</body>
+
+</html>

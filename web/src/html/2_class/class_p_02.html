@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 서브</title>
+</head>
+<body>
+
+
+    <!-- popup -->
+    <!-- <div class="modal" id="connetChild1">
+      <div class="modal_content w470">
+        <a href="#none" class="modal_close" data-dismiss="modal"><i class="sprite_comm sp_ico_close_pop"></i></a>
+        <div class="pop_title">자녀 계정과 연결하기
+        </div>
+        <p class="pop_txt ft16 mt30">
+          자녀의 이름을 검색하고, 계정을 연결하세요. 
+        </p>
+        <div class="flex_start_center mt15">
+          <div class="input_full">
+            <input placeholder="자녀의 이름을 입력하세요." type="text">
+          </div>
+          <a href="#none" class="btn h50 ml10 disabled">검색</a>
+        </div>
+      </div>
+    </div> -->
+    <!--// popup -->
+
+        <!-- popup -->
+        <div class="modal" id="connetChild">
+          <div class="modal_content w470">
+            <a href="#none" class="modal_close" data-dismiss="modal"><i class="sprite_comm sp_ico_close_pop"></i></a>
+            <div class="pop_title">자녀 계정과 연결하기
+            </div>
+            <p class="pop_txt ft16 mt30">
+              자녀의 이름을 검색하고, 계정을 연결하세요. 
+            </p>
+            <div class="flex_start_center mt15">
+              <div class="input_full">
+                <input placeholder="자녀의 이름을 입력하세요." type="text">
+              </div>
+              <a href="#none" class="btn h50 ml10 disabled">검색</a>
+            </div>
+            <span class="val_check_primary" style="width:308px;">동일 이름을 가진 학생이 존재합니다. 자녀의 반 번호 를 잘 보고 선택하세요.</span>
+            
+            <!-- error -->
+            <div class="flex_start_center mt15">
+              <div class="input_full">
+                <!-- 에러일 경우 error 클래스 추가-->
+                <input class="error" placeholder="자녀의 이름을 입력하세요." type="text">
+              </div>
+              <a href="#none" class="btn h50 ml10 disabled">검색</a>
+            </div>
+            <span class="val_check_red" style="width:308px;">
+              학생이 등록되지 않았거나, 정보가 없습니다.  입력한 이름을 다시 확인하시고, 담임 교사에게 문의바랍니다.
+            </span>
+            
+            <div class="search_child_list mt25">
+                <div class="radio_box">
+                  <input type="radio" id="radio1" name="radio_btn" checked="">
+                  
+                  <label for="radio1">
+                    <figure class="profile">
+                      <!-- <img src="../../img/profile_test.jpg" alt=""> -->
+                    </figure>
+                    12번 김천재(학생)
+                  </label>
+                </div>
+                <div class="radio_box">
+                  <input type="radio" id="radio2" name="radio_btn" checked="">
+                  <figure class="profile">
+                    <!-- <img src="../../img/profile_test.jpg" alt=""> -->
+                  </figure>
+                  <label for="radio2">25번 김천재(학생)</label>
+                </div>
+            </div>
+            <div class="btn_full mt30">
+              <!-- 버튼 활성화 시 disabled 삭제-->
+              <a href="#none" class="btn medium disabled">연결하기</a>
+            </div>
+          </div>
+        </div>
+        <!--// popup -->
+
+
+		<script>
+      $('#connetChild').modal({show: true});
+
+      // 검색어 입력시 검색버튼 활성화
+      $(".flex_start_center input").on("input", function(){
+        if( $(".flex_start_center input").val() == '' ) {
+            $(".flex_start_center .btn").addClass("disabled");
+        } else {
+            $(".flex_start_center .btn").removeClass("disabled");
+        }
+      });
+
+    </script>
+
+</body>
+</html>

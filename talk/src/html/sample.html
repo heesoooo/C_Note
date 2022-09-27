@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('include/inc_html_head.html')
+	<title>TALK - 메인</title>
+</head>
+
+<body>
+	<div class="talk_wrap">
+		<div class="conversation_cont_wrap">
+
+			@@include('include/inc_left.html')
+			
+			<!-- right_wrap -->
+			<div class="right_wrap">
+				<div class="chatting_top_wrap">
+					<!-- top -->
+					<div class="opponent_info">
+						<span class="profile"> <!-- 공지방일 경우 .notice 추가 -->
+							<!-- <img src="" alt=""> -->
+						</span>
+						<span class="name">
+							선생님, 권현주, 김지언, 박효영
+						</span>
+						<em class="user_num">4</em>
+						<a href="#none" class="chat_pin">핀메뉴</a>
+						<a href="#none" class="chat_pin on">핀메뉴</a>
+					</div>
+					<div class="btn_info">
+						<a href="#none" class="chat_alarm">알림 꺼짐</a>
+						<a href="#none" class="chat_alarm on">알림 켜짐</a> <!-- 알림켜짐 .on 추가 -->
+						<a href="#none" class="chat_search" data-toggle="chatSearch">대화 검색</a>
+						<a href="#none" class="chat_setting" data-toggle="chatSetting">대화창 정보</a>
+					</div>
+				</div>
+				<!-- top -->
+
+				<!-- content -->
+				<div class="chatting_cont_wrap"> <!-- 대화 불가 채팅창에 .unable_chat 추가  -->
+					<div class="chatting_list_wrap">
+
+						<!-- 220726 :: 상담가능시간 Bar 추가 -->
+						<div class="top_bar_wrap">
+							<!-- 상담가능시간 -->
+							<div class="consulting_time_bar">
+								<dl>
+									<dt>
+										<i></i> 상담가능 시간
+									</dt>
+									<dd>
+										<ul>
+											<li class="first"><span>월요일</span> <strong class="time">09:00 ~ 18:00</strong></li>
+											<li><span>화요일</span> <strong class="time">09:00 ~ 18:00</strong></li>
+											<li><span>수요일</span> <strong class="time">09:00 ~ 18:00</strong></li>
+											<li><span>목요일</span> <strong class="time">09:00 ~ 18:00</strong></li>
+											<li><span>금요일</span> <strong class="time">09:00 ~ 18:00</strong></li>
+										</ul>
+									</dd>
+								</dl>
+								
+								<!-- 상담가능시간 설정되어있지 않을 때 -->
+								<!-- .no_time 추가 -->
+								<!-- <dl class="no_time">
+									<dt>
+										<i></i> 상담가능 시간
+									</dt>
+									<dd>
+										<ul>
+											<li class="first"><span>요일별 상담 가능 시간을 설정해주세요.</span>
+										</ul>
+									</dd>
+								</dl> -->
+							</div>
+
+							<!-- 새로운 메시지 알림 -->
+							<div class="new_alert_bar">
+								<span class="text"><strong>10</strong>개의 새로운 메시지가 있습니다.</span>
+								<span class="date_time">
+									<strong>2020</strong>년 <strong>10</strong>월 <strong>26</strong>일 오후 <strong>20:49</strong>
+								</span>
+							</div>
+						</div>
+
+						<!-- 상대방 -->
+						<div class="chatting_you">
+							<!-- profile -->
+							<div class="chatting_profile">
+								<span class="img">
+									<img src="../img/img_sample.png" alt="">
+								</span>
+								<span class="name">선생님</span>
+							</div>
+							<!-- 채팅 말풍선 -->
+							<div class="chatting_bubble_wrap first"><!-- 첫 번째 대화 말풍선에 .first 추가 -->
+								<div class="chatting_bubble">
+									안녕하세요.
+								</div>
+								<div class="etc">
+									<span class="reading_num">2</span>
+								</div>
+							</div>
+						</div>
+						
+						<!-- 본인 -->
+						<div class="chatting_me">
+							<div class="chatting_bubble_wrap first"><!-- 첫 번째 대화 말풍선에 .first 추가 -->
+								<div class="etc">
+									<span class="reading_num">2</span>
+								</div>
+								<div class="chatting_bubble">
+									안녕하세요.
+								</div>
+							</div>
+							<div class="chatting_bubble_wrap">
+								<div class="etc">
+									<span class="reading_num">2</span>
+									<span class="time">오전 10:29</span>
+								</div>
+								<div class="chatting_bubble del_message">
+									사용자가 삭제한 대화입니다.
+								</div>
+							</div>
+						</div>
+
+						<!-- 상대방 -->
+						<div class="chatting_you">
+							<!-- profile -->
+							<div class="chatting_profile">
+								<span class="img">
+									<img src="../img/img_sample.png" alt="">
+								</span>
+								<span class="name">선생님</span>
+							</div>
+							<!-- 채팅 말풍선 -->
+							<div class="chatting_bubble_wrap first"><!-- 첫 번째 대화 말풍선에 .first 추가 -->
+								<div class="chatting_bubble">
+									오늘 수업 시간에 열심히 참여해준 1조 친구들 사진입니다.
+								</div>
+								<div class="etc">
+									<span class="reading_num">2</span>
+								</div>
+							</div>
+							<div class="chatting_bubble_wrap">
+								<div class="chatting_bubble image"><!-- 이미지 업로드시 .image 추가 -->
+									<img src="../img/img_sample.png" alt="">
+								</div>
+								<div class="etc">
+									<span class="reading_num">2</span>
+									<span class="time">오전 10:29</span>
+								</div>
+							</div>							
+						</div>
+						
+						<!-- 본인 -->
+						<div class="chatting_me">
+							<div class="chatting_bubble_wrap first"><!-- 첫 번째 대화 말풍선에 .first 추가 -->
+								<div class="etc">
+									<span class="reading_num">2</span>
+								</div>
+								<div class="chatting_bubble">
+									감사합니다.
+								</div>
+							</div>
+							<div class="chatting_bubble_wrap"><!-- 첫 번째 대화 말풍선에 .first 추가 -->
+								<div class="etc">
+									<span class="reading_num">2</span>
+								</div>
+								<div class="chatting_bubble">
+									사진 저장해서 엄마한테도 보여드릴게요.
+								</div>
+							</div>
+						</div>
+
+                        <!-- 상대방 -->
+						<div class="chatting_you">
+							<!-- profile -->
+							<div class="chatting_profile">
+								<span class="img">
+									<!-- <img src="../img/img_sample.png" alt=""> -->
+								</span>
+								<span class="name">권현주</span>
+							</div>
+							<!-- 채팅 말풍선 -->
+							<div class="chatting_bubble_wrap first"><!-- 첫 번째 대화 말풍선에 .first 추가 -->
+								<div class="chatting_bubble">
+									감사합니다!
+								</div>
+								<div class="etc">
+									<span class="reading_num">2</span>
+								</div>
+							</div>
+						</div>
+
+                        <!-- 상대방 -->
+						<div class="chatting_you">
+							<!-- profile -->
+							<div class="chatting_profile">
+								<span class="img">
+									<!-- <img src="../img/img_sample.png" alt=""> -->
+								</span>
+								<span class="name">김지언</span>
+							</div>
+							<!-- 채팅 말풍선 -->
+							<div class="chatting_bubble_wrap first"><!-- 첫 번째 대화 말풍선에 .first 추가 -->
+								<div class="chatting_bubble">
+									우와! 감사합니다.
+								</div>
+								<div class="etc">
+									<span class="reading_num">2</span>
+								</div>
+							</div>
+						</div>
+
+                        <!-- 상대방 -->
+						<div class="chatting_you">
+							<!-- profile -->
+							<div class="chatting_profile">
+								<span class="img">
+									<img src="../img/img_sample.png" alt="">
+								</span>
+								<span class="name">선생님</span>
+							</div>
+							<!-- 채팅 말풍선 -->
+							<div class="chatting_bubble_wrap first"><!-- 첫 번째 대화 말풍선에 .first 추가 -->
+								<div class="chatting_bubble">
+									내일 준비물은 학급 공지에 있으니까 꼭 확인하고 오세요!.
+								</div>
+								<div class="etc">
+									<span class="reading_num">2</span>
+								</div>
+							</div>
+						</div>
+
+                        <!-- 상대방 -->
+						<div class="chatting_you">
+							<!-- profile -->
+							<div class="chatting_profile">
+								<span class="img">
+									<!-- <img src="../img/img_sample.png" alt=""> -->
+								</span>
+								<span class="name">김지언</span>
+							</div>
+							<!-- 채팅 말풍선 -->
+							<div class="chatting_bubble_wrap first"><!-- 첫 번째 대화 말풍선에 .first 추가 -->
+								<div class="chatting_bubble">
+									네!!
+								</div>
+								<div class="etc">
+									<span class="reading_num">2</span>
+								</div>
+							</div>
+						</div>
+
+						<!-- 날짜 -->
+						<div class="date">
+							<span>2022년 12월 28일</span>
+						</div>
+
+						<!-- 입장&퇴장&읽음표시 -->
+						<div class="alarm_text">
+							<p>윤석배님이 입장하였습니다.</p>
+							<p>윤석배님이 퇴장하였습니다.</p>
+							<p>여기까지 읽으셨습니다.</p>
+						</div>
+
+						<!-- 상대방 -->
+						<div class="chatting_you">
+							<!-- profile -->
+							<div class="chatting_profile">
+								<span class="img">
+									<img src="../img/img_sample.png" alt="">
+								</span>
+								<span class="name">선생님
+
+                                </span>
+							</div>
+							<!-- 채팅 말풍선 -->
+							<div class="chatting_bubble_wrap first"><!-- 첫 번째 대화 말풍선에 .first 추가 -->
+								<div class="chatting_bubble">
+									<a href="https://www.naver.com" class="link" target="_blank">https://www.naver.com</a>
+								</div>
+								<div class="etc">
+									<span class="reading_num">2</span>
+								</div>
+							</div>
+							<div class="chatting_bubble_wrap">
+								<div class="chatting_bubble video"><!-- 영상 업로드시 .video 추가 -->
+									<strong class="tit">[벚꽃반 자료]3교시 음악시간 노래_샘플.mp3</strong>
+									<span class="period">유효기한: 2022.07.30까지</span>
+									<span class="volume">2.99MB</span>
+
+									<a href="#none" class="save">저장</a>
+									<a href="#none" class="save_as">다른 이름으로 저장</a>
+								</div>
+								<div class="etc">
+									<span class="reading_num">2</span>
+									<span class="time">오전 10:29</span>
+								</div>
+							</div>							
+						</div>
+
+						<!-- 본인 -->
+						<div class="chatting_me">
+							<div class="chatting_bubble_wrap first">
+								<div class="etc">
+									<a href="#none" class="error">에러</a>
+								</div>
+								<div class="chatting_bubble image"><!-- 이미지 업로드시 .image 추가 -->
+									<!-- <img src="../img/img_sample.png" alt=""> -->
+								</div>
+							</div>
+							<div class="chatting_bubble_wrap first">
+								<div class="chatting_bubble">
+									<a href="https://www.naver.com" class="link" target="_blank">https://www.naver.com</a>
+								</div>
+							</div>
+							<div class="chatting_bubble_wrap first">
+								<div class="etc">
+									<span class="reading_num">2</span>
+									<span class="time">오전 10:29</span>
+								</div>
+								<div class="chatting_bubble preview"><!-- 이미지 업로드시 .image 추가 -->									
+									<span class="og_img">
+										<img src="../img/img_preview_naver.png" alt="">
+									</span>
+									<span class="og_tit">
+										네이버
+									</span>
+									<span class="og_desc">
+										네이버 메인에서 다양한 정보와 유용한 컨텐츠를 만나보실 수
+									</span>								
+								</div>
+							</div>
+						</div>
+
+						<!-- btn bottom -->
+						<a href="#none" class="btn_bottom"></a>
+					</div>
+				</div>
+				<!-- /content -->
+
+				<!-- input -->
+                <div class="chatting_input_wrap">
+                    <textarea placeholder="메시지를 입력하세요." class="input_area"></textarea>
+                    <div class="btn_wrap">
+                        <a href="#none" class="btn_emoticon">이모티콘</a>
+                        <div class="emoticon_box">
+                            <div class="emoticon_top">
+                                <a href="#none" class="arrow arrow_prev"><img src="../img/ico_left.png" alt="prev"></a>
+                                <ul class="emoticon_cate">
+                                    <li><img src="../img/emoji.png" alt="emoji"></li>
+                                    <li class="on"><img src="../img/emoji.png" alt="emoji"></li>
+                                    <li><img src="../img/emoji.png" alt="emoji"></li>
+                                    <li><img src="../img/emoji.png" alt="emoji"></li>
+                                    <li><img src="../img/emoji.png" alt="emoji"></li>
+                                    <li><img src="../img/emoji.png" alt="emoji"></li>
+                                </ul>
+                                <a href="#none" class="arrow arrow_next"><img src="../img/ico_right.png" alt="next"></a>
+                            </div>
+                            <div class="emoticon_con">
+                                <ul class="scroll_bar">
+                                    <li><img src="../img/emoji_con.png" alt="emoji"></li>
+                                    <li><img src="../img/emoji_con.png" alt="emoji"></li>
+                                    <li><img src="../img/emoji_con.png" alt="emoji"></li>
+                                    <li><img src="../img/emoji_con.png" alt="emoji"></li>
+                                    <li><img src="../img/emoji_con.png" alt="emoji"></li>
+                                    <li><img src="../img/emoji_con.png" alt="emoji"></li>
+                                    <li><img src="../img/emoji_con.png" alt="emoji"></li>
+                                    <li><img src="../img/emoji_con.png" alt="emoji"></li>
+                                    <li><img src="../img/emoji_con.png" alt="emoji"></li>
+                                    <li><img src="../img/emoji_con.png" alt="emoji"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="emoticon_view" style="display:none;">
+                            <a href="#none" class="btn_close"><img src="../img/ico_close_pop.png" alt="close"></a>
+                            <div class="selected_emoticon">
+                                <img src="../img/emoji_con.png" alt="emoji">
+                            </div>
+                        </div>
+                        <input type="file" class="input_file_button" id="clip">
+                        <label for="clip">파일첨부</label>
+
+                        <a href="#none" class="btn_send">보내기</a>
+                    </div>
+                </div>
+                <!-- /input -->
+			</div>
+			<!-- ./ right_wrap -->
+		</div>
+	</div>
+
+	@@include('include/inc_chat_right.html')
+
+	<script>
+		$(function(){
+			
+			pc_talk.inputFocus();
+			pc_talk.chatBtnBottom();
+
+			// 이모티콘
+            $(document).mouseup(function (e) {
+                if ($(e.target).parent(".btn_wrap").length == 0) {
+                    $(".emoticon_box").hide();
+                }
+            });
+			$(".btn_emoticon").on("click", function (e) {
+				e.preventDefault();
+				$(this).next().toggle();
+			});
+            
+			$(".emoticon_view .btn_close").on("click", function (e) {
+				e.preventDefault();
+				$(this).parent('.emoticon_view').hide();
+			});
+
+			// 220726 :: 상담가능 시간 Bar 추가
+			$(".consulting_time_bar").on("click", function(e){
+				e.preventDefault();
+				if(!$(this).find("dl").hasClass("no_time")){
+					if (!$(this).hasClass("open")) {
+						$(this).addClass("open");
+					}else {
+						$(this).removeClass("open")
+					}
+				}
+			})
+
+		})
+	</script>
+</body>
+
+</html>

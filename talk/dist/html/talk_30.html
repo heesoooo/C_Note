@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="stylesheet" href="../css/style.min.css">
+
+
+<script type="text/javascript" src="../js/script.js"></script> 
+	<title>TALK - 메인</title>
+</head>
+
+<body>
+	<div class="talk_wrap">
+		<div class="conversation_cont_wrap">
+			<!-- left_wrap -->
+			<div class="left_wrap">
+				<div class="inner">
+					<!-- navigation -->
+					<div class="tab_nav_wrap">
+						<ul class="top">
+							<li class="icon t_opponent on"><a href="T_Opponent"><span>대화상대</span></a></li>
+							<li class="icon t_list"><a href="T_List"><span>대화목록</span></a></li>
+						</ul>
+						<a href="#none" class="bottom icon settings"></a>
+					</div>
+					<!-- nav content -->
+					<div class="tab_cont_wrap no_teacher"><!-- 220721 :: 학생 학부모 접속시 .no_teacher 클래스 추가 -->
+						<!-- title -->
+						<div class="tab_title">
+							<h2 class="mb3">대화상대</h2><!-- 새로운 대화상태 or 대화목록이 있을 시 .new 추가 -->
+							<!-- 학부모 학생 페이지의 경우 제거 
+								<div class="class_info">
+								<dl class="select_class">
+									<dt><span>까치울초등학교 5학년 5반</span></dt>
+									<dd>
+										<ul>
+											<li class="class_on"><a href="#none">가산초등학교 1학년 1반</a></li> 
+											<li><a href="#none">구로초등학교 2학년 2반</a></li>
+											<li><a href="#none">대림초등학교 3학년 3반</a></li>
+											<li><a href="#none">온수초등학교 4학년 4반</a></li>
+											<li><a href="#none">까치울초등학교 5학년 5반</a></li>
+										</ul>
+									</dd>
+								</dl>
+								<div class="quick_func">
+									<a href="#none" class="send_batch">1:1 메시지 일괄 전송</a>
+									<a href="#none" class="send_notice">단체방 공지 메시지 전송</a>
+								</div>
+							</div> -->
+						</div>
+						<!-- /title -->
+						
+						<!-- search box -->
+						<div class="search_name_box">
+							<button class="btn_search">검색</button>
+							<input type="text" placeholder="이름 검색">
+							<a href="#none" class="btn_clear">지우기</a>			
+						</div>
+						<!-- /search box -->
+						
+						<!-- 대화상대 리스트 -->
+						<div class="tab_cont_item" id="T_Opponent">
+							<!-- 이름 검색 결과가 없을 때 -->
+							<!-- <div class="no_data">
+								검색 결과가 없습니다.
+							</div> -->
+							<!-- /이름 검색 결과가 없을 때 -->
+							<div class="conversate_list_wrap oppnent_list">
+								<!-- group1 -->
+								<div class="list_item">
+									<div class="list_title">
+										<span class="group_tit">가산초등학교 1학년 1반</span>
+									</div>
+									<div class="list_cont">
+										<ul>
+											<li>
+												<span class="profile teacher">프로필사진</span><!-- 선생님 프로필 기본이미지 다름 :: .teacher -->
+												<span class="name">교생 선생님</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- /group1 -->
+								<!-- group2 -->
+								<div class="list_item">
+									<div class="list_title">
+										<span class="group_tit">구로초등학교 2학년 2반</span>
+									</div>
+									<div class="list_cont">
+										<ul>
+											<li>
+												<span class="profile teacher">프로필사진</span><!-- 선생님 프로필 기본이미지 다름 :: .teacher -->
+												<div class="info">
+													<span class="name">
+														<span>양찬미 선생님</span>
+													</span>
+													<span class="consult_time">
+														월, 화, 수, 목, 금 09:00~18:00 상담 
+													</span>
+												</div>
+											</li>
+											<li>
+												<span class="profile teacher">프로필사진</span><!-- 선생님 프로필 기본이미지 다름 :: .teacher -->
+												<div class="info">
+													<span class="name">
+														<span>양찬미 선생님</span>
+													</span>
+													<span class="consult_time">
+														월, 화, 수, 목, 금 09:00~18:00 상담 
+													</span>
+												</div>
+											</li>
+											<li>
+												<span class="profile">
+													<!-- <img src="../img/img_sample.png" alt=""> -->
+												</span>
+												<div class="info">
+													<span class="name">
+														<span>양찬미 선생님</span>
+													</span>
+													<span class="consult_time">
+														월, 화, 수, 목, 금 09:00~18:00 상담 
+													</span>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- /group2 -->
+							</div>
+						</div>
+						<!-- //대화상대 리스트 -->
+
+						<!-- 대화목록 리스트 -->
+						<div class="tab_cont_item" id="T_List">
+							<div class="conversate_list_wrap talk_list">
+								<!-- group1 -->
+								<div class="list_item">
+									<div class="list_title">
+										<span class="group_tit">상단 고정 대화 목록</span>
+									</div>
+									<div class="list_cont">
+										<ul>
+											<li>
+												<span class="profile notice"> <!-- 공지방일 경우 .notice 추가 -->
+													<!-- <img src="" alt=""> -->
+												</span>
+												<div class="info">
+													<span class="name">학부모 공지방</span>
+													<span class="chat">
+														선생님 내일 등교하나요?
+													</span>
+												</div>
+												<div class="time_count">
+													<span class="time">방금전</span>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- /group1 -->
+								
+								<!-- group2 -->
+								<div class="list_item">
+									<div class="list_title">
+										<span class="group_tit">대화목록</span>
+									</div>
+									<div class="list_cont">
+										<ul>
+											<li>
+												<span class="profile">
+													<!-- <img src="" alt=""> -->
+												</span>
+												<div class="info">
+													<span class="name">
+														<span>김지언, 박초희, 문지웅, 남주혁</span><em class="num">28</em>
+													</span>
+													<span class="chat">
+														선생님 내일 등교하나요?
+													</span>
+												</div>
+												<div class="time_count">
+													<span class="time">방금전</span>
+													<span class="count">99+</span>
+												</div>
+											</li>
+											<li>
+												<span class="profile">
+													<!-- <img src="" alt=""> -->
+												</span>
+												<div class="info">
+													<span class="name">
+														<span>김지언, 박초희</span><em class="num">2</em>
+													</span>
+													<span class="chat">
+														선생님 내일 수학 준비물 무엇인가요? 각도기, 자, 연필이
+													</span>
+												</div>
+												<div class="time_count">
+													<span class="time">4.13</span>
+													<span class="count">28</span>
+												</div>
+											</li>
+											<li>
+												<span class="profile">
+													<!-- <img src="" alt=""> -->
+												</span>
+												<div class="info">
+													<span class="name">교생 선생님</span>
+													<span class="chat">
+														환한 네 미소처럼. 넌 날 빛나게 해. 존재만으로 환한 네 미소처럼. 넌 날 빛나게 해
+													</span>
+												</div>
+												<div class="time_count">
+													<span class="time">68분전</span>
+													<span class="count">28</span>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- /group2 -->					
+								
+								<!-- 그룹이 없을 경우-->
+								<div class="list_item">
+									<div class="list_cont">
+										<ul>
+											<li>
+												<span class="profile">
+													<!-- <img src="" alt=""> -->
+												</span>
+												<div class="info">
+													<span class="name">
+														<span>정재훈, 김지영, 고인돌</span>
+														<em class="num">3</em>
+													</span>
+													<span class="chat">
+														선생님 내일 수학 준비물 무엇인가요? 각도기, 자, 연필이
+													</span>
+												</div>
+												<div class="time_count">
+													<span class="time">방금전</span>
+													<span class="count">99+</span>
+												</div>
+											</li>
+											<li>
+												<span class="profile">
+													<!-- <img src="" alt=""> -->
+												</span>
+												<div class="info">
+													<span class="name">
+														<span>정재훈, 김지영, 고인돌</span>
+														<em class="num">3</em>
+													</span>
+													<span class="chat">
+														선생님 내일 수학 준비물 무엇인가요? 각도기, 자, 연필이
+													</span>
+												</div>
+												<div class="time_count">
+													<span class="time">방금전</span>
+													<span class="count">99+</span>
+												</div>
+											</li>
+											<li>
+												<span class="profile">
+													<!-- <img src="" alt=""> -->
+												</span>
+												<div class="info">
+													<span class="name">
+														<span>정재훈, 김지영, 고인돌</span>
+														<em class="num">3</em>
+													</span>
+													<span class="chat">
+														선생님 내일 수학 준비물 무엇인가요? 각도기, 자, 연필이
+													</span>
+												</div>
+												<div class="time_count">
+													<span class="time">방금전</span>
+													<span class="count">99+</span>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<!-- /그룹이 없을 경우-->
+
+								<!-- 신규채팅방 만들기 버튼 -->
+								<a href="#" class="btn_chat_add"></a>
+								<!-- /신규채팅방 만들기 버튼 -->
+							</div>
+						</div>
+						<!-- //대화목록 리스트 -->
+					</div>
+				</div>
+			</div>
+			<!-- /left_wrap -->
+			
+			<!-- right_wrap -->
+			<div class="right_wrap">
+				<div class="empty_box">
+					<p>정해진 상담 시간에만 선생님과의 톡/콜이 가능합니다.  </p>
+					<p class="text_sm">정해진 상담 시간을 확인 후에 이용해주세요.</p>
+				</div>
+			</div>
+			<!-- ./ right_wrap -->
+		</div>
+	</div>
+	
+	<script>
+		$(function(){
+			pc_talk.navTab();
+			pc_talk.searchBox();
+			pc_talk.selectClass();
+			pc_talk.opponentList();
+		})
+	</script>
+</body>
+
+</html>

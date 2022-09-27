@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="stylesheet" href="../css/style.min.css">
+
+
+<script type="text/javascript" src="../js/script.js"></script> 
+	<title>TALK - 메인</title>
+</head>
+
+<body>
+
+    <!-- 1:1 일괄 메시지 보내기 - 리스트 선택 popup -->
+    <div class="modal send_msg" id="sendMsg">
+        <div class="modal_content w470">
+            <a href="#none" class="modal_close" data-dismiss="modal"><img src="../img/ico_close_pop.png" alt="close"></a>
+            <h3 class="pop_title mb25">1:1 일괄 메시지 보내기</h3>
+
+            <div class="flex_between_start">
+                <h5 class="list_title">1명 선택</h5>
+                <div class="flex_start_center">
+                    <div class="check_box mr15">
+                        <input type="checkbox" id="check_all1" checked="">
+                        <label for="check_all1">전체</label>
+                    </div>
+                    <div class="check_box mr15">
+                        <input type="checkbox" id="check_all2" checked="">
+                        <label for="check_all2">선생님</label>
+                    </div>
+                    <div class="check_box mr15">
+                        <input type="checkbox" id="check_all3" checked="">
+                        <label for="check_all3">학생</label>
+                    </div>
+                    <div class="check_box">
+                        <input type="checkbox" id="check_all4" checked="">
+                        <label for="check_all4">학부모</label>
+                    </div>
+                </div>
+            </div>
+            <div class="user_list">
+                <div class="scroll_bar scroll">
+                    <div class="check_box all" style="border-radius: 6px 0 0;">
+                        <input type="checkbox" id="check1" checked>
+                        <label for="check1">선생님 1명</label>
+                    </div>
+                    <ul class="check_list">
+                        <li class="check_box">
+                            <input type="checkbox" id="check2" checked>
+                            <label for="check2">
+                                <img src="../img/ico_captain.png" alt="선생님">
+                                교생 선생님
+                            </label>
+                        </li>
+                    </ul>
+
+                    <div class="check_box all">
+                        <input type="checkbox" id="check3">
+                        <label for="check3">학생 2명</label>
+                    </div>
+                    <ul class="check_list">
+                        <li class="check_box">
+                            <input type="checkbox" id="check4">
+                            <label for="check4">
+                                <span class="num">1</span>
+                                나희도
+                                <em class="badge badge_gray_full">1</em>
+                            </label>
+                        </li>
+                        <li class="check_box">
+                            <input type="checkbox" id="check5">
+                            <label for="check5">
+                                <span class="num">2</span>
+                                백이진
+                                <em class="badge badge_gray_full">15</em>
+                            </label>
+                        </li>
+                    </ul>
+
+                    <div class="check_box all">
+                        <input type="checkbox" id="check6">
+                        <label for="check6">학부모 12명</label>
+                    </div>
+                    <ul class="check_list">
+                        <li class="check_box">
+                            <input type="checkbox" id="check7">
+                            <label for="check7">
+                                <span class="num">1</span>고유림
+                                <em class="badge badge_pink">모</em>
+                            </label>
+                        </li>
+                        <li class="check_box">
+                            <input type="checkbox" id="check8">
+                            <label for="check8">
+                                <span class="num">2</span>박천재
+                                <em class="badge badge_blue">부</em>
+                            </label>
+                        </li>
+                        <li class="check_box">
+                            <input type="checkbox" id="check9">
+                            <label for="check9">
+                                <span class="num">3</span>김천재
+                                <em class="badge badge_gray">기타</em>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="btn_half mt40">
+                <a href="#none" class="btn outline medium">취소</a>
+                <a href="#none" class="btn medium">확인</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("#sendMsg").modal({show:true});
+
+        // 스크롤 유무에 따른 간격조정
+        $(function () {
+            if ($(".user_list .check_box").length > 7) {
+                console.log('a')
+                $(".scroll_bar").addClass('scroll');
+            } else {
+                console.log('b')
+                $(".scroll_bar").removeClass('scroll');
+            }
+
+            pc_talk.selectBox();
+        });
+
+    </script>
+</body>
+
+</html>

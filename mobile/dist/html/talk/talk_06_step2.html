@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+	<title>T_TALK</title>
+</head>
+
+<body>
+	<!-- 1:1 일괄메시지 팝업 -->
+	<div class="modal" id="batchMessage2">
+		<div class="modal_content modal_full"> <!-- 너비/높이 100% 팝업은 .modal_full 추가 -->
+			<!-- header -->
+			<div class="sub_header center">
+				<a href="#none" class="modal_close" data-dismiss="modal">뒤로가기</a>
+				<h2 class="sub_title">1:1 일괄 메시지</h2>    
+				<div class="btn_wrap">
+					<a href="#none"><span class="count">16</span> 발송</a>				
+				</div>
+			</div>
+			<!-- /header -->
+			<!-- contents -->
+			<div class="cont_section">
+				<div class="batch_massage_wrap">
+                    <div class="inp_message">
+                        <textarea name="" id="" cols="30" rows="10">
+작성된 메시지는 1:1 채팅방에 일괄 발송되며, 
+수신자가 답장할 수 있습니다.
+                        </textarea>
+                    </div>
+				</div>
+			</div>
+			<!-- /contents -->	
+		</div>
+	</div>
+	<!-- ./ -->
+
+	<script>
+
+		$(document).ready(function($){
+			$('#batchMessage2').modal({
+				show: true
+			});
+		})
+
+	</script>
+
+</body>
+
+</html>

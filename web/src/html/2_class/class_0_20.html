@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+		@@include('../include/inc_header.html')
+
+		<!--  sub container -->
+		<div class="container inner_cont">
+
+			<!-- snb -->
+			@@include('../include/inc_snb.html')
+			<!-- //snb -->
+
+			<div class="contents">
+				<!-- title -->
+				<div class="title_box">
+					<h4 class="page_title">구성원 관리</h4>
+				</div>
+				<!--// title -->
+
+				<!-- sub contents -->
+
+				<!-- class tab -->
+				<div class="class_tab mb70">
+					<a href="#none" class="tab_links">학부모(0)</a>
+					<a href="#none" class="tab_links active">학생(0)</a>
+				</div>
+				<!-- /class tab -->
+
+                <!-- 클래스에 가입한 학생이 없을 경우 -->
+                <div class="empty_box pt65">
+                    <figure class="empty no_class"></figure>
+                    <p class="strength">
+                        <strong>클래스에 가입한</strong>  학생이 없습니다.
+                        <span class="sm">구성원을 초대해보세요.</span>
+                    </p>
+
+                    <div class="btn_wrap t_center mt45">
+                        <!-- 220818 :: 교사 계정 생성 > 계정 개별 생성 -->
+                        <a href="#none" class="btn outline round large w210"><i class="sprite_comm sp_ico_new_create_lg mr10"></i>계정 개별 생성</a>
+                        <a href="#none" class="btn outline round large ml10 w210"><i class="sprite_comm sp_ico_all_create_lg mr10"></i>계정 일괄 생성</a>
+                    </div>
+                </div>
+                <!-- /클래스에 가입한 학생이 없을 경우 -->
+
+				<!-- /sub contents -->
+			</div>
+		</div>
+		<!--  /sub container -->
+
+		<!-- footer -->
+		@@include('../include/inc_footer.html')
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 서브</title>
+</head>
+<body>
+
+
+    <!-- popup -->
+    <div class="modal" id="pop_class_qualify">
+      <div class="modal_content w470">
+        <a href="#none" class="modal_close" data-dismiss="modal"><i class="sprite_comm sp_ico_close_pop"></i></a>
+        <div class="pop_title">클래스 권한 위임 후, 탈퇴하기</div>
+        <p class="pop_txt ft16 mt30">
+          권한 위임 받을 선생님을 선택해주세요.
+        </p>
+        <div class="radio_box mt10">
+          <input type="radio" class="mr10" id="radio1" name="radio_btn" checked> 
+          <label for="radio1">김천재 선생님</label>
+        </div>
+        <div class="radio_box mt5">
+          <input type="radio" class="mr10" id="radio2" name="radio_btn"> 
+          <label for="radio2">이천재 선생님</label>
+        </div>
+        <div class="btn_half mt35">
+          <a href="#none" class="btn medium outline">취소</a>
+          <a href="#none" class="btn medium">탈퇴</a>
+        </div>
+      </div>
+    </div>
+    <!--// popup -->
+
+
+		<script>
+      $('#pop_class_qualify').modal({show: true});
+    </script>
+
+</body>
+</html>

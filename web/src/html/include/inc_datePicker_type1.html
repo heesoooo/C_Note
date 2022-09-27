@@ -1,0 +1,19 @@
+﻿<!-- .calendar_modal -->
+<div class="calendar_modal">
+    <div id="datepicker1" data-date="2022.06.04"></div>
+    <input type="hidden" id="my_hidden_input">
+    <script>
+        $('#datepicker1').datepicker({
+            weekStart: 1,
+        });
+        $('#datepicker1').on('changeDate', function() {
+            $('#my_hidden_input').val(
+                $('#datepicker').datepicker('getFormattedDate')
+            );
+        });
+    </script>
+    <div class="btn_full mt15">
+        <a href="#none" class="btn medium">일정 추가하기</a>
+    </div>			
+</div>
+<!-- ./ -->

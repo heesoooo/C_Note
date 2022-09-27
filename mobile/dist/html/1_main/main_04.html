@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+    <title>우리반티셀파 - 메인</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+        <div class="sub_header">
+            <a href="#none" class="history_back">뒤로가기</a>
+            <h2 class="sub_title">알림</h2>
+            <div class="btn_wrap"> 
+                <a href="#none" class="btn_alarm_setting">알람설정</a>
+            </div>
+        </div>
+		<!-- /header -->
+
+		<!-- content -->
+		<div class="container">
+            <ul class="alarm_list_wrap inner">
+                <li class="alarm_list">
+                    <span class="profile">
+                        <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                    </span>
+                    <span>
+                        <p class="title">가산초등학교 가정통신문</p>
+                        <p class="txt">
+                            코로나 유증상시 등교를 중지하고 학교에 알려 주시기 바랍니다. 내일 국악 소풍 서울국립국악원 방문
+                        </p>
+                        <span class="date">2022.05.30 16:52</span>
+                    </span>
+                </li>
+                <li class="alarm_list">
+                    <span class="profile">
+                        <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                    </span>
+                    <span>
+                        <p class="title">알림장</p>
+                        <p class="txt">
+                            코로나 유증상시 등교 중지
+                        </p>
+                        <span class="date">2022.05.30 16:52</span>
+                    </span>
+                </li>
+                <li class="alarm_list">
+                    <span class="profile">
+                        <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                    </span>
+                    <span>
+                        <p class="title">가산초등학교 가정통신문</p>
+                        <p class="txt">
+                            코로나 유증상시 등교를 중지하고 학교에 알려 주시기 바랍니다. 내일 국악 소풍 서울국립국악원 방문
+                        </p>
+                        <span class="date">2022.05.30 16:52</span>
+                    </span>
+                </li>
+            </ul>
+        </div>
+		<!-- //content -->
+	</div>
+
+
+    <!-- 게시판 설정 팝업 -->
+    <div class="modal" id="settingAlarm">
+        <div class="modal_content modal_full"><!-- 너비/높이 100% 팝업은 .modal_full 추가 -->
+            <!-- header -->
+            <div class="sub_header center">
+                <a href="#none" class="modal_close" data-dismiss="modal">뒤로가기</a>
+                <h2 class="sub_title">알림 설정</h2>
+            </div>
+            <!-- /header -->
+
+            <!-- contents -->
+            <div class="cont_section">
+                <div class="setting_list">
+                    <div class="setting_top">
+                        <p class="title">우리반 게시판</p>
+                    </div>
+                    <ul class="setting_detail">
+                        <li class="list_item">
+                            <p class="title">학급공지</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </li>
+                        <li class="list_item">
+                            <p class="title">앨범</p>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </li>
+                        <li class="list_item">
+                            <p class="title">자유게시판</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </li>
+                        <li class="list_item">
+                            <p class="title">과제게시판</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </li>
+                        <li class="list_item">
+                            <p class="title">설문게시판</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </li>
+                        <li class="list_item">
+                            <p class="title">T셀파 학습도구</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </li>
+                    </ul>
+
+                    <div class="setting_top">
+                        <p class="title">우리반 댓글</p>
+                    </div>
+                    <ul class="setting_detail">
+                        <li class="list_item">
+                            <p class="title">댓글 알림</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </li>
+                        <li class="list_item">
+                            <p class="title">대댓글 알림</p>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </li>
+                        <li class="list_item">
+                            <p class="title">대대댓글 알림</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </li>
+                    </ul>
+
+                    <div class="setting_top">
+                        <p class="title">학교 게시판</p>
+                    </div>
+                    <ul class="setting_detail">
+                        <li class="list_item">
+                            <p class="title">가정통신문</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </li>
+                        <li class="list_item">
+                            <p class="title">급식</p>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </li>
+                        <li class="list_item">
+                            <p class="title">학교공지</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <!-- /contents -->
+        </div>
+    </div>
+    <!-- ./ -->
+
+    <script>
+
+            $("#settingAlarm").modal({
+                show: true,
+                overlayDrop: false
+            })
+
+    </script>
+</body>
+
+</html>

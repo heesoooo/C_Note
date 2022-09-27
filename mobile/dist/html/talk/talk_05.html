@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+	<title>T_TALK</title>
+</head>
+
+<body>
+	<div class="talk_wrap">
+		<!-- header -->
+        <div class="sub_header">
+            <a href="#none" class="history_back">뒤로가기</a>
+        
+            <h2 class="sub_title">상담 시간 설정</h2>
+        </div>
+		<!-- //header -->
+
+        <!-- 상담 시간 설정 -->
+        <div class="container consult_time_setting">
+            <div class="set_day_wrap">
+                <ul>
+                    <li>
+                        <div class="set_day">
+                            <span class="day">월요일</span>
+                            <label class="switch" onclick="timeBoxHide(this)">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="set_time">
+                            <input type="text" data-target="timepicker1" placeholder="09 : 00" inputmode="none">
+                            <span>~</span>
+                            <input type="text" data-target="timepicker2" placeholder="18 : 00" inputmode="none">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="set_day">
+                            <span class="day">화요일</span>
+                            <label class="switch" onclick="timeBoxHide(this)">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="set_time">
+                            <input type="text" data-target="timepicker1" placeholder="09 : 00" inputmode="none">
+                            <span>~</span>
+                            <input type="text" data-target="timepicker2" placeholder="18 : 00" inputmode="none">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="set_day">
+                            <span class="day">수요일</span>
+                            <label class="switch" onclick="timeBoxHide(this)">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="set_time">
+                            <input type="text" data-target="timepicker1" placeholder="09 : 00" inputmode="none">
+                            <span>~</span>
+                            <input type="text" data-target="timepicker2" placeholder="18 : 00" inputmode="none">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="set_day">
+                            <span class="day">목요일</span>
+                            <label class="switch" onclick="timeBoxHide(this)">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="set_time">
+                            <input type="text" data-target="timepicker1" placeholder="09 : 00" inputmode="none">
+                            <span>~</span>
+                            <input type="text" data-target="timepicker2" placeholder="18 : 00" inputmode="none">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="set_day">
+                            <span class="day">금요일</span>
+                            <label class="switch" onclick="timeBoxHide(this)">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="set_time">
+                            <input type="text" data-target="timepicker1" placeholder="09 : 00" inputmode="none">
+                            <span>~</span>
+                            <input type="text" data-target="timepicker2" placeholder="18 : 00" inputmode="none">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="set_day">
+                            <span class="day">토요일</span>
+                            <label class="switch" onclick="timeBoxHide(this)">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="set_time">
+                            <input type="text" data-target="timepicker1" placeholder="09 : 00" inputmode="none">
+                            <span>~</span>
+                            <input type="text" data-target="timepicker2" placeholder="18 : 00" inputmode="none">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="set_day">
+                            <span class="day">일요일</span>
+                            <label class="switch" onclick="timeBoxHide(this)">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="set_time">
+                            <input type="text" data-target="timepicker1" placeholder="09 : 00" inputmode="none">
+                            <span>~</span>
+                            <input type="text" data-target="timepicker2" placeholder="18 : 00" inputmode="none">
+                        </div>
+                    </li>
+                </ul>              
+                <div class="desc_box">
+                    <div class="box_inner">
+                        <strong><i class="sprite_comm sp_ico_talk_sm"></i>채팅기능</strong>
+                        <p>
+                            상담 시간과 관계없이 채팅 내용은 전송되나, 상대가 보낸 메시지의 PUSH 알림이 오지 않아, 개인 시간을 보호 받을 수 있습니다.
+                        </p>
+                    </div>
+                    <div class="box_inner">
+                        <strong><i class="sprite_comm sp_ico_call_sm"></i>전화기능</strong>
+                        <p>
+                            상담 시간과 관계없이 선생님은 언제든지 전화가 가능하며, 학생과 학부모는 선생님이 설정해둔 상담 시간에만 통화를 걸 수 있습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>	
+	</div>
+
+    <!-- datetimepicker1 팝업 -->
+    <div class="modal" id="timepicker1">
+        <div class="calendar modal_content">
+            <div class="form-group">
+                <div class="row">
+                    <div>
+                        <div id="datetimepicker1" class="only_timepicker">
+                            <h3 class="picker_title">상담 시작 시간 설정</h3>
+                        </div>                        
+                    </div>
+
+                    <div class="check_box t_center mb20">
+                        <input type="checkbox" id="check1" checked="">
+                        <label for="check1">모든 요일에 동일 적용하기</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal_btn_half">
+                <a href="#none" class="modal_btn" data-dismiss="modal">취소</a>
+                <!-- 활성화시 .active 추가 / 비활성화시 .disabled 추가 -->
+                <a href="#none" class="modal_btn active">확인</a>
+            </div>
+        </div>
+    </div>
+
+     <!-- datetimepicker2 팝업 -->
+     <div class="modal" id="timepicker2">
+        <div class="calendar modal_content">
+            <div class="form-group">
+                <div class="row">
+                    <div>
+                        <div id="datetimepicker2" class="only_timepicker">
+                            <h3 class="picker_title">상담 마지막 시간 설정</h3>
+                        </div>
+                    </div>
+
+                    <div class="check_box t_center mb20">
+                        <input type="checkbox" id="check1" checked="">
+                        <label for="check1">모든 요일에 동일 적용하기</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal_btn_half">
+                <a href="#none" class="modal_btn" data-dismiss="modal">취소</a>
+                <!-- 활성화시 .active 추가 / 비활성화시 .disabled 추가 -->
+                <a href="#none" class="modal_btn active">확인</a>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker({
+                format: 'LT',
+                inline: true,
+                format: 'A hh:mm',
+            });
+            $('#datetimepicker2').datetimepicker({
+                format: 'LT',
+                inline: true,
+                format: 'A hh:mm'
+            });
+            $(".set_time>input").on('click', function(){                
+                //datetimepicker 오전 오후 설정
+                if( $('.btn.btn-primary').html() == '오전' ) {
+                    $('.btn.btn-primary').removeClass('pm').addClass('am');
+                }
+                else {
+                    $('.btn.btn-primary').removeClass('am').addClass('pm');
+                }
+            });
+            // 타이틀 텍스트 변경
+            $("#datetimepicker1 .separator1, #datetimepicker2 .separator1").text("");
+        });
+        
+        // 시간 선택 박스 toggle
+        function timeBoxHide(e) {
+            if( $(e).find("input").is(":checked") ) {
+                $(e).parent().next(".set_time").fadeIn(200).parent().removeClass("gap_close");;
+            } else {
+                $(e).parent().next(".set_time").hide().parent().addClass("gap_close");
+            }
+        }
+    </script>
+</body>
+
+</html>

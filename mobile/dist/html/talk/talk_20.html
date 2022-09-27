@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+    <title>T_TALK</title>
+</head>
+
+<body>
+    <!-- 첨부파일 선택 팝업 -->
+    <div class="modal" id="selAttachFile">
+        <div class="modal_content modal_full">
+            <!-- 너비/높이 100% 팝업은 .modal_full 추가 -->
+            <!-- header -->
+            <div class="sub_header center">
+				<a href="#none" class="modal_close" data-dismiss="modal">뒤로가기</a>
+				<h2 class="sub_title">첨부파일</h2>    
+				<div class="btn_wrap">
+					<a href="#none"><span class="count">16</span> 저장</a>				
+				</div>
+			</div>
+            <!-- /header -->
+            <!-- contents -->
+            <div class="cont_section">
+                <!-- 첨부파일 선택 -->
+                <div class="select_file_list">
+                    <div class="list_group">
+                        <p class="date">2022.06.28</p>                        
+                        <ul class="img_file_list"> <!-- .img_file_list -->
+                            <li class="check_box circle">
+                                <input type="checkbox" id="check1" checked="">
+                                <label for="check1"></label>
+                                <div class="check_img">
+                                    <img src="../../img/img_sample.png" alt="image">
+                                </div>
+                                <!-- 영상 시간 -->
+                                <span class="video_time">
+                                    <i></i> 00:45
+                                </span>
+                            </li>
+                            <li class="check_box circle">
+                                <input type="checkbox" id="check2" checked="">
+                                <label for="check2"></label>
+                                <div class="check_img">
+                                    <img src="../../img/img_sample.png" alt="image">
+                                </div>
+                            </li>
+                            <li class="check_box circle">
+                                <input type="checkbox" id="check3">
+                                <label for="check3"></label>
+                                <div class="check_img">
+                                    <img src="../../img/img_sample.png" alt="image">
+                                </div>
+                            </li>
+                            <li class="check_box circle">
+                                <input type="checkbox" id="check4">
+                                <label for="check4"></label>
+                                <div class="check_img">
+                                    <img src="../../img/img_sample.png" alt="image">
+                                </div>
+                            </li>                            
+                            <!-- 이미지 파일 깨질때 .expire_img -->
+                            <li class="expire_img"></li>
+                            <!-- 영상 파일 깨질때 .expire_video -->
+                            <li class="expire_video"></li>
+                        </ul>
+                    </div>
+
+                    <div class="list_group">
+                        <p class="date mt15">2022.05.02</p>
+                        <ul class="img_file_list"> <!-- .img_file_list -->
+                            <li class="check_box circle">
+                                <input type="checkbox" id="check5" checked="">
+                                <label for="check5"></label>
+                                <div class="check_img">
+                                    <img src="../../img/img_sample.png" alt="image">
+                                </div>
+                            </li>
+                            <li class="check_box circle">
+                                <input type="checkbox" id="check6">
+                                <label for="check6"></label>
+                                <div class="check_img">
+                                    <img src="../../img/img_sample.png" alt="image">
+                                </div>
+                            </li>
+                            <li class="check_box circle">
+                                <input type="checkbox" id="check7">
+                                <label for="check7"></label>
+                                <div class="check_img">
+                                    <img src="../../img/img_sample.png" alt="image">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="list_group">
+                        <p class="date">2022.06.28</p>
+                        <ul class="attached_file_list"> <!-- .attached_file_list -->
+                            <li class="check_box circle">
+                                <input type="checkbox" id="check8" checked="">
+                                <label for="check8"></label>
+                                <div class="check_attached">
+                                    <div>
+                                        <span class="sprite_comm sp_ico_zip">zip파일</span>
+                                        <p class="file_name">[벚꽃반 자료]3교시 음악
+                                            사용시재...노래파일.zip</p>
+                                        <p class="file_date">유효기간 ~ 2022.07.28</p>
+                                        <p class="file_size">2.99MB</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="check_box circle">
+                                <input type="checkbox" id="check9">
+                                <label for="check9"></label>
+                                <div class="check_attached">
+                                    <div>
+                                        <span class="sprite_comm sp_ico_pdf">pdf 파일</span>
+                                        <p class="file_name">3교시 음악시간 악보집 전체 공유본_최종.pdf</p>
+                                        <p class="file_date">유효기간 ~ 2022.07.28</p>
+                                        <p class="file_size">2.99MB</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="check_box circle">
+                                <input type="checkbox" id="check10" checked="">
+                                <label for="check10"></label>
+                                <div class="check_attached">
+                                    <div>
+                                        <span class="sprite_comm sp_ico_zip">zip파일</span>
+                                        <p class="file_name">[벚꽃반 자료] 3교시 음악 사용시재 노래파일.zip</p>
+                                        <p class="file_date">유효기간 ~ 2022.07.28</p>
+                                        <p class="file_size">2.99MB</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="list_group">
+                        <p class="date mt15">2022.05.02</p>
+                        <ul class="attached_file_list"> <!-- .attached_file_list -->
+                            <li class="check_box circle">
+                                <input type="checkbox" id="check11" checked="">
+                                <label for="check11"></label>
+                                <div class="check_attached">
+                                    <div>
+                                        <span class="sprite_comm sp_ico_img_file">이미지 파일</span>
+                                        <p class="file_name">3교시 음악시간.jpg</p>
+                                        <p class="file_date">유효기간 ~ 2022.07.28</p>
+                                        <p class="file_size">2.99MB</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="check_box circle">
+                                <input type="checkbox" id="check12">
+                                <label for="check12"></label>
+                                <div class="check_attached">
+                                    <div>
+                                        <span class="sprite_comm sp_ico_video">영상파일</span>
+                                        <p class="file_name">3교시 음악시간 노래.mp3</p>
+                                        <p class="file_date">유효기간 ~ 2022.07.28</p>
+                                        <p class="file_size">2.99MB</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /contents -->
+        </div>
+    </div>
+    <!-- ./ -->
+
+    <script>
+        $(document).ready(function ($) {
+            $('#selAttachFile').modal({
+                show: true
+            });
+        })
+    </script>
+
+</body>
+
+</html>

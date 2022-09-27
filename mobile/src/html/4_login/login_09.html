@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 로그인</title>
+</head>
+
+<body class="ovh">
+    
+	<!-- 회원가입 완료 팝업 -->
+    <div class="login_wrap">
+        <div class="modal" id="requestJoinClass" style="display: block;">
+            <div class="modal_content modal_full"> <!-- 너비/높이 100% 팝업은 .modal_full 추가 -->
+                <!-- header -->
+                <div class="sub_header center">
+                    <a href="#none" class="modal_close" data-dismiss="modal">뒤로가기</a>
+                    <h2 class="sub_title">가입완료</h2>
+                </div>
+                <!-- /header -->
+                <!-- contents -->
+                <div class="cont_section">
+                    <div class="empty_box">
+                        <figure class="empty join_finish"></figure>
+                        <p class="empty_msg">회원가입이 완료되었습니다.</p>
+                        <p class="empty_txt">우리반 T셀파 가입을 환영합니다.</p>
+                        <a href="#none" class="btn outline round primary mt65" style="min-width:18.3rem;">메인으로 이동</a>
+                    </div>
+                </div>
+                <!-- /contents -->	
+            </div>
+        </div>
+    </div>
+
+	<script>
+		$(function () {
+			$("#requestJoinClass").modal({ show: true, overlayDrop: false})
+		})
+	</script>
+
+
+</body>
+</html>

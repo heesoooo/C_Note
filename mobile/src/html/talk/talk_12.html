@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('../include/inc_html_head.html')
+    <title>T_TALK</title>
+</head>
+
+<body>
+    <div class="talk_wrap">
+        <!-- header -->
+        <div class="sub_header">
+            <a href="#none" class="history_back">뒤로가기</a>
+
+            <h2 class="sub_title">나희도(모)</h2>
+
+            <div class="btn_wrap">
+                <a href="#none" class="btn_search">검색</a>
+                <a href="#none" class="btn_chat_info">대화방 정보 확인</a>
+            </div>
+        </div>
+        <!-- //header -->
+
+        <!-- 채팅창 -->
+        <div class="container chatting_wrap">
+            <div class="chatting_cont">
+                <!-- 대화 내용 -->
+                <div class="chatting_list_wrap">
+                    <!-- 상담가능시간 -->
+                    <div class="consulting_time_bar">
+                        <dl>
+                            <dt>
+                                <i class="sprite_comm sp_ico_consult_clock"></i> 상담가능 시간
+                            </dt>
+                            <dd>
+                                <ul>
+                                    <li class="first"><span>월</span> <strong class="time">09:00 ~ 18:00</strong></li>
+                                    <li><span>화</span> <strong class="time">09:00 ~ 18:00</strong></li>
+                                    <li><span>수</span> <strong class="time">09:00 ~ 18:00</strong></li>
+                                    <li><span>목</span> <strong class="time">09:00 ~ 18:00</strong></li>
+                                    <li><span>금</span> <strong class="time">09:00 ~ 18:00</strong></li>
+                                </ul>
+                            </dd>
+                        </dl>                        
+                        <!-- 상담가능시간 설정되어있지 않을 때 -->
+                        <!-- .no_time 추가 -->
+                        <!-- <dl class="no_time">
+                            <dt>
+                                <i class="sprite_comm sp_ico_consult_clock"></i> 상담가능 시간
+                            </dt>
+                            <dd>
+                                <ul>
+                                    <li class="first"><span>요일별 상담 가능 시간을 설정해주세요.</span>
+                                </ul>
+                            </dd>
+                        </dl> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 메시지 입력영역 -->
+            @@include('../include/inc_talk_chatting_input.html')
+            <!-- /메시지 입력영역 -->
+        </div>
+        <!-- /채팅창 -->
+    </div>
+
+	<!-- 채팅방 설정 -->
+	@@include('../include/inc_talk_chatroom_setting.html')
+	<!-- ./ -->
+
+    <script>
+        $("#popFileAttach").modal({show:true});
+    </script>
+
+</body>
+
+</html>

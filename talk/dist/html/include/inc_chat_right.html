@@ -1,0 +1,104 @@
+<!-- 대화검색 팝업 -->
+<div class="modal_chat_right " id="chatSearch">
+	<a href="#none" class="modal_close">닫기</a>
+	
+	<h4 class="mb20">대화내용 검색</h4>
+	<!-- 입력전 / 220817 :: 검색버튼 위치 변경 -->
+	<div class="search_name_box">
+        <input type="text" placeholder="검색">
+		<a href="#none" class="btn_clear">지우기</a>			
+		<button class="btn_search">검색</button>
+	</div>
+	<div class="no_data">
+		검색어를 입력하세요.
+	</div>
+	<!-- 재검색 / 220817 :: 검색버튼 위치 변경 -->
+	<div class="search_name_box">
+        <input type="text" value="준비물">
+		<a href="#none" class="btn_research">재검색</a>			
+		<button class="btn_search">검색</button>
+	</div>
+	<div class="no_data">
+		<span>준비물</span>로 검색중입니다.
+	</div>
+	<!-- 검색리스트 / 220817 :: 검색버튼 위치 변경 -->
+	<div class="search_name_box">
+        <input type="text" value="준비물">
+		<a href="#none" class="btn_clear">지우기</a>		
+		<button class="btn_search">검색</button>
+	</div>
+	<div class="conversate_list_wrap talk_list">
+		<ul class="list_cont">
+			<li>
+				<span class="profile">
+					<!-- <img src="" alt=""> -->
+				</span>
+				<div class="info">
+					<span class="name">
+						<span>김지언, 박초희, 문지웅, 남주혁</span><em class="num">28</em>
+					</span>
+					<span class="chat">
+						<span class="same_word">준비물</span>목록.pdf
+					</span>
+				</div>
+			</li>
+			<li>
+				<span class="profile">
+					<!-- <img src="" alt=""> -->
+				</span>
+				<div class="info">
+					<span class="name">
+						<span>백이진</span>
+					</span>
+					<span class="chat">
+						<span class="same_word">준비물</span>목록.pdf
+					</span>
+				</div>				
+			</li>
+		</ul>
+	</div>
+</div>
+
+<!-- 채팅방 설정 팝업 -->
+<div class="modal_chat_right" id="chatSetting">
+	<a href="#none" class="modal_close">닫기</a>
+	<h4>채팅방 설정</h4>
+	<div class="chat_room_profile">
+		<a href="#none" class="edit"><i></i>편집</a>
+		<span class="img">
+			<!-- <img src="../img/img_sample.png" alt=""> -->
+		</span>
+		<span class="room_name">학부모 공지방</span>
+	</div>
+	<div class="chat_info_list">
+		<ul>
+			<li class="partners">
+				<a href="#none">대화상대</a>
+				<div class="scroll">
+					<div class="inner">
+						<a href="#none" class="add"><i></i>대화상대 추가하기</a>
+						<a href="#none" class="reject"><i></i>대화상대 내보내기</a>
+						<ul class="opponent_list">
+							<li class="captain"><i></i>교생 선생님</li> <!-- 선생님일때 .captain 추가 -->
+							<li class="others"><i></i>그 외 15명</li> <!-- 그 외 인원 표시 .others 추가 -->
+							<li><span class="num">1</span>고유림 <em class="badge badge_pink">모</em></li>
+							<li><span class="num">1</span>고유림 <em class="badge badge_blue">부</em></li>
+							<li><span class="num">1</span>고유림 <em class="badge badge_gray">기타</em></li>
+							<li><span class="num">99</span>고유림 <em class="badge badge_pink">모</em></li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			<li><a href="#none">이미지,동영상</span></a>
+			<li><a href="#none">첨부파일</span></a>
+			<li><a href="#none">대화내용 저장</span></a>        
+			<li><a href="#none">채팅방 삭제</span></a>
+		</ul>
+	</div>
+</div>
+<script>
+	$(function(){
+		pc_talk.modalRightChat();
+		pc_talk.chatPartnersList();
+	})
+</script>

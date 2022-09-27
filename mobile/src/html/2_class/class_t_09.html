@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+    <!-- 교사 발급 계정 -->
+    <div class="modal" id="issuingAccount">
+        <div class="modal_content modal_full"> <!-- 너비/높이 100% 팝업은 .modal_full 추가 -->
+            <!-- header -->
+            <div class="sub_header center">
+                <a href="#none" class="modal_close" data-dismiss="modal">close</a>
+                <h2 class="sub_title">교사 발급 계정</h2>
+                <div class="btn_wrap">
+                    <!-- 모든 내역 입력 후 활성화시 .disabled 삭제 -->
+                    <a href="#none" class="disabled">확인</a>
+                </div>
+            </div>
+            <!-- /header -->
+            <!-- contents -->
+            <div class="cont_section">
+                <div class="mypage_wrap">
+                    <div class="form_modify">
+                        <div class="info_dec">
+                            <div class="upload_img pt30">
+                                <span class="img">
+                                    <!-- <img src="" alt=""> -->
+                                </span>
+                                <input type="file" class="input_file_button" id="imgEdit">
+                                <label for="imgEdit" class="sprite_comm sp_ico_edit"></label>
+                            </div>
+                        </div>
+                        <div class="info_dec">
+                            <span class="tit essential">이름</span>
+                            <div class="input_full">
+                                <!-- 에러 메세지 있을 경우 input에 .error 클래스 추가 -->
+                                <input type="text" placeholder="한글 또는 영문" class="error">
+                            </div>
+                            <!-- 에러 메세지 추가 -->
+                            <span class="val_check_red">이름을 입력 해주세요.</span>
+                        </div>
+                        <div class="info_dec">
+                            <span class="tit essential">아이디</span>
+                            <div class="input_full">
+                                <input type="text" placeholder="영문 소문자, 숫자">
+                            </div>
+                        </div>
+                        <div class="info_dec">
+                            <span class="tit essential">비밀번호</span>
+                            <div class="input_full">
+                                <input type="password" placeholder="숫자 4~8자리">
+                            </div>
+                        </div>
+                        <div class="info_dec">
+                            <span class="tit essential">비밀번호 확인</span>
+                            <div class="input_full">
+                                <input type="password" placeholder="">
+                            </div>
+                        </div>
+                        <div class="info_dec">
+                            <span class="tit">번호</span>
+                            <div class="input_full">
+                                <input type="text" placeholder="숫자 2자리">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /contents -->	
+        </div>
+    </div>
+    <!-- ./ -->
+
+    <script>
+        $(function () {
+            $("#issuingAccount").modal({ show: true, overlayDrop: false})
+        })
+    </script>
+</body>
+
+</html>

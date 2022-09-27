@@ -1,0 +1,316 @@
+﻿@mixin timepicker {
+    border-top: 1px solid $gray_e0;
+    padding-top: 2.4rem;
+
+    table td {
+        height: 5rem;
+        line-height: 5rem;
+
+        span {
+            width: 5rem;
+            height: 5rem;
+            font-size: 1.8rem;
+            font-weight: $font_weight_regular;
+        }
+        &.separator {
+            width: 1.25rem;
+        }
+        &.separator1 {
+            text-align: left;
+            font-size: 1.4rem;
+            font-weight: $font_weight_medium;
+            line-height: 1;
+            vertical-align: top;
+        }
+        span.timepicker-hour {
+            &::after {
+                content: '시';
+                display: inline-block;
+            }
+        }
+        span.timepicker-minute {
+            &::after {
+                content: '분';
+                display: inline-block;
+            }
+        }
+        button.btn.btn-primary {
+            position: relative;
+            padding: 0;
+            color: $black;
+            font-size: 1.8rem;
+            background-color: transparent;
+            border: none;
+
+            &.am::before {
+                position: absolute;
+                content: '오후';
+                bottom: -3rem;
+                color: $gray_e0;
+            }
+            &.pm::before {
+                position: absolute;
+                content: '오전';
+                top: -3rem;
+                color: $gray_e0;
+            }
+        }
+    }
+    a[data-action="incrementHours"],
+    a[data-action="incrementMinutes"] {
+        background: url(../../img/ico_down_default.png) no-repeat top 0.7rem center;
+        background-size: 1.1rem 0.6rem;
+    }
+    a[data-action="decrementHours"],
+    a[data-action="decrementMinutes"] {
+        background: url(../../img/ico_up_default.png) no-repeat bottom 0.7rem center;
+        background-size: 1.1rem 0.6rem;
+    }
+}
+.bootstrap-datetimepicker-widget {
+    .accordion-toggle {
+        display: none;
+    }
+}
+// 클릭시 datepicker 실행 input
+input {
+    &.inp_datepicker {
+        position: relative;
+        margin: 0;
+        padding-left: 1.2rem;
+        min-width: 10.5rem;
+        height: 4rem;
+        border: 1px solid $gray_e0;
+        border-radius: 0.7rem;
+        @include ff-mont;
+        font-size: 1.4rem;
+        background-image: url(../../img/ico_datetimepicker.png);
+        background-size: 1.4rem;
+        background-repeat: no-repeat;
+        background-position: center right 1.2rem;
+        cursor: pointer;
+        letter-spacing: -0.02rem;
+    }
+    &::placeholder {
+        color: $black;
+    }
+}
+.calendar_wrap {
+    @include flexbox(start, center);
+    width: calc(100% - 5rem);
+    position: relative;
+
+    span {
+        margin: 0 0.7rem;
+        font-size: 1.4rem;
+    }
+}
+.bootstrap-datetimepicker-widget.dropdown-menu {
+    position: absolute;
+    top: 4.8rem !important;
+    min-width: 28rem;
+    height: 34rem;
+    padding: 3rem 2.2rem 0;
+    margin-top: 0;
+    box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 2rem;
+    background-color: $white;
+
+    .picker-switch {
+        height: 3rem;
+    }
+}
+// 달력 감싼 모달
+.calendar_modal_flex {
+    @include flexbox(start, start);
+}
+//modal_calendar
+.modal {
+    .calendar {
+        &.modal_content {
+            padding: 0;
+            width: auto;
+            max-width: 31.5rem;
+            border-radius: 2rem;
+            background-color: #fff;
+
+            .modal_btn_half {
+                margin-top: 0;
+            }
+        }
+        .datepicker {
+            padding: 3rem 2rem 1rem;
+
+            table.table-condensed tr td.day {
+                line-height: 3.3rem;
+            }
+        }
+        .timepicker {
+            @include timepicker;
+        }
+    }
+}
+.calendar {
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: $white;
+
+    .schedule_list_wrap {
+        border-top: 1px solid $gray_e0;
+
+        //일정 리스트
+        .schedule_list {
+            li {
+                padding: 1.8rem 0;
+                border-bottom: 1px solid $gray_e0;
+            }
+            .date {
+                display: block;
+                margin-bottom: 0.8rem;
+                font-size: 1.5rem;
+                color: $point;
+                line-height: 1;
+            }
+            .content {
+                font-size: 1.4rem;
+                line-height: 2.2rem;
+                letter-spacing: -0.15px;
+                color: $black;
+            }
+        }
+        .empty_msg {
+            margin: 8rem 0;
+        }
+    }
+}
+// datePicker Custom
+.datepicker {
+    padding: 0;
+    margin-bottom: 1.2rem;
+
+    .picker-switch {
+        height: 4.3rem;
+        line-height: 1;
+        vertical-align: top;
+        font-size: 1.9rem;
+        font-weight: 500;
+        letter-spacing: -.018rem;
+        color: $primary;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+    table.table-condensed {
+        width: 100%;
+
+        tr {
+
+            th,
+            td {
+                &.dow {
+                    line-height: 4rem;
+                    font-size: 1.6rem;
+                    font-weight: 400;
+                }
+                &.day {
+                    line-height: 3.4rem;
+                    font-size: 1.6rem;
+                }
+            }
+            td {
+                font-weight: $font_weight_regular;
+
+                // 220916 선택된 기간 날짜 color값 변경
+                &[data-action="selectDay"] {
+                    &.disabled {
+                        span {
+                            color: $gray_cc;
+                        }
+                    }
+                }
+                &.active {
+
+                    background-color: transparent;
+
+                    .focus,
+                    .highlighted,
+                    .highlighted.focus,
+                    .highlighted:focus,
+                    .highlighted:hover,
+                    &:focus,
+                    &:hover {
+                        border-radius: 50%;
+                    }
+                    span {
+                        display: inline-block;
+                        width: 3.1rem;
+                        height: 3.1rem;
+                        line-height: 3.1rem;
+                        margin: 0;
+                        background-color: $primary;
+                        border-radius: 50%;
+                    }
+                }
+                &.day {
+                    width: 3.3rem;
+                    @include ff-mont;
+                    transition: all .1s ease-in;
+
+                    &.schedule_info {
+                        position: relative;
+
+                        &::before {
+                            position: absolute;
+                            top: 5rem;
+                            right: 0.6rem;
+                            content: '';
+                            width: 0.4rem;
+                            height: 0.4rem;
+                            background-color: $point;
+                            border-radius: 1rem;
+                        }
+                    }
+                }
+                &.focused {
+                    border-radius: 1rem;
+                }
+                .btn {
+                    background-color: transparent !important;
+                }
+            }
+        }
+        &:first-child>thead tr:nth-child(3) {
+            border: 0;
+        }
+
+    }
+    .prev,
+    .next {
+        font-size: 0;
+        border: 0;
+        background-repeat: no-repeat;
+        background-size: 0.6rem 1.1rem;
+        background-color: transparent;
+        background-position: 50% 0.3rem;
+
+        &:hover { background-color: transparent;}
+    }
+    .prev { background-image: url(../../img/ico_datepicker_prev.png);}
+    .next { background-image: url(../../img/ico_datepicker_next.png);}
+    .month,
+    .year {
+        width: 6rem;
+
+        &.active { background-color: $primary;}
+    }
+}
+.datepicker-inline {
+    width: 100%;
+}
+.bootstrap-datetimepicker-widget table td.today:before {
+    display: none;
+}
+.bootstrap-datetimepicker-widget a[data-action] {
+    background-color: transparent;
+}

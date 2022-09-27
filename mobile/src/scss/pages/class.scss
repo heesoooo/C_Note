@@ -1,0 +1,1605 @@
+@import "../component/_mixin";
+
+@mixin btnAdd {
+	position: fixed;
+	bottom: 8rem; right: 1.4rem;
+	@include ir_pm;
+	@extend .sprite_comm;
+	@extend .sp_btn_write;
+}
+// 게시글 타이틀 태크 display block
+@mixin tagBlock {
+    display: block;
+    height: auto;
+    margin-bottom: 0.5rem;
+    padding: 0;
+    font-size: 1.2rem;
+    font-weight: $font_weight_bold;
+    line-height: 1;
+    border: 0;
+    background: transparent;
+    color: $primary;
+}
+
+.inner {
+    padding: 0 2rem;
+}
+.fix_top_bar {
+    position: relative;
+    @include flexbox(center);
+    height: 4rem;
+    color: $white;
+    font-size: 1.4rem;
+    font-weight: $font_weight_bold;
+    background-color: $primary;
+    &.mint { background-color: #00d0d8; }
+    &.blue { background-color: #27baff; }
+    .btn_more_opt {
+        position: absolute;
+        right: 2rem;
+        padding-left: 2rem;
+        & > a {
+            @include ir_pm;
+        }
+    }
+}
+// 공지사항
+.list_view_item,
+.pin_menu_wrap {
+	border-bottom: .9rem solid $gray_f5;
+}
+.pin_menu_wrap {
+	padding: 0 0 2rem 2rem;
+	&.swiper {
+		z-index: 0;
+	}
+}
+.pin_menu_box {
+	position: relative;
+	background: $l_blue1;
+	border: 1px solid $l_blue2;
+	height: 11.3rem;
+	padding: 1.2rem 1.4rem 1.6rem;
+	border-radius: 1rem;
+	box-shadow: 0px 0.25rem .5rem 0 rgba(197, 225, 243, 0.25);
+	z-index: 0;
+	.btn_pin {
+		padding: 1rem;
+		position: absolute;
+		top:.2rem; right: .4rem;
+		font-size: 0;
+	}
+	.title {
+		@include flexbox(start, center);
+		margin-bottom: .8rem;
+	}
+	.category {
+		margin-right: 9px;
+		height: 2rem;
+		line-height: 2rem;
+		background-color: $secondary;
+		padding: 0 1rem;
+		color: $white;
+		border-radius: 1rem;
+        font-weight: $font_weight_medium;
+	}
+	.date {
+		font-size: 1.2rem;
+		font-weight: $font_weight_medium;
+		color: $gray_99;
+	}
+	.hashtag {
+		margin-bottom: 0.1rem;
+		font-size: 1.2rem;
+		font-weight: $font_weight_medium;
+		letter-spacing: -.12px;
+		color: $secondary;
+		line-height: 1.9rem;
+	}
+	.text {
+		font-size: 1.3rem;
+		line-height: 2rem;
+		color: $black;
+		@include ellipsis(2);
+	}
+}
+.notice_view_header{
+	padding: 0 2rem;
+	@include flexbox(between, center);
+	height: 4rem;
+	background-color: $white;
+	&.bg_gray {
+		background-color: $gray_f5;
+	}
+	.title, .view_num {
+		font-size: 1.2rem;
+		font-weight: $font_weight_medium;
+		letter-spacing: -0.12px;
+	}
+	.date {
+		color: $gray_99;
+        margin-left: 0.5rem;
+	}
+	.bar {
+		display: inline-block;
+		margin: 0 .5rem;
+		width: .1rem;
+		height: .8rem;
+		background: $gray_99;
+	}
+	.status {
+		color: $red;
+	}
+	.writer, 
+    .class,
+    .school {
+		color: $gray_99;
+	}
+	.view_num {
+		min-width: 4.5rem;
+		min-height: 2rem;
+		line-height: 1.8rem;
+		font-size: 1.2rem;
+		font-weight: $font_weight_medium;
+		color: $gray_99;
+		text-align: right;
+		em {
+            display: inline-block;
+            line-height: 1;
+			border-bottom: 1px solid $gray_99;
+		}
+	}
+}
+// 설문제출, 과제현황보기 버튼
+.top_btn_wrap {
+    padding: 1rem 0.5rem 0;
+    .btn {
+        height: 4rem;
+        line-height: 4rem;
+        font-weight: $font_weight_bold;
+        &.blue { background-color: #27baff; }
+        &.mint { background-color: #00d0d8; }
+    }
+}
+.notice_view_body {
+	padding: 2rem 0 0;
+	.bbs_area {
+		padding: 0 2rem 3rem;
+	}
+	.view_target {
+		margin-bottom: 2.1rem;
+		font-size: 1.2rem;
+		letter-spacing: -0.12px;
+		color: $gray_99;
+		line-height: 1;
+	}
+	.hashtag {
+		margin-bottom: .1rem;
+		font-size: 1.2rem;
+		font-weight: $font_weight_medium;
+		color: $primary;
+		letter-spacing: -0.12px;
+	}
+	.notice_title {
+		margin-bottom: .8rem;
+		font-size: 1.7rem;
+		font-weight: $font_weight_bold;
+		letter-spacing: -0.17px;
+		color: $black;
+	}
+	.content {
+		margin-bottom: 2rem;
+		font-size: 1.4rem;
+        line-height: 2.3rem;
+		color: $black;
+		letter-spacing: -.14px;
+		img {
+			width: 100%;
+		}
+	}
+	.attach {
+		display: inline-block;
+		height: 2.5rem;
+		line-height: 2.5rem;
+		padding: 0 1.1rem;
+		font-size: 1.1rem;
+		color: $primary;
+		letter-spacing: -0.11px;
+		border-radius: 1.25rem;
+		background: #e9e7ff;
+		i {
+			margin-top: -0.2rem;
+			margin-right: .5rem;
+			vertical-align: middle;
+		}
+	}
+	.attach_image {
+		margin: -.5rem 0 2rem 0;
+		ul {
+			@include flexbox(start, start);
+			flex-wrap: wrap;
+			li {
+				width: calc(25% - .5rem);
+				margin-bottom: 7px;				
+				margin-right: .65rem;
+
+				img {
+					width: 100%;
+					height: 7.5rem;
+					object-fit: cover;
+					object-position: 50% 0;
+				}
+				
+				&:nth-child(4n) {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+	.attach_list {
+		padding-top: 0.5rem;
+		li {
+			margin-bottom: 1.2rem;
+			line-height: 1;
+			a {
+				font-size: 1.3rem;
+				letter-spacing: -0.13px;
+				color: $gray_66;
+				i {
+					vertical-align: middle;
+					margin: -.3rem .7rem 0 0;
+
+				}
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.post_status {
+		@include flexbox(between, center);
+		padding: 0 2rem;
+		border-top: 1px solid $gray_e0;
+		height: 4.8rem;
+		a {
+			font-size: 1.3rem;
+			color: $black;
+			letter-spacing: -.33px;
+			i {
+				vertical-align: middle;
+				margin-top: -0.25rem;
+				margin-right: .5rem;
+			}
+			.num {
+				margin-left: 0.2rem;
+				font-weight: $font_weight_regular;
+			}
+			&.active {
+				.num {
+					color: $primary;
+				}
+			}
+		}
+		.btn_scrap {
+			&.on {
+				i {
+					@extend .sp_ico_scrap_on;
+				}
+			}
+		}
+	}
+	.img_wrap {		
+		figure {
+			width: 100%;
+			img {
+				width: 100%;
+				height: 27rem;
+				max-height: 27rem;
+				object-fit: cover;
+				object-position: 50% 0;
+			}
+		}
+		&.half {
+			@include flexbox(between, start);
+			figure {
+				width: calc(50% - 3px);				
+				&:last-child {
+					position: relative;
+					&:after {
+						position: absolute;
+						content: '＋  더보기';
+						left: 0; top: 0;
+						width: 100%; height: 100%;
+						background: rgba(0,0,0,.5);
+						@include flexbox(center, center);
+						font-size: 1.4rem;
+						font-weight: $font_weight_bold;
+						color: $white;
+					}
+				}
+			}
+			img {
+				height: 15.7rem;
+				max-height: 15.7rem;
+			}
+		}
+	}
+}
+.list_view_item {
+	.notice_view_header {
+		margin-top: 1.4rem;
+        @include flexbox(between, end);
+        .tag {
+            @include tagBlock;
+        }
+        .date {
+            margin-left: 0;
+        }
+	}
+	.notice_view_body {
+		padding: 1.7rem 0 0;
+		.bbs_area {
+			padding: 0 2rem 2rem;
+		}
+		.content {
+			@include ellipsis(4);
+		}
+	}
+}
+// 게시판 글쓰기 버튼
+// 관리자 추가, 교사발급계정 버튼
+.btn_write_page,
+.btn_add_manager,
+.btn_add_student {
+	@include btnAdd;
+}
+// 768px 이상일때
+@media all and (min-width:768px) {
+	.btn_write_page,
+	.btn_select_research,
+    .btn_add_manager,
+    .btn_add_student {
+		right: auto; 
+		left: 50%; margin-left: 300px;
+	}
+}
+
+// 댓글창
+.reply_wrap {
+	padding: 2rem 2rem 1.2rem;
+	border : {
+		top: 1px solid $gray_e0;
+		bottom: 1px solid $gray_e0;
+	}
+	.reply {
+		margin-bottom: 1.9rem;
+		padding-bottom: 1.5rem;
+		border-bottom: 1px solid $gray_e0;
+		&.depth_2 {
+			padding-left: 2rem;
+		}		
+		&.depth_3 {
+			padding-left: 4rem;
+		}
+
+        &:last-child {
+            margin-bottom: 1.2rem;
+        }
+	}
+	.reply_view {
+		position: relative;
+		@include flexbox(start, start);
+		.profile {
+			display: block;
+			margin-top: -0.4rem;
+			margin-right: 0.9rem;
+			min-width: 3rem; height: 3rem;
+			border-radius: 50%;
+			background: url(../../img/img_profile_basic.png) no-repeat 0 0;
+			background-size: 3rem;
+			img {
+				width: 3rem; height: 3rem;
+				border-radius: 50%;
+                object-fit: cover;
+			}
+		}
+		.usr_name {
+			display: block;
+			margin-bottom: 0.5rem;
+			font-size: 1.3rem;
+			font-weight: $font_weight_bold;
+			letter-spacing: -0.13px;
+			line-height: 1;
+			color: $black;
+		}
+		.text {
+			padding-right: 2rem;
+			margin-bottom: .7rem;
+			font-size: 1.3rem;
+			line-height: 1.8rem;
+			letter-spacing: -0.13px;
+			color: $black;
+			&_del {
+				color: $gray_99;
+			}
+            .stamp_img {
+                max-height: 7rem;
+            }
+		}
+		.date, .btn_write_reply {
+			@include inline-block-box;
+			font-size: 1.2rem;
+			letter-spacing: -0.12px;
+			color: $gray_99;
+			line-height: 1;
+		}
+		.btn_write_reply{
+			margin-left: 1.2rem;
+		}
+		.btn_comment_opt {
+			position: absolute;
+			top: 0; right: 0;
+			font-size: 0;
+			padding: 0 0 .5rem 1.5rem;
+		}
+	}
+	.re_comment {
+		margin-top: 1.5rem;
+		border-radius: 1rem;
+		background-color: $gray_fa;
+			
+		textarea {
+			padding: 1.4rem 0;
+            margin: 0 1.6rem;
+			border: 0;
+			outline: none;
+			resize: none;
+			border-radius: 1rem 1rem 0 0;
+			border-bottom: 1px solid #ececec;
+			background-color: $gray_fa;
+			font-size: 1.3rem;
+			line-height: 1.8rem;
+			letter-spacing: -0.13px;
+			color: $black;
+            width: calc(100% - 3.2rem);
+		}
+		.btn_wrap {
+			padding: 1.4rem 1.6rem;
+			text-align: right;
+			a {
+				margin-left: 2rem;
+				font-size: 13px;
+				font-weight: $font_weight_bold;
+				letter-spacing: -0.13px;
+				color: $gray_99;
+				&.regist {
+					color: $primary;
+				}
+
+                &.btn_stamp {
+                    float: left;
+                    margin: 0;
+                    @include ir_pm;
+                    @extend .sprite_comm;
+                    @extend .sp_ico_stamp_off;
+                }
+			}
+		}
+	}
+	.reply_box {
+		.btn_comment {
+            @include flexbox(between, center);
+			padding: 0 1.6rem;
+			height: 4rem;
+			line-height: 4rem;
+			font-size: 1.3rem;
+			color: $gray_99;
+			letter-spacing: -0.13px;
+			border-radius: 2rem;
+			background-color: $gray_fa;
+		}
+		.real_comment_box {
+			display: none;
+
+            // 이모티콘 삽입 가능한 박스일때
+            .stamp_comment_box {
+                padding-bottom: 1.55rem;
+                border-bottom: 1px solid #ececec;
+                margin: 0 1.55rem;
+                textarea {
+                    margin: 0;
+                    padding: 1.4rem 0;
+                    min-height: 6.65rem;
+                    border: 0;
+                }
+            }
+            .insert_stamp_preview {
+                @include flexbox(start,start);
+                img {
+                    max-height: 4.5rem;
+                }
+                .btn_del_stamp {
+                    margin-left: .2rem;
+                    @include ir_pm;
+                    @extend .sprite_comm;
+                    @extend .sp_ico_delete_attach;
+                }
+            }
+            .stamp_list_box {
+                @include flexbox(start,start);
+                padding: .1rem 0 1.5rem 1.5rem;
+                .stamp {
+                    margin-right: 2.6rem;
+                    img {
+                        max-height: 5.3rem;
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+		}
+	}
+}
+.input_form_wrap {
+    padding: 3.55rem 2rem 2rem;
+}
+// 나의 클래스
+.my_class_wrap {
+    .title {
+        font-size: 1.7rem;
+        line-height: 1;
+        font-weight: $font_weight_bold; 
+    }
+    .my_class_box {
+        padding: 0 2rem 2.5rem;
+        border-bottom: 0.9rem solid $gray_f5;
+        .class_list {
+            @include flexbox(start, center);
+            padding: 1.5rem 2.5rem;
+            border: 1px solid $gray_e0;
+            border-radius: 1rem;
+            margin-top: 1.5rem;
+        }
+        .class {
+            font-size: 1.5rem;
+            margin-bottom: 0.2rem;
+            color: $black;
+            font-weight: $font_weight_medium;
+        }
+    }
+    .my_school_box {
+        padding: 2.5rem 0 3rem 2rem;
+        .school_list_wrap {
+            display: flex;
+            justify-content: start;
+            overflow-x: scroll;
+            width: 100%;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+        .school_list {
+            flex: 0 0 auto;
+            width: 12rem;
+            height: 9.8rem;
+            padding: 1.5rem 0;
+            border: 1px solid $gray_e0;
+            border-radius: 1rem;
+            text-align: center;
+            & + .school_list { margin-left: 1.5rem; }
+            .profile {margin-right: 0; }
+        }
+        .school {
+            font-size: 1.2rem;
+            margin-top: 4px;
+        }
+    }
+    .teacher {
+        font-size: 1.2rem;
+        color: $gray_99;
+        max-width: 18rem;
+    }
+    .profile {
+        display: inline-block;
+        margin-right: 1.2rem;
+        width: 4.5rem;
+        min-width: 4.5rem;
+        height: 4.5rem;
+        border-radius: 50%;
+        background-color: $gray_f5;
+        img {
+            width: 4.5rem;
+            height: 4.5rem;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+    .empty_box {
+        padding: 5rem 0 4rem;
+        .txt { font-size: 1.5rem; line-height: 1; }
+    }
+    
+}
+// 자녀와의 관계 라디오 버튼
+.inp_radio_type {
+    li {
+        margin-bottom: 1rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    input[type=radio] {
+        display: none;
+        + label {
+            display: block;
+            width: 100%;
+            height: 5rem;
+            line-height: 4.8rem;
+            border: solid 1px $gray_e0;
+            background-color: $white;
+            border-radius: .8rem;
+            text-align: center;
+            font-size: 1.4rem;
+            letter-spacing: -0.14px;
+            color: $black;
+        }
+        &:checked {
+            + label {
+                border-color: $point;
+                color: $point;
+            }
+        }
+    }
+	&.half {
+		ul { @include flexbox(between, center); }	
+		li {
+			margin: 0;
+			width: calc(50% - .5rem);
+		}
+	}
+	&.thirds {
+		ul { @include flexbox(between, center); }	
+		li {
+			margin: 0;
+			width: calc(33% - .6rem);
+		}
+	}
+}
+// 초대하기
+.class_invite_wrap {
+    padding: 6.3rem 2rem;
+    text-align: center;
+    .tit { 
+        font-size: 1.8rem;
+        font-weight: $font_weight_bold;
+        position: relative;
+        &::before {
+            content: '';
+            @extend .sprite_comm;
+            @extend .sp_dot_blue;
+            position: absolute;
+            left: -0.5rem;
+            top: -3rem;
+        }
+        &::after {
+            content: '';
+            @extend .sprite_comm;
+            @extend .sp_dot_orange;
+            position: absolute;
+            right: 0;
+            bottom: -1.2rem;
+        }
+        em { color: $primary; font-weight: $font_weight_bold; }
+    }
+    .txt {
+        font-size: 1.3rem;
+        color: $gray_66;
+        margin-top: 0.6rem;
+        font-weight: $font_weight_medium;
+    }
+    .new_code {
+        display: inline-block;
+        margin-top: 2.8rem;
+        line-height: 1.7rem;
+        font-size: 1.3rem;
+        color: $gray_99;
+        border-bottom: 1px solid $gray_99;
+        font-weight: $font_weight_medium;
+    }
+}
+// 클래스 코드로 가입하기
+.input_code {
+    @include flexbox(center, center);
+    input {
+        max-width: 4.7rem;
+        height: 5rem;
+        line-height: 4.5rem;
+        padding: 0 0.5rem;
+        padding-bottom: 0.2rem;
+        font-size: 2.7rem;
+        font-weight: $font_weight_bold;
+        text-align: center;
+        border: 1px solid $gray_e0;
+        border-radius: 0.6rem;
+        & + input {
+            margin-left: 0.75rem;
+            margin-top: 0;
+        }
+        &:focus {
+            border: 1px solid $primary;
+        }
+        &:disabled {
+            border: none;
+            background-color: $gray_f2;
+            color: $black;
+        }
+    }
+}
+// 게시판 설정
+.board_set_box {
+    width: 100%;
+    .board_set_top {
+        @include flexbox(between, center);
+        font-size: 1.5rem;
+        padding: 1.5rem 2rem;
+        background-color: $gray_f5;
+        .title {
+            font-size: 1.5rem;
+            font-weight: $font_weight_regular;
+        }
+    }
+    .board_set_detail {
+        background-color: $white;
+        .list_item {
+            @include flexbox(between, center);
+            font-size: 1.5rem;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid $gray_e0;
+            .check_box input[type=checkbox]+label {
+                padding-left: 3rem;
+                margin-right: 2rem;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+    &.unchecked {
+        .list_item {
+            .title { color: $gray_cc; }
+            .check_box input[type=checkbox]+label {
+                color: $gray_cc;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }        
+    }
+}
+// 클래스 설정 , 알림 설정, 학급 공지
+.setting_list{
+    width: 100%;
+    .setting_top {
+        @include flexbox(between, center);
+        padding: 0 2rem;
+        height: 3.5rem;
+        background-color: $gray_f5;
+        .title {
+            font-size: 1.2rem;
+            font-weight: $font_weight_regular;
+            color: $gray_66;
+        }
+    }
+    .setting_detail {
+        background-color: $white;
+        .list_item {
+            @include flexbox(between, center);
+            font-size: 1.5rem;
+            color: $black;
+            padding: 1.4rem 2rem;
+            line-height: 2rem;
+            border-bottom: 1px solid $gray_e0;
+            &.last {
+                border-bottom: 0.9rem solid $gray_f5;
+            }            
+            .check_box input[type=checkbox]+label {
+                padding-left: 3rem;
+                margin-right: 2rem;
+            }
+            .btn.deadline {
+                padding: 0 2.5rem;
+                height: 3rem;
+                line-height: 2.8rem;
+                font-weight: $font_weight_regular;
+            }
+        }
+        .title {
+            &.point { color: $point; }
+        }
+        .more{
+            @include ir_pm;
+            @extend .sprite_comm;
+            @extend .sp_ico_list_more;
+        }
+        .leave {
+            color: $gray_99;
+        }
+    }
+    .attached_file {
+        &.last {
+            border-bottom: 0.9rem solid $gray_f5;
+        }
+        .txt { 
+            @include flexbox (start, center);
+            font-size: 1.5rem;
+            color: $black;
+            padding: 1.4rem 2rem;
+            line-height: 2rem;
+        }
+        .list_photo {
+            padding: 0 1.3rem;
+            @include clearfix;
+            li {
+                position: relative;
+                float: left;
+                margin:0.7rem;
+                width: 6.7rem;
+                height: 6.7rem;
+                background: rgba(255, 0, 0, .2);                
+                .img {
+                    img { width: 6.7rem; height: 6.7rem; object-fit: cover; }
+                }
+            }
+            .delete {
+                position: absolute;
+                @include ir_pm;
+                @extend .sprite_comm;
+                @extend .sp_ico_delete_attach;
+                top: -0.5rem;
+                right: -0.5rem;
+            }
+        }
+        .file_list {
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            & > li {
+                @include flexbox(start, center);
+                margin-bottom: 1rem;
+                padding-left: 2rem;
+            }
+            .file_name { 
+                font-size: 1.3rem;
+                color: $gray_66;
+                margin-left: 0.7rem;
+                margin-right: 0.8rem;
+            }
+            .delete {
+                @include ir_pm;
+                @extend .sprite_comm;
+                @extend .sp_ico_delete_attach;
+            }
+
+        }
+        .upload_file {
+            position: relative;
+            input[type=file].upload_file_button { display: none; }
+            .upload_file_button {
+                +label {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    bottom: 0;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+} 
+// 자녀 계정 연결 버튼
+.btn_fix_wrap {
+    position: fixed;
+    max-width: $max_width;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    .btn_link_children {
+        @include flexbox(center);
+        width: calc(100% - 1rem);
+        height: 4rem;
+        font-size: 1.2rem;
+        color: $white;
+        background-color: $point;
+        border-radius: 0.5rem;
+        text-align: center;
+        margin: 0.5rem
+    }
+}
+// 자녀 계정 연결
+.link_children_wrap {
+    .fix_top_bar  {
+        background-color: $point;
+    }
+    .search_header.sub {
+        position: static;
+        transform: none;
+        padding: 2.5rem 3.5rem;
+    }
+    .search_wrap {
+        width: auto;
+        flex-grow: 1;
+        input[type=text] {
+            width: 100%;
+            height: 3.7rem;
+            font-size: 1.3rem;
+            border-radius: 1.85rem;
+            background-color: $gray_fa;
+            &:focus { background-color: $white; }
+        }
+        .btn_search { 
+            @include ir_pm;
+            @extend .sprite_comm;
+            @extend .sp_ico_search;
+        }
+    }
+}
+// 학급 공지
+.board_write_wrap {
+    .title_input {
+        border: 0;
+        font-size: 1.6rem;
+        font-weight: $font_weight_bold;
+        width: 100%;
+        &:focus { outline: none; border: none; }
+    }
+    .editor_wrap {
+        padding: 2rem;
+        border-top: 1px solid $gray_e0;
+        border-bottom: 1px solid $gray_e0;
+    }
+}
+// 클래스 일정 추가, 과제 제출하기
+.class_write_wrap {
+    height: calc(var(--vh, 1vh) * 100 - 5rem);
+    .write_area {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        padding: 3rem 2rem;
+        height: calc(100% - 23.4rem);
+    }
+    .upload_file_wrap {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        max-width: $max_width;
+        min-height: 5rem;
+        max-height: 23.4rem;
+        background-color: $white;
+        .txt { 
+            font-size: 1.5rem;
+            height: 5rem;
+            line-height: 4.8rem;
+            padding-left: 2rem;
+            border-top: 1px solid $gray_e0;
+        }
+        input[type=file].upload_file_button { display: none; }
+        .upload_file { position: relative; }
+        .upload_file_button {
+            +label {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                bottom: 0;
+                cursor: pointer;
+            }
+        }
+        .file_list {
+            padding-bottom: 2.5rem;
+            &.scroll_bar {
+                margin-right: 2rem;
+                max-height: 18.4rem;
+                @include scroll;
+                &::-webkit-scrollbar-track {
+                    margin-bottom: 2rem;
+                }
+            }
+            & > li {
+                @include flexbox(start, center);
+                padding-left: 2rem;
+                & + li { margin-top: 1rem; }
+            }
+            .file_name { 
+                font-size: 1.3rem;
+                color: $gray_66;
+                margin-left: 0.7rem;
+                margin-right: 0.8rem;
+            }
+            .delete {
+                @include ir_pm;
+                @extend .sprite_comm;
+                @extend .sp_ico_delete_attach;
+            }
+        }
+    }
+}
+// 클래스 구성원
+.member_list_wrap {
+    .sort_type_chk {
+		@include flexbox(start, center);
+        padding: 3rem 2.5rem;
+        letter-spacing: -.05rem;
+        .check_box + .check_box { margin-left: 2rem; }
+    }
+    .member_list_top {
+        @include flexbox(between, center);
+        padding: 0 2rem;
+        height: 3.5rem;
+        background-color: $gray_f5;
+        .title {
+            font-size: 1.2rem;
+            font-weight: $font_weight_regular;
+            color: $gray_66;
+        }
+        .order {
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            color: $gray_99;
+            .primary { color: $primary; }
+            .gray { color: $gray_99; }
+            .bar {
+                display: inline-block;
+                margin: 0 1rem;
+                width: 1px;
+                height: .8rem;
+                background: $gray_99;
+            }
+        }
+    }
+    
+    .submit_status {
+        padding: 2rem 2rem 0.8rem;
+        font-size: 1.4rem;
+        font-weight: $font_weight_bold;
+        span { line-height: 2.6rem;}
+        strong { color: $primary;}
+        .unsubmit { float: right;}
+    }
+
+    .member_list {
+        @include flexbox(between, center);
+        padding: 2rem 2rem 1.7rem;
+        & + .member_list { padding-top: 0; }
+        .profile {
+            display: inline-block;
+            position: relative;
+            margin-right: 1.2rem;
+            width: 4.5rem;
+            min-width: 4.5rem;
+            height: 4.5rem;
+            border-radius: 50%;
+            background-color: $gray_f5;
+            background-image: url(../../img/profile_basic.png);
+            background-size: 4.5rem;
+            img {
+              width: 4.5rem;
+              height: 4.5rem;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+            &.new {
+                &::after {
+                    display: inline-block;
+                    position: absolute;
+                    content: 'N';
+                    font-size: 1.1rem;
+                    color: $white;
+                    background-color: $point;
+                    width: 1.7rem;
+                    height: 1.7rem;
+                    border-radius: 0.9rem;
+                    text-align: center;
+                    right: -0.3rem;
+                    top: -0.2rem;
+                }
+            }
+        }
+        .name {
+            @include flexbox(start, center);
+            font-size: 1.5rem;
+            margin-bottom: 0.2rem;
+            color: $black;
+            font-weight: $font_weight_medium;
+        }
+        .info {
+            font-size: 1.2rem;
+            color: $gray_99;
+            letter-spacing: -0.07rem;
+            max-width: 18rem;
+            span + span { margin-left: 0.4rem; }
+        }
+        .txt {
+            font-size: 1.4rem;
+            color: $gray_66;
+            margin-bottom: 1.5rem;
+        }
+        .date {
+            font-size: 1.2rem;
+            color: #aeaeae;
+            letter-spacing: -0.06rem;
+            &.red { color: $red; }
+        }
+        .red { color: $red; }
+        .unread {
+            color: $primary;
+            font-size: 1.2rem;
+        }
+        .unsubmitted {
+            font-size: 1.2rem;
+            color: $gray_cc;
+        }
+        .btn  {
+            font-weight: $font_weight_medium;
+        }
+    }
+}
+// 조사표
+.research_wrap {
+	.list_research {
+		padding-top: 3rem;
+		li {
+			a {
+				@include flexbox(between, center);
+				margin-bottom: 1.5rem;
+				padding: 0 1.5rem;
+				height: 7.4rem;
+				border-radius: .7rem;
+				border: solid 1px $gray_e0;
+				background-color: $white;
+				.tit {
+					font-size: 1.5rem;
+					font-weight: $font_weight_medium;
+					letter-spacing: -0.38px;
+					color: $black;
+				}
+				.status {
+					width: 6.2rem;
+					height: 2.5rem;
+					line-height: 2.5rem;
+					font-size: 12px;
+					font-weight: $font_weight_medium;
+					letter-spacing: -0.3px;
+					color: $white;
+					border-radius: 1.25rem;
+					background-color: $primary;
+					text-align: center;
+				}
+				.date {
+					font-size: 1.2rem;
+					letter-spacing: -0.3px;
+					color: $gray_99;
+				}
+			}
+			&.complete {
+				a {
+					border-color: $primary;
+					background-color: #f5f4ff;
+					.tit {
+						color: $primary;
+					}
+				}
+			}
+		}
+	}
+}
+// 달력 선택 바
+.select_date_bar {
+	margin-bottom: 0.5rem;
+	letter-spacing: -0.35px;
+    font-weight: $font_weight_bold;
+	i {
+        margin-top: .2rem;
+		margin-right: 1rem;
+	}
+	.datepicker_value {
+		border: 0;
+		outline: none;
+		background: transparent;
+		width: 9rem;
+		color: $white;
+        font-weight: $font_weight_bold;
+		text-align: center;
+		&::placeholder {
+			color: $white;
+		}
+	}
+}
+.btn_select_research {
+	@include btnAdd;
+}
+// 조사표 선택 추가하기 팝업
+.select_research {
+	min-height: 30rem;
+	max-height: 35rem;
+	@include scroll;
+	h3 {
+		margin-bottom: 3rem;
+		@include flexbox(between, center);
+		.btn_add {
+			i {vertical-align: middle; margin: -.3rem .3rem 0 0; }
+			font-size: 1.4rem;
+			font-weight: $font_weight_medium;
+			letter-spacing: -0.14px;
+			color: $primary;
+		}
+	}
+	.category {
+		li {
+			@include flexbox(between, center);
+			margin-bottom: 2rem;
+			.tit {
+				@include flexbox(start, center);
+				span {
+					margin: 0 .75rem 0 0;
+					font-size: 15px;
+					letter-spacing: -0.15px;
+					color: $black;
+				}
+			}
+			.btn {
+				color: $white;
+			}
+		}
+	}
+}
+// 조사표 만들기
+.create_research_list {
+	@include flexbox(between, start);
+	flex-direction: column;
+	padding: 2.95rem 0 5rem;
+	height: calc(var(--vh, 1vh) * 100 - 5.5rem);
+	.inner {
+		width: 100%;
+	}
+	.btn {
+		min-width: calc(100% - 4rem);
+		margin: 0 auto;
+	}
+    //옵션보기
+    .info_dec {
+        .inp_radio_type {
+            input {
+                &:disabled {
+                    + label {
+                        background: $gray_f2;
+                        color: $gray_99;
+                    }
+                }                
+                &:checked {
+                    + label {
+                        background: $white;
+                        color: $point;
+                    }
+                }
+            }
+        }
+    }
+
+}
+// 조사표 선택 테이블
+.tbl_research_data {
+	width: 100%;
+	thead {
+		th {
+			&:first-child {
+				text-align: left;
+			}
+			padding: 2rem;
+			text-align: center;
+			border-bottom: .05rem solid $gray_e0;
+			font-size: 1.4rem;
+			font-weight: $font_weight_regular;
+			letter-spacing: -0.35px;
+			color: $black;
+		}
+	}
+	tbody {
+		tr {
+			&:first-child {
+				td {
+					padding: 1.5rem .25rem .75rem;
+				}
+			}
+
+			&.checked {
+				td {
+					input[type=radio] {
+						+ label {
+							color: $gray_99;
+						}
+					}
+				}
+			}
+		}
+		th {
+			font-size: 1.5rem;
+			text-align: left;
+			.name {
+				display: inline-block;
+				vertical-align: middle;
+				max-width: 7rem;
+				font-weight: $font_weight_medium;
+				@include ellipsis(1);
+				+ .badge {
+					margin-left: 0.3rem;
+				}
+			}
+		}
+		td {
+			padding: .75rem .25rem;
+			font-size: 1.5rem;
+			color: $black;
+			text-align: center;
+			input[type=radio] {
+				position: absolute;
+                left: -9999px; width: 0; height: 0;
+				+ label {
+					display: inline-block;
+					width: 100%;
+					height: 40px;
+					line-height: 40px;
+					border-radius: 6px;
+					cursor: pointer;
+					color: $black;
+					transition: all .25s;		
+				}
+				&:checked {
+					+ label {
+						background: $l_blue1;
+						color: $secondary !important;
+					}
+				}
+			}
+		}
+	}
+
+}
+// 조사표 통계 테이블
+.research_statistics {
+	.num {
+		display: block;
+		font-size: 14px;
+		line-height: 1;
+		font-weight: $font_weight_medium;
+		letter-spacing: -0.35px;
+		color: $secondary;
+	}
+	.percent {
+		display: block;
+		margin-top: .75rem;
+		font-size: 1.1rem;
+		line-height: 1;
+		letter-spacing: -0.28px;
+		color: $gray_99;
+	}
+}
+// 설문하기
+.survey_wrap { 
+    padding-top: 0.5rem;
+    .survey_question_list {
+        .survey_question {
+            padding : 0 2rem 1.8rem;
+            border-bottom: 1px solid $gray_e0;
+            .question { 
+                margin-top: 1.5rem;
+                @include flexbox (start, center);
+                .tag {
+                    font-weight: $font_weight_medium;
+                }
+            }
+            .q_txt {
+                margin-right: 0.6rem;
+                font-size: 1.4rem;
+            }
+            .img_box {
+                margin-top: 1.8rem;
+                img { width: 100%; object-fit: cover; }
+            }
+        }
+        .multiple_choice {
+            margin-top: 2rem;
+            &:first-child { margin-top: 0.5rem; }
+            .check_box.circle {
+                & + .check_box {
+                    margin-top: 2.4rem;
+                }
+                &.check_input {
+                    margin-top: 1.4rem;
+                    label {
+                        display: flex;
+                        align-items: center;
+                        height: 5rem;
+                        background-position: left top 15px;
+                    }
+                    & input:checked {
+                        & + label input { border-color: $black; }
+                    }
+                }
+                label { font-size: 1.4rem; }
+                .etc { width: 4.5rem; }
+            }
+        }
+        .input_full {
+            margin-top: 1.5rem;
+            .long_answer {
+                min-height: 11.9rem;
+                letter-spacing: -.08rem;
+                overflow-y: hidden;
+            }
+        }
+        .survey_answer {
+            padding-top: 0.8rem;
+            font-size: 1.4rem;
+            .answer { 
+                line-height: 2.2rem;
+                & + .answer { margin-top: 0.8rem; }
+                em { color: $primary; }
+                .detail { 
+                    vertical-align: baseline;
+                    color: $primary;
+                    u { 
+                        text-decoration: underline; 
+                        text-decoration-thickness: 0.5px;
+                    }
+                }
+            }
+        }
+    }
+}
+// 설문통계 - 주관식 답변 페이지
+.survey_statistics {
+    padding : 1rem 2rem 0;
+    .answer_list {
+        border-bottom: 1px solid $gray_e0;
+        padding: 1.5rem 0 2rem;
+    }
+    .answer_txt { 
+        font-size: 1.4rem;
+        line-height: 2.3rem;
+    }
+    .member_list {
+        @include flexbox(between, center);
+        margin-top: 0.9rem;
+        .profile {
+            display: inline-block;
+            margin-right: 0.8rem;
+            width: 3rem;
+            min-width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background-color: $gray_f5;
+            background-image: url(../../img/profile_basic.png);
+            background-size: 3rem;
+            img {
+                width: 3rem; height: 3rem;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+        }
+        .name { font-size: 1.3rem; font-weight: $font_weight_medium; }
+        .date { font-size: 1.2rem; color: $red; }
+    }
+}
+//학교 검색
+.school_search_wrap {
+    padding-top: 2.6rem;
+    .school_list {
+        margin-bottom: 2.2rem;
+        .name {
+            font-size: 1.5rem;
+            margin-bottom: 0.2rem;
+            color: $black;
+            font-weight: $font_weight_medium;
+        }
+        .info {
+            font-size: 1.2rem;
+            color: $gray_99;
+            letter-spacing: -0.07rem;
+        }
+    }
+}
+// 학교 게시글
+.school_list_view {
+    .list_view_item {
+        margin-bottom: 1.7rem;
+        .notice_view_header {
+            height: auto;
+            margin-top: 0;
+            .tag {
+                display: inline-block;
+                margin: 0;
+            }
+            .date {
+                margin-left: .5rem;
+            }
+        }
+        .btn_scrap {
+            &.on {
+                i {
+                    @extend .sp_ico_scrap_on;
+                }
+            }
+        }
+    }
+    .notice_view_body {
+        padding-top: 1.5rem;
+    }
+}
+// 초대 문자 보내기
+.invite_msg_wrap {
+    padding-top: 3rem;
+    .info {
+        font-size: 1.3rem;
+        word-break: keep-all;
+        letter-spacing: -0.04rem;
+    }
+    .number_list {
+        margin-top: 3rem;
+        border-top: 1px solid $gray_e0;
+        padding: 2.5rem 2rem;
+
+        > li { 
+            @include flexbox(between, center);
+            & + li { margin-top: 3rem;}
+        }
+        .num { 
+            font-size: 1.5rem;
+        }
+        .btn {
+            font-weight: $font_weight_medium;
+        }
+    }
+}
+// 클래스 닫기, 클래스 삭제
+.end_class_wrap {
+    padding: 2.5rem 2rem;
+    .tit_msg { 
+        font-size: 1.6rem;
+        font-weight: $font_weight_bold;
+    }
+    .info_msg {
+        margin-top: 2.3rem;
+        font-size: 1.5rem;
+        font-weight: $font_weight_medium;
+    }
+    .info_list {
+        padding-top: 1.3rem;
+        padding-bottom: 4.5rem;
+        li {
+
+            padding-left: 0.9rem;
+            text-indent: -1rem;
+            font-size: 1.3rem;
+            color: $gray_66;
+            word-break: keep-all;
+            // list-style-type: disc;
+            // list-style-position: inside;
+            // &::marker {
+            //     font-size: 0.5rem;
+            // }
+            &::before {
+                content: '·';
+                padding-right: 0.3rem;
+            }
+            & + li { margin-top: 0.6rem;}
+        }
+    }
+}
+
+

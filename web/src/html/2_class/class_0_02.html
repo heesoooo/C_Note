@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 서브</title>
+</head>
+<body>
+
+
+    <!-- popup -->
+    <div class="modal" id="pop_add_teacher">
+      <div class="modal_content w470">
+        <a href="#none" class="modal_close" data-dismiss="modal"><i class="sprite_comm sp_ico_close_pop"></i></a>
+        <div class="pop_title">클래스 선생님 추가</div>
+        <div class="search_wrap default mt40">
+          <input class="default_input" placeholder="핸드폰 번호 또는 T셀파 아이디를 입력하세요." type="text">
+          <a href="#none" class="btn_find"></a>
+        </div>
+        <div class="search_user_list mt30">
+          <div class="search_user">
+            <div class="title">
+              <figure class="profile">
+              </figure>
+              <div class="info">
+                <p class="name">김천재 선생님</p>
+                <p class="number">01025451731</p>
+              </div>
+            </div>
+            
+            <a href="#none" class="btn round mr5">
+              <i class="sprite_comm sp_ico_invite mr5"></i>
+              초대하기
+            </a>
+          </div>
+        </div>
+        <!-- 유효성 검사 메세지 -->
+        <!-- <span class="val_check_red">조회된결과가없습니다. 다시 확인후, 입력해주세요.</span> -->
+      </div>
+    </div>
+    <!--// popup -->
+
+		<script>
+      $('#pop_add_teacher').modal({show: true});
+    </script>
+
+</body>
+</html>

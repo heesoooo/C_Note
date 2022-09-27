@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+        <div class="sub_header">
+            <a href="#none" class="history_back">뒤로가기</a>
+            <h2 class="sub_title">문의하기</h2>
+            <div class="btn_wrap">
+                <a href="#none">수정</a>				
+            </div>
+        </div>
+		<!-- /header -->
+        
+		<!-- content -->
+        <div class="container">
+
+            <div class="mypage_wrap">
+                <div class="form_modify">
+                    <div class="info_dec mt30">
+                        <span class="tit essential">구분</span>
+                        <div class="select_box">
+                            <select class="select">
+                                <option value="">선택</option>
+                                <option value="">선택1</option>
+                                <option value="">선택2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="info_dec">
+                        <span class="tit essential">제목</span>
+                        <div class="input_full">
+                            <input type="text" placeholder="제목을 작성하세요.">
+                        </div>
+                    </div>
+                    <div class="info_dec">
+                        <span class="tit essential">내용</span>
+                        <div class="input_full">
+                            <textarea placeholder="문의 내용을 상세히 작성하세요."></textarea>
+                        </div>
+                    </div>
+                    <div class="info_dec">
+                        <span class="tit">첨부파일</span>
+                        <a href="#none" class="btn outline primary">
+                            <i class="sprite_comm sp_ico_attached_active mr5"></i>첨부파일 추가
+                        </a>
+                        <span class="val_check_gray">파일은 최대 5개, 개당 10Mbyte까지 가능합니다.</span>
+                    </div>
+
+                    <!-- 첨부파일이 5개일 경우 버튼 비활성화 -->
+                    <div class="info_dec">
+                        <span class="tit">첨부파일</span>
+                        <a href="#none" class="btn outline primary disabled">
+                            <i class="sprite_comm sp_ico_attached_disabled mr5"></i>첨부파일 추가
+                        </a>
+                        <!-- 첨부파일 -->
+                        <div class="attach_list mt10">
+                            <ul>
+                                <li>
+                                    <a href="#none" class="attach_file">
+                                        <i class="sprite_comm sp_ico_file_g"></i>이미지 캡쳐1.img
+                                    </a>
+                                    <a href="#none" class="delete"></a>
+                                </li>
+                                <li>
+                                    <a href="#none" class="attach_file">
+                                        <i class="sprite_comm sp_ico_file_g"></i>한글파일.hwp
+                                    </a>
+                                    <a href="#none" class="delete"></a>
+                                </li>
+                                <li>
+                                    <a href="#none" class="attach_file">
+                                        <i class="sprite_comm sp_ico_file_g"></i>카카오톡 화면 캡쳐 화면.img
+                                    </a>
+                                    <a href="#none" class="delete"></a>
+                                </li>
+                                <li>
+                                    <a href="#none" class="attach_file">
+                                        <i class="sprite_comm sp_ico_file_g"></i>주간학습안내.hwp
+                                    </a>
+                                    <a href="#none" class="delete"></a>
+                                </li>
+                                <li>
+                                    <a href="#none" class="attach_file">
+                                        <i class="sprite_comm sp_ico_file_g"></i>주간학습안내.hwp
+                                    </a>
+                                    <a href="#none" class="delete"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="check_box mt60">
+                        <input type="checkbox" id="check1" checked="">
+                        <label for="check1">문의에 필요한 개인정보 취급 방침에 동의합니다.</label>
+                    </div>
+                    <a href="#none" class="privacy">개인정보 취급방침*</a>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- /content -->
+	</div>
+
+	<script>
+	</script>
+</body>
+
+</html>

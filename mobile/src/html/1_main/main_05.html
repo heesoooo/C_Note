@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+        <div class="search_header">
+            <a href="#none" class="history_back">뒤로가기</a>
+            <div class="search_wrap">
+                <input type="text" placeholder="학교 또는 우리반 이름 검색">
+                <a href="#none" class="btn_clear"></a>
+            </div>
+            <a href="#none" class="btn_search">검색</a>
+        </div>
+		<!-- /header -->
+
+        
+		<!-- content -->
+        <div class="container">
+            <!-- tab -->
+            <div class="tab_list">
+                <a href="#none" class="tab_links active">우리반(3)</a>
+                <a href="#none" class="tab_links">학교(0)</a>
+            </div>
+            <!-- /tab -->
+            <div class="tabcontent">
+                <ul class="class_list_wrap">
+                    <li class="class_list">
+                        <div class="flex_start_center">
+                            <span class="profile">
+                                <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                            </span>
+                            <span>
+                                <p class="name">가산초등학교 1학년 벚꽃반</p>
+                                <p class="info">
+                                    <span>구성원 26명</span>
+                                    <span class="bar"></span>
+                                    <span>김*재 선생님</span>
+                                    <span class="bar"></span>
+                                    <span>2022</span>
+                                </p>
+                            </span>
+                        </div>
+                        <a href="#none" class="btn round outline primary bold small">우리반</a>
+                    </li>
+                    <li class="class_list">
+                        <div class="flex_start_center">
+                            <span class="profile">
+                                <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                            </span>
+                            <span>
+                                <p class="name">가산초등학교 2학년 2반</p>
+                                <p class="info">
+                                    <span>구성원 26명</span>
+                                    <span class="bar"></span>
+                                    <span>김*재 선생님</span>
+                                    <span class="bar"></span>
+                                    <span>2022</span>
+                                </p>
+                            </span>
+                        </div>
+                        <a href="#none" class="btn round small" data-target="requestJoinClass">가입하기</a>
+                    </li>
+                    <li class="class_list">
+                        <div class="flex_start_center">
+                            <span class="profile">
+                                <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                            </span>
+                            <span>
+                                <p class="name">가산초등학교 1학년 벚꽃반</p>
+                                <p class="info">
+                                    <span>구성원 26명</span>
+                                    <span class="bar"></span>
+                                    <span>김*재 선생님</span>
+                                    <span class="bar"></span>
+                                    <span>2022</span>
+                                </p>
+                            </span>
+                        </div>
+                        <a href="#none" class="btn round gray small">가입대기</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /content -->
+	</div>
+    
+	<!-- 우리반 가입 요청 팝업 -->
+	<div class="modal" id="requestJoinClass">
+		<div class="modal_content modal_full"> <!-- 너비/높이 100% 팝업은 .modal_full 추가 -->
+			<!-- header -->
+			<div class="sub_header center">
+				<a href="#none" class="modal_close" data-dismiss="modal">뒤로가기</a>
+				<h2 class="sub_title">우리반 가입 요청</h2>    
+				<div class="btn_wrap">
+					<a href="#none">확인</a>				
+				</div>
+			</div>
+			<!-- /header -->
+			<!-- contents -->
+			<div class="cont_section">
+				<div class="input_form_wrap">
+					<div class="info_dec">
+						<span class="tit essential">자녀의 이름(본명)</span> <!-- 필수 입력 표기시 .essential 추가 -->
+						<div class="input_full">
+							<input type="text">
+						</div>
+					</div>
+					<div class="info_dec">
+						<span class="tit essential">자녀와의 관계</span> <!-- 필수 입력 표기시 .essential 추가 -->
+						<div class="inp_radio_type">
+							<ul>
+								<li>
+									<input type="radio" id="relation1" name="relation" checked>
+									<label for="relation1">아버지</label>
+								</li>
+								<li>
+									<input type="radio" id="relation2" name="relation">
+									<label for="relation2">어머니</label>
+								</li>
+								<li>
+									<input type="radio" id="relation3" name="relation">
+									<label for="relation3">기타 보호자</label>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="info_dec">
+                        <span class="tit essential">본인의 이름(본명)</span> <!-- 필수 입력 표기시 .essential 추가 -->
+                        <div class="input_full">
+                            <input type="text">
+                        </div>
+                    </div>
+					<div class="info_dec">
+                        <span class="tit essential">반 번호</span> <!-- 필수 입력 표기시 .essential 추가 -->
+                        <div class="input_full">
+                            <input type="text">
+                        </div>
+                    </div>
+				</div>
+			</div>
+			<!-- /contents -->	
+		</div>
+	</div>
+	<!-- ./ -->
+
+	<script>
+		$(function () {
+			$("#requestJoinClass").modal({
+				show: true,
+				overlayDrop: false
+			})
+		})
+	</script>
+</body>
+
+</html>

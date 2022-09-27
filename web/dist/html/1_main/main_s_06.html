@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=1200">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+    <title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+
+
+    <!-- popup -->
+    <div class="modal" id="invitationCodeS">
+        <div class="modal_content w430">
+            <a href="#none" class="modal_close" data-dismiss="modal">
+                <i class="sprite_comm sp_ico_close_pop"></i>
+            </a>
+            <div class="pop_title">클래스 코드로 가입하기</div>
+
+            <div class="input_code">
+                <p class="input_txt ft16 mt35">선생님께 전달받은 초대 코드 6자리를 입력하세요. </p>
+                <div class="input_full mt15">
+                    <input placeholder="" type="tel" maxlength="1">
+                    <input placeholder="" type="tel" maxlength="1">
+                    <input placeholder="" type="tel" maxlength="1">
+                    <input placeholder="" type="tel" maxlength="1">
+                    <input placeholder="" type="tel" maxlength="1">
+                    <input placeholder="" type="tel" maxlength="1">
+                </div>
+                <span class="val_check_red t_center ml0 mt15">초대코드를 다시 확인해주세요.</span>
+            </div>
+
+            <p class="pop_txt ft16 mt30">이름을 정확하게 입력해주세요.</p>
+            <div class="input_full mt15">
+                <input placeholder="이름" type="text">
+            </div>
+
+            <p class="pop_txt ft16 mt30">반 번호를 입력해주세요.</p>
+            <div class="input_full mt15">
+                <input placeholder="반 번호" type="text">
+            </div>
+
+            <div class="btn_full mt40">
+                <!-- 버튼 활성화 시 disabled 삭제-->
+                <a href="#none" class="btn medium disabled">가입하기</a>
+            </div>
+        </div>
+    </div>
+    <!--// popup -->
+
+
+    <script>
+        $('#invitationCodeS').modal({ show: true });
+
+        $(document).on("keypress keyup keydown", "input[type=tel]", function(e){
+            if (/[a-z|ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g.test(this.value)) { //한글 막기
+                e.preventDefault();
+                this.value = "";
+            } else if (e.which != 8 && e.which != 0 //영문 e막기
+                && e.which < 48 || e.which > 57    //숫자키만 받기
+                && e.which < 96 || e.which > 105) { //텐키 받기
+                e.preventDefault();
+                this.value = "";
+            } else if (this.value.length >= this.maxLength) { //1자리 이상 입력되면 다음 input으로 이동시키기
+                this.value = this.value.slice(0, this.maxLength);
+                if ($(this).next("input").length > 0) {
+                    $(this).next().focus();
+                } else {
+                    $(this).blur();
+                }
+            }
+        });    
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>T_TALK</title>
+</head>
+
+<body>
+	<!-- 1:1 일괄메시지 팝업 -->
+	<div class="modal" id="batchMessage">
+		<div class="modal_content modal_full"> <!-- 너비/높이 100% 팝업은 .modal_full 추가 -->
+			<!-- header -->
+			<div class="sub_header center">
+				<a href="#none" class="modal_close" data-dismiss="modal">뒤로가기</a>
+				<h2 class="sub_title">1:1 일괄 메시지</h2>    
+				<div class="btn_wrap">
+					<a href="#none"><span class="count">16</span> 확인</a>				
+				</div>
+			</div>
+			<!-- /header -->
+			<!-- contents -->
+			<div class="cont_section">
+				<div class="batch_massage_wrap">
+					<!-- 정렬 체크 박스 -->
+					<div class="sort_type_chk">
+						<div class="check_box">
+							<input type="checkbox" id="typeCheck1" checked>
+							<label for="typeCheck1">전체</label>
+						</div>
+						<div class="check_box">
+							<input type="checkbox" id="typeCheck2">
+							<label for="typeCheck2">선생님</label>
+						</div>
+						<div class="check_box">
+							<input type="checkbox" id="typeCheck3">
+							<label for="typeCheck3">학생</label>
+						</div>
+						<div class="check_box">
+							<input type="checkbox" id="typeCheck4">
+							<label for="typeCheck4">학부모</label>
+						</div>
+					</div>
+					<!-- 리스트 -->
+					<div class="conversate_list_wrap opponent_list">       
+						<!-- group1 -->
+						<div class="list_item">
+							<div class="list_title">
+								<span class="group_tit">선생님 <em>1</em>명</span>
+							</div>
+							<div class="list_cont">
+								<ul>
+									<li>
+										<span class="profile teacher"><!-- <img src="" alt=""> --></span><!-- 선생님 프로필 기본이미지 다름 :: .teacher -->
+										<span class="name">교생 선생님</span>
+										<div class="check_box txt_none"><!-- label 텍스트 없을 시 .txt_none 추가 -->
+											<input type="checkbox" id="person1" checked>
+											<label for="person1"></label>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- /group1 -->
+						<!-- group2 -->
+						<div class="list_item">
+							<div class="list_title">
+								<span class="group_tit">학생 <em>3</em>명</span>
+							</div>
+							<div class="list_cont">
+								<ul>
+									<li>
+										<span class="profile">
+											<img src="../../img/img_sample.png" alt="">
+										</span>
+										<span class="name">박호용 <em class="badge badge_gray_full">15</em></span>
+										<div class="check_box txt_none"><!-- label 텍스트 없을 시 .txt_none 추가 -->
+											<input type="checkbox" id="person2">
+											<label for="person2"></label>
+										</div>
+									</li>
+									<li>
+										<span class="profile">
+											<!-- <img src="" alt=""> -->
+										</span>
+										<span class="name">이희수 <em class="badge badge_gray_full">17</em></span>
+										<div class="check_box txt_none"><!-- label 텍스트 없을 시 .txt_none 추가 -->
+											<input type="checkbox" id="person3">
+											<label for="person3"></label>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- /group2 -->
+						<!-- group3 -->
+						<div class="list_item">
+							<div class="list_title">
+								<span class="group_tit">학부모 <em>10</em>명</span>
+							</div>
+							<div class="list_cont">
+								<ul>
+									<li>
+										<span class="profile">
+											<!-- <img src="" alt=""> -->
+										</span>
+										<span class="name">김황 <em class="badge badge_blue">부</em></span>
+										<div class="check_box txt_none"><!-- label 텍스트 없을 시 .txt_none 추가 -->
+											<input type="checkbox" id="person4">
+											<label for="person4"></label>
+										</div>
+									</li>
+									<li>
+										<span class="profile">
+											<!-- <img src="" alt=""> -->
+										</span>
+										<span class="name">신지민 <em class="badge badge_pink">모</em></span>
+										<div class="check_box txt_none"><!-- label 텍스트 없을 시 .txt_none 추가 -->
+											<input type="checkbox" id="person5">
+											<label for="person5"></label>
+										</div>
+									</li>
+									<li>
+										<span class="profile">
+											<!-- <img src="" alt=""> -->
+										</span>
+										<span class="name">신진하 <em class="badge badge_gray">기타</em></span>
+										<div class="check_box txt_none"><!-- label 텍스트 없을 시 .txt_none 추가 -->
+											<input type="checkbox" id="person6">
+											<label for="person6"></label>
+										</div>
+									</li>
+									<li>
+										<span class="profile">
+											<!-- <img src="" alt=""> -->
+										</span>
+										<span class="name">강인준 <em class="badge badge_blue">부</em></span>
+										<div class="check_box txt_none"><!-- label 텍스트 없을 시 .txt_none 추가 -->
+											<input type="checkbox" id="person7">
+											<label for="person7"></label>
+										</div>
+									</li>
+									<li>
+										<span class="profile">
+											<!-- <img src="" alt=""> -->
+										</span>
+										<span class="name">김홍민 <em class="badge badge_pink">모</em></span>
+										<div class="check_box txt_none"><!-- label 텍스트 없을 시 .txt_none 추가 -->
+											<input type="checkbox" id="person8">
+											<label for="person8"></label>
+										</div>
+									</li>
+									<li>
+										<span class="profile">
+											<!-- <img src="" alt=""> -->
+										</span>
+										<span class="name">김상민 <em class="badge badge_gray">기타</em></span>
+										<div class="check_box txt_none"><!-- label 텍스트 없을 시 .txt_none 추가 -->
+											<input type="checkbox" id="person9">
+											<label for="person9"></label>
+										</div>
+									</li>
+									<li>
+										<span class="profile">
+											<!-- <img src="" alt=""> -->
+										</span>
+										<span class="name">조은지 <em class="badge badge_blue">부</em></span>
+										<div class="check_box txt_none"><!-- label 텍스트 없을 시 .txt_none 추가 -->
+											<input type="checkbox" id="person10">
+											<label for="person10"></label>
+										</div>
+									</li>
+									<li>
+										<span class="profile">
+											<!-- <img src="" alt=""> -->
+										</span>
+										<span class="name">이희준 <em class="badge badge_pink">모</em></span>
+										<div class="check_box txt_none"><!-- label 텍스트 없을 시 .txt_none 추가 -->
+											<input type="checkbox" id="person11">
+											<label for="person11"></label>
+										</div>
+									</li>
+									<li>
+										<span class="profile">
+											<!-- <img src="" alt=""> -->
+										</span>
+										<span class="name">박초희 <em class="badge badge_gray">기타</em></span>
+										<div class="check_box txt_none"><!-- label 텍스트 없을 시 .txt_none 추가 -->
+											<input type="checkbox" id="person12">
+											<label for="person12"></label>
+										</div>
+									</li>
+									<li>
+										<span class="profile">
+											<!-- <img src="" alt=""> -->
+										</span>
+										<span class="name">윤석배 <em class="badge badge_gray">기타</em></span>
+										<div class="check_box txt_none"><!-- label 텍스트 없을 시 .txt_none 추가 -->
+											<input type="checkbox" id="person13">
+											<label for="person13"></label>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- /group3 -->
+					</div>
+				</div>
+			</div>
+			<!-- /contents -->	
+		</div>
+	</div>
+	<!-- ./ -->
+
+	<script>
+
+		$(document).ready(function($){
+			$('#batchMessage').modal({
+				show: true
+			});
+		})
+
+	</script>
+
+</body>
+
+</html>

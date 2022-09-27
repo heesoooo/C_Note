@@ -1,0 +1,560 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+		@@include('../include/inc_header.html')
+		<!--  sub container -->
+		<div class="container inner_cont">
+			<!-- snb -->
+			@@include('../include/inc_snb.html')
+			<!-- //snb -->
+			<div class="contents">
+				<!-- title -->
+				<div class="title_box mb0 pos_relative">
+					<h4 class="page_title">학급 조사표
+						<a href="#none" class="ml15 btn outline round small point btn_research">
+							<i class="sprite_comm sp_ico_check"></i>
+							조사하기
+						</a>
+						<div class="class_checklist_pop">
+							<ul class="scroll_box" style="height: 263px">
+								<li class="active"><a href="#none">우리반 청소 열글자까지 허용 합니다</a></li>
+								<li class="active"><a href="#none">우리반 우유</a></li>
+								<li class="active"><a href="#none">우리반 발표</a></li>
+								<li class="active"><a href="#none">우리반 발표</a></li>
+								<li><a href="#none">우리반 발표</a></li>
+								<li><a href="#none">우리반 발표</a></li>
+								<li><a href="#none">우리반 발표</a></li>
+							</ul>
+							<div class="btn_full mt30">
+								<a href="#none" class="btn_add"><i class="sprite_comm sp_ico_add_v"></i> 추가하기</a>
+								<a href="#none" class="btn medium disabled"><i class="mr5 sprite_comm sp_ico_detail_cont_w"></i> 작성하기</a><!-- 작성하기 버튼 활성화시 .disabled 제거 -->
+							</div>
+						</div>
+					</h4>
+
+					<div class="search_wrap board">
+						<input class="board_search_input" placeholder="검색하기" type="text">
+						<a href="#none" class="btn_find"></a>
+						<a href="#none" class="btn_clear"></a>
+						<a href="#none" class="btn_filter"></a>
+						@@include('../include/inc_datePicker_type3.html')
+					</div>
+				</div>
+				<div class="qualification mb30">
+					<a href="#none">
+						통계
+						<i class="sprite_comm sp_ico_setting ml5"></i>
+					</a>					
+				</div>
+				<!-- /title -->
+				<!-- sub contents -->
+				<!-- 등록된 게시물이 없을 때 -->
+				<div class="empty_box">
+					<figure class="empty no_post"></figure>
+					<p class="strength mt70">
+						<strong>등록된 게시물</strong>이 없습니다.
+					</p>
+				</div>
+				<!-- /등록된 게시물이 없을 때 -->
+				<!-- / sub contents -->
+			</div>
+		</div>
+		<!-- //sub container -->
+		<!-- footer -->
+		@@include('../include/inc_footer.html')
+	</div>
+	
+	<!-- modal :: 학급조사표 팝업 -->
+	<div class="modal" id="checklistPop">
+		<div class="modal_content flex_between_start bg_transparent" style="width: 810px">
+			<div class="tbl_data_wrap">
+				<div class="title">
+					<h4>우리반 청소</h4>					
+					<input class="inp_datepicker ico_left" id="researchDate" placeholder="날짜 선택">
+					<script>
+						$('#researchDate').datepicker({
+							weekStart: 1,
+							format: "yy.mm.dd",
+							toggleActive: true,
+							changeMonth: true,
+							changeYear: true,
+							orientation: "bottom right", 
+						});
+					</script>
+				</div>
+				<div class="conts">
+					<p class="desc mb30">
+						내용을 클릭하여, 데이터를 입력하세요. (모든 데이터를 입력해야 작성 완료가 선택 됩니다.)
+
+					</p>
+
+					<!-- OX 테이블 -->
+					<table class="tbl_list tbl_research_data" cellpadding="0" cellspacing="0">
+						<colgroup>
+							<col style="width:25%">
+							<col style="width:25%">
+							<col style="width:25%">
+							<col style="width:25%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">이름</th>
+								<th scope="col" colspan="3">O X</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">
+									김천재 <span class="badge badge_gray_full">1</span>
+								</th>
+								<td>
+									<input type="radio" name="ox_01" id="OX_01_01" checked>
+									<label for="OX_01_01">O</label>
+								</td>
+								<td>
+									<input type="radio" name="ox_01" id="OX_01_02">
+									<label for="OX_01_02">X</label>
+								</td>
+								<td>
+									<input type="radio" name="ox_01" id="OX_01_03">
+									<label for="OX_01_03">X</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									김천재 <span class="badge badge_gray_full">1</span>
+								</th>
+								<td>
+									<input type="radio" name="ox_02" id="OX_02_01">
+									<label for="OX_02_01">O</label>
+								</td>
+								<td>
+									<input type="radio" name="ox_02" id="OX_02_02">
+									<label for="OX_02_02">X</label>
+								</td>
+								<td>
+									<input type="radio" name="ox_02" id="OX_02_03">
+									<label for="OX_02_03">X</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									김천재 <span class="badge badge_gray_full">1</span>
+								</th>
+								<td>
+									<input type="radio" name="ox_03" id="OX_03_01">
+									<label for="OX_03_01">O</label>
+								</td>
+								<td>
+									<input type="radio" name="ox_03" id="OX_03_02">
+									<label for="OX_03_02">X</label>
+								</td>
+								<td>
+									<input type="radio" name="ox_03" id="OX_03_03">
+									<label for="OX_03_03">X</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									김천재 <span class="badge badge_gray">기타</span>
+								</th>
+								<td>
+									<input type="radio" name="ox_04" id="OX_04_01">
+									<label for="OX_04_01">O</label>
+								</td>
+								<td>
+									<input type="radio" name="ox_04" id="OX_04_02">
+									<label for="OX_04_02">X</label>
+								</td>
+								<td>
+									<input type="radio" name="ox_04" id="OX_04_03">
+									<label for="OX_04_03">X</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									김천재 <span class="badge badge_blue">부</span>
+								</th>
+								<td>
+									<input type="radio" name="ox_05" id="OX_05_01">
+									<label for="OX_05_01">O</label>
+								</td>
+								<td>
+									<input type="radio" name="ox_05" id="OX_05_02">
+									<label for="OX_05_02">X</label>
+								</td>
+								<td>
+									<input type="radio" name="ox_05" id="OX_05_03">
+									<label for="OX_05_03">X</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									김천재 <span class="badge badge_pink">모</span>
+								</th>
+								<td>
+									<input type="radio" name="ox_06" id="OX_06_01">
+									<label for="OX_06_01">O</label>
+								</td>
+								<td>
+									<input type="radio" name="ox_06" id="OX_06_02">
+									<label for="OX_06_02">X</label>
+								</td>
+								<td>
+									<input type="radio" name="ox_06" id="OX_06_03">
+									<label for="OX_06_03">X</label>
+								</td>
+							</tr>
+							
+						</tbody>
+					</table>
+
+					<!-- 상중하 테이블 -->
+					<table class="tbl_list tbl_research_data" cellpadding="0" cellspacing="0">
+						<colgroup>
+							<col style="width:25%">
+							<col style="width:25%">
+							<col style="width:25%">
+							<col style="width:25%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">이름</th>
+								<th scope="col" colspan="3">상·중·하</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">
+									김천재 <span class="badge badge_gray_full">1</span>
+								</th>
+								<td>
+									<input type="radio" name="uml_01" id="UML_01_01" checked>
+									<label for="UML_01_01">상</label>
+								</td>
+								<td>
+									<input type="radio" name="uml_01" id="UML_01_02">
+									<label for="UML_01_02">중</label>
+								</td>
+								<td>
+									<input type="radio" name="uml_01" id="UML_01_03">
+									<label for="UML_01_03">하</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									김천재 <span class="badge badge_gray_full">1</span>
+								</th>
+								<td>
+									<input type="radio" name="uml_02" id="UML_02_01">
+									<label for="UML_02_01">상</label>
+								</td>
+								<td>
+									<input type="radio" name="uml_02" id="UML_02_02">
+									<label for="UML_02_02">중</label>
+								</td>
+								<td>
+									<input type="radio" name="uml_02" id="UML_02_03">
+									<label for="UML_02_03">하</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									김천재 <span class="badge badge_gray_full">1</span>
+								</th>
+								<td>
+									<input type="radio" name="uml_03" id="UML_03_01">
+									<label for="UML_03_01">상</label>
+								</td>
+								<td>
+									<input type="radio" name="uml_03" id="UML_03_02">
+									<label for="UML_03_02">중</label>
+								</td>
+								<td>
+									<input type="radio" name="uml_03" id="UML_03_03">
+									<label for="UML_03_03">하</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									김천재 <span class="badge badge_gray">기타</span>
+								</th>
+								<td>
+									<input type="radio" name="uml_04" id="UML_04_01">
+									<label for="UML_04_01">상</label>
+								</td>
+								<td>
+									<input type="radio" name="uml_04" id="UML_04_02">
+									<label for="UML_04_02">중</label>
+								</td>
+								<td>
+									<input type="radio" name="uml_04" id="UML_04_03">
+									<label for="UML_04_03">하</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									김천재 <span class="badge badge_blue">부</span>
+								</th>
+								<td>
+									<input type="radio" name="uml_05" id="UML_05_01">
+									<label for="UML_05_01">상</label>
+								</td>
+								<td>
+									<input type="radio" name="uml_05" id="UML_05_02">
+									<label for="UML_05_02">중</label>
+								</td>
+								<td>
+									<input type="radio" name="uml_05" id="UML_05_03">
+									<label for="UML_05_03">하</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									김천재 <span class="badge badge_pink">모</span>
+								</th>
+								<td>
+									<input type="radio" name="uml_06" id="UML_06_01">
+									<label for="UML_06_01">상</label>
+								</td>
+								<td>
+									<input type="radio" name="uml_06" id="UML_06_02">
+									<label for="UML_06_02">중</label>
+								</td>
+								<td>
+									<input type="radio" name="uml_06" id="UML_06_03">
+									<label for="UML_06_03">하</label>
+								</td>
+							</tr>
+							
+						</tbody>
+					</table>
+
+					<!-- 5점 척도 테이블 -->
+					<table class="tbl_list tbl_research_data" cellpadding="0" cellspacing="0">
+						<colgroup>
+							<col style="width:25%">
+							<col style="width:12.5%">
+							<col style="width:12.5%">
+							<col style="width:12.5%">
+							<col style="width:12.5%">
+							<col style="width:12.5%">
+							<col style="width:12.5%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">이름</th>
+								<th scope="col" colspan="6">5점 척도</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">
+									김천재 <span class="badge badge_gray_full">1</span>
+								</th>
+								<td>
+									<input type="radio" name="point_02" id="point_01_01" checked>
+									<label for="point_01_01">5</label>
+								</td>
+								<td>
+									<input type="radio" name="point_02" id="point_01_02">
+									<label for="point_01_02">4</label>
+								</td>
+								<td>
+									<input type="radio" name="point_02" id="point_01_03">
+									<label for="point_01_03">3</label>
+								</td>
+								<td>
+									<input type="radio" name="point_02" id="point_01_04">
+									<label for="point_01_04">2</label>
+								</td>
+								<td>
+									<input type="radio" name="point_02" id="point_01_05">
+									<label for="point_01_05">1</label>
+								</td>
+								<td>
+									<input type="radio" name="point_02" id="point_01_06">
+									<label for="point_01_06">-</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									김천재 <span class="badge badge_gray_full">1</span>
+								</th>
+								<td>
+									<input type="radio" name="point_02" id="point_02_01">
+									<label for="point_02_01">5</label>
+								</td>
+								<td>
+									<input type="radio" name="point_02" id="point_02_02">
+									<label for="point_02_02">4</label>
+								</td>
+								<td>
+									<input type="radio" name="point_02" id="point_02_03">
+									<label for="point_02_03">3</label>
+								</td>
+								<td>
+									<input type="radio" name="point_02" id="point_02_04">
+									<label for="point_02_04">2</label>
+								</td>
+								<td>
+									<input type="radio" name="point_02" id="point_02_05">
+									<label for="point_02_05">1</label>
+								</td>
+								<td>
+									<input type="radio" name="point_02" id="point_02_06">
+									<label for="point_02_06">-</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									김천재 <span class="badge badge_gray_full">1</span>
+								</th>
+								<td>
+									<input type="radio" name="point_03" id="point_03_01">
+									<label for="point_03_01">5</label>
+								</td>
+								<td>
+									<input type="radio" name="point_03" id="point_03_02">
+									<label for="point_03_02">4</label>
+								</td>
+								<td>
+									<input type="radio" name="point_03" id="point_03_03">
+									<label for="point_03_03">3</label>
+								</td>
+								<td>
+									<input type="radio" name="point_03" id="point_03_04">
+									<label for="point_03_04">2</label>
+								</td>
+								<td>
+									<input type="radio" name="point_03" id="point_03_05">
+									<label for="point_03_05">1</label>
+								</td>
+								<td>
+									<input type="radio" name="point_03" id="point_03_06">
+									<label for="point_03_06">-</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									김천재 <span class="badge badge_gray">기타</span>
+								</th>
+								<td>
+									<input type="radio" name="point_04" id="point_04_01">
+									<label for="point_04_01">5</label>
+								</td>
+								<td>
+									<input type="radio" name="point_04" id="point_04_02">
+									<label for="point_04_02">4</label>
+								</td>
+								<td>
+									<input type="radio" name="point_04" id="point_04_03">
+									<label for="point_04_03">3</label>
+								</td>
+								<td>
+									<input type="radio" name="point_04" id="point_04_04">
+									<label for="point_04_04">2</label>
+								</td>
+								<td>
+									<input type="radio" name="point_04" id="point_04_05">
+									<label for="point_04_05">1</label>
+								</td>
+								<td>
+									<input type="radio" name="point_04" id="point_04_06">
+									<label for="point_04_06">-</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									김천재 <span class="badge badge_blue">부</span>
+								</th>
+								<td>
+									<input type="radio" name="point_05" id="point_05_01">
+									<label for="point_05_01">5</label>
+								</td>
+								<td>
+									<input type="radio" name="point_05" id="point_05_02">
+									<label for="point_05_02">4</label>
+								</td>
+								<td>
+									<input type="radio" name="point_05" id="point_05_03">
+									<label for="point_05_03">3</label>
+								</td>
+								<td>
+									<input type="radio" name="point_05" id="point_05_04">
+									<label for="point_05_04">2</label>
+								</td>
+								<td>
+									<input type="radio" name="point_05" id="point_05_05">
+									<label for="point_05_05">1</label>
+								</td>
+								<td>
+									<input type="radio" name="point_05" id="point_05_06">
+									<label for="point_05_06">-</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									김천재 <span class="badge badge_pink">모</span>
+								</th>
+								<td>
+									<input type="radio" name="point_06" id="point_06_01">
+									<label for="point_06_01">5</label>
+								</td>
+								<td>
+									<input type="radio" name="point_06" id="point_06_02">
+									<label for="point_06_02">4</label>
+								</td>
+								<td>
+									<input type="radio" name="point_06" id="point_06_03">
+									<label for="point_06_03">3</label>
+								</td>
+								<td>
+									<input type="radio" name="point_06" id="point_06_04">
+									<label for="point_06_04">2</label>
+								</td>
+								<td>
+									<input type="radio" name="point_06" id="point_06_05">
+									<label for="point_06_05">1</label>
+								</td>
+								<td>
+									<input type="radio" name="point_06" id="point_06_06">
+									<label for="point_06_06">-</label>
+								</td>
+							</tr>
+							
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="right_section">
+				<a href="#none" class="btn action inactive" data-dismiss="modal">
+					<i class="sprite_comm sp_ico_close"></i>
+					<span>닫기</span>
+				</a>
+				<a href="#none" class="btn action inactive mt15"><!-- a.inactive 제거시 활성화 됨 -->
+					<i class="sprite_comm sp_ico_save"></i>
+					<span>임시저장</span>
+				</a>
+				<a href="#none" class="btn action mt15"><!-- a.inactive 추가시 비활성화 됨 -->
+					<i class="sprite_comm sp_ico_complete"></i>
+					<span>작성완료</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<!-- /modal :: 학급조사표 팝업 -->
+	<script>
+		$('#checklistPop').modal({show: true});
+	</script>
+  </body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="stylesheet" href="../css/style.min.css">
+
+
+<script type="text/javascript" src="../js/script.js"></script> 
+    <title>TALK - 메인</title>
+</head>
+
+<body>
+
+    <!-- 이미지, 동영상 모아보기 popup -->
+    <div class="modal file_list" id="imgList">
+        <div class="modal_content w470">
+            <a href="#none" class="modal_close" data-dismiss="modal"><img src="../img/ico_close_pop.png" alt="close"></a>
+            <h3 class="pop_title mb25">이미지, 동영상</h3>
+            <h4 class="list_title">2개 선택</h4>
+            <div class="scroll_bar">
+                <p class="date">2022.06.28</p>
+                <ul class="img_file_list">
+                    <li class="check_box circle">
+                        <input type="checkbox" id="check1" checked>
+                        <label for="check1"></label>
+                        <div class="check_img">
+                            <img src="../img/img_sample.png" alt="image">
+                        </div>
+                    </li>
+                    <li class="check_box circle">
+                        <input type="checkbox" id="check1" checked>
+                        <label for="check1"></label>
+                        <div class="check_img">
+                            <img src="../img/img_sample.png" alt="image">
+                        </div>
+                    </li>
+                    <li class="check_box circle">
+                        <input type="checkbox" id="check2">
+                        <label for="check2"></label>
+                        <div class="check_img">
+                            <img src="../img/img_sample.png" alt="image">
+                        </div>
+                    </li>
+                    <li class="check_box circle">
+                        <input type="checkbox" id="check3">
+                        <label for="check3"></label>
+                        <div class="check_img video">
+                            <img src="../img/img_sample.png" alt="image">
+                        </div>
+                    </li>
+                </ul>
+                <p class="date mt15">2022.05.02</p>
+                <ul class="img_file_list">
+                    <li class="check_box circle">
+                        <input type="checkbox" id="check4" checked>
+                        <label for="check4"></label>
+                        <div class="check_img">
+                            <img src="../img/img_sample.png" alt="image">
+                        </div>
+                    </li>
+                    <li class="check_box circle">
+                        <input type="checkbox" id="check5">
+                        <label for="check5"></label>
+                        <div class="check_img">
+                            <img src="../img/img_sample.png" alt="image">
+                        </div>
+                    </li>
+                    <li class="check_box circle">
+                        <input type="checkbox" id="check6">
+                        <label for="check6"></label>
+                        <div class="check_img">
+                            <img src="../img/img_sample.png" alt="image">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="btn_half mt40">
+                <a href="#none" class="btn outline medium">취소</a>
+                <a href="#none" class="btn medium">저장</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("#imgList").modal({show: true});
+    </script>
+</body>
+
+</html>

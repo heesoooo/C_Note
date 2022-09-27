@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('../include/inc_html_head.html')
+    <title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        @@include('../include/inc_header.html')
+
+        <!--  sub container -->
+        <div class="container inner_cont">
+
+            <!-- snb -->
+            <div class="snb">
+                       
+                <div class="snb_list">
+                    <h3 class="mt10">고객센터</h3>
+                    <ul>
+                        <li><a href="#none">공지사항</a></li>
+                        <li><a href="#none">자주 묻는 질문</a></li>
+                        <li class="active"><a href="#none">문의하기</a></li>
+                        <li><a href="#none">문의내역</a></li>
+                    </ul>
+                </div>
+          
+            </div>
+            <!-- //snb -->
+
+
+            <div class="contents">
+
+                <!-- title -->
+                <div class="title_box">
+                    <h4 class="page_title">1:1 문의</h4>
+                </div>
+                <!--// title -->
+
+                <!-- sub contents -->
+                <div class="qna_list_wrap">
+
+                    <div class="qna_list">
+                        <div class="info_dec">
+                            <span class="tit essential">문의 구분</span>
+                            <div class="select_wrap">
+								<div class="select_box">
+									<a class="select" href="#none">구분 선택</a>
+									<div class="option_list">
+										<div class="scroll_bar">
+											<a href="#none">회원가입</a>
+											<a href="#none">클래스 관련 문의</a>
+											<a href="#none">게시판 관련 문의</a>
+											<a href="#none">학교 관련 문의</a>
+											<a href="#none">시스템 오류 문의</a>
+											<a href="#none">기타</a>
+										</div>
+									</div>
+								</div>
+							</div>
+                        </div>
+                        <div class="info_dec">
+                            <span class="tit essential">제목</span>
+                            <div class="input_full">
+                                <input type="text" placeholder="제목을 입력하세요.(20자 이내)" value="">
+                            </div>
+                        </div>
+                        
+                        <div class="info_dec">
+                            <span class="tit essential">내용</span>
+                            <div class="input_full">
+                                <textarea type="text" placeholder="내용을 입력하세요.(500자 이내)" value=""></textarea>
+                            </div>
+                        </div>
+
+                        <div class="info_dec">
+                            <span class="tit">첨부파일</span>
+                            <div class="mt10">
+                                <input type="file" class="input_file_button" id="inputFile">
+							    <label for="inputFile" class="btn outline">파일 찾기</label>
+                                <em class="ml15">(최대 5개 파일을 업로드 가능하며, 50MB 미만 가능)</em>
+                            </div>
+                            <ul class="attach_list">
+                                <li>
+                                    <a href="#none">
+                                        <i class="sprite_comm sp_ico_file_g"></i>
+                                        고객센터_문의하기 첨부파일.pdf
+                                    </a>
+                                    <a href="#none" class="delete ml10">삭제</a>
+                                </li>
+                                <li>
+                                    <a href="#none">
+                                        <i class="sprite_comm sp_ico_file_g"></i>
+                                        문의사항_캡쳐.jpg
+                                    </a>
+                                    <a href="#none" class="delete ml10">삭제</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="leave_box">
+                        <span>문의에 필요한 개인정보(로그인 정보)는 접수 및 문제 해결을 위해 일정 기간 보관됩니다.</span>
+                        <a href="#none">개인정보 취급방침</a>
+                    </div>
+    
+                    <div class="check_box">
+                        <input type="checkbox" id="check1">
+                        <label for="check1">해당 내용을 확인하였으며, 이에 동의합니다. </label>
+                    </div>
+    
+                    <div class="btn_full">
+                        <a href="#none" class="btn large">문의하기</a>
+                        <!-- 입력 미완료 시 :: .disabled
+							 <a href="#none" class="btn large disabled">문의하기</a> -->
+                    </div>
+                </div>
+
+                <!--// sub contents -->
+
+            </div>
+        </div>
+        <!-- //sub container -->
+
+        <!-- footer -->
+        @@include('../include/inc_footer.html')
+
+
+        <script>
+            $(function(){
+                $(".accordion").on("click", function(e){
+                    e.preventDefault();
+                    $(this).toggleClass("close");
+                    $(this).next(".panel").stop().slideToggle();
+                });
+            })
+        </script>
+    </div>
+</body>
+
+</html>

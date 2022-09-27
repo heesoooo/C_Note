@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 메인</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+		@@include('../include/inc_logo_header.html')
+
+		<!-- contents -->
+		<div class="container inner_cont">
+			<div class="contents">
+				<!-- title -->
+				<div class="title_box mb0">
+					<h2 class="page_title login_title">나의 SNS 계정 찾기</h2>
+				</div>
+				<!-- /title -->
+
+				<!-- sub contents -->
+				<div class="login_box">
+					<h3>휴대폰 번호 인증을 통해 계정을 찾아드려요.</h3>
+					<div class="login_inner">
+						<ul class="sns_found_field">
+                            
+							<!-- 인증번호 발송 전 -->
+							<div class="flex_between_start mb10">
+								<div class="input_full mr10">
+									<input type="text" placeholder="휴대폰 번호의 숫자만 입력하세요.">
+								</div>
+								<!-- 인증번호 발송 후 disabled 클래스 제거해주세요 -->
+								<a href="#none" class="btn h50 summit_num disabled">번호발송</a>
+							</div>
+							<div class="input_full">
+								<input type="text" placeholder="인증 번호 6자리를 입력하세요." disabled>
+							</div>
+
+							<!-- 인증번호 발송 후 -->
+							<div class="flex_between_start mb10">
+								<div class="input_full mr10">
+									<input type="text" placeholder="휴대폰 번호의 숫자만 입력하세요." value="01032545555">
+								</div>
+								<a href="#none" class="btn h50 summit_num">재발송</a>
+							</div>
+							<div class="input_full">
+								<input type="text" placeholder="인증 번호 6자리를 입력하세요." value="123456" class="error">
+								<span class="time">03:00</span>
+							</div>
+							<span class="val_check_red t_left">
+								인증번호 입력 시간이 지났습니다. <br>
+								재발송 버튼을 클릭하여 다시 번호를 인증하세요.
+							</span>
+                            
+						</ul>
+						<div class="btn_full mt30"><a href="#none" class="btn h50">확인</a></div>
+					</div>
+				</div>
+				<!-- /sub contents -->
+			</div>
+		</div>
+		<!-- /contents -->
+
+		<!-- footer -->
+		@@include('../include/inc_footer.html')
+	</div>
+</body>
+
+</html>

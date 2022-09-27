@@ -1,0 +1,212 @@
+﻿@import "sprite";
+
+// search bar
+.search_wrap {
+    position: relative;
+    display: flex;
+    &.board {
+        width: 345px;
+
+        .filter_pop {
+            position: absolute;
+            top: calc(100% + 30px);
+            left: 0;
+            z-index: 5;
+        }
+
+        .btn_find {
+            right: 70px;
+        }
+    }
+
+    .board_search_input {
+        float: left;
+        width: 300px;
+        height: 44px;
+        padding: 0 80px 0 25px;
+        border: 1px solid $gray_e0;
+        border-radius: 22px;
+        font-size: 15px;
+    }
+
+    .school_search_input {
+        width: 100%;
+        height: 54px;
+        padding: 0 40px 0 15px;
+        border: 1px solid $gray_e0;
+        border-radius: 6px;
+        font-size: 15px;
+    }
+
+    .default_input {
+        width: 100%;
+        height: 50px;
+        padding: 0 40px 0 15px;
+        border: 1px solid $gray_e0;
+        border-radius: 6px;
+        font-size: 15px;
+    }
+
+    .btn_clear {
+        display: none;
+        @include posY;
+        right: 100px;
+        @extend .sprite_comm;
+        @extend .sp_ico_search_clear;
+    }
+
+    .btn_find {
+        @include posY;
+        right: 15px;
+        @extend .sprite_comm;
+        @extend .sp_ico_search_g;
+
+        &.active {
+            @extend .sp_ico_search_b;
+        }
+    }
+
+    //input:focus + .btn_find{@extend .sp_ico_search_b;}
+    input:disabled+.btn_find {
+        @extend .sp_ico_search_disabled;
+    }
+
+    .btn_filter {
+        @include posY;
+        right: 0;
+        @extend .sprite_comm;
+        @extend .sp_ico_filter;
+
+        &.active {
+            @extend .sp_ico_filter_on;
+        }
+    }
+
+    // 학교 검색 결과
+    .search_school_list {
+        display: none;
+        position: absolute;
+        top: calc(100% + 4px);
+        left: 0;
+        width: 100%;
+        padding: 5px 0;
+        background-color: $white;
+        border: 1px solid $gray_e0;
+        border-radius: 6px;
+        z-index: 3;
+
+        .scroll_bar {
+            overflow: auto;
+            max-height: 245px;
+            width: 100%;
+            padding-right: 0;
+
+            &::-webkit-scrollbar {
+                width: 6px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: $gray_e0;
+                border-radius: 10px;
+            }
+
+            &::-webkit-scrollbar-track {
+                border-radius: 10px;
+            }
+
+            a {
+                display: block;
+                color: $gray_66;
+                padding: 20px 14px;
+                line-height: 20px;
+
+                .sc_name {
+                    font-size: 16px;
+                    color: $black;
+                    margin-bottom: 5px;
+                }
+
+                .sc_address {
+                    font-size: 15px;
+                    color: $gray_66;
+                }
+                &:hover {
+                    color: $primary;
+                    background-color: $gray_fa;
+
+                    .sc_name {
+                        color: $primary;
+                    }
+                }
+            }
+            .sc_none {
+                padding: 20px 14px;
+                font-size: 15px;
+				color: $gray_66;
+            }
+            & + .add_new_school {
+                border-top: 1px solid $gray_e0;
+            }
+        }
+    }
+
+    .add_new_school {
+        @include flexbox;
+        flex-direction: column;
+        height: 124px;
+
+        .msg {
+            font-size: 14px;
+            color: $point;
+            margin-bottom: 18px;
+        }
+    }
+}
+
+// 메인 클래스, 학교 검색
+.main_search_wrap {
+    width: 700px;
+    margin: 0 auto;
+
+    .inner {
+        width: 700px;
+        margin: 0 auto;
+    }
+
+    .btn_clear {
+        display: none;
+        @include posY;
+        right: 80px;
+        @extend .sprite_comm;
+        @extend .sp_ico_input_clear;
+    }
+
+    .btn_find {
+        @include posY;
+        right: 30px;
+        @extend .sprite_comm;
+        @extend .sp_ico_head_search_off;
+        cursor: default;
+
+        &.active {
+            @extend .sp_ico_head_search;
+            cursor: pointer;
+        }
+    }
+
+    .input_full {
+        position: relative;
+    }
+
+    input[type=text] {
+        padding: 0 130px 0 30px;
+        height: 60px;
+        font-size: 18px;
+        letter-spacing: -0.18px;
+        color: $black;
+        border-radius: 10px;
+        &:focus {
+            border-color: $black;
+        }
+    }
+}

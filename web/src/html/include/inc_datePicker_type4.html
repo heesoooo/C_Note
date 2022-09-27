@@ -1,0 +1,70 @@
+﻿<!-- .calendar_modal -->
+<div class="calendar_modal">
+    <div id="datepicker5" data-date="2022.06.04"></div>
+    <input type="hidden" id="my_hidden_input">
+    <script>
+        $('#datepicker5').datepicker({
+            weekStart: 1,
+        });
+        $('#datepicker').on('changeDate', function() {
+            $('#my_hidden_input').val(
+                $('#datepicker').datepicker('getFormattedDate')
+            );
+        });
+    </script>
+
+    <div class="reserv_time flex_between">
+        <input type="text" class="sm" placeholder="2022.04.06">
+        
+        <div class="select_wrap">
+            <div class="select_box">
+              <a class="select sm" href="#none"><span>11</span> <span>시</span></a>
+              <div class="option_list">
+                <div class="scroll_bar">
+                  <a href="#none">1</a>
+                  <a href="#none">2</a>
+                  <a href="#none">3</a>
+                  <a href="#none">4</a>
+                  <a href="#none">5</a>
+                  <a href="#none">6</a>
+                  <a href="#none">7</a>
+                  <a href="#none">8</a>
+                  <a href="#none">9</a>
+                  <a href="#none">10</a>
+                  <a href="#none">11</a>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="select_wrap">
+            <div class="select_box">
+              <a class="select sm" href="#none"><span>10</span> <span>분</span></a>
+              <div class="option_list">
+                <div class="scroll_bar">
+                  <a href="#none">1</a>
+                  <a href="#none">2</a>
+                  <a href="#none">3</a>
+                  <a href="#none">4</a>
+                  <a href="#none">5</a>
+                  <a href="#none">6</a>
+                  <a href="#none">7</a>
+                  <a href="#none">8</a>
+                  <a href="#none">9</a>
+                  <a href="#none">10</a>
+                  <a href="#none">11</a>
+                </div>
+              </div>
+            </div>
+        </div>        
+    </div>
+    
+    <div class="btn_half">
+        <a href="#none" class="btn medium outline cancle">취소</a>
+        <a href="#none" class="btn medium">완료</a>
+    </div>
+
+    <p class="no_select">
+        선택할 수 없는 예약 시간입니다.
+    </p>
+</div>
+<!-- ./ -->

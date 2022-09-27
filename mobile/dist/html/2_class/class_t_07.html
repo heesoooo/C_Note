@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+        <div class="sub_header">
+            <a href="#none" class="history_back">뒤로가기</a>
+            <h2 class="sub_title">우리반 구성원</h2>
+            <div class="btn_wrap">
+                <a href="#none">초대하기</a>
+            </div>
+        </div>
+		<!-- /header -->
+        
+		<!-- content -->
+        <div class="container">
+            <!-- tab -->
+            <div class="tab_list">
+                <a href="#none" class="tab_links active">학부모(6)</a>
+                <a href="#none" class="tab_links">학생(4)</a>
+            </div>
+            <!-- /tab -->
+            <div class="tabcontent">
+                <div class="member_list_wrap">
+                    <div class="member_list_top">
+                        <p class="title">대기</p>
+                    </div>
+                    <ul>
+                        <li class="member_list">
+                            <a href="#none" class="flex_start_center">
+                                <span class="profile">
+                                    <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                                </span>
+                                <div>
+                                    <p class="name">
+                                        <span>나희도</span>
+                                        <span class="badge badge_blue">부</span>
+                                    </p>
+                                    <p class="info">
+                                        <span>이해법</span>
+                                        <span>010****4567</span>
+                                    </p>
+                                </div>
+                            </a>
+                            <div>
+                                <a href="#none" class="btn round primary small mr5">수락</a>
+                                <a href="#none" class="btn round outline primary small">거부</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="member_list_top">
+                        <p class="title">가입완료</p>
+                    </div>
+                    <ul>
+                        <li class="member_list">
+                            <a href="#none" class="flex_start_center">
+                                <span class="profile new">
+                                    <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                                </span>
+                                <div>
+                                    <p class="name">
+                                        <span>나희도</span>
+                                        <span class="badge badge_blue">부</span>
+                                    </p>
+                                    <p class="info">
+                                        <span>이해법</span>
+                                        <span>010****4567</span>
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="#none" class="btn round outline point small">탈퇴</a>
+                        </li>
+                        <li class="member_list">
+                            <a href="#none" class="flex_start_center">
+                                <span class="profile">
+                                    <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                                </span>
+                                <div>
+                                    <p class="name">
+                                        <span>백이진</span>
+                                        <span class="badge badge_pink">모</span>
+                                    </p>
+                                    <p class="info">
+                                        <span>이해법</span>
+                                        <span>010****4567</span>
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="#none" class="btn round outline point small">탈퇴</a>
+                        </li>
+                        <li class="member_list">
+                            <a href="#none" class="flex_start_center">
+                                <span class="profile">
+                                    <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                                </span>
+                                <div>
+                                    <p class="name">
+                                        <span>고유림</span>
+                                        <span class="badge badge_gray">기타</span>
+                                    </p>
+                                    <p class="info">
+                                        <span>이해법</span>
+                                        <span>010****4567</span>
+                                    </p>
+                                </div>
+                            </a>
+                            <a href="#none" class="btn round outline point small">탈퇴</a>
+                        </li>
+                    </ul>
+
+                    <!-- 구성원이 없을 경우 -->
+                    <p class="empty_msg mt150">
+                        우리반에 가입한 학부모가 없습니다.<br>
+                        구성원을 초대해보세요.
+                    </p>
+        
+                </div>
+            </div>
+        </div>
+        <!-- /content -->
+
+        <!-- sub tab bar -->
+		<div class="sub_tab_bar">
+    <ul>
+        <li class="tab_checklist on"><a href="#none"><i class="sprite_comm sp_ico_sub_checklist_off"></i>조사표</a></li>
+        <li class="tab_schedule"><a href="#none"><i class="sprite_comm sp_ico_sub_schedule_off"></i>일정추가</a></li>
+        <li class="tab_member"><a href="#none"><i class="sprite_comm sp_ico_sub_member_off"></i>구성원</a></li>
+        <li class="tab_setting"><a href="#none"><i class="sprite_comm sp_ico_sub_setting_off"></i>설정</a></li>
+    </ul>
+</div>
+		<!-- /sub tab bar -->
+	</div>
+
+		<!-- 학부모 정보 팝업 -->
+        <div class="modal" id="parentInfo">
+            <div class="modal_content modal_full"> <!-- 너비/높이 100% 팝업은 .modal_full 추가 -->
+                <!-- header -->
+                <div class="sub_header center">
+                    <a href="#none" class="modal_close" data-dismiss="modal">close</a>
+                    <h2 class="sub_title">학부모 정보</h2>
+                </div>
+                <!-- /header -->
+                <!-- contents -->
+                <div class="cont_section">
+                    <div class="mypage_wrap">
+                        <div class="form_modify">
+                            <div class="info_dec">
+                                <div class="upload_img pt30">
+                                    <span class="img">
+                                        <!-- <img src="" alt=""> -->
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="info_dec">
+                                <span class="tit">학부모 성함</span>
+                                <div class="input_full">
+                                    <input type="text" value="백이진" disabled>
+                                </div>
+                            </div>
+                            <div class="info_dec">
+                                <span class="tit">자녀 관계</span>
+                                <div class="input_full">
+                                    <input type="text" value="부" disabled>
+                                </div>
+                            </div>
+                            <div class="info_dec">
+                                <span class="tit">자녀 이름</span>
+                                <div class="input_full">
+                                    <input type="text" value="김해법" disabled>
+                                </div>
+                            </div>
+                            <div class="info_dec">
+                                <span class="tit">휴대폰 번호</span>
+                                <div class="input_full">
+                                    <input type="text" value="010-1234-5678" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /contents -->	
+            </div>
+        </div>
+        <!-- ./ -->
+    
+        <script>
+            $(function () {
+                $("#parentInfo").modal({ show: true, overlayDrop: false})
+            })
+        </script>
+</body>
+
+</html>

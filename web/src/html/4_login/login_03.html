@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 메인</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+		@@include('../include/inc_logo_header.html')
+
+		<!-- contents -->
+		<div class="container inner_cont">
+			<div class="contents">
+				<!-- title -->
+				<div class="title_box create_login_title">
+					<h2 class="page_title">학부모 회원가입</h2>
+					<p class="summary">회원가입을 위해서 필수 정보를 입력해주세요.</p>
+				</div>
+				<!-- /title -->
+
+				<!-- sub contents -->
+
+				<div class="form_create_login">
+					<div class="create_login_inner">
+						<div class="info_dec">
+							<span class="tit">아이디</span>
+							<div class="input_full">
+								<input type="text" placeholder="네이버로 로그인" disabled>
+							</div>
+						</div>
+						<div class="info_dec">
+							<span class="tit">이름</span>
+							<div class="input_full">
+								<input type="text" placeholder="10자 이내 실명으로 입력">
+							</div>
+						</div>
+						<!-- input에 텍스트 작성되면 a 태그에서 disabled 클래스 제거해주세요 -->
+						<div class="info_dec">
+							<span class="tit">휴대폰 번호</span>
+							<div class="input_full">
+								<div class="phone_wrap">
+									<input type="text" placeholder="숫자만 입력하세요.">
+									<a href="#none" class="btn h50 disabled">인증번호 발송</a>
+								</div>
+							</div>
+						</div>
+						<div class="info_dec">
+							<span class="tit">휴대폰 번호</span>
+							<div class="input_full">
+								<div class="phone_wrap">
+									<input type="text" placeholder="숫자만 입력하세요." value="01057573838">
+									<a href="#none" class="btn h50">재발송</a>
+								</div>
+							</div>
+						</div>
+						<!-- 인증번호 입력 시 span.time 추가해주세요 -->
+						<div class="info_dec">
+							<span class="tit">인증번호</span>
+							<div class="input_full">
+								<input type="text" placeholder="인증번호 6자리">
+							</div>
+						</div>
+						<div class="info_dec">
+							<span class="tit">인증번호</span>
+							<div class="input_full">
+								<input type="text" placeholder="인증번호 6자리" value="123222">
+								<span class="time">03:00</span>
+							</div>
+						</div>
+						<div class="check_box">
+							<input type="checkbox" id="check2">
+							<label for="check2">회원가입에 필요한 내용을 확인하였으며, 이에 동의합니다.</label>
+							<a href="#none" class="btn_login btn_show_terms"><span>이용약관 보기</span></a>
+						</div>
+						<p class="text_guide">이용약관 보기를 클릭하셔야 동의에 체크 가능합니다</p>
+						<div class="btn_half">
+							<a href="#noen" class="btn outline large">취소</a>
+							<a href="#noen" class="btn large">회원가입</a>
+							<!-- 입력완료되지 않았을 시 :: .disabled
+								 <a href="#noen" class="btn large disabled">회원가입</a> -->
+						</div>
+					</div>
+				</div>
+				<!-- /sub contents -->
+			</div>
+		</div>
+		<!-- /contents -->
+
+		<!-- footer -->
+		@@include('../include/inc_footer.html')
+	</div>
+</body>
+
+</html>

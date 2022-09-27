@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+	<title>우리반티셀파 - 로그인</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+        <div class="sub_header">
+            <a href="#none" class="history_back">뒤로가기</a>
+            <h2 class="sub_title">나의 SNS 계정 찾기</h2>
+        </div>
+		<!-- /header -->
+
+		<!-- content -->
+        <div class="container inner">
+            <div class="login_wrap">
+                <h2 class="login_title"><strong>휴대폰 번호 인증을 통해 SNS 계정을 찾아 드립니다. </strong></h2>
+                <div class="login_box">
+                    <div class="info_dec">
+                        <!-- 인증번호 발송 전 -->
+                        <span class="tit">휴대폰 번호</span>
+                        <div class="input_btn">
+                            <input type="text" placeholder="숫자만 입력">
+                            <a href="#none" class="btn">인증번호 발송</a>
+                        </div>
+                        <span class="val_check_red">휴대전화번호 형식에 맞지 않습니다.</span>
+                        <!-- 인증번호 발송 후 -->
+                        <div class="input_btn">
+                            <input type="text" placeholder="숫자만 입력" value="01057578989">
+                            <a href="#none" class="btn">재발송</a>
+                        </div>
+                        <span class="val_check_primary">인증번호를 발송하였습니다.</span>
+                    </div>
+                    <div class="info_dec">
+                        <!-- 인증번호 발송 전 -->
+                        <span class="tit">인증번호</span>
+                        <div class="input_full">
+                            <input type="text" placeholder="인증번호 6자리" disabled="">
+                        </div>
+                        <!-- 인증번호 잘못 입력했을 시 -->
+                        <div class="input_full">
+                            <input class="error" type="text" placeholder="인증번호 6자리" value="678945">
+                            <span class="time">3:00</span>
+                        </div>
+                        <span class="val_check_red">인증번호가 일치하지 않습니다. 다시 한 번 확인해주세요.</span>
+                    </div>
+                    <!-- 인증번호 입력 완료 시 disabled 클래스 삭제해주세요 -->
+                    <a href="#none" class="btn disabled">확인</a>
+                </div>
+            </div>
+        </div>
+        <!-- /content -->
+        
+	</div>
+
+	<script>
+	</script>
+</body>
+
+</html>

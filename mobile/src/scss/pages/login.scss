@@ -1,0 +1,155 @@
+@import "../component/_mixin";
+
+// 로그인 전 메인
+.container {
+    &.before_login {
+        margin-top: 12.8rem;
+        .title_box {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 2rem;
+            left: 50%; transform: translateX(-50%);
+            text-align: center;            
+            &::before,
+            &::after {
+                position: absolute;
+                content: '';
+                @extend .sprite_comm;
+            }
+            &::before {
+                top: 0.7rem;
+                left: -6.35rem;
+                @extend .sp_login_before_bg1;
+            }
+            &::after {
+                top: 1.8rem;
+                right: -6.05rem;
+                @extend .sp_login_before_bg2;
+            }
+            .page_title {
+                font-size: 2.9rem;
+                line-height: 1;
+                span {
+                    display: block;
+                    margin-bottom: 1.5rem;
+                    color: $gray_66;
+                    font-size: 1.4rem;
+                    font-weight: $font_weight_regular;
+                }
+                em {
+                    display: block;
+                    margin-top: 1rem;
+                    line-height: 1;
+                    color: $primary;
+                    font-size: 3.5rem;
+                    font-weight: $font_weight_bold;
+                }
+            }
+        }
+        .login_type_box {
+            margin-top: 10.5rem;
+            a {
+                margin-bottom: 1.5rem;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+.login_wrap {
+    padding-top: 2.95rem;
+    .login_box {
+        padding-top: 5rem;
+    }
+    .login_title {
+        font-size: 1.8rem;
+        line-height: 1.8rem;
+        text-align: center;
+        font-weight: $font_weight_medium;
+        letter-spacing: -.035rem;
+        strong {
+            font-size: 1.4rem;
+        }
+    }
+    .btn_login {
+        margin-top: 3.5rem;
+    }
+    .btn_find_account, .btn_show_terms {
+        display: inline-block;
+        margin-top: 3.5rem;
+        border-bottom: 1px solid $gray_99;
+        color: $gray_99;
+        font-size: 1.2rem;
+        letter-spacing: -.03rem;
+    }
+    .btn_show_terms {
+        margin: .5rem 0 0 2.8rem;
+    }
+    .val_check_red, .val_check_primary, .val_check_pink {
+        margin: 0.8rem 0 0 0.5rem;
+    }
+    .time {
+        font-size: 1.2rem;
+    }
+    .found_sns {
+        font-size: 1.8rem;
+        text-align: center;
+        letter-spacing: -.018rem;
+        span {
+            color: $primary;
+        }
+        strong {
+            display: block;
+            margin-top: .5rem;
+        }
+    }
+    .login_info {
+        margin: 2rem 0 5rem;
+        text-align: center;
+        color: $gray_66;
+        font-size: 1.3rem;
+        letter-spacing: -.013rem;
+    }
+    .results_none {
+        display: block;
+        font-size: 1.4rem;
+        text-align: center;
+        line-height: 2.2rem;
+        letter-spacing: -.035rem;
+    }
+}
+.login_box {
+    .check_box {
+        input[type=checkbox] {
+            & + label {
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
+.btn_sns_list {
+    margin-top: 6rem;
+    text-align: center;
+    &.list_border {
+        margin-top: 3rem;
+        padding-top: 3rem;
+        border-top: 1px solid $gray_e0;
+    }
+    .btn {
+        margin-top: 1.5rem;
+        &:first-child {
+            margin: 0;
+        }
+        &.naver_login {
+            background-color: #03cf5d;
+        }
+        &.kakao_login {
+            color: $black;
+            background-color: #fee22b;
+        }
+        i {
+            margin-right: .6rem;
+        }
+    }
+}

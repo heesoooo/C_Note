@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+    
+	<!-- 서비스 탈퇴 완료 팝업 -->
+	<div class="modal" id="requestJoinClass">
+		<div class="modal_content modal_full"> <!-- 너비/높이 100% 팝업은 .modal_full 추가 -->
+			<!-- header -->
+			<div class="sub_header center">
+				<a href="#none" class="modal_close" data-dismiss="modal">뒤로가기</a>
+				<h2 class="sub_title">서비스 탈퇴</h2>    
+				<div class="btn_wrap">
+					<a href="#none">확인</a>
+				</div>
+			</div>
+			<!-- /header -->
+			<!-- contents -->
+			<div class="cont_section">
+                <div class="empty_box">
+                    <figure class="empty leave"></figure>
+                    <p class="empty_msg">회원탈퇴가 완료되었습니다.</p>
+                    <p class="empty_txt">더욱더 노력하는 우리반T셀파가 되겠습니다.</p>
+                </div>
+			</div>
+			<!-- /contents -->	
+		</div>
+	</div>
+	<!-- /서비스 탈퇴 완료 팝업 -->
+
+	<script>
+		$(function () {
+			$("#requestJoinClass").modal({ show: true, overlayDrop: false})
+		})
+	</script>
+</body>
+
+</html>

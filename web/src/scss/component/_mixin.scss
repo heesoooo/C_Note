@@ -1,0 +1,145 @@
+@import "sprite";
+
+//variable
+$primary: #6255f6;
+$point: #ff61af;
+$red: #ff6652;
+$secondary: #558ef6;
+$third: #11a07c;
+$white: #fff;
+$black: black;
+$gray_66: #666;
+$gray_77: #777;
+$gray_88: #888;
+$gray_99: #999;
+$gray_be: #bebebe;
+$gray_bb: #bbbbbb;
+$gray_e0: #e0e0e0;
+$gray_e4: #e4e4e4;
+$gray_f0: #f0f0f0;
+$gray_f1: #f1f1f1;
+$gray_fa: #fafafa;
+$gray_f2: #f2f2f2;
+$gray_f5: #f5f5f5;
+$gray_cc: #ccc;
+$l_blue1: #f3faff;
+$l_blue2: #c8e2f3;
+
+//font 'Montserrat';
+$font-mont: "Montserrat", "Noto Sans KR", "Nanum Gothic", sans-serif;
+
+/*3가지 타입으로 통일*/
+$font_weight_light:           300 !default;
+$font_weight_regular:         400 !default;
+$font_weight_medium:          500 !default;
+$font_weight_bold:            700 !default;
+
+//포인트 글꼴 넣기
+@mixin ff-mont {
+  font-family: "Montserrat", "Noto Sans KR", "Nanum Gothic", sans-serif;
+}
+
+// 말줄임 ellipsis
+@mixin ellipsis($line: 1) {
+  @if ($line == 1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: $line;    
+    /*! autoprefixer: off */
+    -webkit-box-orient: vertical;
+    /* autoprefixer: on */
+  }
+}
+
+// scroll bar
+@mixin scroll {
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $gray_e0;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+}
+
+// clearfix
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+// inline-block middle
+@mixin inline-block-box($align: middle) {
+  display: inline-block;
+  vertical-align: $align;
+}
+
+// flexbox
+$flex-map: (
+  // 배열이라고 하나 이렇게 값을 펼쳐논다.  key : 값 형태.
+  start: flex-start,
+  end: flex-end,
+  between: space-between,
+  around: space-around,
+  stretch: stretch,
+  center: center
+);
+
+@function _get-flex-value($key) {
+  //입력한 키값($key)를 받아서
+  @return map-get(
+    $flex-map,
+    $key
+  ); // @return 리턴한다. 배열에서 입력한 키값에 맞는 값을.
+}
+
+@mixin flexbox($js: center, $ai: center) {
+  // : 를 붙히고 값을 써준 것은 default값을 설정함
+  display: flex;
+  align-items: _get-flex-value($ai);
+  justify-content: _get-flex-value($js);
+}
+
+//가로 가운데 정렬
+@mixin posX {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+//세로 중앙 정렬
+@mixin posY {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+//가로 세로 가운데로
+@mixin posXY {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// screen out
+@mixin ir_pm {
+  display: block;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  text-indent: -9999px;
+}
+

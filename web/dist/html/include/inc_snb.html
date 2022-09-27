@@ -1,0 +1,157 @@
+<div class="snb">
+	<!-- 220726 :: 추가 -->
+	<a href="#none" class="snb_info_toggle">클래스 정보 열고 닫기 버튼</a>
+
+    <!-- 220825 :: 접히는 부분 영역 변경 -->
+	<div class="class_info">
+        <div>
+            <span class="img">
+                <!-- <img class="class_picture" src="../../img/common/people.png" alt="학급전체사진"> -->
+                <em class="year">2023</em>
+            </span>
+            <p class="school_name">서울가산초등학교</p>
+            <p class="grade_class">1학년 벚꽃반</p>
+            <p class="total"><i></i>구성원 21명</p>
+        </div>
+        <!-- 220726 :: script 추가 -->
+        <script>
+            $(function(){
+                $(".snb_info_toggle").on("click", function(e){
+                    e.preventDefault();
+                    $(this).toggleClass("close");
+                    $(this).next(".class_info").slideToggle();
+                })
+            })
+        </script>
+        <div class="dropdown_wrap btn_write_wrap">
+            <div class="dropdown">
+                <!-- 220822 :: ml20 태그 삭제 -->
+                <a href="#none" class="btn large round btn_board_write"><i class="sprite_comm sp_ico_pen mr10"></i>게시판 글쓰기</a>
+                <ul class="menu_list">
+                    <li><a href="#none"><i class="sprite_comm sp_ico_notice_g mr10"></i>학급공지</a></li>
+                    <li><a href="#none"><i class="sprite_comm sp_ico_album_g mr10"></i>앨범</a></li>
+                    <li><a href="#none"><i class="sprite_comm sp_ico_fboard_g mr10"></i>자유게시판</a></li>
+                    <li><a href="#none"><i class="sprite_comm sp_ico_homework_g mr10"></i>과제게시판</a></li>
+                    <li><a href="#none"><i class="sprite_comm sp_ico_table_g mr10"></i>학급조사표</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="class_plan">
+            <a href="#none" class="btn_check_plan">
+                <strong><i></i> 12월 30일 우리반 일정</strong>
+                <p class="plan_num">금일 일정이 <span>3개</span> 있습니다.</p>
+            </a>
+                <!-- .calendar_modal -->
+    <div class="calendar_modal_flex">
+        <div class="calendar_modal">
+            <div id="datepicker2" data-date="2022.06.04"></div>
+            <input type="hidden" id="my_hidden_input">
+            <script>
+                $('#datepicker2').datepicker({
+                    weekStart: 1,
+                });
+                $('#datepicker').on('changeDate', function() {
+                    $('#my_hidden_input').val(
+                        $('#datepicker').datepicker('getFormattedDate')
+                    );
+                });
+            </script>
+            <div class="schedule_list_wrap">
+                <ul class="schedule_list scroll_box">
+                    <li>
+                        <span class="date">2022.06.11</span>
+                        <p class="content">
+                            오늘의 생일자 - 김상민, 김지영, 정재훈<br>
+                            2교시 과학 수행평가
+                        </p>
+                    </li>
+                    <li>
+                        <span class="date">2022.06.12</span>
+                        <p class="content">
+                            오늘의 생일자 - 김상민, 김지영, 정재훈<br>
+                            2교시 과학 수행평가
+                        </p>
+                    </li>
+                    <li>
+                        <span class="date">2022.06.13</span>
+                        <p class="content">
+                            오늘의 생일자 - 김상민, 김지영, 정재훈<br>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="btn_full mt30">
+                <a href="#none" class="btn medium btn_plan_add">일정 추가하기</a>
+            </div>
+        </div>
+        <!-- ./ -->
+
+        <!-- .calendar_modal.plus -->
+        <div class="calendar_modal plus ml20">
+            <h4 class="title">일정 등록하기</h4>
+            <!-- 220818 ::  입력창 설명글 placeholder로 변경-->
+            <textarea class="w100p input_schedule" placeholder="공유할 일정을 입력해 주세요. (100자 이내)"></textarea>
+            <div class="btn_half mt30">
+                <a href="#none" class="btn medium outline close">닫기</a>
+                <a href="#none" class="btn medium">등록</a>
+            </div>
+        </div>
+    </div>
+    <!-- ./ -->
+
+    <script>
+        $(function(){
+            $(".calendar_modal + .plus").hide();
+            $(".btn_plan_add").on("click", function(){
+                $(".calendar_modal + .plus").show();
+                return false;
+            });
+            $(".plus .close").on("click", function(){
+                $(".calendar_modal_flex").hide();
+                return false;
+            });
+        })
+    </script>
+
+        </div>
+        <script>
+            $(".calendar_modal_flex").hide();
+            $(".btn_check_plan").on("click",function(){
+                $(this).next(".calendar_modal_flex").toggle();
+            })
+        </script>
+    </div>
+
+	<div class="snb_list">
+        <h3>게시판</h3>
+		<ul>
+			<li class="active"><a href="#none">전체</a></li>
+			<li><a href="#none">학급공지</a></li>
+			<li><a href="#none">앨범</a></li>
+			<li><a href="#none">자유게시판</a></li>
+			<li><a href="#none">과제게시판</a></li>
+			<li><a href="#none">학급 설문조사</a></li>
+			<li><a href="#none">T셀파 학습도구</a></li>
+            <!-- 220809 :: 학급죠사표 예외처리 -->
+			<li class="special"><a href="#none">학급 조사표</a></li>
+		</ul>
+        <!-- 220902 :: 배너 추가 -->
+        <div class="banner_area">
+            <a href="#none">
+                <img src="../../img/banner_ai.png" alt="Ai수학">
+            </a>
+        </div>
+	</div>
+
+	<!-- 관리자 접속시 뜨는 메뉴 -->
+	<div class="snb_manage">
+		<ul>
+			<li><a href="#none">클래스 정보 <i class="sprite_comm sp_ico_snb_info_g"></i></a></li>
+			<li><a href="#none">클래스 설정 <i class="sprite_comm sp_ico_snb_setting_g"></i></a></li>
+			<li><a href="#none">구성원 관리 <i class="sprite_comm sp_ico_snb_user_g"></i></a></li>
+			<li><a href="#none">초대하기 <i class="sprite_comm sp_ico_snb_invite_g"></i></a></li>
+		</ul>
+	</div>
+	<!-- ./ -->
+</div>

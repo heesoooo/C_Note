@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Style Guide & Components</title>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+    <style type="text/css">
+        *{margin:0;padding:0;}
+        .components{max-width:768px;margin:0 auto;padding-top:3rem;padding:6rem 1.5rem;font-size:1.6rem;}
+        h1{position:fixed;top:0;left:0;background-color:#6255f6;color:#ffffff;width:100%;height:5rem;line-height:5rem;font-size:2rem;padding:0 1.5rem;z-index:10;}
+        .components .sticky{position:fixed;left:-13rem;top:5rem;height:100%;border-right:1px solid #aaa;background-color:#fff;z-index:5;}
+        .components .sticky.open{top:5rem;left:0;transition:all .3s;}
+        .components .sticky a{display:block;height:4rem;padding:0 1.5rem;font-size:1.6rem;color:#7c7c7c;line-height:4rem;text-decoration:none;border-bottom:1px solid #eee;}
+        .components .sticky a:hover{color:#6255f6;}
+        .components .sticky a.active{color:#6255f6;text-decoration:underline;}
+        .components .categorys{margin-bottom:2.5rem;padding-top:1rem;padding-bottom:1rem;color:#001242;font-size:1.8rem;font-weight:bold;border-bottom:1px solid #e4e4e4;}
+        .components h2.tit{padding-bottom:1rem;font-size:1.5rem;font-weight:300;}
+        .components h2.tit span{font-size:1.4rem;color:#666666;padding-left:1.5rem;}
+        .components .component-area>h2 span{margin-left:0.5rem;font-size:1.6rem;letter-spacing:-5rem;color:#646464;}
+        .components .component-area>h3{margin:3.5rem 0 1.5rem;}
+        .components .component-area>h3:first-child{margin-top:0;}
+        .components .component-area h3 span{display:inline-block;padding:0 1.5rem 0 0.5rem;font-size:1.5rem;font-weight:500;}
+        .components .component-area dl dt{font-size:1.2rem;color:#666666;line-height:2.5rem;margin-bottom:0.5rem}
+        .component-area{margin:0 0 4rem;padding:2rem;background-color:#fbfbfb;}
+        .icon_box{display:flex;flex-wrap:wrap;justify-content:space-between;width:100%;}
+        .icon_box li{display:flex;align-items:center;justify-content: space-between; width:calc(50% - 1rem);margin-bottom:1rem;padding:1.5rem;background-color:#ededed;border-radius:1rem;}
+        .icon_box li strong {width:75%; font-size: 1.4rem;}
+        .flex{display:flex;}
+        .flex_start{display:flex;justify-content:flex-start;align-items:flex-start;}
+        /* components style */
+    </style>
+</head>
+
+<body>
+    <h1>Components</h1>
+    <div class="components">
+        <div class="sticky">
+            <div>
+                <a href="#category1">typography</a>
+                <a href="#category2">form</a>
+                <a href="#category3">search</a>
+                <a href="#category4">button</a>
+                <a href="#category5">icon</a>
+                <a href="#category6">datePicker</a>
+                <a href="#category7">popup</a>
+                <a href="#category10">editor</a>
+                <a href="#category11">tab</a>
+            </div>
+
+        </div>
+
+        <!-- TYPOGRAPHY -->
+        <h2 id="category1" class="categorys">#TYPOGRAPHY</h2>
+        <div class="component-area">
+            <h3><span>Font/Type</span></h3>
+            <div class="mb50">
+                <dl>
+                    <dt>Korean</dt>
+                    <dd style="font-size:28px;font-weight:500;">노토산스 CJK KR</dd>
+                </dl>
+                <dl class="mr20">
+                    <dt>Number & English </dt>
+                    <dd style="font-size:28px;font-weight:300;">Montserrat</dd>
+                </dl>
+            </div>
+
+            <h3><span>Font/Weight</span></h3>
+            <div>
+                <dl class="mt15">
+                    <dt>$font_weight_bold</dt>
+                    <dd class="ft20" style="font-weight:700;">
+                        <span>노토산스 CJK KR</span> /
+                        <span style="font-weight:700;">Montserrat</span>
+                    </dd>
+                </dl>
+                <dl class="mt15">
+                    <dt>$font_weight_medium</dt>
+                    <dd class="ft20" style="font-weight:500;">
+                        <span>노토산스 CJK KR</span> /
+                        <span style="font-weight:500;">Montserrat</span>
+                    </dd>
+                </dl>
+                <dl class="mt15">
+                    <dt>$font_weight_regular</dt>
+                    <dd class="ft20" style="font-weight:400;">
+                        <span>노토산스 CJK KR</span> /
+                        <span style="font-weight:300;">Montserrat</span>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <!-- /TYPOGRAPHY -->
+
+        <!-- form -->
+        <h2 id="category2" class="categorys">#form</h2>
+
+        <h2 class="tit">Input</h2>
+        <div class="component-area">
+
+            <h3><span>Default / Completed</span></h3>
+            <div class="input_full">
+                <input type="text" placeholder="내용을 입력하세요.">
+                <input type="text" placeholder="내용을 입력하세요." value="천재교육">
+            </div>
+            
+            <h3><span>input.my_focus / input.error / disabled </span></h3>
+            <div class="input_full">
+                <input class="my_focus" type="text" placeholder="내용을 입력하세요." value="천재교육">
+                <input class="error" type="text" placeholder="내용을 입력하세요." value="천재교육">
+                <input type="text" placeholder="내용을 입력하세요." value="천재교육" disabled>
+            </div>
+
+            <h3><span>+ btn </span></h3>
+            <div class="input_btn">
+                <input type="password" placeholder="" value="비밀번호">
+                <a href="#none" class="btn">비밀번호 변경</a>
+            </div>
+        </div>
+
+        <h2 class="tit">Select box</h2>
+        <div class="component-area">
+            <div class="select_box mb10">
+                <select class="select">
+                    <option value="">선택</option>
+                    <option value="">선택1</option>
+                    <option value="">선택2</option>
+                    <option value="">선택3</option>
+                    <option value="">선택4</option>
+                    <option value="">선택5</option>
+                </select>
+            </div>
+            <div class="select_box">
+                <select class="select" disabled>
+                    <option value="">선택</option>
+                    <option value="">선택1</option>
+                    <option value="">선택2</option>
+                    <option value="">선택3</option>
+                    <option value="">선택4</option>
+                    <option value="">선택5</option>
+                </select>
+
+            </div>
+        </div>
+
+
+        <h2 class="tit">Textarea</h2>
+        <div class="component-area">
+
+            <h3><span>Default</span></h3>
+            <textarea placeholder="우리반을 간단하게 소개해주세요.(최대 50자 이내)"></textarea>
+            <h3><span>textarea.my_focus</span></h3>
+            <textarea class="my_focus" type="text" placeholder="내용을 입력하세요.">뛰노는 남는 위하여 생명을 하는 돋고, 있는가? 공자는 미묘한 곧 열락의 힘차게 있다. 새 이상의 얼마나 이상의 갑 동산에는 따뜻한 타오르고 사막이다. 청춘 몸이 못할 무엇이 튼튼하며, 되려니와, 것이다.</textarea>
+            <h3><span>disabled</span></h3>
+            <textarea type="text" placeholder="내용을 입력하세요." value="천재교육" disabled></textarea>
+        </div>
+
+        <h2 class="tit">Tag / badge</h2>
+        <div class="component-area">
+            <h3><span>.tag.</span><span>.tag.outline </span></h3>
+            <span class="tag mr10">공지</span>
+            <span class="tag outline">학급공지</span>
+
+            <h3><span>.badge.badge_blue</span>
+                <span>.badge.badge_pink</span>
+                <span>.badge.badge_gray</span>
+                <span>.badge.badge_gray_full</span>
+            </h3>
+            <span class="badge badge_blue">부</span>
+            <span class="badge badge_pink">모</span>
+            <span class="badge badge_gray">기타</span>
+            <span class="badge badge_gray_full red">12</span>
+        </div>
+
+        <h2 class="tit">Checkbox</h2>
+        <div class="component-area">
+            <div class="check_box">
+                <input type="checkbox" id="check1" checked>
+                <label for="check1">Selected</label>
+            </div>
+            <div class="check_box">
+                <input type="checkbox" id="check2">
+                <label for="check2">Unselected</label>
+            </div>
+            <div class="check_box">
+                <input type="checkbox" id="check3" disabled>
+                <label for="check3">Disabled</label>
+            </div>
+            <div class="check_box circle">
+                <input type="checkbox" id="check4" checked>
+                <label for="check4">Circle</label>
+            </div>
+        </div>
+
+        <h2 class="tit">Radio Button</h2>
+        <div class="component-area">
+            <div class="radio_box">
+                <input type="radio" id="radio1" name="radio_btn" checked="">
+                <label for="radio1" class="mr20">김천재 선생님</label>
+                <input type="radio" id="radio2" name="radio_btn">
+                <label for="radio2">이천재 선생님</label>
+            </div>
+        </div>
+
+        <h2 class="tit">Toggle switch</h2>
+        <div class="component-area">
+            <label class="switch mr20">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+            <label class="switch mr20">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <label class="switch mr20">
+                <input type="checkbox" disabled>
+                <span class="slider"></span>
+            </label>
+
+        </div>
+
+        <!-- /form -->
+
+        <!-- search -->
+        <h2 id="category3" class="categorys">#search</h2>
+
+        <h2 class="tit">학교 검색</h2>
+        <div class="component-area">
+            <h3>검색</h3>
+            <div class="info_dec">
+                <div class="search_wrap">
+                    <input class="default_input" placeholder="검색하기" type="text">
+                    <a href="#none" class="btn_find"></a>
+                </div>
+            </div>
+        </div>
+        <!-- /search -->
+
+        <!-- button -->
+        <h2 id="category4" class="categorys">#Button</h2>
+        <h2 class="tit">Line Button</h2>
+        <div class="component-area">
+            <h3>
+                <span>.btn</span>
+                <span>.btn.outline.active.point</span>
+                <span>.btn.outline.active</span>
+                <span>.btn.outline.disabled</span>
+            </h3>
+            <a href="#none" class="btn outline mb10">기본버튼</a>
+            <a href="#none" class="btn outline point mb10">active</a>
+            <a href="#none" class="btn outline primary mb10">active</a>
+            <a href="#none" class="btn outline disabled">disabled</a>
+        </div>
+
+        <h2 class="tit">Solid Button</h2>
+        <div class="component-area">
+            <h3>
+                <span>.btn</span>
+                <span>.btn.disabled</span>
+            </h3>
+            <a href="#none" class="btn mb10">기본버튼</a>
+            <a href="#none" class="btn disabled">disabled</a>
+        </div>
+
+        <h2 class="tit">아이콘 포함 버튼</h2>
+        <div class="component-area">
+            <a href="#none" class="btn outline primary mb10">
+                <i class="sprite_comm sp_ico_attached_active mr5"></i>첨부파일 추가
+            </a>
+            <a href="#none" class="btn outline disabled">
+                <i class="sprite_comm sp_ico_attached_disabled mr5"> </i>첨부파일 추가
+            </a>
+        </div>
+        
+        <h2 class="tit">Round Button</h2>
+        <div class="component-area">
+            <h3>
+                <span>.btn.round.small</span>
+                <a href="#none" class="btn round small">가입하기</a>
+                <br>
+                <span>.btn.round.outline.bold.small</span>
+                <a href="#none" class="btn round outline primary bold small">우리반</a>
+                <br>
+                <span>.btn.round.outline.small</span>
+                <a href="#none" class="btn round outline primary small">가입하기</a>
+                <span>.btn.round.gray.small</span>
+                <a href="#none" class="btn round gray small">가입대기</a>
+            </h3>
+
+        </div>
+        <!-- /button -->
+
+        <!-- icon -->
+        <h2 id="category5" class="categorys">#icon</h2>
+        <h2 class="tit">icon</h2>
+        <div class="component-area">
+            <h3><span style="color:#6255f6">.sprite_comm</span><span>공통클래스</span></h3>
+            <ul class="icon_box">
+                <li><span class="sprite_comm sp_btn_down"></span><strong>.sp_btn_down</strong></li>
+                <li><span class="sprite_comm sp_btn_recording"></span><strong>.sp_btn_recording</strong></li>
+                <li><span class="sprite_comm sp_btn_write"></span><strong>.sp_btn_write</strong></li>
+                <li><span class="sprite_comm sp_dot_blue"></span><strong>.sp_dot_blue</strong></li>
+                <li><span class="sprite_comm sp_dot_orange"></span><strong>.sp_dot_orange</strong></li>
+                <li><span class="sprite_comm sp_ico_add"></span><strong>.sp_ico_add</strong></li>
+                <li><span class="sprite_comm sp_ico_alarm"></span><strong>.sp_ico_alarm</strong></li>
+                <li><span class="sprite_comm sp_ico_alarm_setting"></span><strong>.sp_ico_alarm_setting</strong></li>
+                <li><span class="sprite_comm sp_ico_answer"></span><strong>.sp_ico_answer</strong></li>
+                <li><span class="sprite_comm sp_ico_attached_active"></span><strong>.sp_ico_attached_active</strong></li>
+                <li><span class="sprite_comm sp_ico_attached_disabled"></span><strong>.sp_ico_attached_disabled</strong></li>
+                <li><span class="sprite_comm sp_ico_back"></span><strong>.sp_ico_back</strong></li>
+                <li><span class="sprite_comm sp_ico_calendar"></span><strong>.sp_ico_calendar</strong></li>
+                <li><span class="sprite_comm sp_ico_call"></span><strong>.sp_ico_call</strong></li>
+                <li><span class="sprite_comm sp_ico_call_sm"></span><strong>.sp_ico_call_sm</strong></li>
+                <li><span class="sprite_comm sp_ico_call_w_lg"></span><strong>.sp_ico_call_w_lg</strong></li>
+                <li><span class="sprite_comm sp_ico_call_w_sm"></span><strong>.sp_ico_call_w_sm</strong></li>
+                <li><span class="sprite_comm sp_ico_chat_alarm"></span><strong>.sp_ico_chat_alarm</strong></li>
+                <li><span class="sprite_comm sp_ico_chat_leave"></span><strong>.sp_ico_chat_leave</strong></li>
+                <li><span class="sprite_comm sp_ico_chat_pin"></span><strong>.sp_ico_chat_pin</strong></li>
+                <li><span class="sprite_comm sp_ico_chat_w_sm"></span><strong>.sp_ico_chat_w_sm</strong></li>
+                <li><span class="sprite_comm sp_ico_check_on"></span><strong>.sp_ico_check_on</strong></li>
+                <li><span class="sprite_comm sp_ico_clear_lg"></span><strong>.sp_ico_clear_lg</strong></li>
+                <li><span class="sprite_comm sp_ico_clip"></span><strong>.sp_ico_clip</strong></li>
+                <li><span class="sprite_comm sp_ico_clip_g"></span><strong>.sp_ico_clip_g</strong></li>
+                <li><span class="sprite_comm sp_ico_clock_setting"></span><strong>.sp_ico_clock_setting</strong></li>
+                <li><span class="sprite_comm sp_ico_close"></span><strong>.sp_ico_close</strong></li>
+                <li><span class="sprite_comm sp_ico_close_g"></span><strong>.sp_ico_close_g</strong></li>
+                <li><span class="sprite_comm sp_ico_close_w"></span><strong>.sp_ico_close_w</strong></li>
+                <li><span class="sprite_comm sp_ico_comment"></span><strong>.sp_ico_comment</strong></li>
+                <li><span class="sprite_comm sp_ico_consult_clock"></span><strong>.sp_ico_consult_clock</strong></li>
+                <li><span class="sprite_comm sp_ico_delete"></span><strong>.sp_ico_delete</strong></li>
+                <li><span class="sprite_comm sp_ico_delete_attach"></span><strong>.sp_ico_delete_attach</strong></li>
+                <li><span class="sprite_comm sp_ico_down"></span><strong>.sp_ico_down</strong></li>
+                <li><span class="sprite_comm sp_ico_down_default"></span><strong>.sp_ico_down_default</strong></li>
+                <li><span class="sprite_comm sp_ico_down_g"></span><strong>.sp_ico_down_g</strong></li>
+                <li><span class="sprite_comm sp_ico_down_w"></span><strong>.sp_ico_down_w</strong></li>
+                <li><span class="sprite_comm sp_ico_edit"></span><strong>.sp_ico_edit</strong></li>
+                <li><span class="sprite_comm sp_ico_emoticon"></span><strong>.sp_ico_emoticon</strong></li>
+                <li><span class="sprite_comm sp_ico_error"></span><strong>.sp_ico_error</strong></li>
+                <li><span class="sprite_comm sp_ico_file_download"></span><strong>.sp_ico_file_download</strong></li>
+                <li><span class="sprite_comm sp_ico_file_g"></span><strong>.sp_ico_file_g</strong></li>
+                <li><span class="sprite_comm sp_ico_folder"></span><strong>.sp_ico_folder</strong></li>
+                <li><span class="sprite_comm sp_ico_fulldown"></span><strong>.sp_ico_fulldown</strong></li>
+                <li><span class="sprite_comm sp_ico_fulldown_v"></span><strong>.sp_ico_fulldown_v</strong></li>
+                <li><span class="sprite_comm sp_ico_hang_up"></span><strong>.sp_ico_hang_up</strong></li>
+                <li><span class="sprite_comm sp_ico_img_file"></span><strong>.sp_ico_img_file</strong></li>
+                <li><span class="sprite_comm sp_ico_incoming_call"></span><strong>.sp_ico_incoming_call</strong></li>
+                <li><span class="sprite_comm sp_ico_info"></span><strong>.sp_ico_info</strong></li>
+                <li><span class="sprite_comm sp_ico_info_g"></span><strong>.sp_ico_info_g</strong></li>
+                <li><span class="sprite_comm sp_ico_inp_clear"></span><strong>.sp_ico_inp_clear</strong></li>
+                <li><span class="sprite_comm sp_ico_invite"></span><strong>.sp_ico_invite</strong></li>
+                <li><span class="sprite_comm sp_ico_kakao"></span><strong>.sp_ico_kakao</strong></li>
+                <li><span class="sprite_comm sp_ico_like"></span><strong>.sp_ico_like</strong></li>
+                <li><span class="sprite_comm sp_ico_list_more"></span><strong>.sp_ico_list_more</strong></li>
+                <li><span class="sprite_comm sp_ico_list_more_g"></span><strong>.sp_ico_list_more_g</strong></li>
+                <li><span class="sprite_comm sp_ico_list_more_w"></span><strong>.sp_ico_list_more_w</strong></li>
+                <li><span class="sprite_comm sp_ico_make"></span><strong>.sp_ico_make</strong></li>
+                <li><span class="sprite_comm sp_ico_menu"></span><strong>.sp_ico_menu</strong></li>
+                <li><span class="sprite_comm sp_ico_menu_expand"></span><strong>.sp_ico_menu_expand</strong></li>
+                <li><span class="sprite_comm sp_ico_missed_call"></span><strong>.sp_ico_missed_call</strong></li>
+                <li><span class="sprite_comm sp_ico_more"></span><strong>.sp_ico_more</strong></li>
+                <li><span class="sprite_comm sp_ico_more_sm"></span><strong>.sp_ico_more_sm</strong></li>
+                <li><span class="sprite_comm sp_ico_more_w"></span><strong>.sp_ico_more_w</strong></li>
+                <li><span class="sprite_comm sp_ico_my_class"></span><strong>.sp_ico_my_class</strong></li>
+                <li><span class="sprite_comm sp_ico_my_faq"></span><strong>.sp_ico_my_faq</strong></li>
+                <li><span class="sprite_comm sp_ico_my_inquire"></span><strong>.sp_ico_my_inquire</strong></li>
+                <li><span class="sprite_comm sp_ico_my_news"></span><strong>.sp_ico_my_news</strong></li>
+                <li><span class="sprite_comm sp_ico_my_notice"></span><strong>.sp_ico_my_notice</strong></li>
+                <li><span class="sprite_comm sp_ico_my_school"></span><strong>.sp_ico_my_school</strong></li>
+                <li><span class="sprite_comm sp_ico_my_scrap"></span><strong>.sp_ico_my_scrap</strong></li>
+                <li><span class="sprite_comm sp_ico_naver"></span><strong>.sp_ico_naver</strong></li>
+                <li><span class="sprite_comm sp_ico_no_call"></span><strong>.sp_ico_no_call</strong></li>
+                <li><span class="sprite_comm sp_ico_no_picture"></span><strong>.sp_ico_no_picture</strong></li>
+                <li><span class="sprite_comm sp_ico_no_picture_lg"></span><strong>.sp_ico_no_picture_lg</strong></li>
+                <li><span class="sprite_comm sp_ico_no_video"></span><strong>.sp_ico_no_video</strong></li>
+                <li><span class="sprite_comm sp_ico_outgoing_call"></span><strong>.sp_ico_outgoing_call</strong></li>
+                <li><span class="sprite_comm sp_ico_pause_off"></span><strong>.sp_ico_pause_off</strong></li>
+                <li><span class="sprite_comm sp_ico_pause_on"></span><strong>.sp_ico_pause_on</strong></li>
+                <li><span class="sprite_comm sp_ico_pdf"></span><strong>.sp_ico_pdf</strong></li>
+                <li><span class="sprite_comm sp_ico_picture"></span><strong>.sp_ico_picture</strong></li>
+                <li><span class="sprite_comm sp_ico_pin"></span><strong>.sp_ico_pin</strong></li>
+                <li><span class="sprite_comm sp_ico_play_off"></span><strong>.sp_ico_play_off</strong></li>
+                <li><span class="sprite_comm sp_ico_play_on"></span><strong>.sp_ico_play_on</strong></li>
+                <li><span class="sprite_comm sp_ico_plus"></span><strong>.sp_ico_plus</strong></li>
+                <li><span class="sprite_comm sp_ico_plus_round"></span><strong>.sp_ico_plus_round</strong></li>
+                <li><span class="sprite_comm sp_ico_profile_edit"></span><strong>.sp_ico_profile_edit</strong></li>
+                <li><span class="sprite_comm sp_ico_profile_edit2"></span><strong>.sp_ico_profile_edit2</strong></li>
+                <li><span class="sprite_comm sp_ico_profile_group"></span><strong>.sp_ico_profile_group</strong></li>
+                <li><span class="sprite_comm sp_ico_profile_notice"></span><strong>.sp_ico_profile_notice</strong></li>
+                <li><span class="sprite_comm sp_ico_recording_off"></span><strong>.sp_ico_recording_off</strong></li>
+                <li><span class="sprite_comm sp_ico_recording_on"></span><strong>.sp_ico_recording_on</strong></li>
+                <li><span class="sprite_comm sp_ico_reject"></span><strong>.sp_ico_reject</strong></li>
+                <li><span class="sprite_comm sp_ico_resend"></span><strong>.sp_ico_resend</strong></li>
+                <li><span class="sprite_comm sp_ico_reset"></span><strong>.sp_ico_reset</strong></li>
+                <li><span class="sprite_comm sp_ico_save"></span><strong>.sp_ico_save</strong></li>
+                <li><span class="sprite_comm sp_ico_scrap_off"></span><strong>.sp_ico_scrap_off</strong></li>
+                <li><span class="sprite_comm sp_ico_scrap_on"></span><strong>.sp_ico_scrap_on</strong></li>
+                <li><span class="sprite_comm sp_ico_search"></span><strong>.sp_ico_search</strong></li>
+                <li><span class="sprite_comm sp_ico_search_clear"></span><strong>.sp_ico_search_clear</strong></li>
+                <li><span class="sprite_comm sp_ico_search_filter"></span><strong>.sp_ico_search_filter</strong></li>
+                <li><span class="sprite_comm sp_ico_search_g"></span><strong>.sp_ico_search_g</strong></li>
+                <li><span class="sprite_comm sp_ico_search_s"></span><strong>.sp_ico_search_s</strong></li>
+                <li><span class="sprite_comm sp_ico_sel_class"></span><strong>.sp_ico_sel_class</strong></li>
+                <li><span class="sprite_comm sp_ico_send_off"></span><strong>.sp_ico_send_off</strong></li>
+                <li><span class="sprite_comm sp_ico_send_on"></span><strong>.sp_ico_send_on</strong></li>
+                <li><span class="sprite_comm sp_ico_setting_b"></span><strong>.sp_ico_setting_b</strong></li>
+                <li><span class="sprite_comm sp_ico_sound_off"></span><strong>.sp_ico_sound_off</strong></li>
+                <li><span class="sprite_comm sp_ico_sound_on"></span><strong>.sp_ico_sound_on</strong></li>
+                <li><span class="sprite_comm sp_ico_speaker_off"></span><strong>.sp_ico_speaker_off</strong></li>
+                <li><span class="sprite_comm sp_ico_speaker_on"></span><strong>.sp_ico_speaker_on</strong></li>
+                <li><span class="sprite_comm sp_ico_sub_checklist_off"></span><strong>.sp_ico_sub_checklist_off</strong></li>
+                <li><span class="sprite_comm sp_ico_sub_checklist_on"></span><strong>.sp_ico_sub_checklist_on</strong></li>
+                <li><span class="sprite_comm sp_ico_sub_member_off"></span><strong>.sp_ico_sub_member_off</strong></li>
+                <li><span class="sprite_comm sp_ico_sub_member_on"></span><strong>.sp_ico_sub_member_on</strong></li>
+                <li><span class="sprite_comm sp_ico_sub_schedule_off"></span><strong>.sp_ico_sub_schedule_off</strong></li>
+                <li><span class="sprite_comm sp_ico_sub_schedule_on"></span><strong>.sp_ico_sub_schedule_on</strong></li>
+                <li><span class="sprite_comm sp_ico_sub_setting_off"></span><strong>.sp_ico_sub_setting_off</strong></li>
+                <li><span class="sprite_comm sp_ico_sub_setting_on"></span><strong>.sp_ico_sub_setting_on</strong></li>
+                <li><span class="sprite_comm sp_ico_tab_class_off"></span><strong>.sp_ico_tab_class_off</strong></li>
+                <li><span class="sprite_comm sp_ico_tab_class_on"></span><strong>.sp_ico_tab_class_on</strong></li>
+                <li><span class="sprite_comm sp_ico_tab_main_off"></span><strong>.sp_ico_tab_main_off</strong></li>
+                <li><span class="sprite_comm sp_ico_tab_main_on"></span><strong>.sp_ico_tab_main_on</strong></li>
+                <li><span class="sprite_comm sp_ico_tab_more_off"></span><strong>.sp_ico_tab_more_off</strong></li>
+                <li><span class="sprite_comm sp_ico_tab_more_on"></span><strong>.sp_ico_tab_more_on</strong></li>
+                <li><span class="sprite_comm sp_ico_tab_schedule_off"></span><strong>.sp_ico_tab_schedule_off</strong></li>
+                <li><span class="sprite_comm sp_ico_tab_schedule_on"></span><strong>.sp_ico_tab_schedule_on</strong></li>
+                <li><span class="sprite_comm sp_ico_tab_talk_off"></span><strong>.sp_ico_tab_talk_off</strong></li>
+                <li><span class="sprite_comm sp_ico_tab_talk_on"></span><strong>.sp_ico_tab_talk_on</strong></li>
+                <li><span class="sprite_comm sp_ico_talk"></span><strong>.sp_ico_talk</strong></li>
+                <li><span class="sprite_comm sp_ico_talk_clip"></span><strong>.sp_ico_talk_clip</strong></li>
+                <li><span class="sprite_comm sp_ico_talk_sm"></span><strong>.sp_ico_talk_sm</strong></li>
+                <li><span class="sprite_comm sp_ico_txt_more"></span><strong>.sp_ico_txt_more</strong></li>
+                <li><span class="sprite_comm sp_ico_up_default"></span><strong>.sp_ico_up_default</strong></li>
+                <li><span class="sprite_comm sp_ico_up_g"></span><strong>.sp_ico_up_g</strong></li>
+                <li><span class="sprite_comm sp_ico_video"></span><strong>.sp_ico_video</strong></li>
+                <li><span class="sprite_comm sp_ico_zip"></span><strong>.sp_ico_zip</strong></li>
+                
+            </ul>
+        </div>
+
+        <h2 class="tit">img</h2>
+        <div class="component-area empty_box">
+            <h3><span>.empty.leave</span> </h3>
+            <div class="empty leave"></div>
+
+            <h3><span>.empty.class</span> </h3>
+            <div class="empty class"> </div>
+
+            <h3><span>.empty.join_finish</span> </h3>
+            <div class="empty join_finish"> </div>
+        </div>
+        <!-- /icon -->
+
+        <!-- datepicker -->
+        <h2 id="category6" class="categorys">#datePicker</h2>
+
+        
+        <div class="component-area">
+            <p class="mb20">td.day :: .schedule_info 추가시 일정등록 표기 css확인가능</p>
+
+            <a href="#none" class="btn" data-target="dateTimePicker1">dateTimePicker1</a>
+              <!-- datetimepicker 팝업 -->
+  <div class="modal" id="dateTimePicker1">
+    <div class="calendar modal_content">
+        <!-- td.day :: .schedule_info 추가시 일정등록 표기 css확인가능-->
+
+        <div class="form-group">
+            <div class="row">
+                <div>
+                    <div id="datetimepicker1"></div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker({
+                inline: true,
+            });
+        });
+        </script>
+        <div class="modal_btn_half">
+            <a href="#none" class="modal_btn" data-dismiss="modal">닫기</a>
+            <!-- 활성화시 .active 추가 / 비활성화시 .disabled 추가 -->
+            <a href="#none" class="modal_btn active">예약</a>
+        </div>
+    </div>
+</div>
+<!-- /. -->
+
+<script>
+    
+    $(function () {
+                
+        //datetimepicker 오전 오후 설정
+        if( $('.btn.btn-primary').html() == '오전' ) {
+            $('.btn.btn-primary').removeClass('pm').addClass('am');
+        }
+        else {
+            $('.btn.btn-primary').removeClass('am').addClass('pm');
+        }
+    })
+</script>
+            
+            <a href="#none" class="btn mt10 mb20" data-target="datePicker2">datePicker2</a>
+            <!-- datetimepicker 팝업 -->
+<div class="modal" id="datePicker2">
+    <div class="calendar modal_content">
+        <!-- td.day :: .schedule_info 추가시 일정등록 표기 css확인가능-->
+
+        <div class="form-group">
+            <div class="row">
+                <div>
+                    <div id="datetimepicker2"></div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker2').datetimepicker({
+                format: 'L',
+                format: 'YYYY.MM.DD',
+                inline: true
+            });
+        });
+        </script>
+        <div class="modal_btn_full mt0">
+            <!-- 활성화시 .active 추가 / 비활성화시 .disabled 추가 -->
+            <a href="#none" class="modal_btn disabled">확인</a>
+        </div>
+    </div>
+</div>
+<!-- /. -->
+
+<script>
+    // $(function () {
+    //     $("#datePicker2").modal({ show: true })
+    // })
+</script>
+
+            <div class="calendar">
+    <!-- td.day :: .schedule_info 추가시 일정등록 표기 css확인가능-->
+    <div class="form-group">
+        <div class="row">
+           <div class="col-md-8">
+              <div id="datetimepicker3"></div>
+           </div>
+        </div>
+     </div>
+     <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker3').datetimepicker({
+                inline: true,
+                format: 'L'
+            });
+        });
+     </script>
+    <div class="schedule_list_wrap">
+        <ul class="schedule_list">
+            <li>
+                <span class="date">2022.06.11</span>
+                <p class="content">
+                    오늘의 생일자 - 김상민, 김지영, 정재훈<br>
+                    2교시 과학 수행평가
+                </p>
+            </li>
+            <li>
+                <span class="date">2022.06.22</span>
+                <p class="content">
+                    유네스코 데이
+                </p>
+            </li>
+            <li>
+                <span class="date">2022.06.28</span>
+                <p class="content">
+                    오늘의 생일자 - 김상민, 김지영, 정재훈<br>
+                </p>
+            </li>
+        </ul>
+        <!-- 일정이 없을 경우 -->
+        <p class="empty_msg">금일 일정이 없습니다.</p>
+    </div>		
+</div>
+
+
+            <p class="mb10 mt30">기간설정</p>
+            <div class="calendar_wrap">
+                <input class="inp_datepicker" placeholder="22.08.29" id='datetimepicker4'>
+                <span>~</span>
+                <input class="inp_datepicker" placeholder="22.08.30" id='datetimepicker5'>
+            </div>   
+            <script>
+            $(function () {
+                $('#datetimepicker4').datetimepicker({
+                    format: 'L',
+                    format: 'YY.MM.DD',
+                });
+                $('#datetimepicker5').datetimepicker({
+                    useCurrent: false, //Important! See issue #1075
+                    format: 'L',
+                    format: 'YY.MM.DD',
+                });
+                $("#datetimepicker4").on("dp.change", function (e) {
+                    $('#datetimepicker5').data("DateTimePicker").minDate(e.date);
+                });
+                $("#datetimepicker5").on("dp.change", function (e) {
+                    $('#datetimepicker4').data("DateTimePicker").maxDate(e.date);
+                });
+            });
+            </script>
+        </div>
+
+        <!-- popup -->
+        <h2 id="category7" class="categorys">#popup</h2>
+
+        <div class="component-area">
+            <a href="#none" class="btn" data-target="pop4">2버튼 팝업</a>
+            <div class="modal" id="pop4">
+                <div class="modal_content">
+                    <div class="pop_msg">잘못된 전화번호 형식입니다.</div>
+                    <p class="pop_txt mt10">
+                        전화번호는  010,011,016,017,
+                        <br>018,019로만 시작됩니다
+                    </p>
+                    <div class="modal_btn_half">
+                    <a href="#none" class="modal_btn" data-dismiss="modal">취소</a>
+                    <a href="#none" class="modal_btn">확인</a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#none" class="btn mt10" data-target="pop5">1버튼 팝업</a>
+            <div class="modal" id="pop5">
+                <div class="modal_content">
+                    <p class="pop_txt">
+                        탈퇴한 회원정보는 탈퇴 즉시 삭제되어, <br>
+                        복구가 불가 하오니 신중하게 선택해주세요. 
+                    </p>
+                    <div class="modal_btn_full">
+                    <a href="#none" class="modal_btn medium">확인</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--popup-->
+
+
+
+        <!-- editor -->
+        <h2 id="category10" class="categorys">#Editor</h2>
+        <div class="component-area">
+            <div id="editor">
+                <p>This is some sample content.</p>
+            </div>
+            <script>
+                ClassicEditor
+                    .create( document.querySelector( '#editor' ) )
+                    .catch( error => {
+                        console.error( error );
+                    } );
+            </script>
+        </div>
+        <!-- /editor -->
+
+        <!-- tab -->
+        <h2 id="category11" class="categorys">#Tab</h2>
+        <div class="component-area">
+
+            <div class="tab_list">
+                <a href="#none" class="tab_links active">우리반(0)</a>
+                <a href="#none" class="tab_links">학교(0)</a>
+            </div>
+            <div id="tab1" class="tabcontent"></div>
+            <div id="tab2" class="tabcontent"></div>
+        </div>
+        <!-- /tab -->
+
+
+        <!-- script -->
+        <script type="text/javascript">
+            $(document).ready(function () {
+                //sticky
+
+                $("h1").on("click", function(e){
+                    e.preventDefault();
+                    $('.sticky').toggleClass('open');
+                });
+
+                $('.sticky a').click(function (event) {
+                    event.preventDefault();
+                    $('html,body').animate({
+                        scrollTop: $(this.hash).offset().top
+                    }, 400);
+                });
+
+
+            });
+            $(window).scroll(function () {
+                //sticky
+                $('.categorys').each(function () {
+                    var doc_scroll_top = $(window).scrollTop() + 30,
+                        categorys = $(this),
+                        category_id = categorys.attr('id'),
+                        category_top = categorys.offset().top,
+                        components_top = $('h1').offset().top;
+
+                    if (components_top > $(window).scrollTop()) {
+                        $('.sticky a').removeClass('active');
+                    } else if (category_top <= doc_scroll_top) {
+                        $(".sticky a[href='#" + category_id + "']").addClass('active').siblings('a')
+                            .removeClass('active');
+                    } else if ($(document).height() - $(window).height() === $(window).scrollTop()) {
+                        $('.sticky a:last-child').addClass('active').siblings('a').removeClass(
+                        'active');
+                    }
+                });
+            });
+
+        </script>
+        <!-- /script -->
+</body>
+
+</html>

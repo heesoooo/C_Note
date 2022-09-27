@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 메인</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+		@@include('../include/inc_header.html')
+
+		<!-- contents -->
+		<div class="container inner_cont">
+			<div class="contents">
+				<!-- title -->
+				<div class="title_box">
+					<h4 class="page_title">신규 학교 등록</h4>
+				</div>
+				<!-- /title -->
+
+				<!-- sub contents -->
+				<div class="form_create_class">
+					<div class="info_dec">
+						<span class="tit essential">학교 이름</span> <!-- 필수요소 add :: .essential -->
+						<div class="input_full">
+							<input type="text" placeholder="학교명을 정확하게 입력하세요. (예 : 천재초등학교)">
+						</div>
+					</div>
+					
+					<div class="info_dec">
+						<span class="tit essential">학교 주소</span> <!-- 필수요소 add :: .essential -->
+						<div class="search_wrap school">
+							<input class="school_search_input" placeholder="지역명 혹은 도로명을 입력하세요." type="text">
+							<a href="#none" class="btn_find"></a>
+							<div class="search_school_list">
+								<div class="scroll_bar">
+									<a href="#none">
+										<p class="sc_name">경기도 포천시 가산면 가산로309번길 13</p>
+										<p class="sc_address">경기도 포천시 가산면 마산리 425-1 가산파출소</p>
+									</a>
+									<a href="#none">
+										<p class="sc_name">경기도 포천시 가산면 가산로309번길 13</p>
+										<p class="sc_address">경기도 포천시 가산면 마산리 425-1 가산파출소</p>
+									</a>
+									<a href="#none">
+										<p class="sc_name">경기도 포천시 가산면 가산로309번길 13</p>
+										<p class="sc_address">경기도 포천시 가산면 마산리 425-1 가산파출소</p>
+									</a>									
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="info_dec">
+						<span class="tit essential">상세 주소</span> <!-- 필수요소 add :: .essential -->
+						<div class="input_full">
+							<input type="text" placeholder="상세 주소를 입력하세요.">
+						</div>
+					</div>
+
+					<div class="info_dec">
+						<span class="tit">학교 전화번호</span>
+						<div class="input_third">
+							<input type="text" placeholder="지역 번호(숫자만 입력)">
+							<input type="text" placeholder="중간 번호(숫자만 입력)">
+							<input type="text" placeholder="뒷 번호(숫자만 입력)">
+						</div>
+					</div>
+
+					<div class="info_dec">
+						<span class="tit">학교 홈페이지 주소 </span>
+						<div class="input_full">
+							<input type="text" placeholder="학교 홈페이지 주소를 입력하세요.">
+						</div>
+					</div>
+
+					<!-- button -->
+					<div class="btn_half mt40">
+						<a href="#noen" class="btn outline large">취소</a>
+						<a href="#noen" class="btn large">완료</a>
+						<!-- 입력완료되지 않았을 시 :: .disabled
+							 <a href="#noen" class="btn large disabled">완료</a> -->
+					</div>
+				</div>
+				<!-- /sub contents -->
+			</div>
+		</div>
+		<!-- /contents -->
+
+		<!-- footer -->
+		@@include('../include/inc_footer.html')
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('../include/inc_html_head.html')
+    <title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+
+    <!-- modal :: 설문 통계 팝업 -->
+    <div class="modal" id="surveyWrite">
+
+        <div class="survey_top">
+            <h2>8월 벚꽃반 우유급식 신청 설문조사</h2>
+            <a href="#none" class="btn_modal_close">
+                <i class="sprite_comm sp_ico_close_dim"></i>
+            </a>
+        </div>
+        <div class="modal_content w800 bg_transparent">
+                <span class="survey_status">
+                    제출 현황
+                    <span class="bar"></span>
+                    <strong>20</strong> 
+                    <span class="slash">/</span> 
+                    <span class="total">32</span>
+                </span>
+                <!-- 설문지 -->
+                <div class="survey_create_wrap">
+                    <div class="survey_create survey_view">
+                        <!-- 질문 -->
+                        <div class="row survey_question">
+                            <div class="input_question">
+                                <span class="number">1.</span>
+                                <!-- 220922 :: 2줄일 경우 -->
+                                <span class="input_answer essential">일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십일이삼사오륙칠팔구십</span>
+                                <span class="tag tag_regular red ml5">필수</span>
+                                <span class="tag tag_regular pink ml5">복수선택</span>
+                            </div>
+                            <p class="question_type">객관식</p>
+                        </div>
+
+                        <!-- 설문 통계 -->
+                        <div class="survey_answer">
+                            <div class="answer_total">
+                                <!-- 220919 :: 설문이미지 추가 -->
+                                <div class="img_view">
+                                    <img src="../../img/sample1.png" alt="답변이미지">
+                                </div>
+                                <!-- 220919 :: 설문답변 .answer 클래스 추가 -->
+                                <span class="answer">서울우유 기본</span>
+                                <div class="graph_wrap">
+                                    <p class="graph_item">
+                                        <span class="graph_background">
+                                            <span class="graph_bar" style="width:7%;"></span>
+                                        </span>
+                                    </p>
+                                    <strong>3명</strong>
+                                    <span class="percent">(07.00%)</span>
+                                </div>
+
+                            </div>
+                            <div class="answer_total">
+                                <span class="answer">기타</span>
+
+                                <div class="graph_wrap">
+                                    <p class="graph_item">
+                                        <span class="graph_background">
+                                            <span class="graph_bar" style="width:75%;"></span>
+                                        </span>
+                                    </p>
+                                    <strong>12명</strong>
+                                    <span class="percent">(75.00%)</span>
+                                    <a href="#none" class="more"></a>
+                                </div>
+                                <div class="total_list_wrap">
+                                    <table class="tbl_list" cellpadding="0" cellspacing="0">
+                                        <colgroup>
+                                            <col style="width:20%">
+                                            <col>
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">이름</th>
+                                                <th scope="col">응답 내용</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td scope="row">
+                                                    <span class="name">김상민</span>
+                                                    <em class="badge badge_gray_full">1</em>
+                                                </td>
+                                                <td>요거트 신청합니다.</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">
+                                                    <span class="name">이수재</span>
+                                                    <em class="badge badge_gray_full">2</em>
+                                                </td>
+                                                <td>비요뜨 신청합니다.</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">
+                                                    <span class="name">최벚꽃</span>
+                                                    <em class="badge badge_gray_full">3</em>
+                                                </td>
+                                                <td>비피더스 신청</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">
+                                                    <span class="name">이가산</span>
+                                                    <em class="badge badge_gray">기타</em>
+                                                </td>
+                                                <td>비피더스 신청합니다. </td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">
+                                                    <span class="name">김설문</span>
+                                                    <em class="badge badge_blue">부</em>
+                                                </td>
+                                                <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since t</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">
+                                                    <span class="name">강응답</span>
+                                                    <em class="badge badge_pink">모</em>
+                                                </td>
+                                                <td>비피더스, 비요뜨 신청합니다.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="survey_create survey_view">
+                        <!-- 질문 -->
+                        <div class="row survey_question">
+                            <div class="input_question">
+                                <span class="number">2.</span>
+                                <span class="input_answer">다른 제품 선택</span>
+                                <span class="tag tag_regular red">필수</span>
+                            </div>
+                            <p class="question_type">단답형</p>
+                        </div>
+                        <!-- 설문 통계 -->
+                        <div class="survey_answer">
+                            <div class="answer_total">
+                                <span class="answer">10명 응답</span>
+                                <div class="graph_wrap no_graph">
+                                    <a href="#none" class="more"></a>
+                                </div>
+
+                                <div class="total_list_wrap">
+                                    <table class="tbl_list" cellpadding="0" cellspacing="0">
+                                        <colgroup>
+                                            <col style="width:20%">
+                                            <col>
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">이름</th>
+                                                <th scope="col">응답 내용</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td scope="row">
+                                                    <span class="name">김상민</span>
+                                                    <em class="badge badge_gray_full">1</em>
+                                                </td>
+                                                <td>요거트 신청합니다. 2기타답변'''""2기타답변'''""2기타답변'''""2기타답변'''""2기타답변'''""2기타답변'''""2기타답변'''""2기타답변'''""2기타답변'''""2기타답변'''""</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">
+                                                    <span class="name">이수재</span>
+                                                    <em class="badge badge_gray_full">2</em>
+                                                </td>
+                                                <td>비요뜨 신청합니다.</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">
+                                                    <span class="name">최벚꽃</span>
+                                                    <em class="badge badge_gray_full">3</em>
+                                                </td>
+                                                <td>비피더스 신청</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="survey_create survey_view">
+                        <!-- 질문 -->
+                        <div class="row survey_question">
+                            <div class="input_question">
+                                <span class="number">3.</span>
+                                <span class="input_answer">기타 건의 사항</span>
+                                <span class="tag tag_regular pink">복수선택</span>
+                            </div>
+                            <p class="question_type">장문형</p>
+                        </div>
+                        <!-- 설문 통계 -->
+                        <div class="survey_answer">
+                            <div class="answer_total">
+                                <span class="answer">2명 응답</span>
+                                <div class="graph_wrap no_graph">
+                                    <a href="#none" class="more"></a>
+                                </div>
+                                <div class="total_list_wrap">
+                                    <table class="tbl_list" cellpadding="0" cellspacing="0">
+                                        <colgroup>
+                                            <col>
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <!-- 220920 :: 응답만 노출할 경우 .only 클래스 추가 -->
+                                                <th scope="col" class="only">응답 내용</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td scope="row">Loremipsumdolorsitametconsecteturadipisicingelit.Quosautemlaborequaeratvoluptateculpaliberoporroeius,facilisnatusadsaepecupiditateatdeseruntplaceatipsamex?Accusantium,cumiste?</td>
+                                          </tr>
+                                            <tr>
+                                                <td scope="row">비요뜨 신청합니다.</td>
+                                            </tr>
+                                            <tr>
+                                                <td scope="row">비피더스 신청</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- /설문지 -->
+
+                <script>
+
+                </script>
+
+
+        </div>
+    </div>
+    <!-- /modal :: 설문 통계 팝업 -->
+    <script>
+
+        $(function(){
+			$(".more").on("click", function(e){
+				e.preventDefault();
+				$(this).toggleClass("close");
+				$(this).parent().next(".total_list_wrap").stop().slideToggle();
+			});
+
+            $('#surveyWrite').modal({ show: true });
+		})
+
+        // textarea 높이값 자동으로 늘어나도록
+        function resize(obj) {
+            obj.style.height = "1px";
+            obj.style.height = (obj.scrollHeight)+"px";
+        }
+    </script>
+</body>
+
+</html>

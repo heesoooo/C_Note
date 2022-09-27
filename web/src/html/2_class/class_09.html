@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('../include/inc_html_head.html')
+    <title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        @@include('../include/inc_header.html')
+        <!--  sub container -->
+        <div class="container inner_cont">
+            <!-- snb -->
+            @@include('../include/inc_snb.html')
+            <!-- //snb -->
+            <div class="contents">
+                <!-- title -->
+                <div class="title_box">
+                    <h4 class="page_title">전체</h4>
+                    
+                    <div class="search_wrap board">
+                        <input class="board_search_input" placeholder="검색하기" type="text">
+                        <a href="#none" class="btn_find"></a>
+                        <a href="#none" class="btn_clear"></a>
+                        <a href="#none" class="btn_filter"></a>
+                        @@include('../include/inc_datePicker_type3.html')
+                    </div>
+                </div>
+                <!-- /title -->
+                <!-- sub contents -->
+
+                
+                <!-- 검색결과 -->
+                <div class="result_search_line">
+                    <p><i class="sprite_comm sp_ico_search_v"></i> <strong>가산초등학교</strong> 검색 결과</p>
+                </div>
+                <!-- /검색결과 -->
+
+                <div class="mb20">
+                    <div class="notice_view_header">
+                        <!-- notice_view_header 게시판 아이콘 클래스명
+                        
+                            학급공지 :: .sp_ico_notice_v
+                            앨범 :: .sp_ico_album_v
+                            자유게시판 :: .sp_ico_fboard_v
+                            과제게시판 :: .sp_ico_homework_v
+                            학급 조사표 :: .sp_ico_table_v
+                            T셀파 학습도구 :: .sp_ico_tool_v
+
+                        -->
+                        <div class="title">
+                            <h4><i class="sp_ico_notice_v"></i> 학급공지</h4>
+                            <!--학급공지 .sp_ico_notice_v -->
+                            <span class="date">2022.04.01 금요일</span>
+                            <span class="bar"></span>
+                            <span class="writer">김천재 선생님</span>
+                        </div>
+                        <div class="btn_icon">
+                            <a href="#" class="btn_scrap">
+                                <i class="sprite_comm sp_ico_scrap"></i>
+                            </a>
+                            <div class="dropdown_wrap">
+                                <div class="dropdown">
+                                    <a class="menu" href="#none">
+                                        <i class="sprite_comm sp_ico_more"></i>
+                                    </a>
+                                    <ul class="menu_list">
+                                        <li><a href="#none"><i class="sprite_comm sp_ico_edit_off mr10"></i>게시물 수정하기</a>
+                                        </li>
+                                        <li><a href="#none"><i class="sprite_comm sp_ico_pin_off mr10"></i>게시물 공지하기</a></li>
+                                        <li><a href="#none" class="btn_sms"><i
+                                                    class="sprite_comm sp_ico_share_off mr10"></i>SMS 발송하기</a></li>
+                                        <li><a href="#none"><i class="sprite_comm sp_ico_del_off mr10"></i>삭제하기</a></li>
+                                    </ul>
+                                    <!-- 수신 대상 선택 팝업 -->
+                                    <div id="popSms" class="sms_target" style="display: none">
+                                        <div class="pop_title mb40">수신 대상 선택</div>
+                                        <div class="scroll_bar">
+                                            <div class="check_box all">
+                                                <input type="checkbox" id="check1">
+                                                <label for="check1">전체 선택</label>
+                                            </div>
+                                            <ul class="check_list">
+                                                <li class="check_box">
+                                                    <input type="checkbox" id="check2-1" checked>
+                                                    <label for="check2-1">김천재 학부모(김상민)</label>
+                                                </li>
+                                                <li class="check_box">
+                                                    <input type="checkbox" id="check2-2">
+                                                    <label for="check2-2">나천재 학부모(김지언)</label>
+                                                </li>
+                                                <li class="check_box">
+                                                    <input type="checkbox" id="check2-3">
+                                                    <label for="check2-3">다천재 학부모(권현주)</label>
+                                                </li>
+                                                <li class="check_box">
+                                                    <input type="checkbox" id="check2-4">
+                                                    <label for="check2-4">라천재 학부모(정재훈)</label>
+                                                </li>
+                                                <li class="check_box">
+                                                    <input type="checkbox" id="check2-5">
+                                                    <label for="check2-5">마천재 학부모(윤석배)</label>
+                                                </li>
+                                                <li class="check_box">
+                                                    <input type="checkbox" id="check2-6">
+                                                    <label for="check2-6">바천재 학부모(김교육)</label>
+                                                </li>
+                                                <li class="check_box">
+                                                    <input type="checkbox" id="check2-7">
+                                                    <label for="check2-7">사천재 학부모(김교육)</label>
+                                                </li>
+                                                <li class="check_box">
+                                                    <input type="checkbox" id="check2-7">
+                                                    <label for="check2-7">사천재 학부모(김교육)</label>
+                                                </li>
+                                                <li class="check_box">
+                                                    <input type="checkbox" id="check2-7">
+                                                    <label for="check2-7">사천재 학부모(김교육)</label>
+                                                </li>
+                                                <li class="check_box">
+                                                    <input type="checkbox" id="check2-7">
+                                                    <label for="check2-7">사천재 학부모(김교육)</label>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn_half mt30">
+                                            <a href="#none" class="btn medium outline">취소</a>
+                                            <a href="#none" class="btn medium">완료</a>
+                                        </div>
+                                        <!-- 유효성 검사 메세지 -->
+                                        <span class="val_check_point">수신 대상을 선택해 주세요.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="notice_view_body radius">
+                        <div class="bbs_area">
+                            <p class="view_target">수신 대상 : 학부모, 학생</p>
+                            <p class="notice_title">6.3(금) - 주간학습안내 첨부</p>
+                            <!-- 에디터에서 입력한 내용 노출-->
+                            <p>
+                                1. 현충일 - 태극기(조기) 달기 - 나라를 위해 목숨 바친 국군장병들과 현재 나라를 지켜주는 국군 아저씨들에게 감사하기<br>
+                                2. 오늘 - 공사차량 후문 출입으로 오후 3:30 이후 출입 불가 - 정문 통행<br>
+                                3. 영어 수행평가 - 다음주 수요일 실시<br>
+                                4. 화요일 - 아침 방송 조회(8시 45분까지 등교)<br>
+                                5. 업사이클 작품 활동 - 학급 티 입기<br>
+                                6. 여름철 식중독 조심, 찬 음식이나 음료 많이 먹지 않기<br>
+                            </p>
+                            <!-- 첨부파일 -->
+                            <div class="attach_list">
+                                <ul>
+                                    <li>
+                                        <a href="#none"><i class="sprite_comm sp_ico_file_g"></i>1학년 3반_6월 6일 ~ 6월
+                                            10일(15주).pdf</a>
+                                    </li>
+                                    <li>
+                                        <a href="#none"><i class="sprite_comm sp_ico_file_g"></i>1학년 3반_6월 6일 ~ 6월
+                                            10일(15주).pdf</a>
+                                    </li>
+                                    <li>
+                                        <a href="#none"><i class="sprite_comm sp_ico_file_g"></i>1학년 3반_6월 6일 ~ 6월
+                                            10일(15주).pdf</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- / sub contents -->
+            </div>
+        </div>
+        <!-- //sub container -->
+        <!-- footer -->
+        @@include('../include/inc_footer.html')
+    </div>
+</body>
+
+</html>

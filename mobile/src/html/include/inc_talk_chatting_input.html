@@ -1,0 +1,130 @@
+﻿
+<div class="chatting_input">
+    <!-- btn bottom -->
+    <a href="#none" class="btn_bottom">제일최근글보기</a>
+
+    <div class="inp_wrap">
+        <span class="attach" data-target="popFileAttach">
+            파일첨부
+            <!-- 휴대폰 기본 제공하는 첨부파일 이용시 주석제거
+            <input type="file" class="input_file_button" id="clip">
+            <label for="clip">파일첨부</label> -->
+        </span>
+        <div class="search_wrap"> <!-- 메시지를 작성할 수 없을시 .disabled 추가 -->
+            <input type="text" placeholder="메시지를 입력하세요." class="input_area">
+            <div class="btn_wrap">
+                <a href="#none" class="btn_emoticon">이모티콘</a>
+                <a href="#none" class="btn_send">보내기</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 이모티콘 영역 -->
+    <div class="emoticon_box">
+        <div class="emoticon_top">
+            <ul class="emoticon_cate">
+                <li><img src="../../img/emoji.png" alt="emoji"></li>
+                <li class="on"><img src="../../img/emoji.png" alt="emoji"></li>
+                <li><img src="../../img/emoji.png" alt="emoji"></li>
+                <li><img src="../../img/emoji.png" alt="emoji"></li>
+                <li><img src="../../img/emoji.png" alt="emoji"></li>
+                <li><img src="../../img/emoji.png" alt="emoji"></li>
+                <li><img src="../../img/emoji.png" alt="emoji"></li>
+                <li><img src="../../img/emoji.png" alt="emoji"></li>
+                <li><img src="../../img/emoji.png" alt="emoji"></li>
+                <li><img src="../../img/emoji.png" alt="emoji"></li>
+                <li><img src="../../img/emoji.png" alt="emoji"></li>
+            </ul>
+        </div>
+        <div class="emoticon_con">
+            <ul class="scroll_bar">
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="emoticon_view" style="display: none">
+        <div class="inner">
+            <a href="#none" class="btn_close">닫기</a>
+            <div class="selected_emoticon">
+                <img src="../../img/emoji_con.png" alt="emoji">
+            </div>
+        </div>
+    </div>
+
+    <!-- 새로운 메시지 알림 -->
+    <div class="new_alert_bar">
+        <span class="text"><strong>10</strong>개의 새로운 메시지가 있습니다.</span>
+        <!-- <span class="date_time">
+            <strong>2020</strong>년 <strong>10</strong>월 <strong>26</strong>일 오후 <strong>20:49</strong>
+        </span> -->
+    </div>
+</div>
+
+
+<!-- 댓글 옵션클릭시 팝업 -->
+<div class="modal" id="popFileAttach">
+    <div class="modal_content pt0">
+        <ul class="pop_opt_list">
+            <li>
+                <a href="#none">카메라</a>
+            </li>
+            <li>
+                <a href="#none">앨범</a>
+            </li>
+            <li>
+                <a href="#none">파일</a>
+            </li>
+            <li>
+                <a href="#none" data-dismiss="modal">취소</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<script>
+    $(function(){
+        // 이모티콘 아이콘 클릭시 영역 토글
+        $(".chatting_input .btn_emoticon").on("touch click", function(){
+            $(".emoticon_box").toggle();
+            mo_talk.chatContHeight();
+        });
+
+        // input 클릭시 이모티콘영역 숨기기
+        $(".chatting_input input[type=text]").on("touch click", function(){
+            $(".emoticon_box").hide();
+            mo_talk.chatContHeight();
+        });
+
+        // emoticon preview pop
+        $(".emoticon_con li").on("touch click", function(e){
+            e.preventDefault();
+            $(".emoticon_view").show();
+        })
+
+        // emoticon_view 닫기
+        $(".emoticon_view .btn_close").on("touch click", function(){
+            $(this).parent().parent().hide();
+        });
+    })
+</script>

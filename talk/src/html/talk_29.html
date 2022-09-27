@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('include/inc_html_head.html')
+    <title>TALK</title>
+</head>
+
+<body>
+
+    <!-- 상담 시간 설정 popup -->
+    <div class="modal" id="timeSet">
+        <div class="modal_content w470">
+            <a href="#none" class="modal_close" data-dismiss="modal">
+                <img src="../img/ico_close_pop.png" alt="close">
+            </a>
+            <h3 class="pop_title mb10">상담 시간 설정</h3>
+            <div class="set_day_wrap scroll_bar">
+                <ul>
+                    <li>
+                        <div class="set_day">
+                            <p class="day">월요일</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="set_time select_wrap">
+                            <div class="select_box">
+                                <a class="select" href="#none">09</a>
+                                <div class="option_list">
+                                    <div class="scroll_bar">
+                                        <a href="#none">00</a>
+                                        <a href="#none">01</a>
+                                        <a href="#none">02</a>
+                                        <a href="#none">03</a>
+                                        <a href="#none">04</a>
+                                        <a href="#none">05</a>
+                                        <a href="#none">06</a>
+                                        <a href="#none">07</a>
+                                        <a href="#none">08</a>
+                                        <a href="#none">09</a>
+                                        <a href="#none">10</a>
+                                        <a href="#none">11</a>
+                                        <a href="#none">12</a>
+                                        <a href="#none">13</a>
+                                        <a href="#none">14</a>
+                                        <a href="#none">15</a>
+                                        <a href="#none">16</a>
+                                        <a href="#none">17</a>
+                                        <a href="#none">18</a>
+                                        <a href="#none">19</a>
+                                        <a href="#none">20</a>
+                                        <a href="#none">21</a>
+                                        <a href="#none">22</a>
+                                        <a href="#none">23</a>
+                                        <a href="#none">24</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span>:</span>
+                            <div class="select_box">
+                                <a class="select" href="#none">00</a>
+                                <div class="option_list">
+                                    <div class="scroll_bar">
+                                        <a href="#none">00</a>
+                                        <a href="#none">10</a>
+                                        <a href="#none">20</a>
+                                        <a href="#none">30</a>
+                                        <a href="#none">40</a>
+                                        <a href="#none">50</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="mr10 ml10">~</span>
+                            <div class="select_box">
+                                <a class="select" href="#none">11</a>
+                                <div class="option_list">
+                                    <div class="scroll_bar">
+                                        <a href="#none">00</a>
+                                        <a href="#none">01</a>
+                                        <a href="#none">02</a>
+                                        <a href="#none">03</a>
+                                        <a href="#none">04</a>
+                                        <a href="#none">05</a>
+                                        <a href="#none">06</a>
+                                        <a href="#none">07</a>
+                                        <a href="#none">08</a>
+                                        <a href="#none">09</a>
+                                        <a href="#none">10</a>
+                                        <a href="#none">11</a>
+                                        <a href="#none">12</a>
+                                        <a href="#none">13</a>
+                                        <a href="#none">14</a>
+                                        <a href="#none">15</a>
+                                        <a href="#none">16</a>
+                                        <a href="#none">17</a>
+                                        <a href="#none">18</a>
+                                        <a href="#none">19</a>
+                                        <a href="#none">20</a>
+                                        <a href="#none">21</a>
+                                        <a href="#none">22</a>
+                                        <a href="#none">23</a>
+                                        <a href="#none">24</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span>:</span>
+                            <div class="select_box">
+                                <a class="select" href="#none">00</a>
+                                <div class="option_list">
+                                    <div class="scroll_bar">
+                                        <a href="#none">00</a>
+                                        <a href="#none">10</a>
+                                        <a href="#none">20</a>
+                                        <a href="#none">30</a>
+                                        <a href="#none">40</a>
+                                        <a href="#none">50</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="set_day">
+                            <p class="day">화요일</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="set_time select_wrap">
+                            <div class="select_box">
+                                <!-- 220825 :: .error 추가-->
+                                <a class="select error" href="#none">09</a>
+                                <div class="option_list">
+                                    <div class="scroll_bar">
+                                        <a href="#none">00</a>
+                                        <a href="#none">01</a>
+                                        <a href="#none">02</a>
+                                        <a href="#none">03</a>
+                                        <a href="#none">04</a>
+                                        <a href="#none">05</a>
+                                        <a href="#none">06</a>
+                                        <a href="#none">07</a>
+                                        <a href="#none">08</a>
+                                        <a href="#none">09</a>
+                                        <a href="#none">10</a>
+                                        <a href="#none">11</a>
+                                        <a href="#none">12</a>
+                                        <a href="#none">13</a>
+                                        <a href="#none">14</a>
+                                        <a href="#none">15</a>
+                                        <a href="#none">16</a>
+                                        <a href="#none">17</a>
+                                        <a href="#none">18</a>
+                                        <a href="#none">19</a>
+                                        <a href="#none">20</a>
+                                        <a href="#none">21</a>
+                                        <a href="#none">22</a>
+                                        <a href="#none">23</a>
+                                        <a href="#none">24</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span>:</span>
+                            <div class="select_box">
+                                <a class="select" href="#none">00</a>
+                                <div class="option_list">
+                                    <div class="scroll_bar">
+                                        <a href="#none">00</a>
+                                        <a href="#none">10</a>
+                                        <a href="#none">20</a>
+                                        <a href="#none">30</a>
+                                        <a href="#none">40</a>
+                                        <a href="#none">50</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="mr10 ml10">~</span>
+                            <div class="select_box">
+                                <a class="select" href="#none">10</a>
+                                <div class="option_list">
+                                    <div class="scroll_bar">
+                                        <a href="#none">00</a>
+                                        <a href="#none">01</a>
+                                        <a href="#none">02</a>
+                                        <a href="#none">03</a>
+                                        <a href="#none">04</a>
+                                        <a href="#none">05</a>
+                                        <a href="#none">06</a>
+                                        <a href="#none">07</a>
+                                        <a href="#none">08</a>
+                                        <a href="#none">09</a>
+                                        <a href="#none">10</a>
+                                        <a href="#none">11</a>
+                                        <a href="#none">12</a>
+                                        <a href="#none">13</a>
+                                        <a href="#none">14</a>
+                                        <a href="#none">15</a>
+                                        <a href="#none">16</a>
+                                        <a href="#none">17</a>
+                                        <a href="#none">18</a>
+                                        <a href="#none">19</a>
+                                        <a href="#none">20</a>
+                                        <a href="#none">21</a>
+                                        <a href="#none">22</a>
+                                        <a href="#none">23</a>
+                                        <a href="#none">24</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span>:</span>
+                            <div class="select_box">
+                                <a class="select" href="#none">00</a>
+                                <div class="option_list">
+                                    <div class="scroll_bar">
+                                        <a href="#none">00</a>
+                                        <a href="#none">10</a>
+                                        <a href="#none">20</a>
+                                        <a href="#none">30</a>
+                                        <a href="#none">40</a>
+                                        <a href="#none">50</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="set_day">
+                            <p class="day">수요일</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="set_time select_wrap">
+                            <div class="select_box">
+                                <a class="select" href="#none">09</a>
+                                <div class="option_list">
+                                    <div class="scroll_bar">
+                                        <a href="#none">00</a>
+                                        <a href="#none">01</a>
+                                        <a href="#none">02</a>
+                                        <a href="#none">03</a>
+                                        <a href="#none">04</a>
+                                        <a href="#none">05</a>
+                                        <a href="#none">06</a>
+                                        <a href="#none">07</a>
+                                        <a href="#none">08</a>
+                                        <a href="#none">09</a>
+                                        <a href="#none">10</a>
+                                        <a href="#none">11</a>
+                                        <a href="#none">12</a>
+                                        <a href="#none">13</a>
+                                        <a href="#none">14</a>
+                                        <a href="#none">15</a>
+                                        <a href="#none">16</a>
+                                        <a href="#none">17</a>
+                                        <a href="#none">18</a>
+                                        <a href="#none">19</a>
+                                        <a href="#none">20</a>
+                                        <a href="#none">21</a>
+                                        <a href="#none">22</a>
+                                        <a href="#none">23</a>
+                                        <a href="#none">24</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span>:</span>
+                            <div class="select_box">
+                                <a class="select" href="#none">00</a>
+                                <div class="option_list">
+                                    <div class="scroll_bar">
+                                        <a href="#none">00</a>
+                                        <a href="#none">10</a>
+                                        <a href="#none">20</a>
+                                        <a href="#none">30</a>
+                                        <a href="#none">40</a>
+                                        <a href="#none">50</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="mr10 ml10">~</span>
+                            <div class="select_box">
+                                <a class="select" href="#none">10</a>
+                                <div class="option_list">
+                                    <div class="scroll_bar">
+                                        <a href="#none">00</a>
+                                        <a href="#none">01</a>
+                                        <a href="#none">02</a>
+                                        <a href="#none">03</a>
+                                        <a href="#none">04</a>
+                                        <a href="#none">05</a>
+                                        <a href="#none">06</a>
+                                        <a href="#none">07</a>
+                                        <a href="#none">08</a>
+                                        <a href="#none">09</a>
+                                        <a href="#none">10</a>
+                                        <a href="#none">11</a>
+                                        <a href="#none">12</a>
+                                        <a href="#none">13</a>
+                                        <a href="#none">14</a>
+                                        <a href="#none">15</a>
+                                        <a href="#none">16</a>
+                                        <a href="#none">17</a>
+                                        <a href="#none">18</a>
+                                        <a href="#none">19</a>
+                                        <a href="#none">20</a>
+                                        <a href="#none">21</a>
+                                        <a href="#none">22</a>
+                                        <a href="#none">23</a>
+                                        <a href="#none">24</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span>:</span>
+                            <div class="select_box">
+                                <a class="select" href="#none">00</a>
+                                <div class="option_list">
+                                    <div class="scroll_bar">
+                                        <a href="#none">00</a>
+                                        <a href="#none">10</a>
+                                        <a href="#none">20</a>
+                                        <a href="#none">30</a>
+                                        <a href="#none">40</a>
+                                        <a href="#none">50</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="set_day">
+                            <p class="day">목요일</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="set_time select_wrap">
+                            <div class="select_box">
+                                <a class="select" href="#none">09</a>
+                                <div class="option_list">
+                                    <div class="scroll_bar">
+                                        <a href="#none">00</a>
+                                        <a href="#none">01</a>
+                                        <a href="#none">02</a>
+                                        <a href="#none">03</a>
+                                        <a href="#none">04</a>
+                                        <a href="#none">05</a>
+                                        <a href="#none">06</a>
+                                        <a href="#none">07</a>
+                                        <a href="#none">08</a>
+                                        <a href="#none">09</a>
+                                        <a href="#none">10</a>
+                                        <a href="#none">11</a>
+                                        <a href="#none">12</a>
+                                        <a href="#none">13</a>
+                                        <a href="#none">14</a>
+                                        <a href="#none">15</a>
+                                        <a href="#none">16</a>
+                                        <a href="#none">17</a>
+                                        <a href="#none">18</a>
+                                        <a href="#none">19</a>
+                                        <a href="#none">20</a>
+                                        <a href="#none">21</a>
+                                        <a href="#none">22</a>
+                                        <a href="#none">23</a>
+                                        <a href="#none">24</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span>:</span>
+                            <div class="select_box">
+                                <a class="select" href="#none">00</a>
+                                <div class="option_list">
+                                    <div class="scroll_bar">
+                                        <a href="#none">00</a>
+                                        <a href="#none">10</a>
+                                        <a href="#none">20</a>
+                                        <a href="#none">30</a>
+                                        <a href="#none">40</a>
+                                        <a href="#none">50</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="mr10 ml10">~</span>
+                            <div class="select_box">
+                                <a class="select" href="#none">10</a>
+                                <div class="option_list">
+                                    <div class="scroll_bar">
+                                        <a href="#none">00</a>
+                                        <a href="#none">01</a>
+                                        <a href="#none">02</a>
+                                        <a href="#none">03</a>
+                                        <a href="#none">04</a>
+                                        <a href="#none">05</a>
+                                        <a href="#none">06</a>
+                                        <a href="#none">07</a>
+                                        <a href="#none">08</a>
+                                        <a href="#none">09</a>
+                                        <a href="#none">10</a>
+                                        <a href="#none">11</a>
+                                        <a href="#none">12</a>
+                                        <a href="#none">13</a>
+                                        <a href="#none">14</a>
+                                        <a href="#none">15</a>
+                                        <a href="#none">16</a>
+                                        <a href="#none">17</a>
+                                        <a href="#none">18</a>
+                                        <a href="#none">19</a>
+                                        <a href="#none">20</a>
+                                        <a href="#none">21</a>
+                                        <a href="#none">22</a>
+                                        <a href="#none">23</a>
+                                        <a href="#none">24</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span>:</span>
+                            <div class="select_box">
+                                <a class="select" href="#none">00</a>
+                                <div class="option_list">
+                                    <div class="scroll_bar">
+                                        <a href="#none">00</a>
+                                        <a href="#none">01</a>
+                                        <a href="#none">02</a>
+                                        <a href="#none">03</a>
+                                        <a href="#none">04</a>
+                                        <a href="#none">05</a>
+                                        <a href="#none">06</a>
+                                        <a href="#none">07</a>
+                                        <a href="#none">08</a>
+                                        <a href="#none">09</a>
+                                        <a href="#none">10</a>
+                                        <a href="#none">11</a>
+                                        <a href="#none">12</a>
+                                        <a href="#none">13</a>
+                                        <a href="#none">14</a>
+                                        <a href="#none">15</a>
+                                        <a href="#none">16</a>
+                                        <a href="#none">17</a>
+                                        <a href="#none">18</a>
+                                        <a href="#none">19</a>
+                                        <a href="#none">20</a>
+                                        <a href="#none">21</a>
+                                        <a href="#none">22</a>
+                                        <a href="#none">23</a>
+                                        <a href="#none">24</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="set_day">
+                            <p class="day">금요일</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="set_time select_wrap">
+                            <div class="select_box">
+                                <a class="select" href="#none">09</a>
+                                <div class="option_list">
+                                    <div class="scroll_bar">
+                                        <a href="#none">00</a>
+                                        <a href="#none">01</a>
+                                        <a href="#none">02</a>
+                                        <a href="#none">03</a>
+                                        <a href="#none">04</a>
+                                        <a href="#none">05</a>
+                                        <a href="#none">06</a>
+                                        <a href="#none">07</a>
+                                        <a href="#none">08</a>
+                                        <a href="#none">09</a>
+                                        <a href="#none">10</a>
+                                        <a href="#none">11</a>
+                                        <a href="#none">12</a>
+                                        <a href="#none">13</a>
+                                        <a href="#none">14</a>
+                                        <a href="#none">15</a>
+                                        <a href="#none">16</a>
+                                        <a href="#none">17</a>
+                                        <a href="#none">18</a>
+                                        <a href="#none">19</a>
+                                        <a href="#none">20</a>
+                                        <a href="#none">21</a>
+                                        <a href="#none">22</a>
+                                        <a href="#none">23</a>
+                                        <a href="#none">24</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span>:</span>
+                            <div class="select_box">
+                                <a class="select" href="#none">00</a>
+                                <div class="option_list">
+                                    <div class="scroll_bar">
+                                        <a href="#none">00</a>
+                                        <a href="#none">10</a>
+                                        <a href="#none">20</a>
+                                        <a href="#none">30</a>
+                                        <a href="#none">40</a>
+                                        <a href="#none">50</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="mr10 ml10">~</span>
+                            <div class="select_box">
+                                <a class="select" href="#none">10</a>
+                                <div class="option_list">
+                                    <div class="scroll_bar">
+                                        <a href="#none">00</a>
+                                        <a href="#none">01</a>
+                                        <a href="#none">02</a>
+                                        <a href="#none">03</a>
+                                        <a href="#none">04</a>
+                                        <a href="#none">05</a>
+                                        <a href="#none">06</a>
+                                        <a href="#none">07</a>
+                                        <a href="#none">08</a>
+                                        <a href="#none">09</a>
+                                        <a href="#none">10</a>
+                                        <a href="#none">11</a>
+                                        <a href="#none">12</a>
+                                        <a href="#none">13</a>
+                                        <a href="#none">14</a>
+                                        <a href="#none">15</a>
+                                        <a href="#none">16</a>
+                                        <a href="#none">17</a>
+                                        <a href="#none">18</a>
+                                        <a href="#none">19</a>
+                                        <a href="#none">20</a>
+                                        <a href="#none">21</a>
+                                        <a href="#none">22</a>
+                                        <a href="#none">23</a>
+                                        <a href="#none">24</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span>:</span>
+                            <div class="select_box">
+                                <a class="select" href="#none">00</a>
+                                <div class="option_list">
+                                    <div class="scroll_bar">
+                                        <a href="#none">00</a>
+                                        <a href="#none">01</a>
+                                        <a href="#none">02</a>
+                                        <a href="#none">03</a>
+                                        <a href="#none">04</a>
+                                        <a href="#none">05</a>
+                                        <a href="#none">06</a>
+                                        <a href="#none">07</a>
+                                        <a href="#none">08</a>
+                                        <a href="#none">09</a>
+                                        <a href="#none">10</a>
+                                        <a href="#none">11</a>
+                                        <a href="#none">12</a>
+                                        <a href="#none">13</a>
+                                        <a href="#none">14</a>
+                                        <a href="#none">15</a>
+                                        <a href="#none">16</a>
+                                        <a href="#none">17</a>
+                                        <a href="#none">18</a>
+                                        <a href="#none">19</a>
+                                        <a href="#none">20</a>
+                                        <a href="#none">21</a>
+                                        <a href="#none">22</a>
+                                        <a href="#none">23</a>
+                                        <a href="#none">24</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="set_day">
+                            <p class="day">토요일</p>
+                            <label class="switch">
+                                <!-- input checked 아닐 경우, 하단 div.set_time 미노출 -->
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <!-- <div class="set_time select_wrap">
+                            <div class="select_box">
+                                <a class="select" href="#none">09</a>
+                                <div class="option_list">
+                                    <div class="scroll_bar">
+                                        <a href="#none">00</a>
+                                        <a href="#none">01</a>
+                                        <a href="#none">02</a>
+                                        <a href="#none">03</a>
+                                        <a href="#none">04</a>
+                                        <a href="#none">05</a>
+                                        <a href="#none">06</a>
+                                        <a href="#none">07</a>
+                                        <a href="#none">08</a>
+                                        <a href="#none">09</a>
+                                        <a href="#none">10</a>
+                                        <a href="#none">11</a>
+                                        <a href="#none">12</a>
+                                        <a href="#none">13</a>
+                                        <a href="#none">14</a>
+                                        <a href="#none">15</a>
+                                        <a href="#none">16</a>
+                                        <a href="#none">17</a>
+                                        <a href="#none">18</a>
+                                        <a href="#none">19</a>
+                                        <a href="#none">20</a>
+                                        <a href="#none">21</a>
+                                        <a href="#none">22</a>
+                                        <a href="#none">23</a>
+                                        <a href="#none">24</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span>:</span>
+                            <div class="select_box">
+                                <a class="select" href="#none">00</a>
+                                <div class="option_list">
+                                    <div class="scroll_bar">
+                                        <a href="#none">00</a>
+                                        <a href="#none">10</a>
+                                        <a href="#none">20</a>
+                                        <a href="#none">30</a>
+                                        <a href="#none">40</a>
+                                        <a href="#none">50</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="mr10 ml10">~</span>
+                            <div class="select_box">
+                                <a class="select" href="#none">10</a>
+                                <div class="option_list">
+                                    <div class="scroll_bar">
+                                        <a href="#none">00</a>
+                                        <a href="#none">01</a>
+                                        <a href="#none">02</a>
+                                        <a href="#none">03</a>
+                                        <a href="#none">04</a>
+                                        <a href="#none">05</a>
+                                        <a href="#none">06</a>
+                                        <a href="#none">07</a>
+                                        <a href="#none">08</a>
+                                        <a href="#none">09</a>
+                                        <a href="#none">10</a>
+                                        <a href="#none">11</a>
+                                        <a href="#none">12</a>
+                                        <a href="#none">13</a>
+                                        <a href="#none">14</a>
+                                        <a href="#none">15</a>
+                                        <a href="#none">16</a>
+                                        <a href="#none">17</a>
+                                        <a href="#none">18</a>
+                                        <a href="#none">19</a>
+                                        <a href="#none">20</a>
+                                        <a href="#none">21</a>
+                                        <a href="#none">22</a>
+                                        <a href="#none">23</a>
+                                        <a href="#none">24</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span>:</span>
+                            <div class="select_box">
+                                <a class="select" href="#none">00</a>
+                                <div class="option_list">
+                                    <div class="scroll_bar">
+                                        <a href="#none">00</a>
+                                        <a href="#none">01</a>
+                                        <a href="#none">02</a>
+                                        <a href="#none">03</a>
+                                        <a href="#none">04</a>
+                                        <a href="#none">05</a>
+                                        <a href="#none">06</a>
+                                        <a href="#none">07</a>
+                                        <a href="#none">08</a>
+                                        <a href="#none">09</a>
+                                        <a href="#none">10</a>
+                                        <a href="#none">11</a>
+                                        <a href="#none">12</a>
+                                        <a href="#none">13</a>
+                                        <a href="#none">14</a>
+                                        <a href="#none">15</a>
+                                        <a href="#none">16</a>
+                                        <a href="#none">17</a>
+                                        <a href="#none">18</a>
+                                        <a href="#none">19</a>
+                                        <a href="#none">20</a>
+                                        <a href="#none">21</a>
+                                        <a href="#none">22</a>
+                                        <a href="#none">23</a>
+                                        <a href="#none">24</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </li>
+                    <li>
+                        <div class="set_day">
+                            <p>일요일</p>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+                <dl class="consulting_info">
+                    <dt><i class="talk"></i>채팅기능</dt>
+                    <dd>
+                        상담 시간과 관계없이 채팅 내용은 전송되나, 상대가 보낸 메시지의 PUSH 알림이 오지 않아, 개인 시간을 보호 받을 수 있습니다.
+                    </dd>
+                    <dt><i class="call"></i>전화기능</dt>
+                    <dd>
+                        상담 시간과 관계없이 선생님은 언제든지 전화가 가능하며, 학생과 학부모는 선생님이 설정해둔 상담 시간에만 통화를 걸 수 있습니다.
+                    </dd>
+                </dl>
+              
+            </div>
+            
+            
+            <div class="btn_half mt40">
+                <a href="#none" class="btn outline medium">취소</a>
+                <a href="#none" class="btn medium">확인</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function(){
+            $("#timeSet").modal({show: true});
+            pc_talk.selectBox();
+        })
+    </script>
+</body>
+
+</html>

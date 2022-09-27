@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 서브</title>
+</head>
+<body>
+	<div class="wrapper">
+		<!-- header -->
+		@@include('../include/inc_header.html')
+		
+		<!--  sub container -->
+		<div class="container inner_cont">       
+			
+			<!-- snb -->
+			@@include('../include/inc_snb.html')
+			<!-- //snb -->
+				
+
+			<div class="contents">
+				
+				<!-- title -->
+				<div class="title_box">
+					<h4 class="page_title">클래스 설정</h4>
+				</div>
+				<!--// title -->
+        
+        <!-- class tab -->
+        <div class="class_tab mb55">
+          <a href="#none" class="tab_links">관리자 설정</a>
+          <a href="#none" class="tab_links">게시판 설정</a>
+          <a href="#none" class="tab_links">정보수정</a>
+          <a href="#none" class="tab_links active">클래스 삭제</a>
+        </div>
+        <!--// class tab -->
+
+        <!-- tabcontent - tab4 -->
+        <div id="tab4" class="tabcontent">
+          <div class="class_delete_box">
+            <div class="title">
+              <div>
+                <!-- 220805 :: 텍스트 변경 -->
+                <h3>클래스 열기</h3>
+                <p class="txt">다시 클래스를 운영할 수 있습니다. 클래스 열기 버튼을 클릭해주세요.
+                </p>
+              </div>
+              <!-- 220818 :: 텍스트 변경-->
+              <a href="#none" class="btn gray">클래스 열기</a>
+            </div>
+          </div>
+
+          <div class="class_delete_box mt20">
+            <div class="title">
+              <div>
+                <h3>클래스 삭제</h3>
+                <p class="txt">클래스의 모든 게시글과 정보가 삭제됩니다.</p>
+              </div>
+              <a href="#none" class="btn gray">클래스 삭제</a>
+            </div>
+            <ul class="info_list">
+              <li>삭제 7일 이후에는 클래스 구성원들이 자동적으로 탈퇴됩니다.</li>
+              <li>삭제 7일 이후에는 클래스의 모든 정보가 삭제됩니다.</li>
+              <li>클래스 삭제 요청 후, 철회가 불가능하며, 삭제된 클래스는 복구할 수 없습니다.</li>
+            </ul>
+          </div>
+        </div>
+        <!--// tabcontent -->
+
+			</div>
+		</div>
+		<!-- //sub container -->
+
+		<!-- footer -->
+		@@include('../include/inc_footer.html')
+		<script>
+
+    </script>
+	</div>
+</body>
+</html>

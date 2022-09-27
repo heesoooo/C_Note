@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=1200">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+	<title>우리반티셀파 - 서브</title>
+</head>
+<body>
+
+
+    <!-- popup -->
+    <div class="modal" id="sendNoti">
+      <div class="modal_content w635">
+        <a href="#none" class="modal_close" data-dismiss="modal"><i class="sprite_comm sp_ico_close_pop"></i></a>
+        <div class="pop_send_title">구성원들에게 문자 메시지를 보내세요.</div>
+        <div class="pop_send_con">
+            <div class="send_list">
+                <div class="send_group">
+                    <div class="check_box mr20">
+                        <input type="checkbox" id="check2">
+                        <label for="check2">전체</label>
+                    </div>
+                </div>
+                <div class="scroll_bar">
+                    <ul class="check_list">
+                      <li class="check_box">
+                        <input type="checkbox" id="check1-1" checked="">
+                        <label for="check1-1">
+                            올리비아김김김
+                            <em class="badge badge_blue">부</em>
+                        </label>
+                      </li>
+                      <li class="check_box">
+                        <input type="checkbox" id="check1-2">
+                        <label for="check1-2">
+                            나천재
+                            <em class="badge badge_pink">모</em>
+                        </label>
+                      </li>
+                      <li class="check_box">
+                        <input type="checkbox" id="check1-3">
+                        <label for="check1-3">
+                            권현주
+                            <em class="badge badge_gray">기타</em>
+                        </label>
+                      </li>
+                      <li class="check_box">
+                        <input type="checkbox" id="check1-4">
+                        <label for="check1-4">
+                            정재훈
+                            <em class="badge badge_blue">부</em>
+                        </label>
+                      </li>
+                      <li class="check_box">
+                        <input type="checkbox" id="check1-5">
+                        <label for="check1-5">
+                            마천재
+                            <em class="badge badge_pink">모</em>
+                        </label>
+                      </li>
+                      <li class="check_box">
+                        <input type="checkbox" id="check1-6">
+                        <label for="check1-6">
+                            바천재
+                            <em class="badge badge_pink">모</em>
+                        </label>
+                      </li>
+                      <li class="check_box">
+                        <input type="checkbox" id="check1-7">
+                        <label for="check1-7">사천재 학생</label>
+                      </li>
+                      <li class="check_box">
+                        <input type="checkbox" id="check1-8">
+                        <label for="check1-8">마천재 학생</label>
+                      </li>
+                      <li class="check_box">
+                        <input type="checkbox" id="check1-9">
+                        <label for="check1-9">바천재 학생</label>
+                      </li>
+                      <li class="check_box">
+                        <input type="checkbox" id="check1-10">
+                        <label for="check1-10">사천재 학생</label>
+                      </li>
+                     
+                    </ul>
+                  </div>
+            </div>
+            <div class="send_msg">
+                <p class="pop_title mb35">문자 메시지 보내기</p>
+                <!-- 220818 :: 100자 > 70자로 변경 -->
+                <textarea placeholder="70자 이내로 입력해 주세요."></textarea>
+                <p class="total">총<span class="num"> 8</span>명</p>
+                <div class="btn_full">
+                    <a href="#none" class="btn medium mt30">문자 보내기</a>
+                </div>
+                <span class="val_check_point">문자 메시지를 입력해 주세요.</span>
+            </div>
+        </div>
+      </div>
+    </div>
+    <!--// popup -->
+
+
+	<script>
+      $('#sendNoti').modal({show: true});
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+  <!-- datetimepicker 팝업 -->
+  <div class="modal" id="dateTimePicker1">
+    <div class="calendar modal_content">
+        <!-- td.day :: .schedule_info 추가시 일정등록 표기 css확인가능-->
+
+        <div class="form-group">
+            <div class="row">
+                <div>
+                    <div id="datetimepicker1"></div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker({
+                inline: true,
+            });
+        });
+        </script>
+        <div class="modal_btn_half">
+            <a href="#none" class="modal_btn" data-dismiss="modal">닫기</a>
+            <!-- 활성화시 .active 추가 / 비활성화시 .disabled 추가 -->
+            <a href="#none" class="modal_btn active">예약</a>
+        </div>
+    </div>
+</div>
+<!-- /. -->
+
+<script>
+    
+    $(function () {
+                
+        //datetimepicker 오전 오후 설정
+        if( $('.btn.btn-primary').html() == '오전' ) {
+            $('.btn.btn-primary').removeClass('pm').addClass('am');
+        }
+        else {
+            $('.btn.btn-primary').removeClass('am').addClass('pm');
+        }
+    })
+</script>

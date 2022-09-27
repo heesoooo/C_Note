@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+		@@include('../include/inc_header.html')
+
+		<!--  sub container -->
+		<div class="container inner_cont">
+
+			<!-- snb -->
+			@@include('../include/inc_snb.html')
+			<!-- //snb -->
+
+			<div class="contents">
+				<!-- title -->
+				<div class="title_box">
+					<h4 class="page_title">구성원 관리</h4>
+				</div>
+				<!--// title -->
+
+				<!-- sub contents -->
+
+				<!-- class tab -->
+                <!-- 220822 :: pt15 클래스 삭제 -->
+				<div class="class_tab mb70">
+					<a href="#none" class="tab_links">학부모(3)</a>
+					<a href="#none" class="tab_links active">학생(4)</a>
+
+					<!-- 우측 버튼 -->
+                    <div class="btn_wrap fr">
+                        <a href="#none" class="btn w170 outline round btn_invite">
+                            <i class="sprite_comm sp_ico_new_create_sm"></i> 교사 계정 생성
+                        </a>
+                        <a href="#none" class="btn w170 outline round btn_invite ml5">
+                            <i class="sprite_comm sp_ico_all_create_sm"></i> 계정 일괄 생성
+                        </a>
+                    </div>
+				</div>
+				<!-- /class tab -->
+
+
+				<div class="memeber_management">
+					<div class="new_mem_list">
+						<p class="tit">클래스 가입요청을 확인하세요. <span>(1)</span></p>
+						<!-- list_item -->
+						<div class="list_item">                            
+							<a href="#none" class="mem_wrap" data-target="popMemInfo">
+                                <span class="class_num">4</span>
+								<figure class="profile">
+									<!-- <img src="../../img/profile_test.jpg" alt=""> -->
+								</figure>
+								<div class="mem_info">
+									<span class="nick_name">김천재(chunjae)</span>
+								</div>
+							</a>
+							<div class="btn_wrap">
+								<a href="#none" class="btn round"><i class="sprite_comm sp_ico_ok"></i>수락</a>
+								<a href="#none" class="btn round outline"><i class="sprite_comm sp_ico_reject"></i>거부</a>
+							</div>
+						</div>
+						<!-- ./ -->
+						<!-- list_item -->
+						<div class="list_item">                            
+							<a href="#none" class="mem_wrap" data-target="popMemInfo">
+                                <span class="class_num">5</span>
+								<figure class="profile">
+									<!-- <img src="../../img/profile_test.jpg" alt=""> -->
+								</figure>
+								<div class="mem_info">
+									<span class="nick_name">김천재(010*****234)</span>
+								</div>
+							</a>
+							<div class="btn_wrap">
+								<a href="#none" class="btn round"><i class="sprite_comm sp_ico_ok"></i>수락</a>
+								<a href="#none" class="btn round outline"><i class="sprite_comm sp_ico_reject"></i>거부</a>
+							</div>
+						</div>
+						<!-- ./ -->
+					</div>
+
+					<div class="join_mem_list">
+
+                        <div class="tab_sort">
+                            <a href="#none" class="active">이름순</a>
+                            <a href="#none" >번호순</a>
+                        </div>
+
+						<!-- list_item -->
+						<div class="list_item">                            
+							<a href="#none" class="mem_wrap" data-target="popMemInfo">
+                                <span class="class_num">12</span>
+								<figure class="profile new"> <!-- New 아이콘 :: .new 클래스추가 -->
+									<!-- <img src="../../img/profile_test.jpg" alt=""> -->
+								</figure>
+								<div class="mem_info">
+									<span class="nick_name">김천재(010*****234)</span>
+								</div>
+							</a>
+							<div class="btn_wrap">
+								<a href="#none" class="btn point round"><i class="sprite_comm sp_ico_comment_w"></i>T톡하기</a>
+								<a href="#none" class="btn point round outline"><i class="sprite_comm sp_ico_leave_p"></i>탈퇴하기</a>
+							</div>
+						</div>
+						<!-- ./ -->
+						<!-- list_item -->
+						<div class="list_item">                            
+							<a href="#none" class="mem_wrap" data-target="popMemInfo">
+                                <span class="class_num">7</span>
+								<figure class="profile">
+									<img src="../../img/profile_test.jpg" alt="">
+								</figure>
+								<div class="mem_info">
+									<span class="nick_name">김천재(chunjae)</span>
+								</div>
+							</a>
+							<div class="btn_wrap">
+								<a href="#none" class="btn point round"><i class="sprite_comm sp_ico_comment_w"></i>T톡하기</a>
+                                <a href="#none" class="btn point round outline"><i class="sprite_comm sp_ico_leave_p"></i>탈퇴하기</a> 
+							</div>
+						</div>
+						<!-- ./ -->
+					</div>
+				</div>
+				<!-- /sub contents -->
+			</div>
+		</div>
+		<!--  /sub container -->
+
+		<!-- footer -->
+		@@include('../include/inc_footer.html')
+
+
+		<!-- 학생 정보 팝업 -->
+		<div class="modal pop_member_info" id="popMemInfo">
+			<div class="modal_content w470">
+				<a href="#none" class="modal_close" data-dismiss="modal"><i class="sprite_comm sp_ico_close_pop"></i></a>
+				<h4 class="pop_title mb40">학생 정보</h4>
+
+				<div class="profile">
+					<figure class="img">
+						<img src="../../img/profile_test.jpg" alt="">
+					</figure>
+				</div>
+				<div class="info_dec">
+					<span class="tit">이름</span>
+					<div class="input_full">
+						<input type="text" value="이해법">
+					</div>
+				</div>
+				<div class="info_dec">
+					<span class="tit">전화번호</span>
+					<div class="input_full">
+						<input type="text" value="01000000000" disabled>
+					</div>
+				</div>
+                <div class="info_dec">
+					<span class="tit">반번호</span>
+					<div class="input_full">
+						<input type="text" value="2">
+					</div>
+				</div>
+
+				<div class="btn_half">
+					<a href="#none" class="btn outline medium">취소</a>
+					<a href="#none" class="btn medium disabled">수정</a> <!-- 변경사항 저장시 .disabled 제거 -->
+				</div>
+			</div>
+		</div>
+		<script>
+			$("#popMemInfo").modal({show:true})
+		</script>
+		<!-- /학생 정보 팝업 -->
+	</div>
+</body>
+
+</html>

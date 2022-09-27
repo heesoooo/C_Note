@@ -1,0 +1,1272 @@
+/*
+|------------------------------------------|
+|        TALK SCSS
+|------------------------------------------|
+*/
+
+
+//reset
+@import "reset";
+
+//font
+@import "fonts";
+
+
+// component
+@import "mixin";
+@import "size";
+@import "modal";
+@import "button";
+@import "scrollbox";
+@import "form";
+
+// 뱃지
+.badge {
+	display: inline-block;
+    height: 18px;
+    line-height: 16px;
+    padding: 0 7px 0 6px;
+    margin-left: 4px;
+    border-radius: 9px;
+    background-color: $white;
+    font-style: normal;
+    font-size: 12px;
+    letter-spacing: -0.12px;
+    border-width: 1px;
+    border-style: solid;
+	text-align: center;
+	box-sizing: border-box;
+    &_blue {
+        border-color: #1a6df7;
+        color: 	#1a6df7;
+    }
+    &_pink {
+        border-color: #ff61af;
+        color: 	#ff61af;
+    }
+    &_gray {
+        border-color: $gray_99;
+        color: 	$gray_99;
+    }
+	&_gray_full {
+		min-width: 30px;
+        border-color: $gray_99;
+        background-color: $gray_99;
+        color: 	$white;
+    }
+}
+
+.talk_wrap {
+	width: 100%;
+	height: 100%;
+}
+.conversation_cont_wrap {
+	@include flexbox(start, start);
+}
+.class_dimm {
+	@extend .modal_backdrop;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.left_wrap {
+	width: 361px;
+	.inner{
+		display: flex;
+		flex-direction: row;
+	}
+	.tab_nav_wrap {
+		@include flexbox(between, center);
+		flex-direction: column;
+		padding: 37px 0 22px;
+		width: 62px;
+				background: $primary;
+		.icon {
+			display: block;
+			background-repeat: no-repeat;
+			background-position: 0 0;
+		}
+		.top {
+			li {
+				a {display: block;}
+				span {
+					@include ir_pm;
+				}
+				margin-bottom: 40px;
+			}
+			.t_opponent {
+				a {
+					width: 30px;
+					height: 33px;
+					background-image: url(../img/ico_profile_off.png);
+				}
+				&.on {
+					a {
+						background-image: url(../img/ico_profile_on.png);
+					}
+				}                        
+			}
+			.t_list {
+				a {
+					width: 30px;
+					height: 30px;
+					background-image: url(../img/ico_talk_list_off.png);
+				}
+				&.on {
+					a {
+						background-image: url(../img/ico_talk_list_on.png);
+					}
+				}
+			}
+		}
+		.settings {
+			width: 30px;
+			height: 30px;
+			background-image: url(../img/ico_setting.png);
+		}
+	}
+	.tab_cont_wrap {
+		width: 299px;
+
+		.tab_cont_item {
+			display: none;
+		}
+		.tab_title {
+			//min-height: 78px;
+			padding: 18px 16px 15px;
+			h2 {
+				font-size: 17px;
+				line-height: 1;
+				letter-spacing: -0.17px;
+				color: $black;
+				
+				&.new {
+					position: relative;
+					&::after {
+						@include posY;
+						top: 50%;
+						content: '';
+						display: inline-block; margin: 0 0 0 5px;
+						width: 15px; height: 15px;
+						background: url(../img/ico_new.png) no-repeat 0 0;
+
+					}
+				}
+			}
+		}
+		.class_info {
+			@include flexbox(between, center);
+			margin-top: 10px;
+			.select_class {
+				position: relative;
+				max-width: 195px;
+				dt {
+					padding-right: 18px;
+					@include ellipsis(1);
+					line-height: 1;
+					background: {
+						position: 100% 55%;
+						repeat: no-repeat;
+						image : url(../img/ico_down.png);
+					}
+					span {
+						width: 100%;
+						cursor: pointer;
+						font-size: 15px;
+						line-height: 1;
+						letter-spacing: -0.15px;
+						color: $gray_66;
+					}
+				}
+				dd {
+					display: none;
+					min-width: 230px;
+					padding: 7px 0;
+					position: absolute;
+					top:0; left: -4px;
+					border-radius: 10px;
+					border: solid 1px $gray_e0;
+					background-color: $white;
+					z-index: 999999;
+					li {
+						padding: 0 0 0 20px;
+						line-height: 1;
+						transition: all .3s;
+						&:hover {
+							background: $gray_f2;
+							a {
+								color: $primary;
+							}
+						}
+						a {
+							display: inline-block;
+                            max-width: 190px;
+                            //@include ellipsis;
+							padding: 12px 24px 12px 0;
+							font-size: 15px;
+							letter-spacing: -0.15px;
+							color: $gray_66;
+						}
+						&.class_on {
+							a {
+								background: url(../img/ico_class_check.png) no-repeat 99% 50%;
+							}
+						}
+					}
+				}
+			}
+		}
+		.quick_func {
+			@include flexbox(start,center);
+
+			a {
+				display: block;
+				background-position: 0 0;
+				background-repeat: no-repeat;
+				@include ir_pm;
+			}
+			.send_batch {
+				margin-right: 12px;
+				width: 18px;
+				height: 18px;
+				background-image: url(../img/ico_talk.png);
+			}
+			.send_notice {
+				width: 22px;
+				height: 18px;
+				background-image: url(../img/ico_notice.png);
+			}
+		}
+		.no_data {
+			padding: 35px 0;
+			font-size: 15px;
+			letter-spacing: -0.15px;
+			color: $gray_99;
+			text-align: center;
+			span {
+				color: $primary;
+			}
+		}
+		
+		// 학부모, 학생 접속시
+		&.no_teacher {
+			.conversate_list_wrap {
+				height: calc(100vh - 108px);
+			}
+		}
+	}
+}
+.conversate_list_wrap {
+	position: relative;
+	height: calc(100vh - 133px);
+	margin-right: 8px;
+	padding-right: 8px;
+	@include scroll;
+	overflow-x: hidden;
+	.list_title {
+		padding: 0 16px;
+		height: 32px;
+		line-height: 29px;
+		background: $gray_f5 url(../img/ico_up.png) no-repeat 95% 50%;
+		cursor: pointer;
+		&.close {
+			background-image : url(../img/ico_down.png);
+		}
+		.group_tit {
+			font-size: 13px;
+			letter-spacing: -0.13px;
+			color: $gray_66;
+			em {
+				font-style: normal;
+			}
+		}
+	}
+	.list_cont {
+		li {
+			padding: 10px 0 10px 16px;
+			@include flexbox(start, center);
+			cursor: pointer;
+		}
+		.profile {
+			display: block;
+			margin-right: 11px;
+			min-width: 42px; width:42px; height: 42px;
+			border-radius: 50%;
+			background: url(../img/profile_user_basic.png) no-repeat 50% 50%;
+			font-size: 0;
+			&.teacher {
+				background-image: url(../img/profile_teacher_basic.png);
+			}
+			&.notice {
+				background-color: $gray_66;
+				background-image: url(../img/profile_notice.png);
+			}
+			img {
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+			}
+		}
+		.name {
+			display: block;
+			font-size: 15px;
+			line-height: 25px;
+			letter-spacing: -0.15px;
+			color: $black;
+
+			.num {
+				min-width: 16px;
+                padding-bottom: 2px;
+				font-size: 13px;
+				font-style: normal;
+				letter-spacing: -0.13px;
+				color: $gray_bb;
+				text-align: center;
+			}
+		}
+		.chat {
+			margin-top: 7px;
+			max-height: 38px;
+			font-size: 13px;
+			line-height: 20px;
+			letter-spacing: -0.13px;
+			color: $gray_66;
+			@include ellipsis($line : 2);
+		}
+		.same_word {
+			color: $primary;
+		}
+		.info {
+			flex-grow: 1;
+		}
+		.time_count {
+			min-width: 50px;
+			@include flexbox(end, end);
+			.time {
+				margin-top: 2px;
+				padding-right: 10px;
+				font-size: 13px;
+				line-height: 1;
+				letter-spacing: -0.15px;
+				color: $gray_bb;
+			}
+		}
+		.consult_time {
+			font-size: 13px;
+			letter-spacing: -0.13px;
+			color: $gray_99;
+		}
+	}
+	.btn_chat_add {
+		position: fixed;
+		width: 77px;
+		height: 77px;
+		bottom: -5px; left: 280px;
+		background: url(../img/ico_plus.png) no-repeat 0 0;
+	}
+}
+.talk_list {
+	.list_cont {
+		li {
+			position: relative;
+			align-items: flex-start;
+			padding: 10px 0 15px 16px;					
+			.name {
+				position: relative;
+				letter-spacing: -.3px;
+                line-height: 1;
+				span {
+					max-width: 136px;
+					@include ellipsis(1);
+				}
+				span ,em {
+					display: inline-block;
+					vertical-align: middle;
+				}
+			}
+			.count {
+				position: absolute;
+				bottom: 15px; right: 10px;
+				max-width: 34px;
+				margin-bottom: 1px;
+				height: 19px;
+				line-height: 19px;
+				padding: 0 6px;
+				background: $point;
+				border-radius: 9.5px;
+				text-align: center;
+				font-size: 12px;
+				font-weight: 400;
+				letter-spacing: -0.12px;
+				color: $white;
+			}
+			.same_word {
+				color: $primary;
+			}
+		}
+	}
+}
+.oppnent_list {
+	.list_cont {
+		.name {
+			line-height: 1;
+		}
+		.consult_time {
+			display: block;
+			margin-top: 7px;
+		}
+	}
+}
+.search_name_box {
+	position: relative;
+	margin: 0 22px 15px 16px;
+	padding: 0 16px 0 22px;
+	border-radius: 20px;
+	background-color: $gray_f5;
+	height: 40px;
+	@include flexbox(start, center);
+	&.active {
+		border: 1px solid $black;
+		background: $white;
+	}
+	.btn_search {
+		width: 20px; height: 20px;
+		background: url(../img/ico_search_off.png) no-repeat 0 0;
+		outline: 0;
+		border: 0;
+		@include ir_pm;
+		display: inline-block;
+		&.active {
+			cursor: pointer;
+			background-image: url(../img/ico_search_on.png);					
+		}
+	}
+	input[type=text] {
+		//padding-left: 14px;
+		width: 90%;
+		height: 40px;
+		line-height: 40px;
+		background: transparent;
+		border: 0;
+		outline: none;
+		font-size: 14px;
+		letter-spacing: -0.14px;
+		color: $black;
+	}
+	.btn_clear {
+		@include posY;
+		right: 50px;
+		width: 16px;height: 16px;
+		background: url(../img/ico_clear.png) no-repeat 0 0;
+		@include ir_pm;
+		display: none;
+	}
+	.btn_research {
+		@include posY;
+		right: 50px;
+		width: 16px;height: 16px;
+		background: url(../img/ico_research.png) no-repeat 0 0;
+		@include ir_pm;
+	}
+}
+.right_wrap {
+	position: relative;
+	width: calc(100% - 361px);
+	min-width: 520px;
+	border-left: 1px solid #dedede;
+	.empty_box {
+		@include flexbox(center,center);
+		flex-direction: column;
+		width: 100%;
+		height: 100vh;
+		background-color: $gray_f5;
+		p {
+			font-size: 18px;
+			letter-spacing: -0.18px;
+			color: $gray_66;
+			span {
+				color: $primary;
+			}
+			&.text_sm {
+				margin-top: 10px;
+				font-size: 15px;
+				letter-spacing: -0.15px;
+				color: $gray_66;
+				.deco_point {
+					display: inline-block;
+					color: $point;
+					border-bottom: 1px solid $point;
+				}
+			}
+            &.text_m { 
+                font-size: 16px; 
+                margin-top: 35px;
+                margin-bottom: 80px
+            }
+		}
+	}
+	@include flexbox(between, start);
+	flex-direction: column;
+	.chatting_top_wrap {
+		@include flexbox(between, center);
+		padding: 0 21px 0 16px;
+		width: 100%;
+		height: 82px;
+		.opponent_info {
+			@include flexbox(start, center);
+		}
+		.profile {
+			display: inline-block;
+			margin-right: 14px;
+			width: 42px; height: 42px;
+			background: url(../img/profile_user_basic.png) no-repeat 50%;
+			border-radius: 50%;
+			img {
+				width: 100%; height: 100%; border-radius: 50%;
+			}
+			&.notice {
+				background-color: $gray_66;
+				background-image: url(../img/profile_notice.png);
+			}
+		}
+		.name {
+			max-width: 160px;
+			@include ellipsis(1);
+			font-size: 17px;
+			letter-spacing: -0.17px;
+			color: $black;;
+		}
+		.user_num {
+			margin: 7px 0 0 10px;
+			font-size: 12px;
+			font-weight: 500;
+			font-style: normal;
+			letter-spacing: -0.12px;
+			color: $gray_99;
+		}
+		.chat_pin {
+			margin-left: 10px;
+			@include ir_pm;
+			display: inline-block;
+			width: 17px; height: 17px;
+			background: url(../img/ico_pin_off.png) no-repeat 50%;
+			&.on {
+				background-image: url(../img/ico_pin.png);
+			}
+		}
+		.btn_info {
+			a {
+				@include ir_pm;
+				display: inline-block;
+				margin-left: 18px;
+				width: 26px; height: 26px;
+				background-position: 50%;
+				background-repeat: no-repeat;
+			}
+			.chat_alarm {
+				background-image: url(../img/ico_alarm_off.png);
+				&.on {
+					background-image: url(../img/ico_alarm_on.png);
+				}
+			}
+			.chat_search {
+				background-image: url(../img/ico_search_lg.png);
+			}
+			.chat_setting {
+				background-image: url(../img/ico_info.png);
+			}
+		}
+	}	
+	.chatting_cont_wrap {
+		width: calc(100% - 8px);
+		height: calc(100vh - 182px);		
+		flex-grow: 1;
+		@include scroll;
+        overflow-y: auto;
+		&::-webkit-scrollbar-track {
+			margin-top: 70px;
+		  }
+		&.unable_chat {
+			background: $gray_f5;
+		}
+	}
+	.chatting_input_wrap {
+		@include flexbox(between,end);
+        position: relative;
+		width: 100%;
+		height: 100px;
+		border-top: 1px solid #dedede;
+		textarea {
+			width: calc(100% - 150px);
+			height: 100%;
+			padding: 16px;
+			border: 0; outline: 0;
+			@include scroll;
+			font-size: 14px;
+			font-weight: 300;
+			letter-spacing: -0.14px;
+			color: $black;
+		}
+		.btn_wrap {
+			@include flexbox(start, center);
+			padding-right: 20px; padding-bottom: 12px;
+			a, label {
+				display: inline-block;
+				//width: 40px;
+				margin-left: 20px;
+				background-position: 50%;
+				background-repeat: no-repeat;
+				font-size: 0;
+			}
+			.btn_emoticon {
+				margin-left: 0;
+				width: 20px;
+				height: 20px;
+				background-image: url(../img/ico_emoticon.png);
+			}
+			.input_file_button {
+				+ label {
+					width: 20px;
+					height: 20px;
+					background-image: url(../img/ico_clip.png);
+					cursor: pointer;
+				}
+			}
+			.btn_send {
+				width: 40px; height: 40px;
+				background-image: url(../img/ico_send_off.png);
+				&.on {
+					background-image: url(../img/ico_send_on.png);
+				}
+			}
+		}
+	}
+}
+// 채팅창
+.chatting_list_wrap {
+	position: relative;
+	padding: 70px 16px 20px;	
+	.etc {
+		height: 35px;
+        line-height: 17px;
+		@include flexbox(start, start);
+		flex-direction: column;
+		padding: 0 8px;
+		.reading_num {
+			display: block;
+			font-size: 12px;
+			color: $primary;
+		}
+		.time {
+			display: block;
+			font-size: 12px;
+			letter-spacing: -0.12px;
+			text-align: left;
+			color: $gray_bb;
+		}
+	}
+	.chatting_you {
+		position: relative;
+		padding-left: 40px;
+		.chatting_bubble_wrap {
+			@include flexbox(start,end);
+			.btn_right_click {
+				right: -82px; bottom: 0;
+			}
+			&.first {
+				.chatting_bubble {
+					border-radius: 0 17px 17px 17px;
+				}
+			}
+			.chatting_bubble {
+				background-color: $gray_ee;
+				color: $black;
+				.link {
+					color: #6255f6;
+				}
+			}
+		}
+	}
+	.chatting_profile {
+		.img {
+			position: absolute;
+			display: block;
+			left: 0; top: -4px;
+			width: 30px; height: 30px;
+			border-radius: 50%;
+			background: url(../img/profile_chatting_basic.png) no-repeat 0 0;
+			cursor: pointer;
+			img {
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+			}
+		}
+		.name {
+			display: block;
+			margin-bottom: 8px;
+			font-size: 13px;
+			line-height: 1;
+			letter-spacing: -0.13px;
+			color: $gray_99;
+		}
+	}
+	.chatting_me {
+		.chatting_bubble_wrap {
+			@include flexbox(end, end);
+			.btn_right_click {
+				left: -82px; bottom: 0;
+			}
+			&.first {
+				.chatting_bubble {
+					border-radius: 17px 0 17px 17px;
+				}
+			}
+			.chatting_bubble {
+				background-color: #6f69f7;
+				color: $white;
+				.link {
+					color: #82f2ff;
+				}
+				&.del_message {
+					font-weight: 400;
+					border: dashed 1px #6f69f7;
+  					background-color: #fff;
+					color: $primary;
+				}
+			}
+		}
+		.etc {
+			.reading_num, .time {
+				width: 100%;
+				text-align: right;
+			}
+			.error {
+				@include ir_pm;
+				width: 20px; height: 35px;
+				background: url(../img/ico_error.png) no-repeat 50%;
+			}
+			.resend {
+				@include ir_pm;
+				width: 20px; height: 35px;
+				background: url(../img/ico_resend.png) no-repeat 50%;
+			}
+		}
+	}
+	.date {
+		margin: 20px 0;
+		text-align: center;
+		span {
+			display: inline-block;
+			width: 124px; height: 28px;
+			line-height: 28px;
+			border-radius: 14px;
+  			background-color: $gray_f5;
+			font-size: 13px;
+			letter-spacing: -.15px;
+			text-align: center;
+			color: $gray_99;		
+		}
+	}
+	.alarm_text {
+		text-align: center;
+		p {
+			margin-bottom: 15px;
+			font-size: 13px;
+			font-weight: 400;
+			letter-spacing: -0.13px;
+			color: $gray_99;
+		}
+	}
+	.chatting_bubble_wrap {
+		position: relative;
+		margin-bottom: 6px;
+		.chatting_bubble {
+			position: relative;
+			display: inline-block;
+            max-width: 80%;
+			padding: 8px 14px;
+			font-size: 13px;
+			font-weight: 300;
+			letter-spacing: -0.13px;
+			border-radius: 17px;
+            word-break: break-all;
+			&.image {
+				width: 245px;
+				height: 160px;
+				padding: 0;
+				border-radius: 10px;
+				background: $gray_f5 url(../img/bg_picture.png) no-repeat 50%;
+				border-radius: 17px !important;
+				img {
+					border-radius: 10px;
+                    width: 245px;
+                    height: 160px;
+                    object-fit: cover;
+                    cursor: pointer;
+				}
+			}
+            &.emoticon {
+                width: 120px;
+                height: 120px;
+                padding: 0;
+                background-color: transparent;
+                img {
+                    width: 120px;
+                }
+            }
+			&.video {
+				padding: 15px 20px;
+				width: 245px;
+				background: $gray_ee url(../img/ico_mp3.png) no-repeat 191px 15px;
+				border-radius: 17px !important;
+				.tit {
+					display: block;
+					margin-bottom: 19px;
+					padding-right: 50px;
+					font-size: 13px;
+					font-weight: 500;
+					letter-spacing: -0.13px;
+					text-align: left;
+					color: $black;
+					//word-break: keep-all;
+				}
+				.period, .volume{
+					display: block;
+					font-size: 12px;
+					font-weight: 300;
+					letter-spacing: -0.12px;
+					text-align: left;
+					color: $gray_66;
+				}
+				.volume {
+					margin-bottom: 11px;
+				}
+				.save, .save_as {
+					display: inline-block;
+					margin-right: 12px;
+					font-size: 13px;
+					font-weight: 500;
+					letter-spacing: -0.13px;
+					color: $primary;
+					text-decoration: underline;
+				}
+			}
+			&.preview {
+				padding: 0;
+				width: 245px;
+				background-color: $gray_f5;
+				border-radius: 10px !important;
+				.og_img {
+					display: block;
+					overflow: hidden;
+					height: 116px;
+					img {
+						width: 245px;
+                        height: 116px;
+                        object-fit: cover;
+						border-radius: 10px 10px 0 0;
+					}
+				}
+				.og_tit {
+					display: block;
+					padding: 16px 13px 8px 15px;
+					font-size: 13px;
+					font-weight: 400;
+					line-height: 1;
+					letter-spacing: -0.13px;
+					text-align: left;
+					color: $black;
+				}
+				.og_desc {
+					display: block;
+					padding: 0 13px 17px 15px;
+					font-size: 12px;
+					line-height: 1;
+					font-weight: 300;
+					letter-spacing: -0.12px;
+					color: $gray_99;
+					@include ellipsis(1);
+				}
+			}
+			.link {
+				font-size: 13px;
+				font-weight: 300;
+				letter-spacing: -0.13px;
+                text-decoration: underline;
+			}
+			
+		}
+		.btn_right_click {
+			position: absolute;
+			width: 76px;
+			background: $white;
+			box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.1);
+			border: solid 1px $gray_e0;
+			border-radius: 10px;
+			ul {
+				border-radius: 10px;
+			}
+			li {
+				text-align: center;
+				height: 40px;
+				line-height: 40px;
+				a {
+					display: block;
+					font-size: 14px;
+					font-weight: 400;
+					letter-spacing: -0.14px;
+					color: #000;
+					&.del {
+						border-top: 1px solid $gray_e0;
+						color: $primary;
+					}
+				}
+			}
+		}
+		&:last-child {
+			margin-bottom: 20px;
+		}
+	}
+	.btn_bottom{
+		position: fixed;
+		bottom: 126px; right: 25px;
+		width: 51px;height: 51px;
+		background: url(../img/ico_btn_down.png) no-repeat 0 0;
+	}
+	
+	.top_bar_wrap {
+		position: fixed;;
+		top: 82px; right: 14px;
+		width: calc(100% - 389px);
+		z-index: 99;
+	}	
+
+	.consulting_time_bar {
+		position: absolute;
+		width: 100%;
+		margin-bottom: 8px;
+		padding: 0 0 13px 20px;
+		height: 46px; line-height: 46px;
+		border-radius: 5px;
+		box-shadow: 0px 6px 8px 0 rgba(0, 0, 0, 0.1);
+		cursor: pointer;
+		background: #aaa;
+		
+		&.open {
+			height: auto;
+			dl {
+				background-image: url(../img/ico_up_white.png);
+				dd {
+					li {
+						display: block;
+					}
+				}
+			}
+		}
+		
+		dl {
+			@include flexbox(start, start);
+			border-radius: 5px;
+			background: #aaa url(../img/ico_down_white.png) no-repeat 97% 20px;
+
+			&.no_time {
+				background-image: none;
+			}
+		}
+		dt {
+			margin-right: 30px;
+			font-size: 14px;
+			font-weight: 400;
+			letter-spacing: -0.14px;
+			text-align: left;
+			color: $white;
+			i {
+				display: inline-block;
+				vertical-align: middle;
+				margin-top: -4px;
+				margin-right: 5px;
+				width: 18px; height: 18px;
+				background: url(../img/ico_clock_white.png) no-repeat 0 0;
+			}
+		}
+		dd {
+			margin-top: 11px;
+			li {
+				display: none;
+				height: 22px;
+				line-height: 22px;
+				&.first {
+					display: block;
+				}
+				span {
+					margin-right: 3px;
+					font-size: 14px;
+					letter-spacing: -.14px;
+					color: $white;
+				}
+				.time {
+					font-size: 14px;
+					font-weight: 500;
+					color: $white;
+					letter-spacing: -.14px;
+				}
+			}
+		}
+
+		+ .new_alert_bar {
+			margin-top: 54px;
+		}
+	}
+	
+	.new_alert_bar {
+		height: 40px; line-height: 38px;
+		text-align: center;
+		border-radius: 5px;
+		box-shadow: 0px 6px 8px 0 rgba(255, 97, 175, 0.1);
+		background-color: #ff61af;
+		cursor: pointer;
+		z-index: 9;
+		.text {
+		    font-size: 14px;
+		    letter-spacing: -0.14px;
+		    color: $white;
+		    strong {
+		        font-weight: 700;
+		    }
+		}
+		.date_time {
+		    margin-left: 10px;
+		    font-size: 14px;
+		    letter-spacing: -0.14px;
+		    color: rgba(255, 255, 255, 0.7);
+		    strong {
+		        font-weight: 700;
+		    }
+		}
+	}
+}
+// 채팅방 설정 팝업
+.chat_room_profile {
+	.edit {
+		display: block;
+		margin-bottom: 4px;
+		padding-right: 20px;
+		color: $primary;
+		text-align: right;
+		font-size: 13px;
+		font-weight: 300;
+		letter-spacing: -0.13px;
+		i {
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 5px;
+			width: 12px; height: 12px;
+			background: url(../img/ico_edit.png) no-repeat 0 0;
+		}
+	}
+	.img {
+		display: block;
+		margin: 0 auto 15px;
+		width: 120px; height: 120px;
+		background: $gray_f5;
+		border-radius: 50%;
+		img {
+			width: 100%; height: 100%;
+			border-radius: 50%;
+		}
+	}
+	.room_name {
+		display: block;
+		margin-bottom: 36px;
+		padding: 0 20px;
+		font-size: 16px;
+		letter-spacing: -0.16px;
+		color: $black;
+		text-align: center;
+	}
+}
+.chat_info_list {
+	> ul {
+		> li {
+			border-bottom: 1px solid $gray_e0;
+			&.partners {
+				border-top: 1px solid $gray_e0;
+				background: $gray_f5;
+				> a {
+					background: $white url(../img/ico_up.png) no-repeat 90% 50%;
+					&.fold {
+						background-image: url(../img/ico_down.png);
+					}
+				}
+			}
+			> a {
+				display: block;
+				padding: 0 20px;
+				height: 46px;
+				line-height: 44px;
+				font-size: 15px;
+				letter-spacing: -0.15px;
+				color: $black;
+			}
+			.scroll {
+				border-top: 1px solid $gray_e0;
+				.inner {
+					@include scroll;
+					padding: 17px 20px;
+					max-height: 139px;
+					margin-right: 8px;
+					&::-webkit-scrollbar-track {
+						margin: 8px 0;					
+					}
+				}
+				i {
+					display: inline-block;
+					vertical-align: middle;
+					margin-top: -3px;
+					margin-right: 14px;
+					width: 16px; height: 16px;
+					background-repeat: no-repeat;
+					background-position: 0 0;
+				}
+				.add, .reject {
+					display: block;
+					margin-bottom: 14px;
+					font-size: 15px;
+					font-weight: 300;
+					letter-spacing: -0.15px;
+					color: $black;
+				}
+				.add {
+					i {
+						background-image: url(../img/ico_add.png);
+					}
+				}
+				.reject {
+					i {
+						background-image: url(../img/ico_remove.png);
+					}
+				}
+			}
+			.opponent_list {
+				li {
+					margin-bottom: 14px;
+					font-size: 15px;
+					font-weight: 300;
+					letter-spacing: -0.15px;
+					color: $black;
+					&:last-child {
+						margin-bottom: 0;
+					}
+					&.captain {
+						i {
+							background-image: url(../img/ico_captain.png);
+						}
+					}
+					&.others {
+						i {
+							background-image: url(../img/ico_others.png);
+						}
+					}
+					.num {
+						display: inline-block;
+						margin-right: 14px;
+						width: 16px;
+						text-align: center;
+						letter-spacing: -.5px;
+					}
+				}
+			}
+		}
+	}
+}
+// 이모티콘 창
+.chatting_input_wrap {
+    .emoticon_box {
+        display: none;
+        position: absolute;
+        top: -210px;
+        right: 100px;
+        width: 352px;
+        height: 210px;
+        background-color: $white;
+        border: 1px solid $gray_de;
+        border-radius: 10px;
+        box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.1);
+        .emoticon_top {
+            position: relative;
+            height: 57px;
+            border-bottom: 1px solid $gray_de;
+            .emoticon_cate {
+                @include flexbox(between, center);
+                padding: 11px 40px;
+                & > li {
+                    width: 35px;
+                    height: 35px;
+                    padding: 5px;
+                    cursor: pointer;
+                    &.on {
+                        border: 1px solid $gray_de;
+                        border-radius: 6px;
+                    }
+                }
+            }
+            .arrow {
+                position: absolute;
+                margin: 0;
+                padding: 3px;
+                &_prev {
+                    left: 17px;
+                    top: 20px;
+                }
+                &_next {
+                    right: 17px;
+                    top: 20px;
+                }
+            }
+        }
+        .emoticon_con {
+            padding: 7px 8px 0 19px;
+            .scroll_bar {
+                max-height: 144px;
+                @include scroll;
+                overflow-y: auto;
+                &::-webkit-scrollbar-track {
+                    margin-top: 7px;
+                    margin-bottom: 7px;
+                }
+                @include flexbox(start, center);
+                flex-wrap: wrap;
+                > li {
+                    margin: 7px;
+                    width: 64px;
+                    height: 64px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .btn_wrap {
+        .emoticon_view {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background-color: rgba(0, 0, 0, 0.2);
+            .btn_close {
+                position: absolute;
+                top: 15px;
+                right: 30px;
+            }
+            .selected_emoticon {
+                position: absolute;
+                top: 15px;
+                right: 65px;
+                width: 70px;
+                height: 70px;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+
+    <!-- 자녀 계정 연결 팝업 -->
+	<div class="modal" id="linkChildren">
+		<div class="modal_content modal_full"> <!-- 너비/높이 100% 팝업은 .modal_full 추가 -->
+			<!-- header -->
+			<div class="sub_header center">
+				<a href="#none" class="modal_close" data-dismiss="modal">뒤로가기</a>
+				<h2 class="sub_title">자녀 계정 연결</h2>
+			</div>
+			<!-- /header -->
+			<!-- contents -->
+			<div class="cont_section">
+                <div class="link_children_wrap">
+                    <div class="fix_top_bar">
+                        자녀의 이름 또는 ID를 검색하고, 계정을 연결하세요.
+                    </div>
+                    <div class="search_header sub">
+                        <div class="search_wrap mr10">
+                            <input type="text" placeholder="자녀 이름 또는 ID 입력">
+                            <a href="#none" class="btn_clear"></a>
+                        </div>
+                        <a href="#none" class="btn_search">검색</a>
+                    </div>
+                    
+                    <div class="member_list_wrap mt30">
+                        <ul>
+                            <li class="member_list">
+                                <!-- 클릭시 팝업 노출 -->
+                                <div class="flex_start_center">
+                                    <span class="profile">
+                                        <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                                    </span>
+                                    <p class="name">
+                                        <span>김천재(chunjae1234)</span>
+                                        <span class="badge badge_gray_full">1</span>
+                                    </p>
+                                </div>
+                                <a href="#none" class="btn round small mr5">연결</a>
+                            </li>
+                            <li class="member_list">
+                                <!-- 클릭시 팝업 노출 -->
+                                <div class="flex_start_center">
+                                    <span class="profile">
+                                        <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                                    </span>
+                                    <p class="name">
+                                        <span>김천재(edu546)</span>
+                                        <span class="badge badge_gray_full">15</span>
+                                    </p>
+                                </div>
+                                <a href="#none" class="btn round small mr5">연결</a>
+                            </li>
+                        </ul>
+    
+    
+                        <!-- 구성원이 없을 경우 -->
+                        <p class="empty_msg mt45">
+                            학생이 등록되지 않았거나, 정보가 없습니다.<br>
+                            입력한 이름이나 ID를 다시 확인하시고, <br>
+                            담임 교사에게 문의 바랍니다.<br>
+                        </p>
+
+            
+                    </div>
+                </div>
+			</div>
+
+
+			<!-- /contents -->	
+		</div>
+	</div>
+	<!-- /자녀 계정 연결 팝업 -->
+
+	<script>
+        $(function () {
+            $("#linkChildren").modal({ show: true });
+        })
+	</script>
+</body>
+
+</html>

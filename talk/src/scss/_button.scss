@@ -1,0 +1,53 @@
+/* 버튼 */
+.btn {
+	display: inline-block;
+	min-width: 70px;
+	height: 40px;
+	line-height: 38px;
+	padding: 0 24px;
+	font-size: 15px;
+	font-weight: $font_weight_medium;
+	text-align: center;
+	color: $white;
+	outline: none;
+	border-radius: 6px;
+	background-color: $primary;
+  	border: 1px solid transparent;
+	cursor: pointer;
+	box-sizing: border-box;
+	i {
+		vertical-align: middle;
+		margin-top: -3px;
+	}
+	&.medium {
+		min-width: 134px;
+		height: 46px;
+		line-height: 44px;
+		font-size: 16px;
+	}
+	&.disabled {
+		background: $gray_cc;
+	}
+	&.outline {
+		background: $white;
+		color: $primary;
+		border: 1px solid $primary;
+		font-weight: $font_weight_regular;
+		&.disabled {
+			color: $gray_cc;
+			border: 1px solid $gray_cc;
+		}
+	}
+}
+.btn_full {
+	width: 100%;
+	.btn {
+		width: 100%;
+	}
+}
+.btn_half {
+	@include flexbox(between, center);
+	.btn {
+		width: calc(50% - 5px);
+	}
+}

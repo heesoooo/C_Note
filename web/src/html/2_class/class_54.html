@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+		@@include('../include/inc_header.html')
+		<!--  sub container -->
+		<div class="container inner_cont">
+			<!-- snb -->
+			@@include('../include/inc_snb.html')
+			<!-- //snb -->
+			<div class="contents">
+				<!-- title -->
+				<div class="title_box mb0 pos_relative">
+					<h4 class="page_title">학급 조사표
+						<a href="#none" class="ml15 btn outline round small point btn_research">
+							<i class="sprite_comm sp_ico_check"></i>
+							조사하기
+						</a>
+						<div class="class_checklist_pop">
+							<ul class="scroll_box" style="height: 272px">
+								<li class="active"><a href="#none">우리반 청소 열글자까지 허용 합니다</a></li>
+								<li class="active"><a href="#none">우리반 우유</a></li>
+								<li class="active"><a href="#none">우리반 발표</a></li>
+								<li class="active"><a href="#none">우리반 발표</a></li>
+								<li><a href="#none">우리반 발표</a></li>
+								<li><a href="#none">우리반 발표</a></li>
+								<li><a href="#none">우리반 발표</a></li>
+							</ul>
+							<div class="btn_full mt30">
+								<a href="#none" class="btn_add"><i class="sprite_comm sp_ico_add_v"></i> 추가하기</a>
+								<a href="#none" class="btn medium disabled"><i class="mr5 sprite_comm sp_ico_detail_cont_w"></i> 작성하기</a><!-- 작성하기 버튼 활성화시 .disabled 제거 -->
+							</div>
+						</div>
+					</h4>
+
+					<div class="search_wrap board">
+						<input class="board_search_input" placeholder="검색하기" type="text">
+						<a href="#none" class="btn_find"></a>
+						<a href="#none" class="btn_clear"></a>
+						<a href="#none" class="btn_filter"></a>
+						@@include('../include/inc_datePicker_type3.html')
+					</div>
+				</div>
+				<div class="qualification mb30">
+					<a href="#none">
+						통계
+						<i class="sprite_comm sp_ico_setting ml5"></i>
+					</a>					
+				</div>
+				<!-- /title -->
+				<!-- sub contents -->
+				<!-- 등록된 게시물이 없을 때 -->
+				<div class="empty_box">
+					<figure class="empty no_post"></figure>
+					<p class="strength mt70">
+						<strong>등록된 게시물</strong>이 없습니다.
+					</p>
+				</div>
+				<!-- /등록된 게시물이 없을 때 -->
+				<!-- / sub contents -->
+			</div>
+		</div>
+		<!-- //sub container -->
+		<!-- footer -->
+		@@include('../include/inc_footer.html')
+	</div>
+
+	<!-- modal :: 학급조사표 옵션 팝업 -->
+	<div class="modal" id="checklistPop">
+		<div class="modal_content w1090" style="width: 1140px">
+			<div class="left_section">
+				<div class="con_box p0">
+					<div class="title_checklist">
+						<ul class="scroll_box" style="height: 266px">
+							<li><a href="#none">우리반 청소 열글자까지 허용 합니다</a></li>
+							<li><a href="#none">우리반 우유</a></li>
+							<li class="active"><a href="#none">우리반 발표</a></li>
+							<li><a href="#none">우리반 발표</a></li>
+							<li><a href="#none">우리반 발표</a></li>
+							<li><a href="#none">우리반 발표</a></li>
+							<li><a href="#none">우리반 발표</a></li>
+						</ul>
+						<div class="btn_full mt30">
+							<a href="#none" class="btn medium">+ 추가하기</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="center_section" style="width: 700px">
+				<!-- 조사표 옵션 선택 -->
+				<div class="board_write_wrap">
+					<h4>
+						학급 조사표 옵션
+						<a href="#none" class="delete">닫기</a>
+					</h4>
+					<div class="board_write_body">
+						<div class="input_subject">
+							<input type="text" placeholder="조사표 제목을 입력해주세요." value="우리반 청소">
+						</div>
+						<div class="class_checklist_wrap">
+							<h5>조사표 옵션을 선택해주세요.</h5>
+							<div class="sel_checklist">
+								<dl>
+									<dt>대상</dt>
+									<dd>
+										<ul>
+											<li>
+												<input type="radio" name="selTarget" id="selTarget1" checked>
+												<label for="selTarget1">학부모</label>
+											</li>
+											<li>
+												<input type="radio" name="selTarget" id="selTarget2">
+												<label for="selTarget2">학생</label>
+											</li>
+											<li>
+												<input type="radio" name="selTarget" id="selTarget3">
+												<label for="selTarget3">전체</label>
+											</li>
+										</ul>
+									</dd>
+								</dl>
+								<dl>
+                                    <dt>입력방식</dt>
+                                    <dd>
+                                        <ul>
+                                            <li>
+                                                <input type="radio" name="inpMethod" id="inpMethod1">
+                                                <label for="inpMethod1">O X</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="inpMethod" id="inpMethod2">
+                                                <label for="inpMethod2">상·중·하</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="inpMethod" id="inpMethod3">
+                                                <label for="inpMethod3">5점 척도</label>
+                                            </li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+							</div>						
+
+						</div>
+						<p class="txt_out_notice">
+							생성된 조사표를 사용하면(데이터 입력), 더 이상 옵션을 변경할 수 없으니 신중히 선택해주세요.
+						</p>
+					</div>
+				</div>
+				<!-- /조사표 옵션 선택 -->
+			</div>
+			<div class="right_section">
+				<a href="#none" class="btn action inactive" data-dismiss="modal">
+					<i class="sprite_comm sp_ico_close"></i>
+					<span>닫기</span>
+				</a>
+				<a href="#none" class="btn action mt15"> <!-- 저장하기 버튼 disabled -> .inactive 추가! -->
+					<i class="sprite_comm sp_ico_save"></i>
+					<span>저장하기</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<!-- /modal :: 학급조사표 옵션 팝업 -->
+	<script>
+		$('#checklistPop').modal({show: true});
+	</script>
+  </body>
+
+</html>

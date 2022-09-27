@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('include/inc_html_head.html')
+	<title>TALK - 메인</title>
+</head>
+
+<body>
+
+    <!-- 1:1 일괄 메시지 보내기 - 작성 popup -->
+    <div class="modal send_msg" id="sendMsg">
+        <div class="modal_content w470">
+            <a href="#none" class="modal_close" data-dismiss="modal"><img src="../img/ico_close_pop.png" alt="close"></a>
+            <h3 class="pop_title mb25">1:1 일괄 메시지 보내기</h3>
+
+            <h4 class="list_title">16명 선택 (교생 선생님, 나희도, 백이진, 고유림, 문지웅, 나희도</h4>
+            <textarea class="write" placeholder="작성된 메시지는 1:1 채팅방에 일괄 발송되며, 수신자가 답장할 수 있습니다."></textarea>
+
+            <div class="btn_half mt40">
+                <a href="#none" class="btn outline medium">취소</a>
+                <a href="#none" class="btn medium">확인</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("#sendMsg").modal({show:true});
+
+        
+        $(function () {
+            if ($(".user_list .check_box").length > 7) {
+                $(".scroll_bar").addClass('scroll');
+            } else {
+                $(".scroll_bar").removeClass('scroll');
+            }
+        });
+
+    </script>
+</body>
+
+</html>

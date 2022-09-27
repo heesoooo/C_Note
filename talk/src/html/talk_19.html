@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('include/inc_html_head.html')
+    <title>TALK - 메인</title>
+</head>
+
+<body>
+
+    <!-- 채팅방 편집 popup -->
+    <div class="modal edit_chat" id="editChat">
+        <div class="modal_content w470">
+            <a href="#none" class="modal_close" data-dismiss="modal"><img src="../img/ico_close_pop.png" alt="close"></a>
+            <h3 class="pop_title mb40">채팅방 편집</h3>
+            <div class="mb30">
+                <div class="upload_img">
+                  <span class="img">
+                    <!-- <img src="" alt=""> -->
+                  </span>
+                  <input type="file" class="input_file_button" id="imgEdit">
+                  <label for="imgEdit">
+                    <img src="../img/profile_edit.png" alt="edit">
+                  </label>
+                </div>
+            </div>
+            <h4 class="sub_title">이름</h4>
+            <div class="input_full">
+                <input placeholder="학부모 공지방" value="" type="text">
+            </div>
+
+            <div class="btn_half mt40">
+                <a href="#none" class="btn outline medium">취소</a>
+                <a href="#none" class="btn medium">확인</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("#editChat").modal({show: true});
+    </script>
+</body>
+
+</html>

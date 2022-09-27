@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+        <div class="sub_header">
+            <a href="#none" class="history_back">뒤로가기</a>
+            <h2 class="sub_title">우리반 구성원</h2>
+            <div class="btn_wrap">
+                <a href="#none">초대하기</a>
+            </div>
+        </div>
+		<!-- /header -->
+        
+		<!-- content -->
+        <div class="container">
+            <!-- tab -->
+            <div class="tab_list">
+                <a href="#none" class="tab_links">학부모(6)</a>
+                <a href="#none" class="tab_links active">학생(4)</a>
+            </div>
+            <!-- /tab -->
+            <div class="tabcontent">
+                <div class="member_list_wrap">
+                    <div class="member_list_top">
+                        <p class="title">대기</p>
+                    </div>
+                    <ul>
+                        <li class="member_list">
+                            <!-- 클릭시 팝업 노출 -->
+                            <a href="#none" class="flex_start_center" data-target="parentInfo">
+                                <span class="profile">
+                                    <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                                </span>
+                                <div>
+                                    <p class="name">
+                                        <span>나희도</span>
+                                        <span class="badge badge_gray_full">5</span>
+                                    </p>
+                                    <p class="info">
+                                        <span>010****4567</span>
+                                    </p>
+                                </div>
+                            </a>
+                            <div>
+                                <a href="#none" class="btn round primary small mr5">수락</a>
+                                <a href="#none" class="btn round outline primary small">거부</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="member_list_top">
+                        <p class="title">가입완료</p>
+                        <p class="order">
+                            <a href="#none" class="primary">이름순</a>
+                            <span class="bar"></span>
+                            <a href="#none" class="gray">번호순</a>
+                        </p>
+                    </div>
+                    <ul>
+                        <li class="member_list">
+                            <a href="#none" class="flex_start_center">
+                                <span class="profile new">
+                                    <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                                </span>
+                                <div>
+                                    <p class="name">
+                                        <span>나희도</span>
+                                        <span class="badge badge_gray_full">1</span>
+                                    </p>
+                                    <p class="info">
+                                        <span>010****4567</span>
+                                    </p>
+                                </div>
+                            </a>
+                            <div>
+                                <a href="#none" class="btn round outline point small">탈퇴</a>
+                            </div>
+                        </li>
+                        <li class="member_list">
+                            <a href="#none" class="flex_start_center">
+                                <span class="profile">
+                                    <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                                </span>
+                                <div>
+                                    <p class="name">
+                                        <span>백이진</span>
+                                        <span class="badge badge_gray_full">2</span>
+                                    </p>
+                                    <p class="info">
+                                        <span>chunjae12</span>
+                                    </p>
+                                </div>
+                            </a>
+                            <div>
+                                <a href="#none" class="btn round outline point small">탈퇴</a>
+                            </div>
+                        </li>
+                        <li class="member_list">
+                            <a href="#none" class="flex_start_center">
+                                <span class="profile">
+                                    <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                                </span>
+                                <div>
+                                    <p class="name">
+                                        <span>고유림</span>
+                                        <span class="badge badge_gray_full">3</span>
+                                    </p>
+                                    <p class="info">
+                                        <span>chunjae12</span>
+                                    </p>
+                                </div>
+                            </a>
+                            <div>
+                                <a href="#none" class="btn round point small">삭제</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- 구성원이 없을 경우 -->
+                    <p class="empty_msg mt150">
+                        우리반에 가입한 학생이 없습니다.<br>
+                        구성원을 초대해보세요.
+                    </p>
+        
+                </div>
+            </div>
+        </div>
+        <!-- /content -->
+
+        <!-- 게시글쓰기 버튼 -->
+		<a href="#none" class="btn_add_student">교사 발급 계정</a>
+
+        <!-- sub tab bar -->
+		@@include('../include/inc_sub_tab_bar.html')
+		<!-- /sub tab bar -->
+	</div>
+
+    
+    <script>
+    </script>
+</body>
+
+</html>

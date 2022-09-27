@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('../include/inc_html_head.html')
+    <title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        @@include('../include/inc_header.html')
+        <!--  sub container -->
+        <div class="container inner_cont">
+            <!-- snb -->
+            @@include('../include/inc_snb.html')
+            <!-- //snb -->
+            <div class="contents">
+                <!-- sub contents -->
+                <div class="class_invite_wrap">
+                    <h4 class="page_title">
+                        클래스에 구성원을 <span>초대해 보세요!</span>
+                        <span class="sm">구성원을 초대하고, 클래스에서 관리를 시작하세요.</span>
+                    </h4>
+
+                    <div class="invite_code_num">
+                        <span>6</span>
+                        <span>8</span>
+                        <span>3</span>
+                        <span>0</span>
+                        <span>5</span>
+                        <span>2</span>
+                    </div>
+
+                    <div class="code_reissuance">
+                        <a href="#none">클래스 코드 재발급</a>
+                    </div>
+
+                    <div class="invite_box_list">
+                        <a href="#non3" class="list_item print">
+                            <span>
+                                클래스 초대장<br>인쇄하기
+                            </span>
+                            <i class="sprite_comm sp_ico_print_w"></i>
+                        </a>
+                        <a href="#non3" class="list_item copy">
+                            <span>
+                                클래스 초대장<br>링크 복사하기
+                            </span>
+                            <i class="sprite_comm sp_ico_copy_w"></i>
+                        </a>
+                        <a href="#non3" class="list_item send" data-target="popSmsSend">
+                            <span>
+                                무료 문자로<br>초대장 보내기
+                            </span>
+                            <i class="sprite_comm sp_ico_send_w"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- / sub contents -->
+            </div>
+        </div>
+        <!-- //sub container -->
+        <!-- footer -->
+        @@include('../include/inc_footer.html')
+
+        <!-- modal :: 초대장 문자 보내기 -->
+        <div class="modal pop_sms_send" id="popSmsSend">
+            <div class="modal_content w600">
+                <a href="#none" class="modal_close" data-dismiss="modal"><i class="sprite_comm sp_ico_close_pop"></i></a>
+
+                <h4 class="pop_title mb40">초대장 문자 보내기</h4>
+
+                <div class="regist_row mb40">
+                    <span class="tit mb20">개별 등록</span>                    
+                    <div class="input_number">
+                        <input type="number" placeholder="휴대폰 번호만 입력 (-제외)">
+                        <a href="" class="btn disabled">등록</a> <!-- 입력값 없을시 .disabled -->
+                    </div>
+                </div>
+                <script>
+                    // 개별등록 input
+                    $(".input_number input").on("input", function(){
+                        if( $(".input_number input").val() == '' ) {
+                            $(".input_number .btn").addClass("disabled");
+                        } else {
+                            $(".input_number .btn").removeClass("disabled");
+                        }
+                    })
+                </script>
+
+                <div class="regist_row">
+                    <span class="tit mb15">일괄 등록</span>
+                    <p class="summary">아래의 양식을 다운받고, 작성한 파일을 업로드 해주세요.</p>                    
+                    
+                    <div class="btn_half mt20">
+                        <a href="#none" class="btn medium outline">양식 다운로드</a>
+                        <input type="file" class="input_file_button" id="registFile">
+                        <label for="registFile" class="btn medium outline">파일 등록</label>
+                    </div>
+                </div>
+
+                <!-- 파일등록시 list -->
+                <div class="phone_number_list">
+                    <ul class="scroll_box">
+                        <li>
+                            <span class="phone_num">010-1928-5678</span>
+                            <a href="#none" class="delete">삭제</a>
+                        </li>
+                        <li>
+                            <span class="phone_num">010-2103-5678</span>
+                            <a href="#none" class="delete">삭제</a>
+                        </li>
+                        <li>
+                            <span class="phone_num">010-3114-5678</span>
+                            <a href="#none" class="delete">삭제</a>
+                        </li>
+                        <li>
+                            <span class="phone_num">010-4125-5678</span>
+                            <a href="#none" class="delete">삭제</a>
+                        </li>
+                        <li>
+                            <span class="phone_num">010-5136-5678</span>
+                            <a href="#none" class="delete">삭제</a>
+                        </li>
+                        <li>
+                            <span class="phone_num">010-6147-5678</span>
+                            <a href="#none" class="delete">삭제</a>
+                        </li>
+                        <li>
+                            <span class="phone_num">010-7158-5678</span>
+                            <a href="#none" class="delete">삭제</a>
+                        </li>
+                        <li>
+                            <span class="phone_num">010-8169-5678</span>
+                            <a href="#none" class="delete">삭제</a>
+                        </li>
+                        <li>
+                            <span class="phone_num">010-9170-5678</span>
+                            <a href="#none" class="delete">삭제</a>
+                        </li>
+                        <li>
+                            <span class="phone_num">010-1010-5678</span>
+                            <a href="#none" class="delete">삭제</a>
+                        </li>
+                        <li>
+                            <span class="phone_num">010-1111-5678</span>
+                            <a href="#none" class="delete">삭제</a>
+                        </li>
+                        <li>
+                            <span class="phone_num">010-1212-5678</span>
+                            <a href="#none" class="delete">삭제</a>
+                        </li>
+                    </ul>
+                    <div class="btn_full">
+                        <a href="#none" class="btn medium">초대장 보내기</a>
+                    </div>
+                </div>
+                <!-- /파일등록시 list -->
+            </div>
+        </div>
+        <!-- /modal :: 초대장 문자 보내기 -->
+        <script>
+            // 초대장 문자보내기 팝업
+            $("#popSmsSend").modal({show:true});
+            
+            // 번호 삭제
+            $(".phone_number_list .delete").on("click",function(){
+                $(this).parent().remove();
+                if ( $(".phone_number_list li").length < 1 ){
+                    $(".phone_number_list").hide();
+                }
+            })
+            if ( $(".phone_number_list li").length < 9 ){
+                $(".phone_number_list .scroll_box").css("padding-right", 0);
+            }
+        </script>
+    </div>
+</body>
+
+</html>

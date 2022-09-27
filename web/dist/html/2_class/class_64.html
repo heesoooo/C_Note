@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=1200">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+
+	<!-- 새창팝업 -->
+	<div class="window_pop pop_statistics">
+		<div class="pop_group first">
+			<h2 class="pop_main_title">2학년 10반 학급 조사표 통계</h2>
+			<h3 class="pop_title">통계 조건 선택</h3>
+			<table class="tbl_list tbl_sel_statistics" cellpadding="0" cellspacing="0">
+				<colgroup>
+					<col style="width: 118px">
+					<col />
+				</colgroup>
+				<tbody>
+					<tr>
+						<th scope="row">조사표 선택</th>
+						<td>
+							<div class="select_wrap">
+								<div class="select_box">
+									<a class="select sm" href="#none">최근순</a>
+                                    <!-- 220822 :: 스타일 삭제 -->
+									<div class="option_list">
+										<div class="scroll_bar">
+											<a href="#none">최근순</a>
+                                            <a href="#none">과거순</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">통계 기간</th>
+						<td>
+							<div class="inp_period">
+								<input class="inp_datepicker" id="period1" placeholder="2022.04.06">
+								<script>
+									$('#period1').datepicker({
+										weekStart: 1,
+										format: "yyyy.mm.dd",
+										toggleActive: true,
+										changeMonth: true,
+										changeYear: true,
+										orientation: "bottom left",
+									});
+								</script>
+								<span class="ml20 mr20">~</span>
+								<input class="inp_datepicker" id="period2" placeholder="2022.04.22">
+								<script>
+									$('#period2').datepicker({
+										weekStart: 1,
+										format: "yyyy.mm.dd",
+										toggleActive: true,
+										changeMonth: true,
+										changeYear: true,
+										orientation: "bottom left", 
+									});
+								</script>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">통계 종류</th>
+						<td class="t_left">
+							<div class="radio_box">
+								<input type="radio" id="radio1" name="radio_btn1" checked="">
+								<label for="radio1" class="mr20">누적 데이터(기간별로 입력한 데이터 출력)  </label>
+								<input type="radio" id="radio2" name="radio_btn1">
+								<label for="radio2">통계 데이터(평균 데이터를 출력)</label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">포함 인원</th>
+						<td class="t_left">
+							<div class="radio_box">
+								<input type="radio" id="radio3" name="personnelType" checked="">
+								<label for="radio3" class="mr20">전체 인원</label>
+								
+								<div class="select_type">
+									<input type="radio" id="radio4" name="personnelType">
+									<label for="radio4">개별 선택</label>
+									<a href="#none" class="btn outline round small ml10 btn_person_modify">수정</a>
+									<!-- 개별 선택 팝업 -->
+									<div id="popSelectPerson" class="sms_target" style="display: none">
+										<div class="pop_title mb40">개별 선택</div>
+										<div class="scroll_bar">
+											<ul class="check_list ml0">
+												<li class="check_box">
+													<input type="checkbox" id="check2-1" checked>
+													<label for="check2-1">김천재 학부모(김상민) <em class="badge badge_pink">모</em></label>
+												</li>
+												<li class="check_box">
+													<input type="checkbox" id="check2-2">
+													<label for="check2-2">나천재 학부모(김지언) <em class="badge badge_blue">부</em></label>
+												</li>
+												<li class="check_box">
+													<input type="checkbox" id="check2-3">
+													<label for="check2-3">다천재 학부모(권현주) <em class="badge badge_gray">기타</em></label>
+												</li>
+												<li class="check_box">
+													<input type="checkbox" id="check2-4">
+													<label for="check2-4">라천재 학부모(정재훈) <em class="badge badge_gray_full">28</em></label>
+												</li>
+												<li class="check_box">
+													<input type="checkbox" id="check2-5">
+													<label for="check2-5">마천재 학부모(윤석배) <em class="badge badge_pink">모</em></label>
+												</li>
+												<li class="check_box">
+													<input type="checkbox" id="check2-6">
+													<label for="check2-6">바천재 학부모(김교육) <em class="badge badge_pink">모</em></label>
+												</li>
+												<li class="check_box">
+													<input type="checkbox" id="check2-7">
+													<label for="check2-7">사천재 학부모(김교육) <em class="badge badge_pink">모</em></label>
+												</li>
+												<li class="check_box">
+													<input type="checkbox" id="check2-7">
+													<label for="check2-7">사천재 학부모(김교육) <em class="badge badge_pink">모</em></label>
+												</li>
+												<li class="check_box">
+													<input type="checkbox" id="check2-8">
+													<label for="check2-8">사천재 학부모(김교육) <em class="badge badge_pink">모</em></label>
+												</li>
+												<li class="check_box">
+													<input type="checkbox" id="check2-9">
+													<label for="check2-9">사천재 학부모(김교육) <em class="badge badge_pink">모</em></label>
+												</li>
+											</ul>
+										</div>
+										<div class="btn_half mt30">
+											<a href="#none" class="btn medium outline">취소</a>
+											<a href="#none" class="btn medium">완료</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="btn_full mt30">
+				<a href="" class="btn h50 disabled">통계보기</a> <!-- 조건 모두 선택시 .disabled 제거 -->
+			</div>
+		</div>
+
+		<div class="pop_group">
+			<h3 class="pop_title mb25">우리반 청소 통계 내용</h3>
+			<div class="tbl_summary">
+				<div class="left">
+					<span class="mr20">
+						<em class="tit">기간</em> <strong>06.01~06.30</strong>
+					</span>
+					<span>
+						<em class="tit">조사표 옵션</em>
+						<span class="tag tag_regular ">O X</span>
+						<span class="tag tag_regular red">학생</span>
+					</span>
+				</div>
+				<div class="right">
+					<a href="" class="btn_down">
+						<i class="sprite_comm sp_ico_download_all"></i>
+						Excel 다운로드
+					</a>
+				</div>
+			</div>
+			<table class="tbl_list" cellpadding="0" cellspacing="0">
+				<colgroup>
+					<col style="width: 25%">
+					<col style="width: 25%">
+					<col style="width: 25%">
+					<col style="width: 25%">
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col">이름</th>
+						<th scope="col">O</th>
+						<th scope="col">X</th>
+						<th scope="col">-</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="average">
+						<th scope="row">학급평균</th>
+						<td>45(50.0%)</td>
+						<td>45(50.0%)</td>
+						<td>0(0.0%)</td>
+					</tr>
+					<tr>
+						<th scope="row">이수재 <span class="badge badge_gray_full">1</span></th>
+						<td>45(50.0%)</td>
+						<td>45(50.0%)</td>
+						<td>0(0.0%)</td>
+					</tr>
+					<tr>
+						<th scope="row">이수재 <span class="badge badge_gray">기타</span></th>
+						<td>45(50.0%)</td>
+						<td>45(50.0%)</td>
+						<td>0(0.0%)</td>
+					</tr>
+					<tr>
+						<th scope="row">이수재 <span class="badge badge_pink">모</span></th>
+						<td>45(50.0%)</td>
+						<td>45(50.0%)</td>
+						<td>0(0.0%)</td>
+					</tr>
+					<tr>
+						<th scope="row">이수재 <span class="badge badge_blue">부</span></th>
+						<td>45(50.0%)</td>
+						<td>45(50.0%)</td>
+						<td>0(0.0%)</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="pop_group">
+			<h3 class="pop_title mb25">우리반 청소 통계 내용</h3>
+			<div class="tbl_summary">
+				<div class="left">
+					<span class="mr20">
+						<em class="tit">기간</em> <strong>06.01~06.30</strong>
+					</span>
+					<span>
+						<em class="tit">조사표 옵션</em>
+						<span class="tag tag_regular ">O X</span>
+						<span class="tag tag_regular red">학생</span>
+					</span>
+				</div>
+				<div class="right">
+					<a href="" class="btn_down">
+						<i class="sprite_comm sp_ico_download_all"></i>
+						Excel 다운로드
+					</a>
+				</div>
+			</div>
+			
+			<div class="tbl_scroll">
+				<table class="tbl_list" cellpadding="0" cellspacing="0">
+					<colgroup>
+						<col />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">이름</th>
+							<th scope="col">6/1</th>
+							<th scope="col">6/2</th>
+							<th scope="col">6/3</th>
+							<th scope="col">6/4</th>
+							<th scope="col">6/5</th>
+							<th scope="col">6/6</th>
+							<th scope="col">6/7</th>
+							<th scope="col">6/8</th>
+							<th scope="col">6/9</th>
+							<th scope="col">6/10</th>
+							<th scope="col">6/11</th>
+							<th scope="col">6/12</th>
+							<th scope="col">6/13</th>
+							<th scope="col">6/14</th>
+							<th scope="col">6/15</th>
+							<th scope="col">6/16</th>
+							<th scope="col">6/17</th>
+							<th scope="col">6/18</th>
+							<th scope="col">6/19</th>
+							<th scope="col">6/20</th>
+							<th scope="col">6/21</th>
+							<th scope="col">6/22</th>
+							<th scope="col">6/23</th>
+							<th scope="col">6/24</th>
+							<th scope="col">6/25</th>
+							<th scope="col">6/26</th>
+							<th scope="col">6/27</th>
+							<th scope="col">6/28</th>
+							<th scope="col">6/29</th>
+							<th scope="col">6/30</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">
+								김천재 <span class="badge badge_gray_full">1</span>
+							</th>
+							<td>O</td>
+							<td>O</td>
+							<td>O</td>
+							<td>O</td>
+							<td>O</td>
+							<td>X</td>
+							<td>X</td>
+							<td>X</td>
+							<td>X</td>
+							<td>-</td>
+							<td>-</td>
+							<td>-</td>
+							<td>O</td>
+							<td>O</td>
+							<td>O</td>
+							<td>O</td>
+							<td>O</td>
+							<td>O</td>
+							<td>O</td>
+							<td>O</td>
+							<td>O</td>
+							<td>O</td>
+							<td>O</td>
+							<td>X</td>
+							<td>X</td>
+							<td>X</td>
+							<td>X</td>
+							<td>X</td>
+							<td>X</td>
+							<td>X</td>
+						</tr>
+						<tr>
+							<th scope="row">
+								김천재 <span class="badge badge_gray_full">1</span>
+							</th>
+							<td>O</td>
+							<td>O</td>
+							<td>O</td>
+							<td>O</td>
+							<td>O</td>
+							<td>X</td>
+							<td>X</td>
+							<td>X</td>
+							<td>X</td>
+							<td>O</td>
+							<td>-</td>
+							<td>-</td>
+							<td>-</td>
+							<td>O</td>
+							<td>O</td>
+							<td>O</td>
+							<td>O</td>
+							<td>O</td>
+							<td>O</td>
+							<td>O</td>
+							<td>O</td>
+							<td>O</td>
+							<td>O</td>
+							<td>X</td>
+							<td>X</td>
+							<td>X</td>
+							<td>X</td>
+							<td>X</td>
+							<td>X</td>
+							<td>X</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>		
+	</div>
+
+
+	<script>
+		$(function(){
+			// radio button checked 시 popup 활성화
+			$("input:radio[name=personnelType]").click(function(){
+				if($("input:radio[name=personnelType]:checked + label").text()=='개별 선택'){
+					$("#popSelectPerson").show();
+					$(".btn_person_modify").on("click", function(){
+						$("#popSelectPerson").show();
+					})
+				} else {
+					$("#popSelectPerson").hide();
+					$(".btn_person_modify").on("click", function(){
+						$("#popSelectPerson").hide();
+					})
+				}
+			});			
+		})
+	</script>
+
+</body>
+
+</html>

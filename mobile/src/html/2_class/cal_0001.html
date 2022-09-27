@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+        <div class="sub_header schedule">
+            <a href="#none" class="expand_menu">
+                <span>가산초등학교 1학년 1반</span>
+                <i class="sprite_comm sp_ico_down_default"></i>
+            </a>
+        </div>
+		<!-- /header -->
+
+        <div class="sub_expand_tab">
+            <h3>우리반 선택</h3>
+            <ul>
+                <li class="active"><a href="#none">가산초등학교 1학년 1반</a></li>
+                <li><a href="#none">구로초등학교 2학년 1반</a></li>
+                <li><a href="#none">대림초등학교 2학년 3반</a></li>
+                <li><a href="#none">대청초등학교 5학년 4반</a></li>
+                <li><a href="#none">대륜초등학교 5학년 5반</a></li>
+                <li><a href="#none">까치울초등학교 5학년 5반</a></li>
+            </ul>
+        </div>
+        
+		<!-- content -->
+        <div class="container">
+        @@include('../include/inc_datePicker3.html')
+        </div>
+        <!-- /content -->
+
+        <!-- sub tab bar -->
+		@@include('../include/inc_main_tab_bar.html')
+
+		<!-- /sub tab bar -->
+	</div>
+
+	<script>
+    // 우리반 선택 카테고리 열기
+    $(".schedule .expand_menu").on('click', function(event) {
+        event.stopPropagation();
+        dimmOpen();
+        $(this).parent().next(".sub_expand_tab").addClass("active");
+    })
+	</script>
+</body>
+
+</html>

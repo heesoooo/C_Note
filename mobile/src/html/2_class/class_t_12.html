@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+
+    <!-- 초대 문자 보내기 팝업 -->
+	<div class="modal" id="sendMsg">
+		<div class="modal_content modal_full"> <!-- 너비/높이 100% 팝업은 .modal_full 추가 -->
+			<!-- header -->
+			<div class="sub_header center">
+				<a href="#none" class="modal_close" data-dismiss="modal">뒤로가기</a>
+				<h2 class="sub_title">초대 문자 보내기</h2>
+                <div class="btn_wrap">
+                    <a href="#none">발송</a>
+                </div>
+			</div>
+			<!-- /header -->
+
+			<!-- contents -->
+			<div class="cont_section">
+                <div class="invite_msg_wrap">
+                    <div class="inner">
+                        <p class="info">
+                            우리반에 초대할 구성원(학생, 학부모) 핸드폰 번호를 입력해주세요. 일괄 등록을 원하실 경우 PC 버전에서 가능하며,
+                            발송되는 문자는 T학급공지 고객센터 번호로 무료 발송됩니다.
+                        </p>
+                        <div class="input_btn mt25">
+                            <input type="text" placeholder="숫자만 입력하세요." value="">
+                            <a href="#none" class="btn" style="min-width:8rem;">등록</a>
+                        </div>
+                    </div>
+                    <ul class="number_list">
+                        <li>
+                            <p class="num">010-1234-5678</p>
+                            <a href="#none" class="btn round small point">삭제</a>
+                        </li>
+                        <li>
+                            <p class="num">010-1234-5678</p>
+                            <a href="#none" class="btn round small point">삭제</a>
+                        </li>
+                    </ul>
+                </div>
+			</div>
+
+
+			<!-- /contents -->	
+		</div>
+	</div>
+	<!-- / -->
+
+	<script>
+        $(function () {
+            $("#sendMsg").modal({ show: true });
+        })
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+﻿
+address,
+article,
+aside,
+blockquote,
+body,
+button,
+caption,
+code,
+dd,
+div,
+dl,
+dt,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hr,
+html,
+input,
+label,
+legend,
+li,
+main,
+nav,
+object,
+ol,
+p,
+pre,
+section,
+table,
+tbody,
+td,
+textarea,
+tfoot,
+th,
+thead,
+ul {
+	margin: 0;
+	padding: 0;
+	font-family: 'Noto Sans KR', sans-serif;
+    letter-spacing: -0.2px;
+}
+
+li,
+ol,
+ul {
+	list-style: none;
+}
+
+table {
+	width: 100%;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+address,
+cite,
+code,
+em,
+i {
+	font-style: normal;
+	font-weight: 400;
+}
+
+a,
+button,
+img,
+input,
+label,
+select,
+textarea {
+	vertical-align: middle;
+}
+
+a,
+ins,
+u {
+	text-decoration: none;
+}
+
+button {
+	cursor: pointer;
+}
+
+html {
+	font-size: 62.5%;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+/* input file */
+input[type=file] {
+    &.input_file_button {
+        display: none;
+    }
+}

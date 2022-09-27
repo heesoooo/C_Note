@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+
+	<!-- 게시글 작성 시 노출되는 팝업 -->
+	<div class="modal" id="commentOption">
+		<div class="modal_content pt0">
+			<ul class="pop_opt_list">
+				<li>
+					<a href="#none">모든 내용을 취소하고 나가기</a>
+				</li>
+				<li>
+					<a href="#none" class="disabled">임시저장 후 나가기</a>
+				</li>
+				<li>
+					<a href="#none">취소</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<script>
+    $(function () {
+        $("#commentOption").modal({ show: true })
+    })
+	</script>
+</body>
+
+</html>

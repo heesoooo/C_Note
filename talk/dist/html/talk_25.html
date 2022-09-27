@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="stylesheet" href="../css/style.min.css">
+
+
+<script type="text/javascript" src="../js/script.js"></script> 
+    <title>TALK - 메인</title>
+</head>
+
+<body>
+
+    <!-- 1L1 채팅하기 popup -->
+    <div class="modal one_profile" id="oneProfile">
+        <div class="modal_content w260">
+            <a href="#none" class="modal_close" data-dismiss="modal"><img src="../img/ico_close_pop.png" alt="close"></a>
+            <div class="mb15">
+                <div class="upload_img_lg mt20">
+                  <span class="img">
+                    <!-- <img src="" alt=""> -->
+                  </span>
+                </div>
+            </div>
+            <p class="name">나희도</p>
+
+            <div class="btn_full mt25">
+                <a href="#none" class="btn medium">1:1 채팅하기</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("#oneProfile").modal({show: true});
+    </script>
+</body>
+
+</html>

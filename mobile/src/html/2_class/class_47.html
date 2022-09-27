@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+        <div class="sub_header">
+            <a href="#none" class="history_back">뒤로가기</a>
+            <h2 class="sub_title">우리반 정보 수정</h2>
+            <div class="btn_wrap">
+                <a href="#none" class="">확인</a>
+            </div>
+        </div>
+		<!-- /header -->
+        
+		<!-- content -->
+        <div class="container">
+            <div class="mypage_wrap">
+                <div class="form_modify">
+                    <div class="info_dec">
+                        <div class="upload_img pt30">
+                            <span class="img">
+                                <!-- <img src="" alt=""> -->
+                            </span>
+                            <input type="file" class="input_file_button" id="imgEdit">
+                            <label for="imgEdit" class="sprite_comm sp_ico_edit" data-target="imgPop"></label>
+                        </div>
+                    </div>
+                    <div class="info_dec">
+                        <span class="tit essential">학교</span>
+                        <div class="search_wrap">
+                            <input class="default_input" placeholder="" value="가산초등학교" type="text" disabled>
+                            <a href="#none" class="btn_find"></a>
+                        </div>
+                    </div>
+                    <div class="info_dec">
+                        <span class="tit essential">연도</span>
+                        <div class="select_box mb10">
+                            <!-- 값이 입력되었을 경우 .on 클래스 추가 -->
+                            <a href="#none" class="select on" data-target="yearPop">2022년</a>
+                        </div>
+                    </div>
+                    <div class="info_dec">
+                        <span class="tit essential">학년</span>
+                        <div class="select_box mb10">
+                            <!-- 값이 입력되었을 경우 .on 클래스 추가 -->
+                            <a href="#none" class="select on" data-target="gradePop">1학년</a>
+                        </div>
+                    </div>
+                    <div class="info_dec">
+                        <span class="tit essential">우리반 이름</span>
+                        <div class="input_full">
+                            <input type="text" value="1반" placeholder="최대 10자 이내">
+                        </div>
+                    </div>
+                    <div class="info_dec mb0">
+                        <span class="tit">우리반 소개</span>
+                        <textarea placeholder="우리반을 간단히 소개해주세요. (최대 50자)"></textarea>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- /content -->
+	</div>
+
+
+	<!-- 연도 팝업 -->
+	<div class="modal" id="yearPop">
+		<div class="modal_content pt0">
+			<ul class="pop_opt_list">
+				<li><a href="#none">2022</a></li>
+				<li><a href="#none">2023</a></li>
+				<li><a href="#none">연도 무관</a></li>
+				<li><a href="#none">취소</a></li>
+			</ul>
+		</div>
+	</div>
+
+    <!-- 이미지 업로드 팝업 -->
+	<div class="modal" id="imgPop">
+		<div class="modal_content pt0">
+			<ul class="pop_opt_list">
+				<li><a href="#none">카메라</a></li>
+				<li><a href="#none">앨범</a></li>
+				<li><a href="#none">기본 이미지로 변경</a></li>
+				<li><a href="#none">취소</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 학년 팝업 -->
+	<div class="modal" id="gradePop">
+		<div class="modal_content pt0">
+			<ul class="pop_opt_list">
+				<li><a href="#none">학년</a></li>
+				<li><a href="#none">학년</a></li>
+				<li><a href="#none">학년 무관</a></li>
+				<li><a href="#none">취소</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<script>
+    $(function () {
+        $("#yearPop").modal({ show: true })
+    })
+	</script>
+</body>
+
+</html>

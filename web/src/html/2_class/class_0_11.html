@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('../include/inc_html_head.html')
+    <title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        @@include('../include/inc_header.html')
+
+        <!--  sub container -->
+        <div class="container inner_cont">
+
+            <!-- snb -->
+            @@include('../include/inc_snb.html')
+            <!-- //snb -->
+
+
+            <div class="contents">
+
+                <!-- title -->
+                <div class="title_box">
+                    <h4 class="page_title">클래스 설정</h4>
+                </div>
+                <!--// title -->
+
+                <!-- class tab -->
+                <div class="class_tab mb55">
+                    <a href="#none" class="tab_links">관리자 설정</a>
+                    <a href="#none" class="tab_links">게시판 설정</a>
+                    <a href="#none" class="tab_links active">정보수정</a>
+                    <a href="#none" class="tab_links">클래스 삭제</a>
+                </div>
+                <!--// class tab -->
+
+                <!-- tabcontent - tab3 -->
+                <div id="tab3" class="tabcontent">
+
+
+                    <div class="form_modify_wrap">
+                        <div class="info_dec">
+                            <div class="upload_img">
+                                <span class="img">
+                                    <!-- <img src="" alt=""> -->
+                                </span>
+                                <input type="file" class="input_file_button" id="imgEdit">
+                                <label for="imgEdit" class="sprite_comm sp_ico_edit"></label>
+                            </div>
+                            <a href="#none" class="del_btn btn outline mt25"><i
+                                    class="sprite_comm sp_ico_del_off mr5"></i>삭제</a>
+                        </div>
+                        <div class="form_modify">
+                            <div class="info_dec">
+                                <span class="tit">학교</span>
+                                <div class="input_full">
+                                    <input type="text" placeholder="placeholder" value="서울가산초등학교" disabled>
+                                </div>
+                            </div>
+
+                            <div class="half_box">
+                                <div class="info_dec">
+                                    <span class="tit">연도</span>
+                                    <!-- 220805 :: 연도 select box 활성화 -->
+                                    <div class="select_box">
+                                        <a class="select" href="#none">연도</a>
+                                        <!-- 220822 :: 스타일 삭제 -->
+                                        <div class="option_list">
+                                            <div class="scroll_bar">
+                                                <a href="#none">2022</a>
+                                                <a href="#none">연도 무관</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="info_dec">
+                                    <span class="tit">학년</span>
+                                    <div class="input_full">
+                                        <input type="text" placeholder="placeholder" value="1학년" disabled>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="info_dec">
+                                <span class="tit">반/클래스 이름</span>
+                                <div class="input_full">
+                                    <!-- 220818 :: placeholder 추가 -->
+                                    <input placeholder="반 이름 입력 시, ‘반’까지 입력해주세요." value="벚꽃반" type="text">
+                                </div>
+                            </div>
+
+                            <div class="info_dec">
+                                <span class="tit">클래스 소개</span>
+                                <textarea placeholder="클래스를 간단하게 소개해주세요.(최대 50자 이내)"></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!--// tabcontent -->
+
+            </div>
+        </div>
+        <!-- //sub container -->
+
+        <!-- footer -->
+        @@include('../include/inc_footer.html')
+        <script>
+
+        </script>
+    </div>
+</body>
+
+</html>

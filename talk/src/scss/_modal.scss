@@ -1,0 +1,487 @@
+/* modal */
+body {
+	&.ovh {
+		overflow: hidden;
+	}
+}
+.modal_backdrop {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	z-index: 9998 !important;
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+.modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 9999 !important;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	outline: 0;
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+	.modal_content {
+		position: relative;
+        min-height: 200px;
+        padding: 40px;
+		margin: 0 auto 20px;
+		color: #222;
+		outline: none;
+        border-radius: 20px;
+        background-color: $white;
+		-webkit-box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.15);
+		box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.15);
+		box-sizing: border-box;
+		.pop_title {
+			font-size: 18px;
+			line-height: 18px;
+			font-weight: $font_weight_medium;
+			text-align: center;
+		}
+        .list_title {
+            @include ellipsis;
+            max-width: 380px;
+            font-size: 15px;
+            color: $primary;
+            font-weight: $font_weight_medium;
+            margin-bottom: 12px;
+        }
+        .sub_title {
+            font-size: 15px;
+            text-align: left;
+        }
+        &.w260 { width: 260px;}
+		&.w470 { width: 470px;}		
+		.modal_close {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			width: 14px;
+			height: 14px;
+            img { display: block;}
+		}
+	}
+    .modal_close_dim {
+        position: fixed;
+        top: 50px;
+        right: 50px;
+        width: 30px;
+        height: 30px;
+    }
+
+
+    //input
+    input[type="text"],
+    input[type="password"],
+    input[type="number"] {
+        height: 40px;
+        padding: 0 14px;
+        border: 1px solid $gray_e0;
+        border-radius: 6px;
+        font-weight: 400;
+        font-size: 15px;
+        vertical-align: middle;
+        outline: none;
+    }
+    .input_full {
+        width: 100%;
+
+        input {
+            width: 100%;
+        }
+    }
+}
+
+
+// 채팅창 우측 팝업
+.modal_chat_right {
+    display: none;
+    position: absolute;
+    top: 0; right: 0; left: auto;
+    width: 250px;
+    height: 100vh;
+    padding: 30px 0;
+    background: $white;
+    z-index: 99999 !important;
+    h4 {
+        padding: 0 20px;
+        font-size: 17px;
+        letter-spacing: -0.17px;
+        color: $black;
+    }
+    .modal_close {
+        @include ir_pm;
+        position: absolute;
+        top: 20px; right: 20px;
+        width: 14px;
+        height: 14px;
+        background: url(../img/ico_close_pop.png) no-repeat 0 0;
+    }
+    .no_data {
+        padding: 35px 0 50px;
+        font-size: 15px;
+        letter-spacing: -0.15px;
+        color: $gray_99;
+        text-align: center;
+        span {color: $primary;}
+    }
+}
+
+// 메시지 보내기
+.send_msg {
+    textarea {
+        overflow: auto;
+        overflow-x: hidden;
+        width: 100%;
+        padding: 14px;
+        min-height: 275px;
+        border: 1px solid $gray_e0;
+        border-radius: 6px;
+        @include scroll;
+    }
+}
+
+.user_list {
+    width: 100%;
+    border: 1px solid $gray_e0;
+    border-radius: 6px;
+    .scroll_bar {
+        height: 275px;
+        &.scroll {
+            padding-right: 8px;
+            margin-right: 8px;
+            @include scroll;
+            &::-webkit-scrollbar-track {
+                margin-top: 8px;
+                margin-bottom: 8px;
+            }
+        }
+    }
+    .check_list {
+        padding: 5px 0;
+    }
+    .check_box{
+        height: 36px;
+        line-height: 32px;
+        padding-left: 14px;
+        padding-right: 14px;
+        & input[type=checkbox] {
+            &+label {
+                width: 100%;
+                padding-left: 0;
+                background-position: center right;
+                img {
+                    vertical-align: middle;
+                    padding-right: 8px;
+                    padding-bottom: 1px;
+                }
+                .num {
+                    display: inline-block;
+                    width: 25px;
+                    color: $gray_99;
+
+                }
+            }
+        }
+        &.all {
+            background-color: $gray_f5;
+            label {
+                font-size: 13px;
+                color: $gray_66;
+            }
+        }
+    }
+}
+
+// 상담 시간 설정
+.set_day_wrap {
+    li + li { margin-top: 17px;}
+    &.scroll_bar {
+        @include scroll;
+        max-height: 302px;
+        overflow-y: auto;
+        padding-right: 16px;
+        padding-top: 10px;
+        &::-webkit-scrollbar-track {
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+    }
+
+    .set_day {
+        @include flexbox(between, center);
+        margin-bottom: 10px;
+        .day {
+            line-height: 1;
+        }
+    }
+    .set_time {
+        @include flexbox(between, center);
+        .select_box {
+            .option_list {
+                top: -40px;
+                .scroll_bar {
+                    max-height: 120px;
+                    overflow-y: auto;
+                    &::-webkit-scrollbar-track {
+                        margin-top: 5px;
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+        }
+    }
+    .consulting_info {
+        dt {
+            margin-top: 26px;
+            color: $black;
+            i {
+                display: inline-block;
+                vertical-align: middle;
+                margin-top: -2px;
+                margin-right: 5px;
+                width: 21px;
+                height: 21px;
+                &.call { background: url(../img/ico_call_info.png) no-repeat 0 0;}
+                &.talk { background: url(../img/ico_talk_info.png) no-repeat 0 0;}
+            }
+        }
+        dd { 
+            margin-top: 9px;
+            font-size: 14px;
+            color: $gray_66;
+            letter-spacing: -.3px;
+        }
+    }
+}
+
+
+//채팅방 편집
+.edit_chat {
+    .sub_title { font-size: 15px; margin-bottom: 10px}
+    .upload_img {
+        @include flexbox(center, center);
+        position: relative;
+        .img {
+            
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: url(../img/profile.png) no-repeat 0 0;
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+            }
+        }
+        .input_file_button {
+            & + label {
+                position: absolute;
+                left: calc(50% + 20px);
+                top: calc(50% + 23px);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+//이미지, 파일 모아보기 팝업
+.file_list {
+    .scroll_bar {
+        @include scroll;
+        height: 275px;
+        padding-right: 8px;
+        overflow-y: auto;
+        .date {
+            margin-bottom: 8px;
+            font-size: 12px;
+            color: $gray_66;
+        }
+        &::-webkit-scrollbar-track {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+    .img_file_list {
+        display: flex;
+        flex-wrap: wrap;
+        & > li {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        & > li:nth-of-type(3n) {
+            margin-right: 0;
+        }
+        input[type=checkbox] {
+            & ~ .check_img {
+                img {
+                    object-fit: cover;
+                    width: 118px;
+                    height: 118px;
+                    border: 1px solid $gray_e0;
+                    border-radius: 6px;
+                }
+            }
+            &:checked ~ .check_img {
+                img {
+                    border: 1px solid $primary;
+                }
+            }
+            & + label {
+                position: absolute;
+                top: 8px;
+                right: 8px;
+                padding-left: 18px;
+            }
+        }
+        .check_img {
+            height: 118px;
+            &.video {
+                &::before {
+                    content: '0:08';
+                    color: $white;
+                    font-size: 12px;
+                    line-height: 16px;
+                    padding-left: 15px;
+                    position: absolute;
+                    bottom: 5px;
+                    right: 5px;
+                    width: 50px;
+                    height: 18px;
+                    background-color: rgba(0, 0, 0, 0.2);
+                    border-radius: 9px;
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 10px;
+                    right: 36px;
+                    width: 0;
+                    height: 0;
+                    border-bottom: 4px solid transparent;
+                    border-top: 4px solid transparent;
+                    border-left: 6px solid $white;
+                    border-right: 7px solid transparent;
+                }
+            }
+        }
+    }
+    .attached_file_list {
+        display: flex;
+        flex-wrap: wrap;
+        & > li {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        & > li:nth-of-type(2n) {
+            margin-right: 0;
+        }
+        input[type=checkbox] {
+            & ~ .check_attached {
+                border: 1px solid $gray_e0;
+                border-radius: 6px;
+            }
+            &:checked ~ .check_attached {
+                border: 1px solid $primary;
+            }
+            & + label {
+                position: absolute;
+                top: 8px;
+                right: 8px;
+                padding-left: 18px;
+            }
+        }
+        .check_attached { 
+            @include flexbox(between, start);
+            flex-direction: column;
+            width: 180px;
+            height: 150px;
+            padding: 15px 15px 10px;
+            .file_name{
+                overflow: hidden;
+                text-overflow: ellipsis;
+                line-height: 17px;
+                font-size: 13px;
+                font-weight: $font_weight_medium;
+                padding-top: 4px;
+                @include ellipsis($line: 2);
+            }
+            .file_date { padding-top: 6px;}
+            .file_date,
+            .file_size {
+                font-size: 12px;
+                color: $gray_66;
+            }
+        }
+    }
+}
+
+// 1:1 채팅하기
+.one_profile {
+    .upload_img_lg {
+        @include flexbox(center, center);
+        position: relative;
+        .img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: url(../img/profile_basic_lg.png) no-repeat 0 0;
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+            }
+        }
+    }
+    .name {
+        font-size: 18px;
+        text-align: center;
+    }
+}
+
+
+// 이미지 모달
+
+.img_modal {
+    .modal_content.image {
+        @include flexbox( center, center);
+        width: 100%;
+        height: 100%;
+        margin: 0 !important;
+        padding: 0;
+        background: transparent; 
+        box-shadow: none;
+        .btn_wrap {
+            @include flexbox(end, center);
+            position: absolute;
+            top: 30px;
+            right: 25px;
+            .download {
+                height: 40px; 
+                line-height: 38px;
+                padding: 0 17px;
+                background-color: $black;
+                border-radius: 20px;
+                color: $white;
+                margin-right: 25px;
+                img { margin-right: 8px;}
+            }
+        }
+        .img_view {
+            max-width: 750px;
+            max-height: 530px;
+            object-fit: contain;
+            margin-top: 45px;
+        }
+    }
+
+}

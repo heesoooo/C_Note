@@ -1,0 +1,45 @@
+﻿<!-- .calendar_modal -->
+<div class="calendar_modal pt30 filter_pop" style="display:none;">
+  <div class="flex_between mb15">
+    <input class="inp_datepicker" id="datePicker3" placeholder="2022.04.06">
+    <script>
+      $('#datePicker3').datepicker({
+        weekStart: 1,
+        format: "yyyy.mm.dd",
+        toggleActive: true,
+        changeMonth: true,
+        changeYear: true,
+        orientation: "bottom left",
+      });
+    </script>
+    <span>~</span>
+    <input class="inp_datepicker" id="datePicker4" placeholder="2022.04.22">
+    <script>
+      $('#datePicker4').datepicker({
+        weekStart: 1,
+        format: "yyyy.mm.dd",
+        toggleActive: true,
+        changeMonth: true,
+        changeYear: true,
+        orientation: "bottom right", 
+      });
+    </script>
+  </div>
+  <div class="input_full mb12">
+    <input type="text" placeholder="포함 단어" class="sm">
+  </div>
+  <div class="select_wrap">
+    <div class="select_box">
+      <a class="select sm" href="#none">최근순</a>
+      <div class="option_list">
+      <div class="scroll_bar">
+        <a href="#none">최근순</a>
+        <a href="#none">과거순</a>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="btn_full mt30">
+      <a href="#none" class="btn medium">검색</a>
+  </div>
+</div>

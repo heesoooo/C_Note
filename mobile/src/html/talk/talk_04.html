@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>T_TALK</title>
+</head>
+
+<body>
+	<div class="talk_wrap">
+		<!-- header -->
+		<div class="search_header">
+			<a href="#none" class="history_back">뒤로가기</a>
+			<div class="search_wrap">
+				<input type="text" placeholder="이름 검색">
+				<a href="#none" class="btn_clear"></a>
+			</div>
+			<a href="#none" class="btn_search">검색</a>
+		</div>
+		<!-- //header -->
+
+		<!-- 이름검색 -->
+		<div class="container search_name_wrap">
+			<div class="conversate_list_wrap opponent_list">	
+				
+				<!-- 검색 전 / 후 결과없을시 -->
+				<!-- <div class="class_no_person">
+					이름을 검색하세요.<br>
+					검색 결과가 없습니다.
+				</div> -->
+				<!-- / -->
+
+				<!-- group1 -->
+				<div class="list_item">
+					<div class="list_title">
+						<span class="group_tit">선생님 <em>1</em>명</span>
+					</div>
+					<div class="list_cont">
+						<ul>
+							<li>
+								<span class="profile teacher"><!-- <img src="" alt=""> --></span><!-- 선생님 프로필 기본이미지 다름 :: .teacher -->
+								<span class="name">교생 선생님</span>
+								<div class="btn_talk_call">
+									<a href="#none" class="t_talk"><i></i>Talk</a>
+									<a href="#none" class="t_call block"><i></i>call</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- /group1 -->
+				<!-- group2 -->
+				<div class="list_item">
+					<div class="list_title">
+						<span class="group_tit">학생 <em>3</em>명</span>
+					</div>
+					<div class="list_cont">
+						<ul>
+							<li>
+								<span class="profile">
+									<img src="../../img/img_sample.png" alt="">
+								</span>
+								<span class="name">박호용 <em class="badge badge_gray_full">15</em></span>
+								<div class="btn_talk_call">
+									<a href="#none" class="t_talk"><i></i>Talk</a>
+									<a href="#none" class="t_call"><i></i>call</a>
+								</div>
+							</li>
+							<li>
+								<span class="profile">
+									<!-- <img src="" alt=""> -->
+								</span>
+								<span class="name">이희수 <em class="badge badge_gray_full">17</em></span>
+								<div class="btn_talk_call">
+									<a href="#none" class="t_talk"><i></i>Talk</a>
+									<a href="#none" class="t_call"><i></i>call</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- /group2 -->
+			</div>
+		</div>	
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+		@@include('../include/inc_header.html')
+		<!--  sub container -->
+		<div class="container inner_cont">
+			<!-- snb -->
+			<div class="snb">
+				<div class="snb_list">
+					<h3>마이페이지</h3>
+					<ul>
+						<li><a href="#none">개인정보</a></li>
+						<li><a href="#none">나의 학교</a></li>
+						<li><a href="#none">나의 클래스</a></li>
+						<li class="active"><a href="#none">내 소식</a></li>
+						<li><a href="#none">나의 스크랩</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- //snb -->
+			<div class="contents">
+				<!-- title -->
+				<div class="title_box">
+					<h4 class="page_title flex_start_end">내 소식 <span class="summary_sm mt5 ml5">(최근 3개월간 학교 소식을 확인할 수 있습니다.)</span></h4>
+				</div>
+				<!-- /title -->
+
+				<!-- sub contents -->				
+
+                <!-- 소식없는 경우 -->
+                <div class="empty_box">
+                    <figure class="empty no_school"></figure>
+                    <p class="strength">
+                        <strong>구독 중</strong>인 학교 및 클래스가 없습니다.
+                    </p>
+                </div>
+                <!-- /소식없는 경우 -->
+			
+				<!-- / sub contents -->
+			</div>
+		</div>
+		<!-- //sub container -->
+		<!-- footer -->
+		@@include('../include/inc_footer.html')
+	</div>
+</body>
+
+</html>

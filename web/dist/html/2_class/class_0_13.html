@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=1200">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+	<title>우리반티셀파 - 서브</title>
+</head>
+<body>
+
+
+    <!-- popup -->
+    <div class="modal" id="classDelete">
+      <div class="modal_content w380">
+        <a href="#none" class="modal_close" data-dismiss="modal"><i class="sprite_comm sp_ico_close_pop"></i></a>
+        <div class="pop_title">클래스 삭제</div>
+        <div class="empty delete mt35"> </div>
+        <p class="pop_msg ft16 mt30">
+            클래스 삭제는 요청 이후, 복구가<br>불가하오니 신중하게 결정해주세요.
+        </p>
+        <div class="input_full mt35">
+            <input type="text" placeholder="입력란에 ‘삭제’라고 입력해주세요.">
+        </div>
+        <div class="btn_half">
+          <a href="#none" class="btn outline medium mt40">취소</a>
+          <!-- 버튼 활성화 시 disabled 삭제-->
+          <a href="#none" class="btn medium mt40 disabled">삭제</a>
+        </div>
+      </div>
+    </div>
+    <!--// popup -->
+
+
+		<script>
+      $('#classDelete').modal({show: true});
+    </script>
+
+</body>
+</html>

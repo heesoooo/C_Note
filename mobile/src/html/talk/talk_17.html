@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('../include/inc_html_head.html')
+    <title>T_TALK</title>
+</head>
+
+<body>
+    <!-- 채팅방 편집 팝업 -->
+    <div class="modal" id="editChatRoom">
+        <div class="modal_content modal_full">
+            <!-- 너비/높이 100% 팝업은 .modal_full 추가 -->
+            <!-- header -->
+            <div class="sub_header center">
+                <a href="#none" class="modal_close" data-dismiss="modal">뒤로가기</a>
+                <h2 class="sub_title">채팅방 편집</h2>
+                <div class="btn_wrap">
+                    <a href="#none">확인</a>
+                </div>
+            </div>
+            <!-- /header -->
+            <!-- contents -->
+            <div class="cont_section">
+                <!-- 채팅방 편집 -->
+                <div class="edit_chat_room">
+                    <div class="upload_img">
+                        <span class="img">
+                            <img src="../../img/img_sample.png" alt="img sample">
+                        </span>
+                        <span class="img_edit" data-target="popFileAttach">
+                            <!-- 기본 input file 사용시 주석 해제
+                                <input type="file" class="input_file_button" id="imgEdit">
+                                <label for="imgEdit"></label>
+                            -->
+                        </span>
+                    </div>
+
+                    <span class="tit">반/우리반 이름</span>
+                    <!-- 수정 전 -->
+                    <div class="input_full edit_before">
+                        <input type="text" value="학부모 공지방">
+                    </div>
+
+                    <!-- 수정 -->
+                    <div class="input_full edit_after">
+                        <input type="text" placeholder="최대 10자 이내" maxlength="10">
+                        <span class="count">
+                            00 / 10
+                        </span>
+                        <a href="#none" class="btn_clear">입력글 삭제</a>
+                    </div>
+                </div>
+            </div>
+            <!-- /contents -->
+        </div>
+    </div>
+    <!-- ./ -->
+
+    <!-- 댓글 옵션클릭시 팝업 -->
+    <div class="modal over_modal" id="popFileAttach"> <!-- 모달 위에 모달 띄워야할때 .over_modal add -->
+        <div class="modal_content pt0">
+            <ul class="pop_opt_list">
+                <li>
+                    <a href="#none">카메라</a>
+                </li>
+                <li>
+                    <a href="#none">앨범</a>
+                </li>
+                <li>
+                    <a href="#none">기본 이미지로 변경</a>
+                </li>
+                <li>
+                    <a href="#none">취소</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function ($) {
+            $('#editChatRoom').modal({
+                show: true
+            });
+            
+            // 반/우리반 이름 변경시 input event
+            $(".edit_before").on("click", function(){
+                $(".edit_after > input[type=text]").focus();
+            })
+            $(".edit_after .btn_clear").on("click", function(e) {
+                e.preventDefault();
+                if (! $(this).siblings('input').val() == 0) {
+                    $(this).siblings('input').val("");
+                }
+            });
+        })
+    </script>
+
+</body>
+
+</html>

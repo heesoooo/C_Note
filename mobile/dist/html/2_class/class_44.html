@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+        <div class="sub_header">
+            <a href="#none" class="history_back">뒤로가기</a>
+            <h2 class="sub_title">권한 위임자 선택</h2>
+            <div class="btn_wrap">
+                <a href="#none">확인</a>
+            </div>
+        </div>
+		<!-- /header -->
+        
+		<!-- content -->
+        <div class="container">
+            <div class="member_list_wrap">
+
+                <div class="member_list_top">
+                    <p class="title">기타 선생님</p>
+                </div>
+                <ul>
+                    <li class="member_list">
+                        <div class="flex_start_center">
+                            <span class="profile">
+                                <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                            </span>
+                            <p class="name">
+                                <span>교생 선생님1</span>
+                            </p>
+                        </div>
+                        <div class="radio_box">
+                            <input type="radio" id="radio1" name="radio_btn" checked="">
+                            <label for="radio1"></label>
+                        </div>
+                    </li>
+                    <li class="member_list">
+                        <div class="flex_start_center">
+                            <span class="profile">
+                                <!-- <img src="https://via.placeholder.com/100x100.png"> -->
+                            </span>
+                            <p class="name">
+                                <span>교생 선생님2</span>
+                            </p>
+                        </div>
+                        <div class="radio_box">
+                            <input type="radio" id="radio1" name="radio_btn">
+                            <label for="radio1"></label>
+                        </div>
+                    </li>
+
+                </ul>
+    
+            </div>
+        </div>
+        <!-- /content -->
+
+        <!-- 게시글쓰기 버튼 -->
+		<a href="#none" class="btn_write_page">글쓰기페이지</a>
+	</div>
+
+
+    <!-- 권한 위임자 선택 팝업 -->
+    <div class="modal" id="leaveTeacher">
+        <div class="modal_content modal_full"> <!-- 너비/높이 100% 팝업은 .modal_full 추가 -->
+            <!-- header -->
+            <div class="sub_header center">
+                <a href="#none" class="modal_close" data-dismiss="modal">뒤로가기</a>
+                <h2 class="sub_title">권한 위임자 선택</h2>
+            </div>
+            <!-- /header -->
+            <!-- contents -->
+            <div class="cont_section">
+                <div class="empty_box">
+                    <figure class="empty leave"></figure>
+                    <p class="empty_msg">우리반 탈퇴가 완료되었습니다.</p>
+                    <p class="empty_txt mt10">
+                        권한 양도와 동시에 우리반 탈퇴가 완료되었습니다.<br>
+                        신규 우리반 운영을 원하실 경우,<br>
+                        언제든지 개설이 가능합니다.<br>
+                    </p>
+
+                    <div><a href="#none" class="btn outline round primary mt45" style="min-width:20rem;">우리반 개설</a></div>
+                    <a href="#none" class="under_line">홈으로 이동</a>
+                </div>
+            </div>
+            <!-- /contents -->	
+        </div>
+    </div>
+    <!-- /권한 위임자 선택 팝업 -->
+
+    <script>
+        $(function () {
+            $("#leaveTeacher").modal({ show: true })
+        })
+    </script>
+</body>
+
+</html>

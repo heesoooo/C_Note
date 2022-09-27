@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=1200">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+	<title>우리반티셀파 - 메인</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+		<!-- logo만 있는 header -->
+<div class="logo_header_wrap ver2"> <!-- 20220720 :: ver2 add -->
+    <div class="inner_cont">
+        <h1 class="brand"><a href="/">T셀파 CLASS</a></h1>
+    </div>
+</div>
+<!-- /logo만 있는 header -->
+
+		<!-- contents -->
+		<div class="container inner_cont">
+			<div class="contents">
+				<!-- title -->
+				<div class="title_box mb0">
+					<h2 class="page_title login_title">나의 SNS 계정 찾기</h2>
+				</div>
+				<!-- /title -->
+
+				<!-- sub contents -->
+				<div class="login_box">
+					<h3>휴대폰 번호 인증을 통해 계정을 찾아드려요.</h3>
+					<div class="login_inner">
+						<ul class="sns_found_field">
+                            
+							<!-- 인증번호 발송 전 -->
+							<div class="flex_between_start mb10">
+								<div class="input_full mr10">
+									<input type="text" placeholder="휴대폰 번호의 숫자만 입력하세요.">
+								</div>
+								<!-- 인증번호 발송 후 disabled 클래스 제거해주세요 -->
+								<a href="#none" class="btn h50 summit_num disabled">번호발송</a>
+							</div>
+							<div class="input_full">
+								<input type="text" placeholder="인증 번호 6자리를 입력하세요." disabled>
+							</div>
+
+							<!-- 인증번호 발송 후 -->
+							<div class="flex_between_start mb10">
+								<div class="input_full mr10">
+									<input type="text" placeholder="휴대폰 번호의 숫자만 입력하세요." value="01032545555">
+								</div>
+								<a href="#none" class="btn h50 summit_num">재발송</a>
+							</div>
+							<div class="input_full">
+								<input type="text" placeholder="인증 번호 6자리를 입력하세요." value="123456" class="error">
+								<span class="time">03:00</span>
+							</div>
+							<span class="val_check_red t_left">
+								인증번호 입력 시간이 지났습니다. <br>
+								재발송 버튼을 클릭하여 다시 번호를 인증하세요.
+							</span>
+                            
+						</ul>
+						<div class="btn_full mt30"><a href="#none" class="btn h50">확인</a></div>
+					</div>
+				</div>
+				<!-- /sub contents -->
+			</div>
+		</div>
+		<!-- /contents -->
+
+		<!-- footer -->
+		<footer>
+	<div class="terms">
+		<div class="inner_cont">
+			<ul>
+				<li><a href="#none">회사소개</a></li>
+				<li><a href="#none">이용약관</a></li>
+                <!-- 220818 :: 개인정보처리방침 bold 처리-->
+				<li><a href="#none"><strong>개인정보처리방침</strong></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="groups">
+		<div class="inner_cont">
+			<div class="item">
+				<h2 class="company_edu">천재교육</h2>
+				<p class="address">
+					대표 : 오병목 &nbsp;&nbsp;&nbsp; 주소 : 서울시 금천구 가산로 9길 54<br>
+					사업자등록번호 : 119-81-19350<br>
+					부가통신사업신고 : 016712
+				</p>
+			</div>
+			<div class="item">
+				<h2 class="company_book">천재교과서</h2>
+				<p class="address">
+					대표 : 박정과, 윤문현 &nbsp;&nbsp;&nbsp; 주소 : 서울시 금천구 가산디지털1로 16 (2011호)<br>
+					사업자등록번호 : 119-81-70643<br>
+					부가통신사업신고 : 016712
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<a href="#none" class="btn_top"><i></i>TOP</a>
+         
+            
+<!-- 220906 배너 추가 -->
+<div class="sub_quick_banner">
+	<ul>
+		<li>
+			<a href="#none">
+				<img src="../../img/main_quick_ban_n02.png" alt="banner">
+				<p class="text">우리반 AI. 수학</p>
+			</a>
+		</li>
+		<li>
+			<a href="#none">
+				<img src="../../img/main_quick_ban_n03.png" alt="banner">
+				<p class="text">하루하나</p>
+			</a>
+		</li>
+	</ul>
+</div>
+<!-- //220906 배너 추가 -->
+
+<script>
+	$(function(){
+		// top btn
+		$('.btn_top').click(function(){
+			$('html,body').animate( { scrollTop:0 },'slow' );
+			return false;
+		});
+		// scroll시 top button 위치 제어
+		$(window).on('scroll', function (){
+			var nDocH = $(document).height()
+			var nWinH = $(window).height()
+			var nMaxH = nDocH - nWinH
+			var scrollTop = $(window).scrollTop()
+			if (scrollTop > 50) {
+				$('.btn_top').css({'opacity' : 1})
+			} else {
+				$('.btn_top').css({'opacity' : 0})
+			}
+			if (scrollTop > nMaxH - 272 + 20) {
+				$('.btn_top').css({'bottom' : scrollTop - (nMaxH - 430)})
+			} else {
+				$('.btn_top').css({'bottom' : '45px'})
+			}
+		})
+	})
+</script>
+	</div>
+</body>
+
+</html>

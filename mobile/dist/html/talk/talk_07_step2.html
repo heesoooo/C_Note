@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+    <title>T_TALK</title>
+</head>
+
+<body>
+    <div class="talk_wrap">
+        <!-- header -->
+        <div class="sub_header">
+            <a href="#none" class="history_back">뒤로가기</a>
+
+            <h2 class="sub_title">학생, 학부모 공지방 </h2>
+
+            <div class="btn_wrap">
+                <a href="#none" class="btn_search">검색</a>
+                <a href="#none" class="btn_chat_info">대화방 정보 확인</a>
+            </div>
+        </div>
+        <!-- //header -->
+
+        <!-- 채팅창 -->
+        <div class="container chatting_wrap">
+            <div class="chatting_cont">
+                <!-- 대화 내용 -->
+            </div>
+            <div class="chatting_input">
+                <div class="inp_wrap">
+                    <span class="attach">
+                        파일첨부
+                        <!-- 기존 첨부파일 창 사용하려면 주석해제
+                        <input type="file" class="input_file_button" id="clip">
+                        <label for="clip">파일첨부</label> -->
+                    </span>
+                    <div class="search_wrap"> <!-- 메시지를 작성할 수 없을시 .disabled 추가 -->
+                        <input type="text" placeholder="수신자는 답장할 수 없습니다." class="input_area">
+                        <div class="btn_wrap">
+                            <a href="#none" class="btn_emoticon">이모티콘</a>
+                            <a href="#none" class="btn_send">보내기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /채팅창 -->
+    </div>
+
+	<!-- 채팅방 설정 -->
+	<div class="side_chat_settings">
+    <div class="setting_inner">
+        <div class="header">
+            <h3 class="title">채팅방 설정 </h3>		
+            <div class="btn_wrap">
+                <a href="#none" class="btn_edit">편집</a>
+            </div>
+        </div>
+
+        <div class="chat_room_profile">
+            <span class="img notice"> <!-- 공지방일경우 .notice 추가/ 여러명 방일 경우 .multiple 추가 -->
+                <!-- <img src="../../img/img_sample.png" alt=""> -->
+            </span>
+            <span class="room_name">학부모 공지방</span>
+        </div>
+
+        <div class="chat_info_data">
+            <ul>
+                <li class="partners">
+                    <a>대화상대</a>
+                    <ul class="opponent_list">
+                        <li class="add"><a href="#none"><i></i>대화상대 추가하기</a></li> <!-- 대화상대 추가 .add -->
+                        <li class="reject"><a href="#none"><i></i>대화상대 내보내기</a></li> <!-- 대화상대 내보내기 .reject -->
+                        <li class="captain"><a href="#none"><span class="profile"></span>교생 선생님</a></li> <!-- 선생님일때 .captain 추가 -->
+                        <li class="others"><a href="#none"><span class="profile"></span>그 외 15명</a></li> <!-- 그 외 인원 표시 .others 추가 -->
+
+                        <li><a href="#none"><span class="profile"></span> <span class="name">나희도</span><em class="badge badge_pink">모</em></a></li>
+                        <li><a href="#none"><span class="profile"></span> <span class="name">나희도</span><em class="badge badge_blue">부</em></a></li>
+                        <li><a href="#none"><span class="profile"></span> <span class="name">나희도</span><em class="badge badge_gray">기타</em></a></li>
+                        <li><a href="#none"><span class="profile"></span> <span class="name">나희도</span><em class="badge badge_pink">모</em></a></li>
+                        <li><a href="#none"><span class="profile"></span> <span class="name">나희도</span><em class="badge badge_pink">모</em></a></li>
+                    </ul>
+                </li>
+                <li><a href="#none">이미지,동영상 <i class="sprite_comm sp_ico_list_more_g"></i></a></li>
+                <li><a href="#none">첨부파일</a></li>
+            </ul>
+        </div>
+
+        <div class="chat_setting_bottom">
+            <a href="#none" class="exit">채팅방 나가기</a>
+            <div class="btn_right">
+                <a href="#none" class="alarm">알람켜기/끄기</a>
+                <a href="#none" class="pin">대화상단고정</a>
+            </div>
+        </div>
+    </div>
+</div>
+	<!-- ./ -->
+</body>
+
+</html>

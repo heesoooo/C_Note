@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=1200">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+    <title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        <header class="header_pack ver2">
+	<div class="inner_cont">
+		<div class="util_wrap">
+			<ul>
+				<li class="user_name">
+                    <!-- 220824 :: 프로필 사진 등록 -->
+                    <figure class="profile">
+                       <!-- <img src="https://via.placeholder.com/100x225.png"> -->
+                    </figure>
+                    김상민 선생님
+                </li>
+				<li><a href="#none">마이페이지</a></li>
+				<li><a href="#none">고객센터</a></li>
+				<li><a href="#none">로그아웃</a></li>
+			</ul>
+		</div>
+		<div class="header_cont">
+			<div class="header_left">
+			 	<h1 class="brand"><a href="/">천재교과서 알림장</a></h1>
+                <!-- 220831 :: GNB 삭제-->
+				<!-- <nav class="gnb">
+					<ul>
+						<li class="active"><a href="#none">클래스</a></li>
+						<li><a href="#none">T톡</a></li>
+					</ul>
+				</nav> -->
+			</div>
+			<div class="header_right">
+				<a href="#none" class="badge_talk">T톡</a>
+				<a href="#none" class="badge_search btn_header_search">검색</a>
+
+                <!-- 220812 :: 알람이 없을경우 .on 삭제 -->
+				<div class="badge_alarm on">
+					<a href="#none">알람</a>
+					<!-- 알림 클릭시 box -->
+					<div class="header_alarm_wrap">
+						<div class="inner">
+							<h3>알림</h3>
+							<!--  등록된 글이 없을 때 -->							
+							<div class="no_data" style="display: none;">
+								최근 소식이 없습니다.
+							</div>
+							<!--  //등록된 글이 없을 때 -->
+
+							<!-- 알림 리스트 -->
+							<ul class="scroll_box alarm_list">
+								<li>
+									<a href="#none">
+										<figure class="profile">
+											<img src="../../img/profile_test.jpg" alt="">
+
+										</figure>
+										<div class="cont_wrap">
+											<span class="category">알림장</span>
+											<p class="content">
+												코로나 유증상시 등교 중지 등교시 체크<br>
+												내일 국악 소풍(경기국악원) - 학급반티 입고 등교하기
+											</p>
+											<span class="date">2022.04.06 08:32</span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#none">
+										<figure class="profile">
+											<img src="../../img/profile_test.jpg" alt="">
+
+										</figure>
+										<div class="cont_wrap">
+											<span class="category">알림장</span>
+											<p class="content">
+												코로나 유증상시 등교 중지 등교시 체크<br>
+												내일 국악 소풍(경기국악원) - 학급반티 입고 등교하기
+											</p>
+											<span class="date">2022.04.06 08:32</span>
+										</div>
+									</a>
+								</li>
+								<li>
+									<a href="#none">
+										<figure class="profile"></figure>
+										<div class="cont_wrap">
+											<span class="category">가산초등학교 가정통신문</span>
+											<p class="content">
+												코로나 유증상시 등교 중지 등교시 체크<br>
+												내일 국악 소풍(경기국악원) - 학급반티 입고 등교하기
+											</p>
+											<span class="date">2022.04.06 08:32</span>
+										</div>
+									</a>
+								</li>
+							</ul>
+							<!-- //알림 리스트 -->
+						</div>
+					</div>
+					<!-- /알림 클릭시 box -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 클래스, 학교 찾기 search box -->
+	<div class="header_search_wrap">
+		<div class="inner">
+			<div class="input_full">
+				<input type="text" placeholder="클래스, 학교찾기">
+				<a href="#none" class="btn_clear"></a>
+				<a href="#none" class="btn_find"></a>
+			</div>
+		</div>
+	</div>
+	<!-- search wrap dimm -->
+	<div class="search_dimmed"></div>
+	<!-- //클래스, 학교 찾기 search box -->
+</header>
+
+
+<script>
+	$(function(){
+		// header fixed
+		$(window).on('scroll', function() {
+			headerFixed();
+		});
+		headerFixed();
+		 		
+		function getCurrentScroll() {
+			return window.pageYOffset || document.documentElement.scrollTop;
+		}
+		function headerFixed() {
+			var scroll = getCurrentScroll();
+			if (scroll >= 50) {
+				$('.header_pack, .header_search_wrap').addClass('fixed');
+			} else {
+				$('.header_pack, .header_search_wrap').removeClass('fixed');
+			}
+		}
+
+		// 검색창 입력시 clear button 제어
+		$(".header_search_wrap input").on("input", function(){
+			if( $(".header_search_wrap input").val() == '' ) {
+				$(".header_search_wrap .btn_clear").hide();
+				$(".header_search_wrap .btn_find").removeClass("active");
+			} else {
+				$(".header_search_wrap .btn_clear").show();
+				$(".header_search_wrap .btn_find").addClass("active");
+			}
+		})
+
+		// input clear button 클릭시
+		$(".btn_clear").on("click", function(e){
+			e.preventDefault();
+			$(".header_search_wrap input").val("");
+			$(".header_search_wrap .btn_find").removeClass("active");
+			$(this).hide();
+		});
+		
+		// 검색버튼 클릭시
+		$(".btn_header_search").on("click", function(e){
+			e.preventDefault();
+			$(this).toggleClass("on").parents("body").addClass("ovh");
+			$(".search_dimmed, .header_search_wrap").fadeIn(200);
+			if ( ! $(this).hasClass("on") )	{
+				$(this).parents("body").removeClass("ovh");
+				$(".search_dimmed, .header_search_wrap").fadeOut(100);
+			}
+		})
+
+		// dimm 클릭시
+		$(".search_dimmed").on("click",function(e){
+			e.preventDefault();
+			$(this).parents("body").removeClass("ovh");
+			$(".search_dimmed, .header_search_wrap").fadeOut(100);
+			$(".btn_header_search").removeClass("on");
+		})
+
+		// 알림 버튼
+		$(".badge_alarm a").on("click", function(e){
+			e.preventDefault();
+			$(".header_alarm_wrap").toggle();
+		});
+		$(document).mouseup(function(e) {
+			if(!$(".badge_alarm").has(e.target).length > 0) {
+				$('.header_alarm_wrap').hide();
+			} 
+		});
+		
+	});
+</script>
+
+        <!--  sub container -->
+        <div class="container inner_cont">
+
+            <!-- snb -->
+            <div class="snb">
+                       
+                <div class="snb_list">
+                    <h3 class="mt10">고객센터</h3>
+                    <ul>
+                        <li class="active"><a href="#none">공지사항</a></li>
+                        <li><a href="#none">자주 묻는 질문</a></li>
+                        <li><a href="#none">문의하기</a></li>
+                        <li><a href="#none">문의내역</a></li>
+                    </ul>
+                </div>
+          
+            </div>
+            <!-- //snb -->
+
+
+            <div class="contents">
+
+                <!-- title -->
+                <div class="title_box">
+                    <h4 class="page_title">공지사항</h4>
+                </div>
+                <!--// title -->
+
+                <!-- sub contents -->
+                <div class="notice_list_wrap">
+                    <table class="tbl_list empty" cellpadding="0" cellspacing="0">
+                        <colgroup>
+                            <col style="width:9%">
+                            <col style="width:9%">
+                            <col>
+                            <col style="width:18%">
+                            <col style="width:9%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">번호</th>
+                                <th scope="col">분류</th>
+                                <th scope="col">제목</th>
+                                <th scope="col">작성날짜</th>
+                                <th scope="col">상태</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <!-- 220818 :: 문구 변경 -->
+                                <td colspan="5">등록된 공지가 없습니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- 페이징 -->
+                    <div class="paging mt60">
+                        <a href="javascript:void(0);" class="pprev"><i></i></a> 
+                        <a href="javascript:void(0);" class="prev"><i></i></a> 
+                        <!-- 해당페이지에서 .on 추가 -->
+                        <a href="javascript:void(0);" class="on">1 </a>
+                        <!-- 화살표 활성화시 .active 추가 -->
+                        <a href="javascript:void(0);" class="next"><i></i></a>
+                        <a href="javascript:void(0);" class="nnext"><i></i></a>
+                    </div>
+                </div>
+                <!--// sub contents -->
+
+            </div>
+        </div>
+        <!-- //sub container -->
+
+        <!-- footer -->
+        <footer>
+	<div class="terms">
+		<div class="inner_cont">
+			<ul>
+				<li><a href="#none">회사소개</a></li>
+				<li><a href="#none">이용약관</a></li>
+                <!-- 220818 :: 개인정보처리방침 bold 처리-->
+				<li><a href="#none"><strong>개인정보처리방침</strong></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="groups">
+		<div class="inner_cont">
+			<div class="item">
+				<h2 class="company_edu">천재교육</h2>
+				<p class="address">
+					대표 : 오병목 &nbsp;&nbsp;&nbsp; 주소 : 서울시 금천구 가산로 9길 54<br>
+					사업자등록번호 : 119-81-19350<br>
+					부가통신사업신고 : 016712
+				</p>
+			</div>
+			<div class="item">
+				<h2 class="company_book">천재교과서</h2>
+				<p class="address">
+					대표 : 박정과, 윤문현 &nbsp;&nbsp;&nbsp; 주소 : 서울시 금천구 가산디지털1로 16 (2011호)<br>
+					사업자등록번호 : 119-81-70643<br>
+					부가통신사업신고 : 016712
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<a href="#none" class="btn_top"><i></i>TOP</a>
+         
+            
+<!-- 220906 배너 추가 -->
+<div class="sub_quick_banner">
+	<ul>
+		<li>
+			<a href="#none">
+				<img src="../../img/main_quick_ban_n02.png" alt="banner">
+				<p class="text">우리반 AI. 수학</p>
+			</a>
+		</li>
+		<li>
+			<a href="#none">
+				<img src="../../img/main_quick_ban_n03.png" alt="banner">
+				<p class="text">하루하나</p>
+			</a>
+		</li>
+	</ul>
+</div>
+<!-- //220906 배너 추가 -->
+
+<script>
+	$(function(){
+		// top btn
+		$('.btn_top').click(function(){
+			$('html,body').animate( { scrollTop:0 },'slow' );
+			return false;
+		});
+		// scroll시 top button 위치 제어
+		$(window).on('scroll', function (){
+			var nDocH = $(document).height()
+			var nWinH = $(window).height()
+			var nMaxH = nDocH - nWinH
+			var scrollTop = $(window).scrollTop()
+			if (scrollTop > 50) {
+				$('.btn_top').css({'opacity' : 1})
+			} else {
+				$('.btn_top').css({'opacity' : 0})
+			}
+			if (scrollTop > nMaxH - 272 + 20) {
+				$('.btn_top').css({'bottom' : scrollTop - (nMaxH - 430)})
+			} else {
+				$('.btn_top').css({'bottom' : '45px'})
+			}
+		})
+	})
+</script>
+
+
+        <script>
+        
+        </script>
+    </div>
+</body>
+
+</html>

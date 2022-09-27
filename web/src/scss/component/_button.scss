@@ -1,0 +1,139 @@
+/* 버튼 */
+.btn {
+	display: inline-block;
+	min-width: 70px;
+	height: 40px;
+	line-height: 38px;
+	padding: 0 24px;
+	font-size: 15px;
+	font-weight: $font_weight_medium;
+	text-align: center;
+	color: $white;
+	outline: none;
+	border-radius: 6px;
+	background-color: $primary;
+    border: 1px solid transparent;
+	cursor: pointer;
+	box-sizing: border-box;
+	i {
+		vertical-align: middle;
+		margin-top: -3px;
+	}
+	&.small {
+		height: 30px;
+		line-height: 28px;
+		padding: 0 13px;
+		font-size: 14px;
+	}
+	&.medium {
+		min-width: 134px;
+		height: 46px;
+		line-height: 44px;
+		font-size: 16px;
+	}
+ 	 &.h50 {
+		padding: 0 17px;
+		height: 50px;
+		line-height: 48px;
+		font-size: 15px;
+		&.round {
+            box-shadow: 0px 15px 20px 0 rgba(61, 49, 197, 0.07);
+            min-width: 150px;
+		}
+	}
+	&.large {
+		min-width: 230px;
+		height: 60px;
+		line-height: 58px;
+		font-size: 18px;
+		&.round {
+            box-shadow: 2.1px 14.9px 20px 0 rgba(61, 49, 197, 0.15);
+            &.outline { box-shadow: 2.1px 14.9px 20px 0 rgba(61, 49, 197, 0.07);}
+		}
+	}
+	&.action {
+   		display: block;
+		width: 90px;
+		height: 96px;
+		padding: 15px;
+		font-size: 15px;
+		border-radius: 20px;
+		background-color: $point;
+		&.inactive { background-color: $gray_be;}
+		& i {
+			display: block;
+			margin: 3px auto;
+		}
+	}
+	&.round {
+		border-radius: 30px;
+		box-shadow: 0px 5px 8px 0 rgba(61, 49, 197, 0.05);
+		&.medium {
+			height: 50px;
+			line-height: 48px;
+			font-size: 15px;
+			font-weight: 400;
+		}
+		&.point {
+			background-color: $point;
+
+			&.outline {
+				border-color: $point;
+				background: $white;
+				color: $point;
+			}
+		}
+	}
+	&.etc {
+		min-width: 90px;
+		height: 60px;
+		line-height: 58px;
+		font-size: 16px;
+	}
+	&.disabled {
+		background: $gray_cc;
+	}
+
+	&.outline {
+		background: $white;
+		color: $primary;
+		border: 1px solid $primary;
+		font-weight: $font_weight_regular;
+		&.disabled {
+			color: $gray_cc;
+			border: 1px solid $gray_cc;
+		}
+		&.secondary {
+			color: $secondary;
+			border: 1px solid $secondary;
+            box-shadow: none;
+		}
+		&.third {
+			color: $third;
+			border: 1px solid $third;
+            box-shadow: 0px 5px 8px 0 rgba(17, 160, 124, 0.07);
+		}
+		&.red {
+			color: $red;
+			border: 1px solid $red;
+            box-shadow: 0px 5px 8px 0 rgba(17, 160, 124, 0.07);
+		}		
+	}
+  &.gray {
+    background-color: $gray_66;
+  }
+}
+
+.btn_full {
+	width: 100%;
+	.btn {
+		width: 100%;
+	}
+}
+
+.btn_half {
+	@include flexbox(between, center);
+	.btn {
+		width: calc(50% - 5px);
+	}
+}

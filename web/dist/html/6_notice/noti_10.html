@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=1200">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+	<title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+
+	<!-- modal :: 문의 내역 팝업 -->
+	<div class="modal" id="qnaView">
+		<a href="#none" class="modal_close_dim">
+			<i class="sprite_comm sp_ico_close_dim"></i>
+		</a>
+		<div class="modal_content w760" style="margin-top: 174px;">
+			<div class="qna_view_wrap">
+                <div class="qna_view_header">
+                    <div class="title">
+                        <h4>문의내역 확인</h4>
+                        <span class="date">2022.04.01 금요일</span>
+                        <span class="bar"></span>
+                        <span class="cate">회원가입 문의</span>
+                    </div>
+                </div>
+                <div class="qna_view_body">
+                    <div class="bbs_area">
+                        <div class="qna_text">
+                            <p class="qna_title">로그인을 했는데 다른 아이디로 로그인이 되었어요.</p>
+                            원래 하던대로 SNS 로그인을 하려고 버튼을 눌렀는데 다른 아이디로 로그인이 됩니다.
+                            오류인가 싶어서 로그아웃을 하고 다시 SNS 로그인을 해도 동일하게 다른 아이디로 로그인이 되는 현상이 발생합니다 
+                            혹시 몰라서 인터넷 사용기록에 들어가 캐시 삭제를 해도 똑같아서 고객센터에 문의를 남깁니다. 좋은 하루 되세요.
+                        </div>
+                    </div>
+                    <div class="title">
+                        <h5>로그인 문의 답변 드립니다.</h5>
+                        <span class="date">2022.07.01 오전 09:00</span>
+                        <span class="bar"></span>
+                        <span class="manager">관리자</span>
+                    </div>
+                    <div class="bbs_area">
+                        <div class="qna_text">
+                            안녕하세요. 우리반T셀파 운영팀입니다.<br>
+                            만약 연결하려는 SNS 계정이 이미 다른 아이디에 연결되어있을 경우에는 SNS 연결이 되지 않습니다.
+                            로그아웃 후 로그인 페이지에서 연결을 시도하였던 SNS 아이콘을 눌러 로그인을 하면 기 연결이 되어있는 아이디로
+                            로그인 할 수 있습니다. SNS 연결 설정 메뉴에서 연결을 해제한 후 다시 연결을 시도해 주세요
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</div>
+	<!-- /modal :: 문의 내역 팝업 -->
+	<script>
+		$('#qnaView').modal({ show: true });
+
+	</script>
+</body>
+
+</html>

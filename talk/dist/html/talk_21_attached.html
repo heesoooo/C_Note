@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="stylesheet" href="../css/style.min.css">
+
+
+<script type="text/javascript" src="../js/script.js"></script> 
+    <title>TALK - 메인</title>
+</head>
+
+<body>
+
+    <!-- 첨부파일 모아보기 popup -->
+    <div class="modal file_list" id="imgList">
+        <div class="modal_content w470">
+            <a href="#none" class="modal_close" data-dismiss="modal"><img src="../img/ico_close_pop.png" alt="close"></a>
+            <h3 class="pop_title mb25">첨부파일</h3>
+            <h4 class="list_title">2개 선택</h4>
+            <div class="scroll_bar">
+                <p class="date">2022.06.28</p>
+                <ul class="attached_file_list">
+                    <li class="check_box circle">
+                        <input type="checkbox" id="check1" checked>
+                        <label for="check1"></label>
+                        <div class="check_attached">
+                            <div>
+                                <img src="../img/ico_zip.png" alt="zip">
+                                <p class="file_name">3교시 음악시간 노래.zip</p>
+                                <p class="file_date">유효기간 2022.07.28까지</p>
+                            </div>
+                            <p class="file_size">2.99MB</p>
+                        </div>
+                    </li>
+                    <li class="check_box circle">
+                        <input type="checkbox" id="check1" checked>
+                        <label for="check1"></label>
+                        <div class="check_attached">
+                            <div>
+                                <img src="../img/ico_zip.png" alt="zip">
+                                <p class="file_name">3교시 음악시간 노래.zip</p>
+                                <p class="file_date">유효기간 2022.07.28까지</p>
+                            </div>
+                            <p class="file_size">2.99MB</p>
+                        </div>
+                    </li>
+                    <li class="check_box circle">
+                        <input type="checkbox" id="check2">
+                        <label for="check2"></label>
+                        <div class="check_attached">
+                            <div>
+                                <img src="../img/ico_pdf.png" alt="pdf">
+                                <p class="file_name">3교시 음악시간 악보집 전체 공유본_최종.pdf</p>
+                                <p class="file_date">유효기간 2022.07.28까지</p>
+                            </div>
+                            <p class="file_size">2.99MB</p>
+                        </div>
+                    </li>
+                </ul>
+                <p class="date mt15">2022.05.02</p>
+                <ul class="attached_file_list">
+                    <li class="check_box circle">
+                        <input type="checkbox" id="check4" checked>
+                        <label for="check4"></label>
+                        <div class="check_attached">
+                            <div>
+                                <img src="../img/ico_jpg.png" alt="img">
+                                <p class="file_name">3교시 음악시간 노래.jpg</p>
+                                <p class="file_date">유효기간 2022.07.28까지</p>
+                            </div>
+                            <p class="file_size">2.99MB</p>
+                        </div>
+                    </li>
+                    <li class="check_box circle">
+                        <input type="checkbox" id="check5">
+                        <label for="check5"></label>
+                        <div class="check_attached">
+                            <div>
+                                <img src="../img/ico_mp3_sm.png" alt="mp3">
+                                <p class="file_name">3교시 음악시간 노래.mp3</p>
+                                <p class="file_date">유효기간 2022.07.28까지</p>
+                            </div>
+                            <p class="file_size">2.99MB</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="btn_half mt40">
+                <a href="#none" class="btn outline medium">취소</a>
+                <a href="#none" class="btn medium">저장</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $("#imgList").modal({show: true});
+    </script>
+</body>
+
+</html>

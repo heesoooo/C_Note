@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('../include/inc_html_head.html')
+    <title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        @@include('../include/inc_header.html')
+
+        <!--  sub container -->
+        <div class="container inner_cont">
+
+            <!-- snb -->
+            <div class="snb">
+                       
+                <div class="snb_list">
+                    <h3>마이페이지</h3>
+                    <ul>
+                        <li class="active"><a href="#none">개인 정보</a></li>
+                        <li><a href="#none">나의 학교</a></li>
+                        <li><a href="#none">나의 클래스</a></li>
+                        <li><a href="#none">내 소식</a></li>
+                        <li><a href="#none">나의 스크랩</a></li>
+                    </ul>
+                </div>
+          
+            </div>
+            <!-- //snb -->
+
+
+            <div class="contents">
+
+                <!-- title -->
+                <div class="title_box">
+                    <h4 class="page_title">개인정보</h4>
+                </div>
+                <!--// title -->
+
+                <!-- sub contents -->
+                <div class="form_modify_wrap">
+                    <div class="info_dec">
+                        <div class="upload_img">
+                            <span class="img">
+                                <!-- <img src="" alt=""> -->
+                            </span>
+                            <input type="file" class="input_file_button" id="imgEdit">
+                            <label for="imgEdit" class="sprite_comm sp_ico_edit"></label>
+                        </div>
+                        <a href="#none" class="del_btn btn outline mt25">
+                            <i class="sprite_comm sp_ico_del_off mr5"></i>삭제
+                        </a>
+                    </div>
+                    <div class="form_modify">
+                        <div class="info_dec">
+                            <span class="tit">이름</span>
+                            <div class="input_full">
+                                <input class="my_focus" type="text" placeholder="" value="김천재">
+                            </div>
+                        </div>
+                        <div class="info_dec">
+                            <span class="tit">구분</span>
+                            <div class="input_full">
+                                <input class="my_focus" type="text" placeholder="placeholder" value="선생님" disabled>
+                            </div>
+                        </div>
+
+                        <div class="info_dec">
+                            <span class="tit">휴대폰</span>
+                            <div class="input_full">
+                                <input class="my_focus" type="text" placeholder="" value="010*****234" disabled>
+                            </div>
+                        </div>
+
+                        <!-- 220729 비밀번호 변경 추가 -->
+                        <div class="info_dec">
+                            <span class="tit">비밀번호</span>
+                            <div class="mt5">
+                                <a href="#none" class="btn outline" data-target="changePassword">비밀번호 변경</a>
+                            </div>
+                        </div>
+
+                        <!-- 220809 비밀번호 - SNS 회원 가입 계정 -->
+                        <div class="info_dec">
+                            <span class="tit">비밀번호</span>
+                            <p class="txt">현재 계정은 SNS로 가입된 계정입니다. 비밀번호 변경을 진행하시려면, 가입하신 SNS에서 변경을 진행 해주세요.</p>
+                        </div>
+
+                        <div class="info_dec">
+                            <span class="tit">전자서명</span>
+                            <div class="flex_between_start">
+                                <div class="signature"></div>
+                                <input type="file" class="input_file_button" id="inputFile">
+                                <label for="inputFile" class="btn h50 ml10">등록</label>
+                            </div>
+                        </div>
+
+                        <div class="info_dec">
+                            <span class="tit">계정 정보</span>
+                            <div class="input_full">
+                                <input class="my_focus" type="text" placeholder="" value="ABCD(2022.07.19 등록)" disabled>
+                            </div>
+                            <span class="val_check_pink">2022.07.19에 만료 예정</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="leave_box mb20">
+                    <span>알림톡을 사용하지 않는다면?</span>
+                    <a href="#none">서비스 탈퇴 바로 가기</a>
+                </div>
+                <div class="leave_box">
+                    <a href="#none">개인 세부 정보 수정 바로가기</a>
+                </div>
+                <!--// sub contents -->
+
+            </div>
+        </div>
+        <!-- //sub container -->
+
+        <!-- footer -->
+        @@include('../include/inc_footer.html')
+
+        <!-- 220729 비밀번호 변경 popup 추가  -->
+        <div class="modal pop_member_info" id="changePassword">
+            <div class="modal_content w540">
+                <a href="#none" class="modal_close" data-dismiss="modal"><i class="sprite_comm sp_ico_close_pop"></i></a>
+                <div class="pop_title">비밀번호 변경</div>
+                <p class="pop_txt ft16 mt30 mb35">
+                    비밀번호 입력 시, Caps Lock 키가 활성화 되어 있는지 꼭 확인하세요.
+                </p>
+
+                <div class="info_dec">
+					<span class="tit">현재 비밀번호</span>
+					<div class="input_full">
+						<input type="password" placeholder="현재 비밀번호" class="error">
+					</div>
+                    <span class="val_check_red">현재 비밀번호가 일치하지 않습니다. 비밀번호를 다시 확인해 주세요.</span>
+				</div>
+                <div class="info_dec">
+					<span class="tit">새 비밀번호</span>
+					<div class="input_full">
+						<input type="password" placeholder="새 비밀번호">
+					</div>
+				</div>
+                <div class="info_dec">
+					<span class="tit">새 비밀번호 확인</span>
+					<div class="input_full">
+						<input type="password" placeholder="새 비밀번호 확인">
+					</div>
+				</div>
+
+                <div class="btn_half mt40">
+                    <a href="#none" class="btn medium outline">취소</a>
+                    <!-- 버튼 활성화 시 disabled 삭제-->
+                    <a href="#none" class="btn medium disabled">확인</a>
+                </div>
+            </div>
+        </div>
+        <!--// popup -->
+        <script>
+        $('#changePassword').modal({ show: true });
+        </script>
+    </div>
+</body>
+
+</html>

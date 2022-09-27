@@ -1,0 +1,28 @@
+/*
+|------------------------------------------|
+|        알림장 common scss
+|------------------------------------------|
+*/
+
+
+//reset
+@import "reset";
+
+//font
+@import "fonts";
+
+
+// component
+@import "mixin";
+@import "size";
+@import "sprite";
+@import "datepicker";
+@import "swiper";
+@import "datepickerCustom";
+@import "modal";
+@import "button";
+@import "scrollbox";
+@import "form";
+@import "search";
+@import "table";
+@import "paging";

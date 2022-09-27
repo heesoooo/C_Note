@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('../include/inc_html_head.html')
+	<title>우리반티셀파 - 메인</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- header -->
+		@@include('../include/inc_header.html')
+
+		<!-- contents -->
+		<div class="container inner_cont">
+			<div class="contents">
+				<!-- title -->
+				<div class="title_box">
+					<h4 class="page_title">새 클래스 만들기</h4>
+					<p class="summary">환영합니다! 클래스 정보를 등록해주세요.</p>
+				</div>
+				<!-- /title -->
+
+				<!-- sub contents -->
+				<div class="form_create_class">
+					<div class="info_dec">
+						<span class="tit">학교</span>
+						<div class="search_wrap school">
+							<input class="school_search_input" placeholder="검색하기" type="text">
+							<a href="#none" class="btn_find"></a>
+							<div class="search_school_list">
+								<div class="scroll_bar">
+									<a href="#none">
+										<p class="sc_name">이천가산초등학교</p>
+										<p class="sc_address">경기 이천시 부발읍 가산리</p>
+									</a>
+									<a href="#none">
+										<p class="sc_name">가산초등학교</p>
+										<p class="sc_address">경기 포천시 가산면 마산리 407</p>
+									</a>
+									<a href="#none">
+										<p class="sc_name">가산초등학교</p>
+										<p class="sc_address">강원 춘천시 동면 지내리 136-2번지</p>
+									</a>
+									<a href="#none">
+										<p class="sc_name">가산초등학교</p>
+										<p class="sc_address">강원 춘천시 동면 지내리 136-2번지</p>
+									</a>
+									<a href="#none">
+										<p class="sc_name">가산초등학교</p>
+										<p class="sc_address">강원 춘천시 동면 지내리 136-2번지</p>
+									</a>
+									<!-- 220823 :: 검색결과 및 검색어 없을 시 a태그는 사용하지 마시고 p태그에 .sc_none 클래스 넣어주세요. -->
+									<!-- 220824 :: 검색어 입력~ 부분은 중복이라 삭제하였습니다. -->
+									<p class="sc_none">조회된 학교가 없습니다.</p>
+								</div>
+								<div class="add_new_school">
+									<span class="msg">학교가 검색 결과에 없다면,신규 학교를 등록해주세요.</span>
+									<a class="btn" href="#none">신규 학교 등록</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="half_box">
+						<div class="info_dec">
+							<span class="tit">연도</span>
+							<div class="select_wrap">
+								<div class="select_box">
+									<a class="select" href="#none">년도</a>
+									<div class="option_list">
+										<div class="scroll_bar">
+											<a href="#none">2022</a>
+											<a href="#none">2021</a>
+											<a href="#none">2020</a>
+											<a href="#none">2019</a>
+											<a href="#none">2018</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="info_dec">
+							<span class="tit">학년</span>
+							<div class="select_wrap">
+								<div class="select_box">
+									<a class="select" href="#none">학년</a>
+									<div class="option_list">
+										<div class="scroll_bar">
+											<a href="#none">1학년</a>
+											<a href="#none">2학년</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="info_dec">
+						<span class="tit">반/클래스 이름</span>
+						<div class="input_full">
+							<input placeholder="1반, 천재반, 행복반 등 (최대 10자 이내)" type="text">
+						</div>
+					</div>
+
+					<div class="info_dec">
+						<span class="tit">클래스 대표 이미지 <em>(선택)</em></span>
+						<div class="upload_img">
+							<span class="img">
+								<!-- <img src="" alt=""> -->
+							</span>
+
+							<input type="file" class="input_file_button" id="inputFile">
+							<label for="inputFile" class="btn outline">사진 올리기</label>
+						</div>
+					</div>
+
+					<div class="info_dec">
+						<span class="tit">클래스 소개 <em>(선택)</em></span>
+						<textarea placeholder="클래스를 간단하게 소개해주세요.(최대 50자 이내)"></textarea>
+					</div>
+
+					<!-- button -->
+					<div class="btn_half mt40">
+						<a href="" class="btn outline large">취소</a>
+						<a href="" class="btn large">만들기</a>
+					</div>
+				</div>
+				<!-- /sub contents -->
+			</div>
+		</div>
+		<!-- /contents -->
+
+		<!-- footer -->
+		@@include('../include/inc_footer.html')
+	</div>
+</body>
+
+</html>

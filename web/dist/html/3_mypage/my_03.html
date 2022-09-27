@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=1200">
+
+<script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+
+<script type="text/javascript" src="../../js/script.js"></script> 
+    <title>우리반티셀파 - 서브</title>
+</head>
+
+<body>
+    <!-- popup -->
+    <div class="modal" id="modifyPhoneNumber">
+        <div class="modal_content w470">
+            <a href="#none" class="modal_close" data-dismiss="modal"><i class="sprite_comm sp_ico_close_pop"></i></a>
+            <div class="pop_title">휴대폰 인증</div>
+
+            <p class="pop_txt ft16 mt30">
+                변경하실 휴대폰 번호를 입력하고 인증을 진행해주세요.
+            </p>
+
+            <!-- 번호 입력 전 -->
+            <div class="flex_start_center mt15">
+                <div class="input_full">
+                    <input type="text" placeholder="휴대폰 번호의 숫자만 입력하세요.">
+                </div>
+                <a href="#none" class="btn h50 ml10 disabled">요청</a>
+            </div>
+            <div class="input_full mt10">
+                <input type="text" placeholder="인증 번호 6자리를 입력하세요." class="disabled" disabled>
+            </div>
+
+            <!-- 번호 입력 후 -->
+            <div class="flex_start_center mt15">
+                <div class="input_full">
+                    <input type="text" value="01055885958">
+                </div>
+                <a href="#none" class="btn h50 ml10 p0">재요청</a>
+            </div>
+            <div class="input_full mt10">
+                <input type="text" placeholder="인증 번호 6자리를 입력하세요.">
+                <span class="time">03:00</span>
+            </div>
+            <span class="val_check_primary">인증 번호가 전송되었습니다.</span>
+
+
+            <!-- error -->
+            <div class="flex_start_center mt15">
+                <div class="input_full">
+                    <!-- 에러일 경우 error 클래스 추가-->
+                    <input type="text" class="error" value="01055885958">
+                </div>
+                <a href="#none" class="btn h50 ml10 p0">재요청</a>
+            </div>
+            <span class="val_check_red">현재번호와 같은 번호입니다. 다시 입력해주세요.</span>
+
+            <div class="input_full mt20">
+                <input type="text" class="error" value="152533" >
+            </div>
+            <span class="val_check_red">인증 번호를 다시 확인해주세요.</span>
+
+            <!-- button -->
+            <div class="btn_full mt40">
+                <!-- 버튼 활성화 시 disabled 삭제-->
+                <a href="#none" class="btn medium disabled">확인</a>
+            </div>
+        </div>
+    </div>
+    <!--// popup -->
+
+
+    <script>
+        $('#modifyPhoneNumber').modal({
+            show: true
+        });
+
+        // 검색어 입력시 검색버튼 활성화
+        $(".flex_start_center input").on("input", function () {
+            if ($(".flex_start_center input").val() == '') {
+                $(".flex_start_center .btn").addClass("disabled");
+            } else {
+                $(".flex_start_center .btn").removeClass("disabled");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
