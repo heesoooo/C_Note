@@ -25,19 +25,26 @@
 						</a>
 						<div class="class_checklist_pop" style="display:block">
 							<ul class="scroll_box" style="height: 263px">
-								<li class="active"><a href="#none">우리반 청소 열글자까지 허용 합니다</a></li>
-								<li class="active"><a href="#none">우리반 우유</a></li>
-								<li class="active"><a href="#none">우리반 발표</a></li>
-								<li class="active"><a href="#none">우리반 발표</a></li>
-								<li><a href="#none">우리반 발표</a></li>
-								<li><a href="#none">우리반 발표</a></li>
-								<li><a href="#none">우리반 발표</a></li>
+								<li class="active"><span class="tit">우리반의청소는열글자</span> <a href="#" class="delete">삭제</a></li>
+								<li class="active"><span class="tit">우리반 우유</span> <a href="#" class="delete">삭제</a></li>
+								<li class="active"><span class="tit">우리반 발표</span> <a href="#" class="delete">삭제</a></li>
+								<li class="active"><span class="tit">우리반 발표</span> <a href="#" class="delete">삭제</a></li>
+								<li><span class="tit">우리반 발표</span> <a href="#" class="delete">삭제</a></li>
+								<li><span class="tit">우리반 발표</span> <a href="#" class="delete">삭제</a></li>
+								<li><span class="tit">우리반 발표</span> <a href="#" class="delete">삭제</a></li>
 							</ul>
 							<div class="btn_full mt30">
 								<a href="#none" class="btn_add"><i class="sprite_comm sp_ico_add_v"></i> 추가하기</a>
 								<a href="#none" class="btn medium disabled"><i class="mr5 sprite_comm sp_ico_detail_cont_w"></i> 작성하기</a><!-- 작성하기 버튼 활성화시 .disabled 제거 -->
 							</div>
 						</div>
+
+						<!-- 221005 통계버튼 생성 -->
+						<a href="#none" class="ml5 btn outline round small red">
+							<i class="sprite_comm sp_ico_chart_red"></i>
+							통계
+						</a>
+						<!-- // 221005 통계버튼 생성 -->
 					</h4>
 
 					<div class="search_wrap board">
@@ -48,12 +55,15 @@
 						@@include('../include/inc_datePicker_type3.html')
 					</div>
 				</div>
+				
+				<!-- 221005 delete :: 통계 버튼 위치 및 디자인 수정 				
 				<div class="qualification mb30">
 					<a href="#none">
 						통계
 						<i class="sprite_comm sp_ico_setting ml5"></i>
 					</a>					
-				</div>
+				</div> -->
+
 				<!-- /title -->
 				<!-- sub contents -->
 				<!-- 등록된 게시물이 없을 때 -->
@@ -70,6 +80,16 @@
 		<!-- //sub container -->
 		<!-- footer -->
 		@@include('../include/inc_footer.html')
+
+
+		<script>
+			// 220929 :: li 6개 이상일때 삭제버튼 여백조정
+			if($(".class_checklist_pop li").length > 6 ) {
+				$(".class_checklist_pop li .delete").css("margin-right", "20px");
+			} else {
+				$(".class_checklist_pop li .delete").css("margin-right", "0");
+			}
+		</script>
 	</div>
   </body>
 

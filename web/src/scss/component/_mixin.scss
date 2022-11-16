@@ -143,3 +143,28 @@ $flex-map: (
   text-indent: -9999px;
 }
 
+// animation
+@mixin ani_up_hide {
+	opacity: 0;
+	transform: translatey(100px);
+}
+@mixin ani_up_show {
+	opacity: 1;
+	transform: translatey(0%);
+	transition: ease .4s;
+	//transition-delay: .2s;
+}
+@keyframes move {
+	from {
+		opacity: 0;
+		visibility: hidden;
+		transform: translate3d(0, 40px, 0);
+	}
+
+	to {
+		opacity: 1;
+		visibility: visible;
+		transform: none;
+	}
+
+}

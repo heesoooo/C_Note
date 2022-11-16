@@ -729,6 +729,7 @@ header.ver2 {
                 &.active {
                     color: $primary;
                     background: none;
+                    border-radius: 0;
                 }
             }
         }

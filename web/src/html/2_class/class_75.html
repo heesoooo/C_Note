@@ -170,7 +170,9 @@
                         <a href="#none" class="download_all">
                             <i class="sprite_comm sp_ico_survey_stats mr5"></i> 설문 통계
                         </a>
-                        <div class="view_status_top">
+
+                        <!-- 221005 :: 설문현황보기 .open 클래스 추가 / 설문현황 없을경우 .none 클래스 추가-->
+                        <div class="view_status_top none">
                             <span class="pr25">설문 현황 보기</span>
                             <span class="submit_status">
                                 설문 제출 
@@ -380,7 +382,8 @@
 
     <script>
         $(function(){
-			$(".view_status_top").on("click", function(e){
+            // 221005 :: 현황보기 .open 클래스 추가
+			$(".view_status_top.open").on("click", function(e){
 				e.preventDefault();
 				$(this).toggleClass("close");
 				$(this).prev(".download_all").toggleClass("show");

@@ -72,6 +72,7 @@ function jsTask() {
 		'src/js/common.js',
 		'src/js/bootstrap-datepicker.js',
 		'src/js/swiper.min.js',
+		'src/js/fullpage.js',
 	];
 	return gulp.src(sourceLib)
 	.pipe(concat('script.js'))

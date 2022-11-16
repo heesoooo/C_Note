@@ -22,7 +22,7 @@
     &.no_post {
         background-image: url(../../img/ico_no_post.png);
         height: 130px;
-        margin-top: 145px;
+        margin-top: 163px;
     }
 	&.no_class {
 		background-image: url(../../img/ico_no_class.png);
@@ -36,7 +36,7 @@
 	}
 
 	&.no_data {
-		margin-top: 135px;
+		margin-top: 162px;
 		background-image: url(../../img/ico_no_data.png);
 		height: 133px;
 
@@ -509,6 +509,9 @@
             
             &.close {
                 background-image: url('../../img/ico_status_up.png');
+            }
+            &.none {
+                background-image: none;
             }
             .submit_status {
                 strong { 
@@ -2662,7 +2665,8 @@
     height: 120px;
     background-color: $black;
     z-index: 10;
-    & + .modal_content { margin-top: 250px !important;}
+	// 220928 여백 좁게 재수정
+    & + .modal_content { margin-top: 200px !important;}
     h2 {
         position: absolute;
         top: 50%;
@@ -2694,7 +2698,7 @@
 			letter-spacing: -0.15px;
 			color: $gray_66;
 			text-align: center;
-            &.active { color: $black;}
+            &.active { color: $black; background-color: $white;}
 			i {
 				margin-top: -1px;
 				margin-right: 8px;
@@ -3020,7 +3024,7 @@
 	display: none;
 	position: absolute;
 	left: 62px; top: calc(100% + 8px);
-	width: 270px;
+	width: 296px;
 	height: 468px;
 	padding: 27px 30px;
 	border-radius: 20px;
@@ -3029,6 +3033,7 @@
 	background-color: $white;
 	z-index: 9;
 	li {
+		@include flexbox(between, center);
 		margin-bottom: 25px;
 		font-size: 16px;
 		font-weight: $font_weight_medium;
@@ -3039,25 +3044,33 @@
 		&:last-child{
 			margin-bottom: 0;
 		}
-		a {
+		.tit {
 			display: inline-block;
 			padding-right: 23px;
 			max-width: calc(100% - 23px);
 			color: $gray_cc;
-			@include ellipsis(1);
+			cursor: pointer;
+		}
+		.delete {
+			@include ir_pm;
+			@extend .sprite_comm;
+			@extend .sp_ico_del_g2;
 		}
 		&.active {
-			a {
+			.tit {
 				position: relative;
 				color: $gray_66;
 				&:after {
 					position: absolute;
 					content: '';
 					right: 3px;
-					top: 50%; transform: translateY(-50%);
+					bottom: 0;
 					@extend .sprite_comm;
 					@extend .sp_ico_select;
 				}
+			}
+			.delete {
+				@extend .sp_ico_del_off;
 			}
 		}
 	}
@@ -3244,6 +3257,9 @@
 		color: $point;
 		letter-spacing: -0.14px;
 		text-align: center;
+		&.col_gray {
+			color: $gray_66;
+		}
 	}
 }
 // 수정불가시
@@ -3310,13 +3326,17 @@
 		thead {
 			th {
 				background: $gray_f2;
-				line-height: 1.267;
+				line-height: 1.267; 
 			}
 		}
 		tbody {
 			th {
 				padding-left: 50px;
 				text-align: left;
+				white-space: nowrap;
+				&:has(.badge) {
+					white-space: nowrap;
+				}
 			}
 			td {
 				padding: 5px 10px;
@@ -3341,7 +3361,7 @@
 					}
 					&:checked {
 						+ label {
-							background: $l_blue1;
+							background: #e0f2ff;
 							color: $secondary;
 						}
 					}
@@ -3468,6 +3488,22 @@
 				}
 				td {
 					padding: 15px 0;
+				}
+			}
+		}
+	}
+}
+
+// 설문조사 테이블 이름영역 예외처리
+.survey_create_wrap {
+	table.tbl_list {	
+		tbody {
+			td {
+				&:first-child {
+					white-space: nowrap;
+				}
+				&:last-child{
+					white-space: inherit;
 				}
 			}
 		}

@@ -269,21 +269,57 @@
             <div class="schedule_list_wrap">
                 <ul class="schedule_list scroll_box">
                     <li>
-                        <span class="date">2022.06.11</span>
+                        <!-- 221026 수정 삭제 아이콘 추가 -->
+                        <div class="list_top">
+                            <span class="date">2022.06.11</span>
+                            <div class="btn_wrap">
+                                <a href="#none" class="edit">
+                                    <span>수정</span>
+                                </a>
+                                <a href="#none" class="del">
+                                    <span>삭제</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- / -->
                         <p class="content">
                             오늘의 생일자 - 김상민, 김지영, 정재훈<br>
                             2교시 과학 수행평가
                         </p>
                     </li>
                     <li>
-                        <span class="date">2022.06.12</span>
+                        <!-- 221026 수정 삭제 아이콘 추가 -->
+                        <div class="list_top">
+                            <span class="date">2022.06.12</span>
+                            <div class="btn_wrap">
+                                <a href="#none" class="edit">
+                                    <span>수정</span>
+                                </a>
+                                <a href="#none" class="del">
+                                    <span>삭제</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- / -->
                         <p class="content">
                             오늘의 생일자 - 김상민, 김지영, 정재훈<br>
                             2교시 과학 수행평가
                         </p>
                     </li>
                     <li>
-                        <span class="date">2022.06.13</span>
+                        <!-- 221026 수정 삭제 아이콘 추가 -->
+                        <div class="list_top">
+                            <span class="date">2022.06.13</span>
+                            <div class="btn_wrap">
+                                <a href="#none" class="edit">
+                                    <span>수정</span>
+                                </a>
+                                <a href="#none" class="del">
+                                    <span>삭제</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- / -->
                         <p class="content">
                             오늘의 생일자 - 김상민, 김지영, 정재훈<br>
                         </p>
@@ -313,10 +349,18 @@
     <script>
         $(function(){
             $(".calendar_modal + .plus").hide();
-            $(".btn_plan_add").on("click", function(){
+
+            // 221026 :: .schedule_list li 수정/삭제 버튼 click 이벤트 추가 
+            $(".btn_plan_add,.schedule_list li .edit").on("click", function(){
                 $(".calendar_modal + .plus").show();
                 return false;
             });
+            $(".schedule_list li .del").on("click", function(){
+                $(this).closest("li").remove();
+                return false;
+            });
+            // 221026 */
+
             $(".plus .close").on("click", function(){
                 $(".calendar_modal_flex").hide();
                 return false;
@@ -375,20 +419,27 @@
 							조사하기
 						</a>
 						<div class="class_checklist_pop">
-							<ul class="scroll_box" style="height: 272px">
-								<li class="active"><a href="#none">우리반 청소 열글자까지 허용 합니다</a></li>
-								<li class="active"><a href="#none">우리반 우유</a></li>
-								<li class="active"><a href="#none">우리반 발표</a></li>
-								<li class="active"><a href="#none">우리반 발표</a></li>
-								<li><a href="#none">우리반 발표</a></li>
-								<li><a href="#none">우리반 발표</a></li>
-								<li><a href="#none">우리반 발표</a></li>
+							<ul class="scroll_box" style="height: 263px">
+								<li class="active"><span class="tit">우리반의청소는열글자</span> <a href="#" class="delete">삭제</a></li>
+								<li class="active"><span class="tit">우리반 우유</span> <a href="#" class="delete">삭제</a></li>
+								<li class="active"><span class="tit">우리반 발표</span> <a href="#" class="delete">삭제</a></li>
+								<li class="active"><span class="tit">우리반 발표</span> <a href="#" class="delete">삭제</a></li>
+								<li><span class="tit">우리반 발표</span> <a href="#" class="delete">삭제</a></li>
+								<li><span class="tit">우리반 발표</span> <a href="#" class="delete">삭제</a></li>
+								<li><span class="tit">우리반 발표</span> <a href="#" class="delete">삭제</a></li>
 							</ul>
 							<div class="btn_full mt30">
 								<a href="#none" class="btn_add"><i class="sprite_comm sp_ico_add_v"></i> 추가하기</a>
 								<a href="#none" class="btn medium disabled"><i class="mr5 sprite_comm sp_ico_detail_cont_w"></i> 작성하기</a><!-- 작성하기 버튼 활성화시 .disabled 제거 -->
 							</div>
 						</div>
+
+						<!-- 221005 통계버튼 생성 -->
+						<a href="#none" class="ml5 btn outline round small red">
+							<i class="sprite_comm sp_ico_chart_red"></i>
+							통계
+						</a>
+						<!-- // 221005 통계버튼 생성 -->
 					</h4>
 
 					<div class="search_wrap board">
@@ -443,12 +494,13 @@
 </div>
 					</div>
 				</div>
+				<!-- 221005 delete :: 통계 버튼 위치 및 디자인 수정 				
 				<div class="qualification mb30">
 					<a href="#none">
 						통계
 						<i class="sprite_comm sp_ico_setting ml5"></i>
 					</a>					
-				</div>
+				</div> -->
 				<!-- /title -->
 				<!-- sub contents -->
 				<!-- 등록된 게시물이 없을 때 -->
@@ -549,7 +601,9 @@
 
 	<!-- modal :: 학급조사표 옵션 팝업 -->
 	<div class="modal" id="checklistPop">
-		<div class="modal_content w1090" style="width: 1140px">
+		<!-- 220929 :: class명 변경 -->
+		<div class="modal_content flex_between_start bg_transparent"  style="width: 810px">
+			<!-- 220929 :: delete
 			<div class="left_section">
 				<div class="con_box p0">
 					<div class="title_checklist">
@@ -567,13 +621,14 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<div class="center_section" style="width: 700px">
 				<!-- 조사표 옵션 선택 -->
 				<div class="board_write_wrap">
 					<h4>
 						학급 조사표 옵션
-						<a href="#none" class="delete">닫기</a>
+						<!-- 220928 :: delete 
+						<a href="#none" class="delete">닫기</a>-->
 					</h4>
 					<div class="board_write_body">
 						<div class="input_subject">
@@ -621,11 +676,11 @@
                                     </dd>
                                 </dl>
 							</div>						
-
+							<!-- 220929 :: modify -->
+							<p class="txt_in_notice col_gray">
+								생성된 조사표를 사용하면(데이터 입력), 더 이상 옵션을 변경할 수 없으니 신중히 선택해주세요.
+							</p>
 						</div>
-						<p class="txt_out_notice">
-							생성된 조사표를 사용하면(데이터 입력), 더 이상 옵션을 변경할 수 없으니 신중히 선택해주세요.
-						</p>
 					</div>
 				</div>
 				<!-- /조사표 옵션 선택 -->
@@ -645,6 +700,12 @@
 	<!-- /modal :: 학급조사표 옵션 팝업 -->
 	<script>
 		$('#checklistPop').modal({show: true});
+		// 220929 :: li 6개 이상일때 삭제버튼 여백조정
+		if($(".class_checklist_pop li").length > 6 ) {
+			$(".class_checklist_pop li .delete").css("margin-right", "20px");
+		} else {
+			$(".class_checklist_pop li .delete").css("margin-right", "0");
+		}
 	</script>
   </body>
 

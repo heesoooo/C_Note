@@ -269,21 +269,57 @@
             <div class="schedule_list_wrap">
                 <ul class="schedule_list scroll_box">
                     <li>
-                        <span class="date">2022.06.11</span>
+                        <!-- 221026 수정 삭제 아이콘 추가 -->
+                        <div class="list_top">
+                            <span class="date">2022.06.11</span>
+                            <div class="btn_wrap">
+                                <a href="#none" class="edit">
+                                    <span>수정</span>
+                                </a>
+                                <a href="#none" class="del">
+                                    <span>삭제</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- / -->
                         <p class="content">
                             오늘의 생일자 - 김상민, 김지영, 정재훈<br>
                             2교시 과학 수행평가
                         </p>
                     </li>
                     <li>
-                        <span class="date">2022.06.12</span>
+                        <!-- 221026 수정 삭제 아이콘 추가 -->
+                        <div class="list_top">
+                            <span class="date">2022.06.12</span>
+                            <div class="btn_wrap">
+                                <a href="#none" class="edit">
+                                    <span>수정</span>
+                                </a>
+                                <a href="#none" class="del">
+                                    <span>삭제</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- / -->
                         <p class="content">
                             오늘의 생일자 - 김상민, 김지영, 정재훈<br>
                             2교시 과학 수행평가
                         </p>
                     </li>
                     <li>
-                        <span class="date">2022.06.13</span>
+                        <!-- 221026 수정 삭제 아이콘 추가 -->
+                        <div class="list_top">
+                            <span class="date">2022.06.13</span>
+                            <div class="btn_wrap">
+                                <a href="#none" class="edit">
+                                    <span>수정</span>
+                                </a>
+                                <a href="#none" class="del">
+                                    <span>삭제</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- / -->
                         <p class="content">
                             오늘의 생일자 - 김상민, 김지영, 정재훈<br>
                         </p>
@@ -313,10 +349,18 @@
     <script>
         $(function(){
             $(".calendar_modal + .plus").hide();
-            $(".btn_plan_add").on("click", function(){
+
+            // 221026 :: .schedule_list li 수정/삭제 버튼 click 이벤트 추가 
+            $(".btn_plan_add,.schedule_list li .edit").on("click", function(){
                 $(".calendar_modal + .plus").show();
                 return false;
             });
+            $(".schedule_list li .del").on("click", function(){
+                $(this).closest("li").remove();
+                return false;
+            });
+            // 221026 */
+
             $(".plus .close").on("click", function(){
                 $(".calendar_modal_flex").hide();
                 return false;
@@ -574,10 +618,10 @@
 					<!-- OX 테이블 -->
 					<table class="tbl_list tbl_research_data" cellpadding="0" cellspacing="0">
 						<colgroup>
-							<col style="width:25%">
-							<col style="width:25%">
-							<col style="width:25%">
-							<col style="width:25%">
+							<col style="width:30%">
+							<col style="width:23.3333%">
+							<col style="width:23.3333%">
+							<col style="width:23.3333%">
 						</colgroup>
 						<thead>
 							<tr>
@@ -673,7 +717,7 @@
 							</tr>
 							<tr>
 								<th scope="row">
-									김천재 <span class="badge badge_pink">모</span>
+									김천재천재증조할머니 <span class="badge badge_pink">기타</span>
 								</th>
 								<td>
 									<input type="radio" name="ox_06" id="OX_06_01">
@@ -794,7 +838,7 @@
 							</tr>
 							<tr>
 								<th scope="row">
-									김천재 <span class="badge badge_pink">모</span>
+									김천재천재증조할머니 <span class="badge badge_pink">기타</span>
 								</th>
 								<td>
 									<input type="radio" name="uml_06" id="UML_06_01">
@@ -836,27 +880,27 @@
 									김천재 <span class="badge badge_gray_full">1</span>
 								</th>
 								<td>
-									<input type="radio" name="point_02" id="point_01_01" checked>
+									<input type="radio" name="point_01" id="point_01_01" checked>
 									<label for="point_01_01">5</label>
 								</td>
 								<td>
-									<input type="radio" name="point_02" id="point_01_02">
+									<input type="radio" name="point_01" id="point_01_02">
 									<label for="point_01_02">4</label>
 								</td>
 								<td>
-									<input type="radio" name="point_02" id="point_01_03">
+									<input type="radio" name="point_01" id="point_01_03">
 									<label for="point_01_03">3</label>
 								</td>
 								<td>
-									<input type="radio" name="point_02" id="point_01_04">
+									<input type="radio" name="point_01" id="point_01_04">
 									<label for="point_01_04">2</label>
 								</td>
 								<td>
-									<input type="radio" name="point_02" id="point_01_05">
+									<input type="radio" name="point_01" id="point_01_05">
 									<label for="point_01_05">1</label>
 								</td>
 								<td>
-									<input type="radio" name="point_02" id="point_01_06">
+									<input type="radio" name="point_01" id="point_01_06">
 									<label for="point_01_06">-</label>
 								</td>
 							</tr>
@@ -978,7 +1022,7 @@
 							</tr>
 							<tr>
 								<th scope="row">
-									김천재 <span class="badge badge_pink">모</span>
+									김천재천재증조할머니 <span class="badge badge_pink">기타</span>
 								</th>
 								<td>
 									<input type="radio" name="point_06" id="point_06_01">

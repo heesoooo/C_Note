@@ -413,7 +413,7 @@
             text-align: center;
             z-index: 5;
         }
-        .ourclass { padding-left: 62px; padding-right: 50px; }
+        .ourclass { padding-left: 62px; /*padding-right: 50px;*/ }
         .profile_area {
             @include flexbox(start, center);
             margin-top: 3px;
@@ -433,6 +433,7 @@
                     font-weight: $font_weight_regular;
                     color: $gray_66;
                     margin-top: 7px;
+                    max-width: 143px;
                     i {
                         vertical-align: middle;
                         margin-bottom: 3px;
@@ -607,6 +608,32 @@
             font-size: 14px;
             color: #aeaeae;
             letter-spacing: -1px;
+        }
+    }
+
+    // 우리반 T셀파 간단 이용방법
+    .howtouse_article {
+        height: 160px;
+        .howtouse_area {
+            @include flexbox (between, center);
+            padding: 14px 22px;
+            .howtouse {
+                i {
+                    display: block;
+                    margin: 0 auto;
+                }
+                .tit {
+                    margin-top: 3px;
+                    font-size: 14px;
+                    color: $black;
+                    text-align: center;
+                }
+                .inactive {
+                    cursor: default;
+                    //i { filter: grayscale(100%);}
+                    .tit { color: $gray_99;}
+                }
+            }
         }
     }
 

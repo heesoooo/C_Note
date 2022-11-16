@@ -187,95 +187,45 @@
 	}
 }
 
-// 로그인전 메인
-.container {
-	&.before_login {
-		padding: 0;
-		background: url(../../img/before_login_bg.png) no-repeat 50% 0;
-		width: 100%; min-width: 1240px;
-		min-height: 1038px;
-		.title_box  {
-			margin-top: 140px;
-			margin-bottom: 103px;
-			.page_title {
-				font-size: 40px;
-				line-height: 1;
-				span {
-					display: block;
-					margin-bottom: 22px;
-					font-size: 24px;
-					font-weight: $font_weight_medium;
-					letter-spacing: -0.24px;
-					color: $gray_66;
-				}
-				em {
-					font-style: normal;
-					color: $primary;
-				}
-			}
-		}
-		.login_type_box {
-			@include flexbox(center, center);
-		}
-		.box_type {
-			@include flexbox(start, center);
-			flex-direction: column;
-			margin: 0 15px;
-			padding: 0 35px;
-			width: 360px;
-			height: 410px;
-			border-width: 1px;
-			border-style: solid;
-			border-radius: 20px;
-			text-align: center;
-			background-color: $white;
-			transition-delay: .5s;
-			transition: all .3s;
-			&:hover {
-				transform: translateY(-30px);
-				box-shadow: 0px 35px 25px 0 var(--box-shadow-color);
-			}
-			.mem_type {
-				margin: 27px 0 11px;
-				font-size: 30px;
-				font-weight: $font_weight_bold;
-				line-height: 1;
-				letter-spacing: -.18px;
-			}
-			.desc {
-				font-size: 18px;
-				line-height: 24px;
-				color: $gray_99;
-			}
-			.btn {
-				margin-top: 34px;
-				font-size: 20px;
-				box-shadow: none;
-			}
-			&.teacher {
-				padding-top: 51px;
-				border-color: $primary;
-				--box-shadow-color: rgba(98, 85, 246, 0.15);
-				.mem_type{color: $primary;}
-				.btn {background-color: $primary;}
-			}
-			&.parent {
-				padding-top: 50px;
-				border-color: #02c3c5;
-				--box-shadow-color: rgba(1, 228, 220, 0.15);
-				.mem_type{margin-top: 30px;color: #02c3c5;}
-				.btn {margin-top: 36px;background-color: #02c3c5;}
-			}
-			&.student {
-				padding-top: 34px;
-				border-color: $point;
-				--box-shadow-color: rgba(255, 97, 175, 0.15);
-				.mem_type{margin-top: 32px;color: $point;}
-				.btn {margin-top: 37px;background-color: $point;}
-			}
-		}
-	}
+
+//  우리반 T셀파 간단 이용방법
+.howtouse_box {
+    @include flexbox(between, center);
+    width: 1140px;
+    height: 140px;
+    margin: 52px auto 0;
+    padding: 32px 38px;
+    border-radius: 10px;
+    box-shadow: 2.1px 4.5px 20px 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    .title { 
+        font-size: 18px;
+        font-weight: $font_weight_medium;
+    }
+
+    .howtouse_area {
+        @include flexbox(between, center);
+        width: 794px;
+        .howtouse {
+            i {
+                display: block;
+                margin: 0 auto;
+            }
+            .tit {
+                //margin-top: 3px;
+                font-size: 14px;
+                color: $black;
+                text-align: center;
+            }
+            .inactive {
+                cursor: default;
+                //i { filter: grayscale(100%);}
+                .tit { color: $gray_99;}
+            }
+        }
+    }
 }
+
 // 나의 sns 계정 찾기
 .sns_found_field {
     margin: 25px 0 38px;
@@ -300,4 +250,385 @@
     color: $gray_66;
     font-size: 17px;
     letter-spacing: -.17px;
+}
+
+
+
+//login intro page
+#intro {
+    .section {
+        z-index: -10;
+        .logo {
+            position: absolute;
+            @include ir_pm;
+            @extend .sprite_comm;
+			@extend .sp_intro_logo;
+            top: 38px;
+            left: 20px;
+        }
+        .inner {
+            position: relative;
+            @include flexbox(between, center);
+            height: 100%;
+            max-width: 1240px;
+            min-width: 1024px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .txt_wrap {
+            position: relative;
+            text-align: left;
+            .cate { font-size: 72px; font-weight: $font_weight_bold;}
+            .title { 
+                font-size: 32px; 
+                font-weight: $font_weight_medium;
+                line-height: 55px;
+            }
+            .text { 
+                font-size: 22px; 
+                color: $gray_99; 
+                margin-top: 35px;
+            }
+            .btn { 
+                min-width: 160px;
+                margin-top: 50px;
+                font-size: 18px;
+                font-weight: $font_weight_regular;
+                box-shadow: none;
+            }
+            .img_deco { position: absolute;}
+        }
+        .img_wrap {
+            position: relative;
+            .mobile_v { border-radius: 30px; box-shadow: 0px 3px 39px 0 rgba(0, 0, 0, 0.1);}
+            .img_deco { position: absolute;}
+        }
+
+        .cate,
+        .title,
+        .text,
+        .btn_more,
+        .mobile_v,
+        .deco1, 
+        .deco2, 
+        .deco3,
+        .deco4,
+        .deco5{
+            @include ani_up_hide;
+        }
+        .mobile_v {
+            @include ani_up_hide;
+            transform: translatey(20%);
+        }
+        
+        &.action {
+            .cate,
+            .title,
+            .text,
+            .btn_more {
+                @include ani_up_show;
+            }
+            .mobile_v,
+            .deco1, 
+            .deco2, 
+            .deco3,
+            .deco4,
+            .deco5{
+                @include ani_up_show;
+                transition: ease .7s;
+            }
+            .title { transition-delay: .3s;}
+            .text { transition-delay: .5s;}
+            .btn_more { transition-delay: .7s;}
+            .mobile_v { transition-delay: .7s;}
+            .deco4 { transition-delay: 1.2s;}
+        }
+    }
+
+    /* Section 0 --------------------------------------- */
+    #section0 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background: url(../../img/before_login_bg.png) no-repeat 50% 50%;
+        .logo_header_wrap.ver2 {
+            position: absolute;
+            top: 0; left:0; right:0;
+        }
+        .title_box  {
+            margin-top: 140px;
+            margin-bottom: 82px;
+            .page_title {
+                font-size: 40px;
+                line-height: 1;
+                font-weight: $font_weight_bold;
+                span {
+                    display: block;
+                    margin-bottom: 22px;
+                    font-size: 24px;
+                    font-weight: $font_weight_medium;
+                    letter-spacing: -0.24px;
+                    color: $gray_66;
+                }
+                em {
+                    font-style: normal;
+                    color: $primary;
+                }
+            }
+        }
+        .login_type_box {
+            @include flexbox(center, center);
+        }
+        .box_type {
+            @include flexbox(start, center);
+            flex-direction: column;
+            margin: 0 15px;
+            padding: 0 35px;
+            width: 360px;
+            height: 410px;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 20px;
+            text-align: center;
+            background-color: $white;
+            transition-delay: .5s;
+            transition: all .3s;
+            &:hover {
+                transform: translateY(-30px);
+                box-shadow: 0px 35px 25px 0 var(--box-shadow-color);
+            }
+            .mem_type {
+                margin: 27px 0 11px;
+                font-size: 30px;
+                font-weight: $font_weight_bold;
+                line-height: 1;
+                letter-spacing: -.18px;
+            }
+            .desc {
+                font-size: 18px;
+                line-height: 24px;
+                color: $gray_99;
+            }
+            .btn {
+                margin-top: 34px;
+                font-size: 20px;
+                box-shadow: none;
+            }
+            &.teacher {
+                padding-top: 51px;
+                border-color: $primary;
+                --box-shadow-color: rgba(98, 85, 246, 0.15);
+                .mem_type{color: $primary;}
+                .btn {background-color: $primary;}
+            }
+            &.parent {
+                padding-top: 50px;
+                border-color: #02c3c5;
+                --box-shadow-color: rgba(1, 228, 220, 0.15);
+                .mem_type{margin-top: 30px;color: #02c3c5;}
+                .btn {margin-top: 36px;background-color: #02c3c5;}
+            }
+            &.student {
+                padding-top: 34px;
+                border-color: $point;
+                --box-shadow-color: rgba(255, 97, 175, 0.15);
+                .mem_type{margin-top: 32px;color: $point;}
+                .btn {margin-top: 37px;background-color: $point;}
+            }
+        }
+
+        .arrow {
+            margin-top: 65px;
+            a {
+                //cursor: default;
+                padding-bottom: 70px;
+                // position: absolute;
+                // bottom: 20px;
+                // left: 50%;
+                color: $gray_66;
+                transform: translate(-50%, 0%);
+                transition: opacity .3s;
+            }
+            p {
+                height: 70px;
+                background: url(../../img/scroll_down.png) center 30px no-repeat;
+                -webkit-animation: intro0 1.5s infinite;
+                animation: intro0 1.5s infinite;
+
+            }
+        }
+
+        @keyframes intro0 {
+            0% {
+            transform: translate(0, 0);
+            }
+            50% {
+            transform: translate(0, -20px);
+            }
+        }
+    }
+
+    
+    /* Section 1 --------------------------------------- */
+    #section1 {
+        .cate { color: $primary;}
+        .txt_wrap {
+            .deco1 { left: -102px; top: -90px;}
+            .deco2 { left: 329px; top: -35px;}
+            .deco3 { left: -108px; top: 70px;}
+        }
+        .img_wrap{
+            .img_deco { left: -215px; bottom: -31px;}
+        }
+
+        .deco1 { transform: translate3D(-130px,-150px,0);}
+        .deco2 { transform: translate3D(200px,-250px,0);}
+        .deco3 { transform: translate3D(-200px,60px,0);}
+        .deco4 { transform: translate3D(200px,0,0);}    
+        &.action {
+            .deco1 { transition-delay: 1s; transform: translateX(0);} 
+            .deco2 { transition-delay: 1.2s; transform: translateX(0);}  
+            .deco3 { transition-delay: 1.4s; transform: translateX(0);} 
+            .deco4 { transform: translateX(0);}
+            
+        }
+
+    }
+        
+    /* Section 2 --------------------------------------- */
+    #section2 {
+        .cate { color: $point;}
+        .img_wrap{
+            .img_deco {
+                left: -101px;
+                bottom: -28px;
+            }
+        }
+        .deco4 { transform: translateY(-50%);}
+        &.action {
+            .deco4 { transform: translateY(0);}
+        }
+    }
+        
+    /* Section 3 --------------------------------------- */
+    #section3 {
+        .cate { color: #fb9638;}
+        .txt_wrap {
+            .deco1 { left: 390px; top: -35px;}
+            .deco2 { left: -108px; top: 65px;}
+            .deco3 { left: 267px; bottom: -85px;}
+            .btn { background-color: #fb9638;}
+        }
+        .img_wrap{
+            .deco4 {
+                left: -76px;
+                bottom: 57px;
+                z-index: -5;
+            }
+        }
+        .deco5 {
+            position: absolute;
+            right: -132px;
+            top: 0;
+            z-index: -5;
+            object-fit: cover;
+        }
+
+        .deco1 { transform: translate3D(200px,-250px,0);}
+        .deco2 { transform: translate3D(-150px,80px,0);}
+        .deco3 { transform: translate3D(300px,200px,0);}
+        .deco4{ transform: translateX(200px)}
+        &.action {
+            .deco1 { transition-delay: 1s; transform: translateX(0);} 
+            .deco2 { transition-delay: 1.2s; transform: translateX(0);}  
+            .deco3 { transition-delay: 1.4s; transform: translateX(0);}
+            .deco4 { transform: translateX(0); transition-delay: 1s;}
+        }
+    }
+
+    /* Section 4 --------------------------------------- */
+    #section4 {
+        .cate { color: #02c3c5;}
+        .txt_wrap {
+            .btn { background-color: #02c3c5;}
+        }
+        .img_wrap{
+            .img_deco {
+                left: -180px;
+                bottom: -38px;
+            }
+        }
+
+        .deco4 { transform: translate3D(200px,0,0);}
+        &.action {
+            .deco4 { transform: translateX(0);}
+            
+        }
+    }
+
+    /* Section 5 --------------------------------------- */
+    #section5 {
+        .cate { color: #4688ff;}
+        .txt_wrap {
+            .deco1 { left: -60px; top: -45px;}
+            .deco2 { left: 400px; top: -35px;}
+            .deco3 { left: -187px; top: 83px;}
+            .btn { background-color: #4688ff;}
+        }
+        .img_wrap{
+            .img_deco {
+                left: -127px;
+                bottom: -30px;
+            }
+        }
+
+        .deco1 { transform: translate3D(-130px,-150px,0);}
+        .deco2 { transform: translate3D(200px,-250px,0);}
+        .deco3 { transform: translate3D(-200px,100px,0);}
+        .deco4 { transform: translate3D(-150px,0,0);}    
+        &.action {
+            .deco1 { transition-delay: 1s; transform: translateX(0);} 
+            .deco2 { transition-delay: 1.2s; transform: translateX(0);}  
+            .deco3 { transition-delay: 1.4s; transform: translateX(0);} 
+            .deco4 { transform: translateX(0);}
+        }
+    }
+
+    /* Section 6 --------------------------------------- */
+    #section6 {
+        .cate { color: #ff6652;}
+        .txt_wrap {
+            .btn { background-color: #ff6652;}
+        }
+        .img_wrap{
+            .deco4 { left: -105px; bottom: -35px;}
+        }
+        .deco5 { 
+            right: -60px;
+            bottom: -11px;
+            z-index: -5;
+        }
+        
+        .deco4 { transform: translate3D(150px,0,0);}
+        .deco5 { transform: translate3D(-150px,0,0);}
+        &.action {
+            .deco4, .deco5 { transform: translateX(0);}
+            .deco5 {transition-delay: 1.5s;}
+            
+        }
+    }
+}  
+    
+// top button
+.intro_top {
+    display: none;
+    position: fixed;
+    right: 0;
+    transform: translateX(-50%);
+    bottom: 40px;
+    transition: all .2s;
+    @extend .sprite_comm;
+    @extend .sp_btn_top;
 }

@@ -175,7 +175,9 @@
                         <a href="#none" class="download_all">
                             <i class="sprite_comm sp_ico_download_all mr5"></i> 제출된 과제 일괄 다운로드
                         </a>
-                        <div class="view_status_top">
+
+                        <!-- 221005 :: 과제현황보기 .open 클래스 추가 / 과제현황 없을경우 .none 클래스 추가-->
+                        <div class="view_status_top open">
                             <span class="pr25">과제 현황 보기</span>
                             <span class="submit_status">
                                 과제 제출 
@@ -560,7 +562,9 @@
 	<!-- /modal :: 과제게시판 보기 팝업 -->
     <script>
         $(function(){
-			$(".view_status_top").on("click", function(e){
+
+            // 221005 :: 현황보기 .open 클래스 추가
+			$(".view_status_top.open").on("click", function(e){
 				e.preventDefault();
 				$(this).toggleClass("close");
 				$(this).prev(".download_all").toggleClass("show");

@@ -16,21 +16,57 @@
             <div class="schedule_list_wrap">
                 <ul class="schedule_list scroll_box">
                     <li>
-                        <span class="date">2022.06.11</span>
+                        <!-- 221026 수정 삭제 아이콘 추가 -->
+                        <div class="list_top">
+                            <span class="date">2022.06.11</span>
+                            <div class="btn_wrap">
+                                <a href="#none" class="edit">
+                                    <span>수정</span>
+                                </a>
+                                <a href="#none" class="del">
+                                    <span>삭제</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- / -->
                         <p class="content">
                             오늘의 생일자 - 김상민, 김지영, 정재훈<br>
                             2교시 과학 수행평가
                         </p>
                     </li>
                     <li>
-                        <span class="date">2022.06.12</span>
+                        <!-- 221026 수정 삭제 아이콘 추가 -->
+                        <div class="list_top">
+                            <span class="date">2022.06.12</span>
+                            <div class="btn_wrap">
+                                <a href="#none" class="edit">
+                                    <span>수정</span>
+                                </a>
+                                <a href="#none" class="del">
+                                    <span>삭제</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- / -->
                         <p class="content">
                             오늘의 생일자 - 김상민, 김지영, 정재훈<br>
                             2교시 과학 수행평가
                         </p>
                     </li>
                     <li>
-                        <span class="date">2022.06.13</span>
+                        <!-- 221026 수정 삭제 아이콘 추가 -->
+                        <div class="list_top">
+                            <span class="date">2022.06.13</span>
+                            <div class="btn_wrap">
+                                <a href="#none" class="edit">
+                                    <span>수정</span>
+                                </a>
+                                <a href="#none" class="del">
+                                    <span>삭제</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- / -->
                         <p class="content">
                             오늘의 생일자 - 김상민, 김지영, 정재훈<br>
                         </p>
@@ -60,10 +96,18 @@
     <script>
         $(function(){
             $(".calendar_modal + .plus").hide();
-            $(".btn_plan_add").on("click", function(){
+
+            // 221026 :: .schedule_list li 수정/삭제 버튼 click 이벤트 추가 
+            $(".btn_plan_add,.schedule_list li .edit").on("click", function(){
                 $(".calendar_modal + .plus").show();
                 return false;
             });
+            $(".schedule_list li .del").on("click", function(){
+                $(this).closest("li").remove();
+                return false;
+            });
+            // 221026 */
+
             $(".plus .close").on("click", function(){
                 $(".calendar_modal_flex").hide();
                 return false;

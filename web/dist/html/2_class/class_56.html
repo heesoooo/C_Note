@@ -269,21 +269,57 @@
             <div class="schedule_list_wrap">
                 <ul class="schedule_list scroll_box">
                     <li>
-                        <span class="date">2022.06.11</span>
+                        <!-- 221026 수정 삭제 아이콘 추가 -->
+                        <div class="list_top">
+                            <span class="date">2022.06.11</span>
+                            <div class="btn_wrap">
+                                <a href="#none" class="edit">
+                                    <span>수정</span>
+                                </a>
+                                <a href="#none" class="del">
+                                    <span>삭제</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- / -->
                         <p class="content">
                             오늘의 생일자 - 김상민, 김지영, 정재훈<br>
                             2교시 과학 수행평가
                         </p>
                     </li>
                     <li>
-                        <span class="date">2022.06.12</span>
+                        <!-- 221026 수정 삭제 아이콘 추가 -->
+                        <div class="list_top">
+                            <span class="date">2022.06.12</span>
+                            <div class="btn_wrap">
+                                <a href="#none" class="edit">
+                                    <span>수정</span>
+                                </a>
+                                <a href="#none" class="del">
+                                    <span>삭제</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- / -->
                         <p class="content">
                             오늘의 생일자 - 김상민, 김지영, 정재훈<br>
                             2교시 과학 수행평가
                         </p>
                     </li>
                     <li>
-                        <span class="date">2022.06.13</span>
+                        <!-- 221026 수정 삭제 아이콘 추가 -->
+                        <div class="list_top">
+                            <span class="date">2022.06.13</span>
+                            <div class="btn_wrap">
+                                <a href="#none" class="edit">
+                                    <span>수정</span>
+                                </a>
+                                <a href="#none" class="del">
+                                    <span>삭제</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- / -->
                         <p class="content">
                             오늘의 생일자 - 김상민, 김지영, 정재훈<br>
                         </p>
@@ -313,10 +349,18 @@
     <script>
         $(function(){
             $(".calendar_modal + .plus").hide();
-            $(".btn_plan_add").on("click", function(){
+
+            // 221026 :: .schedule_list li 수정/삭제 버튼 click 이벤트 추가 
+            $(".btn_plan_add,.schedule_list li .edit").on("click", function(){
                 $(".calendar_modal + .plus").show();
                 return false;
             });
+            $(".schedule_list li .del").on("click", function(){
+                $(this).closest("li").remove();
+                return false;
+            });
+            // 221026 */
+
             $(".plus .close").on("click", function(){
                 $(".calendar_modal_flex").hide();
                 return false;
@@ -549,7 +593,9 @@
 
 	<!-- modal :: 학급조사표 옵션 팝업 -->
 	<div class="modal" id="checklistPop">
-		<div class="modal_content w1090" style="width: 1140px">
+		<!-- 220929 :: class명 변경 -->
+		<div class="modal_content flex_between_start bg_transparent"  style="width: 810px">
+			<!-- 220929 :: delete
 			<div class="left_section">
 				<div class="con_box p0">
 					<div class="title_checklist">
@@ -567,13 +613,14 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<div class="center_section" style="width: 700px">
 				<!-- 조사표 옵션 선택 (옵션 수정이 불가능함) -->
 				<div class="board_write_wrap unmodify"> <!-- .unmodify 추가 시 옵션 모두 disabled 넣어주기  -->
 					<h4>
 						학급 조사표 옵션
-						<a href="#none" class="delete">닫기</a>
+						<!-- 220928 :: delete 
+						<a href="#none" class="delete">닫기</a>-->
 					</h4>
 					<div class="board_write_body">
 						<div class="input_subject">

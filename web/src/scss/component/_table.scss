@@ -56,7 +56,9 @@ table.tbl_list {
                 color: $black;
                 padding-left: 35px;
             }
-            &:first-child { padding-left: 20px;}
+            &:first-child { 
+                padding-left: 20px;
+            }
             &:last-child { padding-right: 20px;}
         }
     }
