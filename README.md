@@ -1,4 +1,4 @@
-# C_Note
+# WT_Note
 
 URL 확인
 
