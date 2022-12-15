@@ -5,7 +5,6 @@
     table td {
         height: 5rem;
         line-height: 5rem;
-
         span {
             width: 5rem;
             height: 5rem;
@@ -66,6 +65,12 @@
         background: url(../../img/ico_up_default.png) no-repeat bottom 0.7rem center;
         background-size: 1.1rem 0.6rem;
     }
+    .timepicker-hours,
+    .timepicker-minutes {
+        margin-top: -2.4rem;
+        padding: 1.5rem;
+        td { font-size: 1.6rem;}
+    }
 }
 .bootstrap-datetimepicker-widget {
     .accordion-toggle {
@@ -78,7 +83,7 @@ input {
         position: relative;
         margin: 0;
         padding-left: 1.2rem;
-        min-width: 10.5rem;
+        min-width: 11.3rem;
         height: 4rem;
         border: 1px solid $gray_e0;
         border-radius: 0.7rem;
@@ -124,7 +129,7 @@ input {
 .calendar_modal_flex {
     @include flexbox(start, start);
 }
-//modal_calendar
+// modal_calendar
 .modal {
     .calendar {
         &.modal_content {
@@ -139,11 +144,7 @@ input {
             }
         }
         .datepicker {
-            padding: 3rem 2rem 1rem;
-
-            table.table-condensed tr td.day {
-                line-height: 3.3rem;
-            }
+            padding: 2.6rem 2rem 1.5rem;
         }
         .timepicker {
             @include timepicker;
@@ -161,8 +162,15 @@ input {
         //일정 리스트
         .schedule_list {
             li {
+                position: relative;
                 padding: 1.8rem 0;
                 border-bottom: 1px solid $gray_e0;
+                .btn_comment_opt {
+                    position: absolute;
+                    top: 1.75rem; right: 0;
+                    font-size: 0;
+                    padding: 0 0 .5rem 1.5rem;
+                }
             }
             .date {
                 display: block;
@@ -176,6 +184,7 @@ input {
                 line-height: 2.2rem;
                 letter-spacing: -0.15px;
                 color: $black;
+                word-break: break-all;
             }
         }
         .empty_msg {
@@ -183,11 +192,24 @@ input {
         }
     }
 }
-// datePicker Custom
+
+.datepicker-inline {
+    width: 100%;
+}
+.bootstrap-datetimepicker-widget table td.today:before {
+    display: none;
+}
+.bootstrap-datetimepicker-widget a[data-action] {
+    background-color: transparent;
+}
+
+
+// datePicker ver.1 Custom
 .datepicker {
     padding: 0;
     margin-bottom: 1.2rem;
 
+    .datepicker-switch,
     .picker-switch {
         height: 4.3rem;
         line-height: 1;
@@ -214,8 +236,13 @@ input {
                     font-weight: 400;
                 }
                 &.day {
-                    line-height: 3.4rem;
+                    line-height: 3.7rem;
                     font-size: 1.6rem;
+                    text-align: center;
+                    &.old,
+                    &.new {
+                        color: $gray_cc;
+                    }
                 }
             }
             td {
@@ -230,9 +257,7 @@ input {
                     }
                 }
                 &.active {
-
                     background-color: transparent;
-
                     .focus,
                     .highlighted,
                     .highlighted.focus,
@@ -242,28 +267,34 @@ input {
                     &:hover {
                         border-radius: 50%;
                     }
-                    span {
-                        display: inline-block;
-                        width: 3.1rem;
-                        height: 3.1rem;
-                        line-height: 3.1rem;
-                        margin: 0;
-                        background-color: $primary;
-                        border-radius: 50%;
+                    &.day {
+                        span {
+                            background-color: $primary;
+                            border-radius: 50%;
+                            color: $white;
+                        }
                     }
                 }
                 &.day {
                     width: 3.3rem;
                     @include ff-mont;
                     transition: all .1s ease-in;
+                    span {
+                        display: inline-block;
+                        width: 3.1rem;
+                        height: 3.1rem;
+                        line-height: 3.1rem;
+                        margin: 0 auto;
+                        background-color: transparent;
+                        cursor: pointer;
+                    }
 
                     &.schedule_info {
-                        position: relative;
-
-                        &::before {
+                        span { position: relative;}
+                        span::before {
                             position: absolute;
-                            top: 5rem;
-                            right: 0.6rem;
+                            top: 0.5rem;
+                            right: 0.1rem;
                             content: '';
                             width: 0.4rem;
                             height: 0.4rem;
@@ -300,17 +331,35 @@ input {
     .next { background-image: url(../../img/ico_datepicker_next.png);}
     .month,
     .year {
-        width: 6rem;
-
-        &.active { background-color: $primary;}
+        display: inline-block;
+        width: 25%;
+        height: 3rem;
+        line-height: 2.8rem;
+        text-align: center;
+        font-size: 1.6rem;
+        &.active { background-color: $primary; color: $white; border-radius: 0.5rem;}
     }
-}
-.datepicker-inline {
-    width: 100%;
-}
-.bootstrap-datetimepicker-widget table td.today:before {
-    display: none;
-}
-.bootstrap-datetimepicker-widget a[data-action] {
-    background-color: transparent;
+    &.dropdown-menu {
+        position: absolute;
+        min-width: 28rem;
+        height: 32rem;
+        padding: 2.6rem 2.2rem 1rem;
+        margin-top: 0;
+        box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 2rem;
+        background-color: $white;
+        @media (max-width: 350px) {
+            min-width: 25rem;
+            padding: 2.6rem 1.8rem 1rem;
+        }
+        .datepicker-switch {
+            height: 3rem;
+        }
+        table.table-condensed tr td.day {
+            line-height: 3.4rem;
+            &.disabled {
+                color: $gray_cc;
+            }
+        }
+    }
 }

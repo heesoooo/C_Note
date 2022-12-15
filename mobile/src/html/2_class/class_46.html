@@ -7,126 +7,117 @@
 </head>
 
 <body>
-
-    <!-- 게시판 설정 팝업 -->
-    <div class="modal" id="requestJoinClass">
-        <div class="modal_content modal_full"><!-- 너비/높이 100% 팝업은 .modal_full 추가 -->
-            <!-- header -->
-            <div class="sub_header center">
-                <a href="#none" class="modal_close" data-dismiss="modal">뒤로가기</a>
-                <h2 class="sub_title">게시판 설정</h2>
+    <div class="wrapper">
+        <!-- header -->
+        <div class="sub_header center">
+            <a href="#none" class="history_back">뒤로가기</a>
+            <h2 class="sub_title">게시판 설정</h2>
+            <div class="btn_wrap">
+                <a href="#none" class="">확인</a>
             </div>
-            <!-- /header -->
+        </div>
+		<!-- /header -->
 
-            <!-- contents -->
-            <div class="cont_section">
-                <div class="setting_list">
-                    <div class="board_set_box">
-                        <ul class="board_set_detail">
-                            <li class="list_item">
-                                <p class="title">T셀파 학습도구</p>
-                                <label class="switch">
-                                    <input type="checkbox" checked>
-                                    <span class="slider"></span>
-                                </label>
-                            </li>
-                            <li class="list_item">
-                                <p class="title">조사표</p>
-                                <label class="switch">
-                                    <input type="checkbox" uncheked>
-                                    <span class="slider"></span>
-                                </label>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="board_set_box">
-                        <div class="board_set_top">
-                            <p class="title">학급공지 게시판</p>
+        <!-- contents -->
+        <div class="container">
+            <div class="setting_list">
+                <div class="board_set_box">
+                    <ul class="board_set_detail">
+                        <li class="list_item">
+                            <p class="title">T셀파 학습도구</p>
                             <label class="switch">
                                 <input type="checkbox" checked>
                                 <span class="slider"></span>
                             </label>
-                        </div>
-                        <ul class="board_set_detail">
-                            <li class="list_item">
-                                <p class="title">읽기 권한</p>
-                                <div class="check_box">
-                                    <input type="checkbox" id="check1" checked>
-                                    <label for="check1">학생</label>
-                                    <input type="checkbox" id="check1-2">
-                                    <label for="check1-2">학부모</label>
-                                </div>
-                            </li>
-                            <li class="list_item">
-                                <p class="title">댓글 사용</p>
-                                <label class="switch">
-                                    <input type="checkbox" checked>
-                                    <span class="slider"></span>
-                                </label>
-                            </li>
-                            <li class="list_item">
-                                <p class="title">읽기 권한</p>
-                                <div class="check_box">
-                                    <input type="checkbox" id="check1" checked>
-                                    <label for="check1">학생</label>
-                                    <input type="checkbox" id="check1-3">
-                                    <label for="check1-3">학부모</label>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="board_set_box unchecked">
-                        <div class="board_set_top">
-                            <p class="title">학급공지 게시판</p>
+                        </li>
+                        <li class="list_item">
+                            <p class="title">조사표</p>
                             <label class="switch">
                                 <input type="checkbox" uncheked>
                                 <span class="slider"></span>
                             </label>
-                        </div>
-                        <ul class="board_set_detail">
-                            <li class="list_item">
-                                <p class="title">읽기 권한</p>
-                                <div class="check_box">
-                                    <input type="checkbox" id="check1" disabled>
-                                    <label for="check1">학생</label>
-                                    <input type="checkbox" id="check1-2" disabled>
-                                    <label for="check1-2">학부모</label>
-                                </div>
-                            </li>
-                            <li class="list_item">
-                                <p class="title">댓글 사용</p>
-                                <label class="switch">
-                                    <input type="checkbox" disabled>
-                                    <span class="slider"></span>
-                                </label>
-                            </li>
-                            <li class="list_item">
-                                <p class="title">읽기 권한</p>
-                                <div class="check_box">
-                                    <input type="checkbox" id="check1" disabled>
-                                    <label for="check1">학생</label>
-                                    <input type="checkbox" id="check1-3" disabled>
-                                    <label for="check1-3">학부모</label>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
-            </div>
-            <!-- /contents -->
+                <div class="board_set_box">
+                    <div class="board_set_top">
+                        <p class="title">학급공지 게시판</p>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <ul class="board_set_detail">
+                        <li class="list_item">
+                            <p class="title">읽기 권한</p>
+                            <div class="check_box">
+                                <input type="checkbox" id="check1" checked>
+                                <label for="check1">학생</label>
+                                <input type="checkbox" id="check1-2">
+                                <label for="check1-2">학부모</label>
+                            </div>
+                        </li>
+                        <li class="list_item">
+                            <p class="title">댓글 사용</p>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </li>
+                        <li class="list_item">
+                            <p class="title">읽기 권한</p>
+                            <div class="check_box">
+                                <input type="checkbox" id="check1" checked>
+                                <label for="check1">학생</label>
+                                <input type="checkbox" id="check1-3">
+                                <label for="check1-3">학부모</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="board_set_box unchecked">
+                    <div class="board_set_top">
+                        <p class="title">학급공지 게시판</p>
+                        <label class="switch">
+                            <input type="checkbox" uncheked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <ul class="board_set_detail">
+                        <li class="list_item">
+                            <p class="title">읽기 권한</p>
+                            <div class="check_box">
+                                <input type="checkbox" id="check1" disabled>
+                                <label for="check1">학생</label>
+                                <input type="checkbox" id="check1-2" disabled>
+                                <label for="check1-2">학부모</label>
+                            </div>
+                        </li>
+                        <li class="list_item">
+                            <p class="title">댓글 사용</p>
+                            <label class="switch">
+                                <input type="checkbox" disabled>
+                                <span class="slider"></span>
+                            </label>
+                        </li>
+                        <li class="list_item">
+                            <p class="title">읽기 권한</p>
+                            <div class="check_box">
+                                <input type="checkbox" id="check1" disabled>
+                                <label for="check1">학생</label>
+                                <input type="checkbox" id="check1-3" disabled>
+                                <label for="check1-3">학부모</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>  
         </div>
+        <!-- /contents -->
+
     </div>
-    <!-- ./ -->
 
     <script>
-        $(function () {
-
-            $("#requestJoinClass").modal({
-                show: true,
-                overlayDrop: false
-            })
-
-        })
     </script>
 </body>
 

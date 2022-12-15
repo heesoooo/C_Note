@@ -4,14 +4,17 @@
 <head>
 	<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
 
 <link rel="stylesheet" href="../../css/common/common.css">
 <link rel="stylesheet" href="../../css/common/pages.css">
 
+
 <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
 
-<script type="text/javascript" src="../../js/script.js"></script> 
+<script type="text/javascript" src="../../js/jquery.js"></script> 
+<script type="text/javascript" src="../../js/script.js"></script>
 	<title>우리반티셀파 - 서브</title>
 </head>
 
@@ -32,7 +35,10 @@
                 </div>
                 <div class="submit_status">
                    <span>제출현황 :</span>
-                   <span><strong>36</strong>/60(60.00%)</span>
+                   
+                   <!-- 221201 차트 아이콘 추가 -->
+                   <span><strong>36</strong>/60(60.00%) <i class="sprite_comm sp_ico_chart"></i></span>                   
+                   <!-- // 221201 -->
 
                     <a href="#none" class="unsubmit btn outline small round point">미제출 알림</a>
                 </div>
@@ -105,13 +111,18 @@
 
 			<!-- contents -->
 			<div class="cont_section">
+                <!-- 221011 :: 상단바 추가 -->
+                <div class="fix_top_bar blue">
+                    2학년 3반 12번 김천재 학생 
+                </div>
                 <div class="survey_wrap">
                     <ul class="survey_question_list">
                         <li class="survey_question">
                             <p class="question">
                                 <span class="q_txt">1. 신청하고 싶은 우유 체크</span>
                                 <span class="tag tag_pink">복수응답</span>
-                                <span class="tag tag_red ml5">필수</span>
+                                <!-- 221201 :: .ml5 클래스 삭제 -->
+                                <span class="tag tag_red">필수</span>
                             </p>
                             <div class="img_box">
                                 <img src="https://via.placeholder.com/320x185.png">

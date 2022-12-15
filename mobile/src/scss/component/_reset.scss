@@ -1,4 +1,7 @@
 ﻿
+*, body {
+	-webkit-text-size-adjust:none;
+} 
 address,
 article,
 aside,
@@ -71,6 +74,10 @@ i {
 	font-weight: 400;
 }
 
+a {
+	-webkit-tap-highlight-color: transparent;
+}
+
 a,
 button,
 img,
@@ -98,6 +105,9 @@ html {
 *::before,
 *::after {
     box-sizing: border-box;
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
 }
 /* input file */
 input[type=file] {

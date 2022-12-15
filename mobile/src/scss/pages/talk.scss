@@ -54,25 +54,31 @@
 	.sub_header {
 		// header icon
 		.btn_wrap { display: flex }
-		.btn_sel_class,
 		.btn_timepicker,
 		.btn_chat_info,
 		.btn_page_fulldown{
 			@include ir_pm;
 			@extend .sprite_comm;
 		}    
-		.btn_sel_class {        
-			@extend .sp_ico_sel_class;
-		}
 		.btn_timepicker {        
-			@extend .sp_ico_clock_setting;
+            @extend .sp_ico_clock_setting;
 		}
 		.btn_chat_info {        
-			@extend .sp_ico_menu;
+            @extend .sp_ico_menu;
 		}
 		.btn_page_fulldown {
-			@extend .sp_ico_fulldown;
+            @extend .sp_ico_fulldown;
 		}
+        .btn_sel_class {
+            @include flexbox(start, center);
+            span {
+                padding-right: 0.8rem;
+                padding-left: 0.7rem;
+                font-size: 1.6rem;
+                font-weight: $font_weight_medium;
+                color: #000;
+            }
+        }
 	}
 }
 // talk nav tab
@@ -133,6 +139,15 @@
 // tab content
 .tab_cont_wrap {
 	padding-top: 12.1rem;
+	// 대화상대 추가 버튼
+	.btn_add_partner {
+		position: fixed;
+		bottom: 8rem; right: 1.25rem;
+		@include ir_pm;
+		@extend .sprite_comm;
+		@extend .sp_btn_add_partner;
+	}
+
 	.tab_cont_item {
 		display: none;
 	}
@@ -276,6 +291,13 @@
 				i {@extend .sp_ico_call;}
 				&.block {
 					i {@extend .sp_ico_no_call;}
+				}                
+			}
+			.t_rec {
+				margin-left: 1rem;
+				i {@extend .sp_ico_rec;}
+				&.block {
+					i {@extend .sp_ico_no_rec;}
 				}                
 			}
 		}
@@ -724,6 +746,11 @@
 .chatting_list_wrap {
 	position: relative;
 	padding: 6.5rem 2rem 0;
+
+	&.one_on_one {
+		padding: 1rem 2rem 0; 
+	}
+
 	.consulting_time_bar {
 		position: fixed;
 		width: calc(100% - 1rem);
@@ -803,9 +830,6 @@
 				font-weight: $font_weight_bold;
 			}
 		}
-		+ .date {
-			margin-top: 0;
-		}
 	}
 	.chatting_profile {
 		.name {
@@ -827,7 +851,6 @@
 	}
 	.chatting_bubble_wrap {
 		position: relative;
-		margin-bottom: 6px;		
 		// 긴글 모두보기 버튼
 		.all_view_txt {
 			position: absolute;
@@ -960,6 +983,15 @@
 					margin-bottom: 0;
 				}
 			}
+			&.emoticon {
+                width: 12rem;
+                height: 12rem;
+                padding: 0;
+                background: transparent !important;
+                img {
+                    width: 12rem;
+                }
+            }
 			.link {
 				color: $primary;
 				text-decoration: underline;
@@ -1011,9 +1043,6 @@
 				}
 			}
 		}
-		&:last-child {
-			margin-bottom: 1.5rem;
-		}
 	}
 	// 상대방 대화
 	.chatting_you {
@@ -1049,6 +1078,9 @@
 				}
 			} 
 		}
+		+ .date {
+			margin: 3rem 0 1.5rem;	
+		}
 	}
 	// 본인 대화
 	.chatting_me {
@@ -1079,9 +1111,12 @@
 				@include flexbox(end,end);
 			}
 		}
+		+ .date {
+			margin: 3rem 0 1.5rem;	
+		}
 	}
 	.date {
-		margin: 3rem 0 1.5rem;
+		margin: 0 0 1.5rem;
 		text-align: center;
 		span {
 			display: inline-block;
@@ -1223,11 +1258,12 @@
 		@include flexbox(center, center);
 		flex-direction: column;
 		.img_profile {
+			@include ir_pm;
 			margin-bottom: 1.9rem;
 			width: 10rem;
 			height: 10rem;
 			border-radius: 50%;
-			background: url(../../img/img_profile_large.png) no-repeat 0 0;
+			background: url(../../img/img_call_profile.png) no-repeat 0 0;
 			background-size: 10rem;
 			img {
 				width: 100%;
@@ -1285,7 +1321,7 @@
 			}
 		}
 		+ a {
-			margin-left: 6rem;
+			margin-left: 3rem;
 		}
 		span {
 			font-size: 13px;
@@ -1307,6 +1343,14 @@
 			background: $primary;
 			&::after {
 				@extend .sp_ico_call_w_sm;
+			}
+		}
+	}
+	.rec {
+		i {
+			background: #00c4c6;
+			&::after {
+				@extend .sp_ico_rec_w;
 			}
 		}
 	}
@@ -1941,9 +1985,12 @@
 		}
 	}
 	.btn_middle_wrap {
-		@include flexbox(between, center);
+		@include flexbox(center, center);
 		width: 100%;
 		padding: 0 4.5rem;
+		.btn_call {
+			margin: 0 1.5rem;
+		}
 	}	
 	.btn_bottom_wrap {
 		margin-top: 5.45rem;
@@ -1993,6 +2040,8 @@
 	}
 }
 
+
+
 // 768px 이상일때
 @media all and (min-width:768px) {
 	.conversate_list_wrap{
@@ -2010,4 +2059,47 @@
 			margin-left: -20.2rem;
 		}
 	}	
+	.tab_cont_wrap {
+		.btn_add_partner {
+			right: auto;
+			left: 50%;
+			margin-left: 300px;
+		}
+	}
+}
+
+//톡콜 팝업
+.modal_talk {
+    .modal_content {
+        .profile {
+			display: block;
+            margin: 0 auto 1.5rem;
+            width: 7rem;
+            height: 7rem;
+            border-radius: 50%;
+            background-color: $gray_f5;
+            background-image: url(../../img/profile_basic.png);
+            background-size: 7rem;
+            img {
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+		}
+    }
+    .modal_btn_half {
+        margin-top: 2.8rem;
+        .modal_btn {
+            flex-direction: column;
+            font-size: 1.3rem;
+            height: 7.6rem;
+            line-height: 1;
+            font-weight: $font_weight_regular;
+            &.inactive {
+                color: $gray_99;
+                i { opacity: .4;}
+            }
+        }
+    }
 }

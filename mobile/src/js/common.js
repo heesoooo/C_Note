@@ -35,14 +35,18 @@
         event.stopPropagation();
         dimmOpen();
         $(this).parent().next(".sub_expand_tab").addClass("active");
+        if ($(this).parent().next(".sub_expand_tab").outerHeight() > 320) {
+            $(this).parent().next(".sub_expand_tab").addClass("ov_scroll")
+        }
     })
 
     // 글쓰기 버튼 클릭시
-    $(".btn_write_page").on('click', function(event) {
+    $(".btn_write_page, .btn_write_page2").on('click', function(event) {
         event.stopPropagation();
         dimmOpen();
         $(this).next(".list_write_menu").addClass("active");
     })
+
 
     // 게시판 더보기 버튼 클릭시
     $(".btn_more_opt").on('click', function(event) {
@@ -107,6 +111,7 @@
         if ($(this).val() == 0) {
             $(this).blur().siblings('.btn_clear').hide();
             $(this).parent().next(".btn_search").removeClass("active");
+            $(this).focus();
         } else {
             $(this).focus().siblings('.btn_clear').show();
             $(this).parent().next(".btn_search").addClass("active");
@@ -114,7 +119,7 @@
     })
     $('.inp_clear + .btn_clear').on("click", function (e) {
         e.preventDefault();
-        $(this).hide().siblings('input').val("");
+        $(this).hide().siblings('input').val("").focus();
         $(this).parent().removeClass("active");
     });
 

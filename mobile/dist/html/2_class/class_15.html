@@ -4,14 +4,17 @@
 <head>
 	<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
 
 <link rel="stylesheet" href="../../css/common/common.css">
 <link rel="stylesheet" href="../../css/common/pages.css">
 
+
 <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
 
-<script type="text/javascript" src="../../js/script.js"></script> 
+<script type="text/javascript" src="../../js/jquery.js"></script> 
+<script type="text/javascript" src="../../js/script.js"></script>
 	<title>우리반티셀파 - 서브</title>
 </head>
 
@@ -67,7 +70,11 @@
 			<div class="notice_view_body">
 				<div class="bbs_area">
 					<p class="view_target">수신 대상 : 학부모, 학생</p>
-					<p class="hashtag">#예약 #중요</p>
+					<p class="hashtag">
+                        <!-- 221130 :: 예약 추가 -->
+                        <span class="reservation">#예약_5월30일 13:46</span> 
+                        <span>#중요</span>
+                    </p>
 					<p class="notice_title">5월 30일 공지사항</p>
 					<!-- 에디터에서 입력한 내용 노출-->
 					<p class="content">
@@ -76,12 +83,18 @@
 						3. 영어 수행평가 - 다음주 수요일 실시<br>
 						4. 화요일 - 아침 방송 조회(8시 45분까지 등교)<br>
 						5. 업사이클 작품 활동 - 학급 티 입기<br>
-						6. 여름철 식중독 조심, 찬 음식이나 음료 많이 먹지 않기 <br><br>
+						6. 여름철 식중독 조심, 찬 음식이나 음료 많이 먹지 않기<br><br>
+						Loremipsumdolorsitametconsecteturadipisicingelit.Quisnemoatque,impeditaccusantiumaccusamus,ullameligendidictalaboriosamtemporibusdoloremqueadeosvoluptatearchitectoaspernatur.Vitaeametfugitfacereiusto?<br><br>
 						<img src="../../img/test_img.jpg" alt="test_img">
 					</p>
 
 					<!-- 첨부파일 이미지 -->
 					<div class="attach_image">
+
+						<!-- 221123 : title 추가 -->
+						<h3>첨부파일</h3>
+						<!-- / -->
+						
 						<ul>
 							<li>
 								<a href="#none">
@@ -233,7 +246,7 @@
 									습니다. 점검이 얼른 완료 되었으면 좋겠습니다. 첫번째로 와서 공지 확인 했습니다^^ 화이팅 하세요~</p>
 								<span class="date">2022.04.08 15:32</span>
 								<!-- 세번째 부턴 더이상 댓글쓰기 불가
-						<a href="#none" class="btn_write_reply">답글쓰기</a> -->
+						        <a href="#none" class="btn_write_reply">답글쓰기</a> -->
 							</div>
 							<a href="#none" class="btn_comment_opt" data-target="commentOption"><i class="sprite_comm sp_ico_more_sm"></i>코멘트 옵션</a>
 						</div>
@@ -242,7 +255,6 @@
 
 				<div class="reply_box">
 					<p class="btn_comment">댓글을 입력하세요.(100자 이내)</p>
-
 					<div class="real_comment_box re_comment">
 						<textarea maxlength="100" placeholder="댓글을 남겨주세요. (최대 100자)"></textarea>
 						<div class="btn_wrap">
@@ -251,6 +263,11 @@
 						</div>
 					</div>
 				</div>
+
+                <!--  221206 :: 댓글을 작성할 수 없는경우 -->
+                <div class="reply_box">
+					<p class="btn_comment_disabled">댓글을 작성할 수 없습니다. 선생님에게 문의해주세요.</p>
+                </div>
 			</div>
 		</div>
 		<!-- //content -->
@@ -258,7 +275,10 @@
 		<!-- sub tab bar -->
 		<div class="sub_tab_bar">
     <ul>
-        <li class="tab_checklist on"><a href="#none"><i class="sprite_comm sp_ico_sub_checklist_off"></i>조사표</a></li>
+        <!-- 221117 :: add -->
+        <li class="tab_home on"><a href="#none"><i class="sprite_comm sp_ico_sub_home_off"></i>홈</a></li>
+        <!-- ./ -->
+        <li class="tab_checklist"><a href="#none"><i class="sprite_comm sp_ico_sub_checklist_off"></i>조사표</a></li>
         <li class="tab_schedule"><a href="#none"><i class="sprite_comm sp_ico_sub_schedule_off"></i>일정추가</a></li>
         <li class="tab_member"><a href="#none"><i class="sprite_comm sp_ico_sub_member_off"></i>구성원</a></li>
         <li class="tab_setting"><a href="#none"><i class="sprite_comm sp_ico_sub_setting_off"></i>설정</a></li>
@@ -278,8 +298,6 @@
 		</div>
 	</div>
 
-	<script>
-	</script>
 </body>
 
 </html>

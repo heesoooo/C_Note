@@ -33,11 +33,32 @@
                     </div>
                     <div class="filter_line">
                         <span class="tit">기간</span>
-                        <div class="calendar_wrap">
-                            <input class="inp_datepicker" placeholder="22.08.29" id='datetimepicker4'>
+                        <div class="calendar_wrap input-group input-daterange">
+                            <input class="inp_datepicker form-control" placeholder="22.10.12" id='datePicker4'>
                             <span>~</span>
-                            <input class="inp_datepicker" placeholder="22.08.30" id='datetimepicker5'>
-                        </div>                       
+                            <input class="inp_datepicker form-control" placeholder="22.10.13" id='datePicker5'>
+                        </div>   
+                        <script>
+                        $(function () {
+                            $('#datePicker4').datepicker({
+                                weekStart: 1,
+                                format: "yy.mm.dd",
+                                toggleActive: true,
+                                changeMonth: true,
+                                changeYear: true,
+                            });
+                            $('#datePicker5').datepicker({
+                                weekStart: 1,
+                                format: "yy.mm.dd",
+                                toggleActive: true,
+                                changeMonth: true,
+                                changeYear: true,
+                            });
+                            $('.input-daterange input').each(function() {
+                                $(this).datepicker('clearDates');
+                            });
+                        });
+                        </script>                     
                     </div>
                 </div>
                 <div class="search_result">
@@ -162,25 +183,7 @@
         
 
     <script type="text/javascript">
-        $(function () {
-            $('#datetimepicker4').datetimepicker({
-                format: 'L',
-                format: 'YY.MM.DD',
-            });
-            $('#datetimepicker5').datetimepicker({
-                useCurrent: false, //Important! See issue #1075
-                format: 'L',
-                format: 'YY.MM.DD'
-            });
-            $("#datetimepicker4").on("dp.change", function (e) {
-                $('#datetimepicker5').data("DateTimePicker").minDate(e.date);
-            });
-            $("#datetimepicker5").on("dp.change", function (e) {
-                $('#datetimepicker4').data("DateTimePicker").maxDate(e.date);
-            });
-        });
-
-        
+       
         // 검색 필터
         $(function(){
             $(".search_result .btn_filter").on("click", function(e){

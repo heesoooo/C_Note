@@ -87,6 +87,47 @@
             color: $gray_99;
         }
     }
+
+    // sns list
+    .sns_lst_wrap {
+        padding-top: 2.4rem;
+        text-align: center;
+        .tit {
+            display: block;
+            margin-bottom: 1.4rem;
+            font-size: 1.2rem;
+            font-weight: $font_weight_regular;
+            line-height: 1;
+            letter-spacing: -0.12px;
+            color: $gray_66;
+        }
+
+        .sns {
+            @include flexbox(center, center);
+            li {
+                margin: 0 .5rem;
+                @extend .sprite_comm;
+                a {
+                    display: block;
+                    height: 100%;
+                    font-size: 0;
+                }
+                &.instagram {
+                    @extend .sp_sns_instagram;
+                }
+                &.facebook {
+                    @extend .sp_sns_facebook;
+                }
+                &.youtube {
+                    @extend .sp_sns_youtube;
+                }
+                &.blog {
+                    @extend .sp_sns_blog;
+                }
+            }
+        }
+    }
+
     .my_ver {
         text-align: center;
         padding: 3rem 0 4rem;
@@ -222,7 +263,13 @@
                 }
             }
         }
-
+        
+        .sub_tit {
+            padding-top: 2rem;
+            margin-bottom: 2.2rem;
+            font-size: 1.6rem;
+            font-weight: $font_weight_bold;
+        }
     }
 
     .information {
@@ -270,39 +317,50 @@
 
 // 공지사항, 문의하기 상세페이지
 .notice_view_wrap {
-    .date { 
-        font-size: 1.2rem;
-        color: $gray_bb;
-        letter-spacing: -0.04rem;
-    }
-    .title { 
-        font-size: 1.8rem;
-        line-height: 2.5rem;
-        font-weight: $font_weight_bold;
-        color: $black;
-        margin-top: 0.4rem;
-        @include flexbox(between, start);
-        a { min-width: 16px; margin-top: 0.4rem;}
-    }
-    .cate { 
-        font-size: 1.2rem;
-        font-weight: $font_weight_bold;
-        color: $primary;
-        margin-bottom: 0.4rem;
-    }
-    .bar {
-        display: inline-block;
-        margin: 0 0.5rem;
-        width: 0.1rem;
-        height: 0.8rem;
-        background: #aeaeae;
+    .notice_view {
+        .date { 
+            font-size: 1.2rem;
+            color: $gray_bb;
+            letter-spacing: -0.04rem;
+        }
+        .title { 
+            font-size: 1.8rem;
+            line-height: 2.5rem;
+            font-weight: $font_weight_bold;
+            color: $black;
+            margin-top: 0.4rem;
+            word-break: break-all;
+            @include flexbox(between, start);
+            a { min-width: 16px; margin-top: 0.4rem;}
+        }
+        .cate { 
+            font-size: 1.2rem;
+            font-weight: $font_weight_bold;
+            color: $primary;
+            margin-bottom: 0.4rem;
+        }
+        .bar {
+            display: inline-block;
+            margin: 0 0.5rem;
+            width: 0.1rem;
+            height: 0.8rem;
+            background: #aeaeae;
+        }
     }
 
-    .answer_area {
-        padding: 3.5rem 2rem;
-        border-top: 0.9rem solid $gray_f5;
-        .icon { margin-right: 1.2rem;}
-        .title { font-size: 1.6rem;}
+    .notice_view_body {
+        padding: 2rem 0 0;
+        word-break: break-all;
+        border-bottom: 0;
+        .bbs_area {
+            padding: 0 2rem 3rem;
+        }
+        .answer_area {
+            padding: 3.5rem 2rem;
+            border-top: 0.9rem solid $gray_f5;
+            .icon { margin-right: 1.2rem;}
+            .title { font-size: 1.6rem;}
+        }
     }
 
 }
@@ -384,6 +442,7 @@
             &.done { color: $point;}
         }
         .title { 
+            word-break: break-all;
             @include ellipsis(2);
             font-size: 1.5rem;
             font-weight: $font_weight_medium;

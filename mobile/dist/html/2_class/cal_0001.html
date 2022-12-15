@@ -4,14 +4,17 @@
 <head>
 	<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
 
 <link rel="stylesheet" href="../../css/common/common.css">
 <link rel="stylesheet" href="../../css/common/pages.css">
 
+
 <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
 
-<script type="text/javascript" src="../../js/script.js"></script> 
+<script type="text/javascript" src="../../js/jquery.js"></script> 
+<script type="text/javascript" src="../../js/script.js"></script>
 	<title>우리반티셀파 - 서브</title>
 </head>
 
@@ -20,10 +23,14 @@
 		<!-- header -->
         <div class="sub_header schedule">
             <a href="#none" class="expand_menu">
-                <span>가산초등학교 1학년 1반</span>
+                <span>서울 가산 초등학교 4학년 가산 4학년 테스트반</span>
                 <i class="sprite_comm sp_ico_down_default"></i>
             </a>
+            <div class="btn_wrap">
+                <a href="#none">등록</a>
+            </div>
         </div>
+        
 		<!-- /header -->
 
         <div class="sub_expand_tab">
@@ -37,26 +44,29 @@
                 <li><a href="#none">까치울초등학교 5학년 5반</a></li>
             </ul>
         </div>
-        
+         
 		<!-- content -->
         <div class="container">
         <div class="calendar">
-    <!-- td.day :: .schedule_info 추가시 일정등록 표기 css확인가능-->
-    <div class="form-group">
-        <div class="row">
-           <div class="col-md-8">
-              <div id="datetimepicker3"></div>
-           </div>
-        </div>
-     </div>
-     <script type="text/javascript">
-        $(function () {
-            $('#datetimepicker3').datetimepicker({
-                inline: true,
-                format: 'L'
-            });
-        });
+     <div id="datepicker3" ></div>
+     <!-- 221123 :: data-date="" 삭제-->
+     <input type="hidden" id="my_hidden_input">
+     <script>
+         $('#datepicker3').datepicker({
+             weekStart: 1,
+             
+         });
+
+         // 221123 :: 오늘 날짜 선택되도록 스크립트 추가
+         $('#datepicker3').datepicker('setDate', 'today');
+
+         $('#datepicker3').on('changeDate', function() {
+             $('#my_hidden_input').val(
+                 $('#datepicker').datepicker('getFormattedDate')
+             );
+         });
      </script>
+ 
     <div class="schedule_list_wrap">
         <ul class="schedule_list">
             <li>
@@ -65,23 +75,51 @@
                     오늘의 생일자 - 김상민, 김지영, 정재훈<br>
                     2교시 과학 수행평가
                 </p>
+                <!-- 221102 :: 일정 수정삭제 아이콘 추가 -->
+                <a href="#none" class="btn_comment_opt" data-target="commentOption">
+                    <i class="sprite_comm sp_ico_more_sm"></i>수정삭제
+                </a>
             </li>
             <li>
                 <span class="date">2022.06.22</span>
                 <p class="content">
-                    유네스코 데이
+                    kjafkjaskfjaskdjf;askjdfl;akjdfkasjdfkajsdkfjaskdjfaksdjfkajdfkadfjaksdfjkajfdkasjfkasjkfadj
                 </p>
+                <!-- 221102 :: 일정 수정삭제 아이콘 추가 -->
+                <a href="#none" class="btn_comment_opt" data-target="commentOption">
+                    <i class="sprite_comm sp_ico_more_sm"></i>수정삭제
+                </a>
             </li>
             <li>
                 <span class="date">2022.06.28</span>
                 <p class="content">
                     오늘의 생일자 - 김상민, 김지영, 정재훈<br>
                 </p>
+                <!-- 221102 :: 일정 수정삭제 아이콘 추가 -->
+                <a href="#none" class="btn_comment_opt" data-target="commentOption">
+                    <i class="sprite_comm sp_ico_more_sm"></i>수정삭제
+                </a>
             </li>
         </ul>
+
         <!-- 일정이 없을 경우 -->
         <p class="empty_msg">금일 일정이 없습니다.</p>
     </div>		
+</div>
+
+
+<!-- 221102 :: 일정 수정삭제 아이콘 클릭시 팝업 -->
+<div class="modal" id="commentOption">
+    <div class="modal_content pt0">
+        <ul class="pop_opt_list">
+            <li>
+                <a href="#none">수정하기</a>
+            </li>
+            <li>
+                <a href="#none">삭제</a>
+            </li>
+        </ul>
+    </div>
 </div>
         </div>
         <!-- /content -->
@@ -104,8 +142,12 @@
     // 우리반 선택 카테고리 열기
     $(".schedule .expand_menu").on('click', function(event) {
         event.stopPropagation();
-        dimmOpen();
         $(this).parent().next(".sub_expand_tab").addClass("active");
+
+        // 리스트 개수 5개 이상시 스크롤생길 수 있게        
+        if ($(this).parent().next(".sub_expand_tab").outerHeight() > 320) {
+            $(this).parent().next(".sub_expand_tab").addClass("ov_scroll")
+        }        
     })
 	</script>
 </body>

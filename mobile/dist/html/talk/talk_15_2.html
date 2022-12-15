@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+
+<link rel="stylesheet" href="../../css/common/common.css">
+<link rel="stylesheet" href="../../css/common/pages.css">
+
+
+<script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
+
+<script type="text/javascript" src="../../js/jquery.js"></script> 
+<script type="text/javascript" src="../../js/script.js"></script>
+	<title>T_TALK</title>
+</head>
+
+<body>
+	<div class="talk_wrap">
+		<!-- header -->
+		<div class="sub_header">
+			<a href="#none" class="history_back">뒤로가기</a>
+
+			<h2 class="sub_title">1:1 대화방</h2>
+
+			<div class="btn_wrap">
+				<a href="#none" class="btn_search">검색</a>
+				<a href="#none" class="btn_chat_info">대화방 정보 확인</a>
+			</div>
+		</div>
+		<!-- //header -->
+
+		<!-- 채팅창 -->
+		<div class="container chatting_wrap">
+			<div class="chatting_cont">
+				<!-- 대화 내용 -->
+                
+                <!-- 221212 1:1 대화일 경우 .one_on_one 추가 -->
+				<div class="chatting_list_wrap one_on_one">
+
+					<!-- 날짜 -->
+					<div class="date">
+						<span>2022년 12월 28일</span>
+					</div>
+
+					<!-- 상대방 -->
+					<div class="chatting_you">
+						<!-- profile -->
+						<div class="chatting_profile">
+							<span class="img">
+								<img src="../../img/img_sample.png" alt="sample_img">
+							</span>
+							<span class="name">선생님<em class="badge badge_blue">부</em></span>
+						</div>
+						<!-- 채팅 말풍선 -->
+						<div class="chatting_bubble_wrap first"><!-- 첫 번째 대화 말풍선에 .first 추가 -->
+							<div class="chatting_bubble">
+								안녕하세요.
+							</div>
+							<div class="etc">
+								<span class="reading_num">2</span>
+								<span class="time">오전 10:29</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- 상대방 -->
+					<div class="chatting_you">
+						<!-- profile -->
+						<div class="chatting_profile">
+							<span class="img">
+								<img src="../../img/img_sample.png" alt="sample_img">
+							</span>
+							<span class="name">선생님</span>
+						</div>
+						<!-- 채팅 말풍선 -->
+						<div class="chatting_bubble_wrap first"><!-- 첫 번째 대화 말풍선에 .first 추가 -->
+							<div class="chatting_bubble long_text"> <!-- 10줄 이상 텍스트일 경우 .long_text 추가 -->
+								내일 준비물은 학급 공지에 있으니까 꼭 확인하고 오세요! 내일 준비물은 학급 공지에 있으니까 꼭 확인하고 오세요! 내일 준비물은 학급 공지에 있으니까 꼭 확인하고 오세요! 내일 준비물은 학급 공지에 있으니까 꼭 확인하고 오세요! 내일 준비물은 학급 공지에 있으니까 꼭 확인하고 오세요!
+								내일 준비물은 학급 공지에 있으니까 꼭 확인하고 오세요! 내일 준비물은 학급 공지에 있으니까 꼭 확인하고 오세요! 내일 준비물은 학급 공지에 있으니까 꼭 확인하고 오세요! 내일 준비물은 학급 공지에 있으니까 꼭 확인하고 오세요!
+							</div>
+							<!-- 긴글 모두보기 버튼 -->
+							<a href="#none" class="all_view_txt">
+								모두 보기 <i class="sprite_comm sp_ico_txt_more"></i>
+							</a>
+							<div class="etc">
+								<span class="reading_num">2</span>
+								<span class="time">오전 10:29</span>
+							</div>
+						</div>
+					</div>
+					
+					<!-- 본인 -->
+					<div class="chatting_me">
+						<div class="chatting_bubble_wrap first"><!-- 첫 번째 대화 말풍선에 .first 추가 -->
+							<div class="etc">
+								<span class="reading_num">2</span>
+							</div>
+							<div class="chatting_bubble">
+								안녕하세요.
+							</div>
+						</div>
+					</div>
+					<div class="chatting_me">
+						<div class="chatting_bubble_wrap">
+							<div class="etc">
+								<span class="reading_num">2</span>
+								<span class="time">오전 10:29</span>
+							</div>
+							<div class="chatting_bubble del_message">
+								사용자가 삭제한 대화입니다.
+							</div>
+						</div>
+					</div>
+
+					<!-- 상대방 -->
+					<div class="chatting_you">
+						<!-- profile -->
+						<div class="chatting_profile">
+							<span class="img">
+								<img src="../../img/img_sample.png" alt="sample_img">
+							</span>
+							<span class="name">선생님</span>
+						</div>
+						<!-- 채팅 말풍선 -->
+						<div class="chatting_bubble_wrap first"><!-- 첫 번째 대화 말풍선에 .first 추가 -->
+							<div class="chatting_bubble">
+								오늘 수업 시간에 열심히 참여해준 1조 친구들 사진입니다.
+							</div>
+							<div class="etc">
+								<span class="reading_num">2</span>
+							</div>
+						</div>
+					</div>
+					<div class="chatting_you">
+						<div class="chatting_bubble_wrap">
+							<div class="chatting_bubble image"><!-- 이미지 업로드시 .image 추가 -->
+								<img src="../../img/img_sample.png" alt="sample_img" data-target="viewLargerImg">
+							</div>
+							<div class="etc">
+								<span class="reading_num">2</span>
+								<span class="time">오전 10:29</span>
+							</div>
+						</div>
+					</div>
+					<div class="chatting_you">
+						<div class="chatting_bubble_wrap">
+							<div class="chatting_bubble image cracking"><!-- 이미지 깨짐현상 .image.cracking 추가 -->
+								<!-- <img src="../../img/img_sample.png" alt="sample_img"> -->
+							</div>
+							<div class="etc">
+								<span class="reading_num">2</span>
+								<span class="time">오전 10:29</span>
+							</div>
+						</div>							
+					</div>
+					
+					<!-- 본인 -->
+					<div class="chatting_me">
+						<div class="chatting_bubble_wrap first"><!-- 첫 번째 대화 말풍선에 .first 추가 -->
+							<div class="etc">
+								<span class="reading_num">2</span>
+							</div>
+							<div class="chatting_bubble">
+								감사합니다.
+							</div>
+						</div>
+					</div>
+					<div class="chatting_me">
+						<div class="chatting_bubble_wrap"><!-- 첫 번째 대화 말풍선에 .first 추가 -->
+							<div class="etc">
+								<span class="reading_num">2</span>
+								<span class="time">오전 10:29</span>
+							</div>
+							<div class="chatting_bubble">
+								사진 저장해서 엄마한테도 보여드릴게요.
+							</div>
+						</div>
+					</div>
+
+					<!-- 상대방 -->
+					<div class="chatting_you">
+						<!-- profile -->
+						<div class="chatting_profile">
+							<span class="img">
+								<!-- <img src="../../img/img_sample.png" alt="sample_img"> -->
+							</span>
+							<span class="name">권현주</span>
+						</div>
+						<!-- 채팅 말풍선 -->
+						<div class="chatting_bubble_wrap first"><!-- 첫 번째 대화 말풍선에 .first 추가 -->
+							<div class="chatting_bubble">
+								감사합니다!
+							</div>
+							<div class="etc">
+								<span class="reading_num">2</span>
+								<span class="time">오전 10:29</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- 상대방 -->
+					<div class="chatting_you">
+						<!-- profile -->
+						<div class="chatting_profile">
+							<span class="img">
+								<!-- <img src="../../img/img_sample.png" alt="sample_img"> -->
+							</span>
+							<span class="name">김지언</span>
+						</div>
+						<!-- 채팅 말풍선 -->
+						<div class="chatting_bubble_wrap first"><!-- 첫 번째 대화 말풍선에 .first 추가 -->
+							<div class="chatting_bubble">
+								우와! 감사합니다.
+							</div>
+							<div class="etc">
+								<span class="reading_num">2</span>
+								<span class="time">오전 10:29</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- 상대방 -->
+					<div class="chatting_you">
+						<!-- profile -->
+						<div class="chatting_profile">
+							<span class="img">
+								<!-- <img src="../../img/img_sample.png" alt="sample_img"> -->
+							</span>
+							<span class="name">김지언</span>
+						</div>
+						<!-- 채팅 말풍선 -->
+						<div class="chatting_bubble_wrap first"><!-- 첫 번째 대화 말풍선에 .first 추가 -->
+							<div class="chatting_bubble">
+								네!!
+							</div>
+							<div class="etc">
+								<span class="reading_num">2</span>
+								<span class="time">오전 10:29</span>
+							</div>
+						</div>
+					</div>
+
+					<!-- 날짜 -->
+					<div class="date">
+						<span>2022년 12월 28일</span>
+					</div>
+
+					<!-- 입장&퇴장&읽음표시 -->
+					<div class="alarm_text">
+						<p>윤석배님이 입장하였습니다.</p>
+						<p>윤석배님이 퇴장하였습니다.</p>
+						<p>여기까지 읽으셨습니다.</p>
+					</div>
+
+					<!-- 상대방 -->
+					<div class="chatting_you">
+						<!-- profile -->
+						<div class="chatting_profile">
+							<span class="img">
+								<img src="../../img/img_sample.png" alt="sample_img">
+							</span>
+							<span class="name">선생님</span>
+						</div>
+						<!-- 채팅 말풍선 -->
+						<div class="chatting_bubble_wrap first"><!-- 첫 번째 대화 말풍선에 .first 추가 -->
+							<div class="chatting_bubble">
+								<a href="https://www.naver.com" class="link" target="_blank">https://www.naver.com</a>
+							</div>
+							<div class="etc">
+								<span class="reading_num">2</span>
+							</div>
+						</div>
+					</div>
+					<div class="chatting_you">
+						<div class="chatting_bubble_wrap">
+							<div class="chatting_bubble video"><!-- 영상 업로드시 .video 추가 -->
+								<a href="#none">
+									<strong class="tit">[벚꽃반 자료]3교시 음악시간 노래_샘플.mp3</strong>
+									<span class="period">유효기한: 2022.07.30까지</span>
+									<span class="volume">2.99MB</span>
+								</a>
+							</div>
+							<div class="etc">
+								<span class="reading_num">2</span>
+								<span class="time">오전 10:29</span>
+							</div>
+						</div>							
+					</div>
+
+					<!-- 본인 -->
+					<div class="chatting_me">
+						<div class="chatting_bubble_wrap first">
+							<div class="etc">
+								<a href="#none" class="error">에러</a>
+							</div>
+							<div class="chatting_bubble image cracking"><!-- 이미지 깨짐현상시 .image.cracking 추가 -->
+								<!-- <img src="../../img/img_sample.png" alt="sample_img"> -->
+							</div>
+						</div>
+						<div class="chatting_bubble_wrap first">
+							<div class="etc">
+								<a href="#none" class="resend">에러</a>
+							</div>
+							<div class="chatting_bubble">
+								<a href="https://www.naver.com" class="link" target="_blank">https://www.naver.com</a>
+							</div>
+						</div>
+					</div>
+					<div class="chatting_me">
+						<div class="chatting_bubble_wrap">
+							<div class="etc">
+								<span class="reading_num">2</span>
+								<span class="time">오전 10:29</span>
+							</div>
+							<div class="chatting_bubble preview"><!-- 이미지 업로드시 .image 추가 -->									
+								<span class="og_img">
+									<img src="https://picsum.photos/200/300">
+								</span>
+								<span class="og_tit">
+									네이버
+								</span>
+								<span class="og_desc">
+									네이버 메인에서 다양한 정보와 유용한 컨텐츠를 만나보실 수
+								</span>								
+							</div>
+						</div>
+					</div>
+
+					<!-- 상대방 -->
+					<div class="chatting_you">
+						<!-- profile -->
+						<div class="chatting_profile">
+							<span class="img">
+								<img src="../../img/img_sample.png" alt="sample_img">
+							</span>
+							<span class="name">선생님</span>
+						</div>
+						<div class="chatting_bubble_wrap">
+							<div class="chatting_bubble emoticon"> <!-- 이모티콘인 경우 .emoticon  추가 -->
+								<img src="../../img/emoji_con1.png" alt="">
+							</div>
+						</div>	
+					</div>
+					<div class="chatting_you">
+						<div class="chatting_bubble_wrap">
+							<div class="chatting_bubble">
+								환한 네 미소처럼. 넌 날 빛나게 해. 존재만으로
+							</div>
+							<div class="etc">
+								<span class="reading_num">2</span>
+								<span class="time">오전 10:29</span>
+							</div> 
+						</div>
+					</div>
+					
+					<!-- 본인 -->
+					<div class="chatting_me">
+						<div class="chatting_bubble_wrap">
+							<div class="chatting_bubble emoticon">
+								<img src="../../img/emoji_con2.png" alt="">
+							</div>
+						</div>	
+					</div>
+					<div class="chatting_me">
+						<div class="chatting_bubble_wrap">
+							<div class="etc">
+								<span class="reading_num">2</span>
+								<span class="time">오전 10:29</span>
+							</div> 
+							<div class="chatting_bubble">
+								환한 네 미소처럼. 넌 날 빛나게 해. 존재만으로
+							</div>
+						</div>
+					</div>
+
+					<!-- btn bottom -->
+					<a href="#none" class="btn_bottom"></a>
+				</div>
+			</div>
+			<!-- 메시지 입력영역 -->
+			
+<div class="chatting_input">
+    <!-- btn bottom -->
+    <a href="#none" class="btn_bottom">제일최근글보기</a>
+
+    <div class="inp_wrap">
+        <span class="attach" data-target="popFileAttach">
+            파일첨부
+            <!-- 휴대폰 기본 제공하는 첨부파일 이용시 주석제거
+            <input type="file" class="input_file_button" id="clip">
+            <label for="clip">파일첨부</label> -->
+        </span>
+        <div class="search_wrap"> <!-- 메시지를 작성할 수 없을시 .disabled 추가 -->
+            <input type="text" placeholder="메시지를 입력하세요." class="input_area">
+            <div class="btn_wrap">
+                <a href="#none" class="btn_emoticon">이모티콘</a>
+                <a href="#none" class="btn_send">보내기</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 이모티콘 영역 -->
+    <div class="emoticon_box">
+        <div class="emoticon_top">
+            <ul class="emoticon_cate">
+                <li><img src="../../img/emoji.png" alt="emoji"></li>
+                <li class="on"><img src="../../img/emoji.png" alt="emoji"></li>
+                <li><img src="../../img/emoji.png" alt="emoji"></li>
+                <li><img src="../../img/emoji.png" alt="emoji"></li>
+                <li><img src="../../img/emoji.png" alt="emoji"></li>
+                <li><img src="../../img/emoji.png" alt="emoji"></li>
+                <li><img src="../../img/emoji.png" alt="emoji"></li>
+                <li><img src="../../img/emoji.png" alt="emoji"></li>
+                <li><img src="../../img/emoji.png" alt="emoji"></li>
+                <li><img src="../../img/emoji.png" alt="emoji"></li>
+                <li><img src="../../img/emoji.png" alt="emoji"></li>
+            </ul>
+        </div>
+        <div class="emoticon_con">
+            <ul class="scroll_bar">
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+                <li><img src="../../img/emoji_con.png" alt="emoji"></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="emoticon_view" style="display: none">
+        <div class="inner">
+            <a href="#none" class="btn_close">닫기</a>
+            <div class="selected_emoticon">
+                <img src="../../img/emoji_con.png" alt="emoji">
+            </div>
+        </div>
+    </div>
+
+    <!-- 새로운 메시지 알림 -->
+    <div class="new_alert_bar">
+        <span class="text"><strong>10</strong>개의 새로운 메시지가 있습니다.</span>
+        <!-- <span class="date_time">
+            <strong>2020</strong>년 <strong>10</strong>월 <strong>26</strong>일 오후 <strong>20:49</strong>
+        </span> -->
+    </div>
+</div>
+
+
+<!-- 댓글 옵션클릭시 팝업 -->
+<div class="modal" id="popFileAttach">
+    <div class="modal_content pt0">
+        <ul class="pop_opt_list">
+            <li>
+                <a href="#none">카메라</a>
+            </li>
+            <li>
+                <a href="#none">앨범</a>
+            </li>
+            <li>
+                <a href="#none">파일</a>
+            </li>
+            <li>
+                <a href="#none" data-dismiss="modal">취소</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<script>
+    $(function(){
+        // 이모티콘 아이콘 클릭시 영역 토글
+        $(".chatting_input .btn_emoticon").on("touch click", function(){
+            $(".emoticon_box").toggle();
+            mo_talk.chatContHeight();
+
+            // 221215 이모티콘 버튼 클릭했을때 채팅창 젤 하단으로 이동
+            var chatHeight = $(".chatting_list_wrap").height();
+            $(".chatting_cont").animate({
+                scrollTop: chatHeight
+            }, 0);
+            
+        });
+
+        // input 클릭시 이모티콘영역 숨기기
+        $(".chatting_input input[type=text]").on("touch click", function(){
+            $(".emoticon_box").hide();
+            mo_talk.chatContHeight();
+        });
+
+        // emoticon preview pop
+        $(".emoticon_con li").on("touch click", function(e){
+            e.preventDefault();
+            $(".emoticon_view").show();
+        })
+
+        // emoticon_view 닫기
+        $(".emoticon_view .btn_close").on("touch click", function(){
+            $(this).parent().parent().hide();
+        });
+    })
+</script>
+			<!-- /메시지 입력영역 -->
+		</div>
+		<!-- /채팅창 -->
+	</div>
+
+	<!-- 이미지 클릭시 크게보기 -->
+	<div class="modal img_modal" id="viewLargerImg">
+		 <div class="btn_wrap">
+			 <a href="#none" class="img_modal_close" data-dismiss="modal">
+				 <span class="sprite_comm sp_ico_close_w">닫기</span>
+			 </a>
+		 </div>
+		<div class="modal_content image">
+			<img class="img_view" src="../../img/img_sample.png" alt="image">
+		</div>
+	</div>
+
+	<!-- 채팅 복사 & 삭제 -->
+	<div class="modal" id="chatCopyDel">
+		<div class="modal_content pt0">
+			<ul class="pop_opt_list">
+				<li>
+					<a href="#none">복사</a>
+				</li>
+				<li>
+					<a href="#none">삭제</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 채팅방 설정 -->
+	<div class="side_chat_settings">
+    <div class="setting_inner">
+        <div class="header">
+            <h3 class="title">채팅방 설정 </h3>		
+            <div class="btn_wrap">
+                <a href="#none" class="btn_edit">편집</a>
+            </div>
+        </div>
+
+        <div class="chat_room_profile">
+            <span class="img notice"> <!-- 공지방일경우 .notice 추가/ 여러명 방일 경우 .multiple 추가 -->
+                <!-- <img src="../../img/img_sample.png" alt=""> -->
+            </span>
+            <span class="room_name">학부모 공지방</span>
+        </div>
+
+        <div class="chat_info_data">
+            <ul>
+                <li class="partners">
+                    <a>대화상대</a>
+                    <ul class="opponent_list">
+                        <li class="add"><a href="#none"><i></i>대화상대 추가하기</a></li> <!-- 대화상대 추가 .add -->
+                        <li class="reject"><a href="#none"><i></i>대화상대 내보내기</a></li> <!-- 대화상대 내보내기 .reject -->
+                        <li class="captain"><a href="#none"><span class="profile"></span>교생 선생님</a></li> <!-- 선생님일때 .captain 추가 -->
+                        <li class="others"><a href="#none"><span class="profile"></span>그 외 15명</a></li> <!-- 그 외 인원 표시 .others 추가 -->
+
+                        <li><a href="#none"><span class="profile"></span> <span class="name">나희도</span><em class="badge badge_pink">모</em></a></li>
+                        <li><a href="#none"><span class="profile"></span> <span class="name">나희도</span><em class="badge badge_blue">부</em></a></li>
+                        <li><a href="#none"><span class="profile"></span> <span class="name">나희도</span><em class="badge badge_gray">기타</em></a></li>
+                        <li><a href="#none"><span class="profile"></span> <span class="name">나희도</span><em class="badge badge_pink">모</em></a></li>
+                        <li><a href="#none"><span class="profile"></span> <span class="name">나희도</span><em class="badge badge_pink">모</em></a></li>
+                    </ul>
+                </li>
+                <li><a href="#none">이미지,동영상 <i class="sprite_comm sp_ico_list_more_g"></i></a></li>
+                <li><a href="#none">첨부파일</a></li>
+            </ul>
+        </div>
+
+        <div class="chat_setting_bottom">
+            <a href="#none" class="exit">채팅방 나가기</a>
+            <div class="btn_right">
+                <a href="#none" class="alarm">알람켜기/끄기</a>
+                <a href="#none" class="pin">대화상단고정</a>
+            </div>
+        </div>
+    </div>
+</div>
+	<!-- ./ -->
+
+	<script>
+		$(function(){
+			// btn bottom, alert bar click
+			var chatHeight = $(".chatting_list_wrap").height();
+			$(".btn_bottom, .new_alert_bar").click(function(){
+				$(".chatting_cont").animate({
+					scrollTop: chatHeight
+				}, 1000);
+
+				setTimeout(function() {
+					$(".new_alert_bar").hide()
+				}, 1000);	
+			});
+		})
+		// 채팅 길게 탭했을 시, 팝업띄우기
+		document.addEventListener('long-press', function(e) {
+			console.log(e.target);
+			$("#chatCopyDel").modal({show: true})
+		});
+	</script>
+
+
+</body>
+
+</html>

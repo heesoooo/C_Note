@@ -9,7 +9,7 @@ mo_talk = {
 		mo_talk.opponentList();
 		mo_talk.inputFocus();
 		mo_talk.chatContHeight();
-		mo_talk.chatBtnBottom();
+		mo_talk.chatBubbleGroup();
 		mo_talk.consultTimeBar();
 		mo_talk.sideChatSettings();
 	},
@@ -45,6 +45,9 @@ mo_talk = {
 			e.stopPropagation();
             dimmOpen();
             $(this).parent().next(".sub_expand_tab").addClass("active");
+			if ($(this).parent().next(".sub_expand_tab").outerHeight() > 320) {
+				$(this).parent().next(".sub_expand_tab").addClass("ov_scroll")
+			}
 		});
 	},
 	// 대화 상대 목록 리스트 그룹 slideToggle
@@ -82,39 +85,26 @@ mo_talk = {
 		}
 		className.chatCont.css("height", "calc(var(--vh, 1vh) * 100 - " + className.sumHeaderInp + "px)");
 	},
-	// 채팅창 btn bottom
-	chatBtnBottom: function(){
+	// 채팅 그룹 시간체크해서 영역주기
+	chatBubbleGroup: function(){
 		var className = {
-			btnBottom : $(".btn_bottom"),
-			chatContWrap : $('.chatting_cont'),
-			chatContH : $('.chatting_cont').height(),
-			chatListWrap : $('.chatting_list_wrap'),
-			chatHeight: $(".chatting_list_wrap").height(),
-			newAlertBar: $(".new_alert_bar")
+			chattingMe: $(".chatting_list_wrap .chatting_me .etc"),
+			chattingYou: $(".chatting_list_wrap .chatting_you .etc")
 		}
-		$(".btn_bottom, .new_alert_bar").click(function(){
-			className.chatContWrap.animate({
-				scrollTop: className.chatHeight,
-			}, 1000);
-
-			setTimeout(function() {
-				$(".new_alert_bar").hide()
-			}, 500);	
-		});
-		
-		if(className.chatContH > className.chatHeight ) {
-			className.btnBottom.css("display", "none");
-		}
-		
-		className.chatContWrap.on("scroll", function(){
-			var scrollTop = className.chatContWrap.scrollTop() +  className.chatHeight / 2;
-			if(scrollTop > className.chatHeight) {
-				className.btnBottom.css("display", "none");
-				className.newAlertBar.css("display", "none");
+		$.each(className.chattingMe, function(){
+			if ($(this).find("span").hasClass("time")) {
+				$(this).parent().css("margin-bottom", "1.5rem");
 			} else {
-				className.btnBottom.css("display", "block");
+				$(this).parent().css("margin-bottom", ".6rem");
 			}
-		})		
+		});
+		$.each(className.chattingYou, function(){
+			if ($(this).find("span").hasClass("time")) {
+				$(this).parent().css("margin-bottom", "1.5rem");
+			} else {
+				$(this).parent().css("margin-bottom", ".6rem");
+			}
+		});
 	},
 	// 상당가능 시간 BAR
 	consultTimeBar : function(){

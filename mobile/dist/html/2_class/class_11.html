@@ -4,37 +4,55 @@
 <head>
 	<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
 
 <link rel="stylesheet" href="../../css/common/common.css">
 <link rel="stylesheet" href="../../css/common/pages.css">
 
+
 <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
 
-<script type="text/javascript" src="../../js/script.js"></script> 
+<script type="text/javascript" src="../../js/jquery.js"></script> 
+<script type="text/javascript" src="../../js/script.js"></script>
 	<title>우리반티셀파 - 서브</title>
 </head>
 
 <body>
       <!-- datetimepicker 팝업 -->
-  <div class="modal" id="dateTimePicker1">
+  <div class="modal" id="dateTimePicker11">
     <div class="calendar modal_content">
         <!-- td.day :: .schedule_info 추가시 일정등록 표기 css확인가능-->
-
-        <div class="form-group">
-            <div class="row">
-                <div>
-                    <div id="datetimepicker1"></div>
-                </div>
-            </div>
-        </div>
-        <script type="text/javascript">
-        $(function () {
-            $('#datetimepicker1').datetimepicker({
-                inline: true,
+        <!-- 221123 :: data-date="" 삭제-->
+        <div id="datepicker1"></div>
+        <input type="hidden" id="my_hidden_input">
+        <script>
+            $('#datepicker1').datepicker({
+                weekStart: 1,
             });
-        });
+
+            // 221123 :: 오늘 날짜 선택되도록 스크립트 추가
+            $('#datepicker1').datepicker('setDate', 'today');
+
+            $('#datepicker1').on('changeDate', function() {
+                $('#my_hidden_input').val(
+                    $('#datepicker').datepicker('getFormattedDate')
+                );
+            });
         </script>
+
+        <div id="datetimepicker1"></div>
+        <script>
+            $(function () {
+                    $('#datetimepicker1').datetimepicker({
+                        format: 'LT',
+                        inline: true,
+                        format: 'A hh:mm',
+                    });
+                });
+        </script>
+
+
         <div class="modal_btn_half">
             <a href="#none" class="modal_btn" data-dismiss="modal">닫기</a>
             <!-- 활성화시 .active 추가 / 비활성화시 .disabled 추가 -->
@@ -47,7 +65,6 @@
 <script>
     
     $(function () {
-                
         //datetimepicker 오전 오후 설정
         if( $('.btn.btn-primary').html() == '오전' ) {
             $('.btn.btn-primary').removeClass('pm').addClass('am');
@@ -61,7 +78,7 @@
 </body>
     <script>
     $(function () {
-        $("#dateTimePicker1").modal({ show: true })
+        $("#dateTimePicker11").modal({ show: true })
     })
     </script>
 </html>

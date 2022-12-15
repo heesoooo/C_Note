@@ -26,7 +26,7 @@
 					<div class="sort_type_chk">
 						<div class="check_box">
 							<input type="checkbox" id="typeCheck1" checked>
-							<label for="typeCheck1">읽지 않은 인원</label>
+							<label for="typeCheck1">미확인</label>
 						</div>
 						<div class="check_box">
 							<input type="checkbox" id="typeCheck2">
@@ -38,7 +38,8 @@
 						</div>
 					</div>
 
-                    <div class="member_list_top">
+                    <!-- 221014 :: 접고펼치기 가능 .accordian 추가 -->
+                    <div class="member_list_top accordian">
                         <p class="title">학생 3명</p>
                     </div>
                     <ul>
@@ -98,7 +99,8 @@
                         </li>
                     </ul>
                     
-                    <div class="member_list_top">
+                    <!-- 221014 :: 접고펼치기 가능 .accordian 추가 -->
+                    <div class="member_list_top accordian">
                         <p class="title">학부모 3명</p>
                     </div>
                     <ul>
@@ -108,7 +110,7 @@
                                     <!-- <img src="https://via.placeholder.com/100x100.png"> -->
                                 </span>
                                 <p class="name">
-                                    <span>나희도</span>
+                                    <span>나희도나희도</span>
                                     <span class="badge badge_blue">부</span>
                                 </p>
                             </div>
@@ -192,9 +194,16 @@
 
 
 	<script>
-$(function () {
-            $("#writeMsg").modal({ show: true });
-        })
+    $(function () {
+        //$("#writeMsg").modal({ show: true });
+
+        // 221014 :: 분류 바 접고펼치기 toggle 추가
+        $(".member_list_top.accordian").on("click", function(e) {
+            e.preventDefault();
+            $(this).next().slideToggle(100);
+            $(this).toggleClass("close");
+        });
+    })
 	</script>
 </body>
 

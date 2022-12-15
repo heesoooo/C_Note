@@ -2,30 +2,38 @@
 <html lang="ko">
 
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
 
 <link rel="stylesheet" href="../../css/common/common.css">
 <link rel="stylesheet" href="../../css/common/pages.css">
 
+
 <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
 
-<script type="text/javascript" src="../../js/script.js"></script> 
-	<title>우리반티셀파 - 서브</title>
+<script type="text/javascript" src="../../js/jquery.js"></script> 
+<script type="text/javascript" src="../../js/script.js"></script>
+    <title>우리반티셀파 - 서브</title>
 </head>
 
 <body>
-	<div class="wrapper">
-		<!-- header -->
+    <div class="wrapper">
+        <!-- header -->
         <div class="sub_header">
             <a href="#none" class="history_back">뒤로가기</a>
             <h2 class="sub_title">조사표</h2>
         </div>
-		<!-- /header -->
+        <!-- /header -->
         
-		<!-- content -->
-        <div class="container">            
+        <!-- content -->
+        <div class="container">
+            <div class="top_btn_wrap pt0">
+                <!-- 221124 :: .arrow 클래스 추가 -->
+                <a href="#none" class="btn primary arrow" data-target="questionList">선택하여 조사표 종류별로 보기</a>
+                <!-- ./ -->
+            </div>         
             <!-- 조사표 -->
             <div class="research_wrap">
                 <div class="inner">
@@ -62,16 +70,19 @@
         </div>
         <!-- /content -->
         <!-- sub tab bar -->
-		<div class="sub_tab_bar">
+        <div class="sub_tab_bar">
     <ul>
-        <li class="tab_checklist on"><a href="#none"><i class="sprite_comm sp_ico_sub_checklist_off"></i>조사표</a></li>
+        <!-- 221117 :: add -->
+        <li class="tab_home on"><a href="#none"><i class="sprite_comm sp_ico_sub_home_off"></i>홈</a></li>
+        <!-- ./ -->
+        <li class="tab_checklist"><a href="#none"><i class="sprite_comm sp_ico_sub_checklist_off"></i>조사표</a></li>
         <li class="tab_schedule"><a href="#none"><i class="sprite_comm sp_ico_sub_schedule_off"></i>일정추가</a></li>
         <li class="tab_member"><a href="#none"><i class="sprite_comm sp_ico_sub_member_off"></i>구성원</a></li>
         <li class="tab_setting"><a href="#none"><i class="sprite_comm sp_ico_sub_setting_off"></i>설정</a></li>
     </ul>
 </div>
-		<!-- /sub tab bar -->
-	</div>
+        <!-- /sub tab bar -->
+    </div>
     
     <!-- 조사표 선택 팝업 -->
     <div class="sub_expand_tab select_research">
@@ -80,32 +91,74 @@
             <li>
                 <a href="#none" class="tit">
                     <span>우리반 우유</span>
-                    <i class="sprite_comm sp_ico_setting_g"></i>
+                    <!-- 221124 :: del <i class="sprite_comm sp_ico_setting_g"></i> -->
                 </a>
-                <a href="#none" class="btn round small">선택</a>
+
+                <!-- 221124 버튼변경 선택 -> 삭제로 변경 -->
+                <a href="#none" class="btn_delete">삭제</a>
             </li>
             <li>
                 <a href="#none" class="tit">
                     <span>우리반 청소</span>
-                    <i class="sprite_comm sp_ico_setting_g"></i>
+                    <!-- 221124 :: del <i class="sprite_comm sp_ico_setting_g"></i> -->
                 </a>
-                <a href="#none" class="btn round small">선택</a>
+                <!-- 221124 버튼변경 선택 -> 삭제로 변경 -->
+                <a href="#none" class="btn_delete">삭제</a>
             </li>
             <li>
                 <a href="#none" class="tit">
                     <span>우리반 발표</span>
-                    <i class="sprite_comm sp_ico_setting_g"></i>
+                    <!-- 221124 :: del <i class="sprite_comm sp_ico_setting_g"></i> -->
                 </a>
-                <a href="#none" class="btn round small">선택</a>
+                <!-- 221124 버튼변경 선택 -> 삭제로 변경 -->
+                <a href="#none" class="btn_delete">삭제</a>
             </li>
         </ul>
     </div>
 
-	<script>
-        $(function(){
+    <!-- 221019 :: 상단버튼 클릭시 조사표 리스트 -->
+    <div class="modal" id="questionList">
+        <div class="modal_content pt0">
+            <!-- 221124 타이틀 추가 -->
+            <h3 class="select_research_title">조사표 종류별로 보기</h3>
+            <!-- ./ -->
+            <ul class="pop_opt_list">
+                <li>
+                    <a href="#none">조사표 제목1</a>
+                </li>
+                <li>
+                    <a href="#none">조사표 제목2</a>
+                </li>
+                <li>
+                    <a href="#none">조사표 제목3</a>
+                </li>
+                <li>
+                    <a href="#none">조사표 제목4</a>
+                </li>
+                <li>
+                    <a href="#none">조사표 제목5</a>
+                </li>
+                <li>
+                    <a href="#none">조사표 제목6</a>
+                </li>
+                <li>
+                    <a href="#none">조사표 제목7</a>
+                </li>
+                <li>
+                    <a href="#none">전체 조사표 보기</a>
+                </li>
+                <li>
+                    <a href="#none">취소</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
+    <script>
+        $(function(){
+            $("#questionList").modal({ show: true })                 
         })
-	</script>
+    </script>
 </body>
 
 </html>

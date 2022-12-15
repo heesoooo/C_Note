@@ -11,10 +11,14 @@
 		<!-- header -->
         <div class="sub_header schedule">
             <a href="#none" class="expand_menu">
-                <span>가산초등학교 1학년 1반</span>
+                <span>서울 가산 초등학교 4학년 가산 4학년 테스트반</span>
                 <i class="sprite_comm sp_ico_down_default"></i>
             </a>
+            <div class="btn_wrap">
+                <a href="#none">등록</a>
+            </div>
         </div>
+        
 		<!-- /header -->
 
         <div class="sub_expand_tab">
@@ -28,7 +32,7 @@
                 <li><a href="#none">까치울초등학교 5학년 5반</a></li>
             </ul>
         </div>
-        
+         
 		<!-- content -->
         <div class="container">
         @@include('../include/inc_datePicker3.html')
@@ -45,8 +49,12 @@
     // 우리반 선택 카테고리 열기
     $(".schedule .expand_menu").on('click', function(event) {
         event.stopPropagation();
-        dimmOpen();
         $(this).parent().next(".sub_expand_tab").addClass("active");
+
+        // 리스트 개수 5개 이상시 스크롤생길 수 있게        
+        if ($(this).parent().next(".sub_expand_tab").outerHeight() > 320) {
+            $(this).parent().next(".sub_expand_tab").addClass("ov_scroll")
+        }        
     })
 	</script>
 </body>

@@ -40,7 +40,11 @@
 						<thead>
 							<tr>
 								<th scope="col">이름</th>
-								<th scope="col" colspan="3">유형</th>
+								<th scope="col" colspan="3">
+									유형
+									<!-- 221201 :: 일괄선택 버튼 추가 -->
+									<a href="#none" class="btn_batch_select" data-target="batchSelect">일괄선택</a>
+								</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -162,7 +166,11 @@
 						<thead>
 							<tr>
 								<th scope="col">이름</th>
-								<th scope="col" colspan="4">유형</th>                                
+								<th scope="col" colspan="4">
+									유형
+									<!-- 221201 :: 일괄선택 버튼 추가 -->
+									<a href="#none" class="btn_batch_select" data-target="batchSelect">일괄선택</a>
+								</th>                                
 							</tr>
 						</thead>
 						<tbody>
@@ -310,7 +318,11 @@
 						<thead>
 							<tr>
 								<th scope="col">이름</th>
-								<th scope="col" colspan="6">유형</th>
+								<th scope="col" colspan="6">
+									유형
+									<!-- 221201 :: 일괄선택 버튼 추가 -->
+									<a href="#none" class="btn_batch_select" data-target="batchSelect">일괄선택</a>
+								</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -530,6 +542,25 @@
 	</div>
 	<!-- ./ -->
 
+
+	<!-- 221201 :: 일괄선택 클릭시 팝업 추가 -->
+	<div class="modal" id="batchSelect">
+		<div class="modal_content pt0">
+			<h3 class="select_research_title">일괄선택 하기</h3>
+			<ul class="pop_opt_list">
+				<li>
+					<a href="#none">조사표 옵션1</a>
+				</li>
+				<li>
+					<a href="#none">조사표 옵션2</a>
+				</li>
+				<li>
+					<a href="#none" data-dismiss="modal">취소</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
 	<script>
 		$(function(){			
 			// 유형 선택시 tr에 .checked 추가
@@ -539,7 +570,10 @@
 					$(this).parent().parent().addClass("checked");
 				}				
 			})
-		})
+			
+			// 221201 추가
+			$("#batchSelect").modal({ show: true })                 
+		})	
 	</script>
 </body>
 

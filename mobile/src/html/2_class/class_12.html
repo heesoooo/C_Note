@@ -37,7 +37,9 @@
 							<label for="typeCheck3">학생</label>
 						</div>
 					</div>
-                    <div class="member_list_top">
+
+                    <!-- 221014 :: 접고펼치기 가능 .accordian 추가 -->
+                    <div class="member_list_top accordian">
                         <p class="title">학부모 3명</p>
                     </div>
                     <ul>
@@ -88,7 +90,8 @@
                         </li>
                     </ul>
 
-                    <div class="member_list_top">
+                    <!-- 221014 :: 접고펼치기 가능 .accordian 추가 -->
+                    <div class="member_list_top accordian">
                         <p class="title">학생 3명</p>
                     </div>
                     <ul>
@@ -148,6 +151,13 @@
 	<script>
         $(function () {
 			$("#popReceiver").modal({ show: true })
+
+            // 221014 :: 분류 바 접고펼치기 toggle 추가
+            $(".member_list_top.accordian").on("click", function(e) {
+                e.preventDefault();
+                $(this).next().slideToggle(100);
+                $(this).toggleClass("close");
+            });
         })
 	</script>
 </body>

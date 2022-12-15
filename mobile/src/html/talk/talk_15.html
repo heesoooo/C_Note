@@ -78,6 +78,7 @@
 							</div>
 							<div class="etc">
 								<span class="reading_num">2</span>
+								<span class="time">오전 10:29</span>
 							</div>
 						</div>
 					</div>
@@ -103,6 +104,7 @@
 							</a>
 							<div class="etc">
 								<span class="reading_num">2</span>
+								<span class="time">오전 10:29</span>
 							</div>
 						</div>
 					</div>
@@ -117,6 +119,8 @@
 								안녕하세요.
 							</div>
 						</div>
+					</div>
+					<div class="chatting_me">
 						<div class="chatting_bubble_wrap">
 							<div class="etc">
 								<span class="reading_num">2</span>
@@ -146,6 +150,8 @@
 								<span class="reading_num">2</span>
 							</div>
 						</div>
+					</div>
+					<div class="chatting_you">
 						<div class="chatting_bubble_wrap">
 							<div class="chatting_bubble image"><!-- 이미지 업로드시 .image 추가 -->
 								<img src="../../img/img_sample.png" alt="sample_img" data-target="viewLargerImg">
@@ -155,6 +161,8 @@
 								<span class="time">오전 10:29</span>
 							</div>
 						</div>
+					</div>
+					<div class="chatting_you">
 						<div class="chatting_bubble_wrap">
 							<div class="chatting_bubble image cracking"><!-- 이미지 깨짐현상 .image.cracking 추가 -->
 								<!-- <img src="../../img/img_sample.png" alt="sample_img"> -->
@@ -176,9 +184,12 @@
 								감사합니다.
 							</div>
 						</div>
+					</div>
+					<div class="chatting_me">
 						<div class="chatting_bubble_wrap"><!-- 첫 번째 대화 말풍선에 .first 추가 -->
 							<div class="etc">
 								<span class="reading_num">2</span>
+								<span class="time">오전 10:29</span>
 							</div>
 							<div class="chatting_bubble">
 								사진 저장해서 엄마한테도 보여드릴게요.
@@ -202,6 +213,7 @@
 							</div>
 							<div class="etc">
 								<span class="reading_num">2</span>
+								<span class="time">오전 10:29</span>
 							</div>
 						</div>
 					</div>
@@ -222,6 +234,7 @@
 							</div>
 							<div class="etc">
 								<span class="reading_num">2</span>
+								<span class="time">오전 10:29</span>
 							</div>
 						</div>
 					</div>
@@ -242,6 +255,7 @@
 							</div>
 							<div class="etc">
 								<span class="reading_num">2</span>
+								<span class="time">오전 10:29</span>
 							</div>
 						</div>
 					</div>
@@ -265,9 +279,7 @@
 							<span class="img">
 								<img src="../../img/img_sample.png" alt="sample_img">
 							</span>
-							<span class="name">선생님
-
-							</span>
+							<span class="name">선생님</span>
 						</div>
 						<!-- 채팅 말풍선 -->
 						<div class="chatting_bubble_wrap first"><!-- 첫 번째 대화 말풍선에 .first 추가 -->
@@ -278,6 +290,8 @@
 								<span class="reading_num">2</span>
 							</div>
 						</div>
+					</div>
+					<div class="chatting_you">
 						<div class="chatting_bubble_wrap">
 							<div class="chatting_bubble video"><!-- 영상 업로드시 .video 추가 -->
 								<a href="#none">
@@ -311,6 +325,8 @@
 								<a href="https://www.naver.com" class="link" target="_blank">https://www.naver.com</a>
 							</div>
 						</div>
+					</div>
+					<div class="chatting_me">
 						<div class="chatting_bubble_wrap">
 							<div class="etc">
 								<span class="reading_num">2</span>
@@ -326,6 +342,53 @@
 								<span class="og_desc">
 									네이버 메인에서 다양한 정보와 유용한 컨텐츠를 만나보실 수
 								</span>								
+							</div>
+						</div>
+					</div>
+
+					<!-- 상대방 -->
+					<div class="chatting_you">
+						<!-- profile -->
+						<div class="chatting_profile">
+							<span class="img">
+								<img src="../../img/img_sample.png" alt="sample_img">
+							</span>
+							<span class="name">선생님</span>
+						</div>
+						<div class="chatting_bubble_wrap">
+							<div class="chatting_bubble emoticon"> <!-- 이모티콘인 경우 .emoticon  추가 -->
+								<img src="../../img/emoji_con1.png" alt="">
+							</div>
+						</div>	
+					</div>
+					<div class="chatting_you">
+						<div class="chatting_bubble_wrap">
+							<div class="chatting_bubble">
+								환한 네 미소처럼. 넌 날 빛나게 해. 존재만으로
+							</div>
+							<div class="etc">
+								<span class="reading_num">2</span>
+								<span class="time">오전 10:29</span>
+							</div> 
+						</div>
+					</div>
+					
+					<!-- 본인 -->
+					<div class="chatting_me">
+						<div class="chatting_bubble_wrap">
+							<div class="chatting_bubble emoticon">
+								<img src="../../img/emoji_con2.png" alt="">
+							</div>
+						</div>	
+					</div>
+					<div class="chatting_me">
+						<div class="chatting_bubble_wrap">
+							<div class="etc">
+								<span class="reading_num">2</span>
+								<span class="time">오전 10:29</span>
+							</div> 
+							<div class="chatting_bubble">
+								환한 네 미소처럼. 넌 날 빛나게 해. 존재만으로
 							</div>
 						</div>
 					</div>
@@ -372,11 +435,48 @@
 	<!-- ./ -->
 
 	<script>
-	// 채팅 길게 탭했을 시, 팝업띄우기
-	document.addEventListener('long-press', function(e) {
-		console.log(e.target);
-		$("#chatCopyDel").modal({show: true})
-	});       
+		$(function(){
+			// btn bottom, alert bar click
+			var chatHeight = $(".chatting_list_wrap").height();
+			$(".btn_bottom, .new_alert_bar").click(function(){
+				$(".chatting_cont").animate({
+					scrollTop: chatHeight
+				}, 1000);
+
+				setTimeout(function() {
+					$(".new_alert_bar").hide()
+				}, 1000);	
+			});
+
+
+			//  221214 채팅창 스크롤 제일 하단으로 갔을 때 버튼 숨기기
+			$('.chatting_cont').on("scroll", function(){
+				var scrollTop = $(this).scrollTop(),
+					innerHeight = $(this).innerHeight(),
+					scrollListH = $(this).prop('scrollHeight');
+				//console.log(scrollTop + innerHeight, scrollListH)
+				if(scrollTop + innerHeight >= scrollListH) {
+					$(".btn_bottom").css("display", "none");
+					$(".new_alert_bar").css("display", "none");
+				} else {
+					$(".btn_bottom").css("display", "block");
+				}
+			})
+
+			//221215 :: chatting input 포커스 됬을때, 
+			$(".chatting_input .search_wrap input[type=text]").focus(function(){
+				var chatHeight = $(".chatting_list_wrap").height();
+				$(".chatting_cont").animate({
+					scrollTop: chatHeight
+				}, 0);
+			})
+		});
+
+		// 채팅 길게 탭했을 시, 팝업띄우기
+		document.addEventListener('long-press', function(e) {
+			console.log(e.target);
+			$("#chatCopyDel").modal({show: true})
+		}); 
 	</script>
 
 

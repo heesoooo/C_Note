@@ -4,14 +4,17 @@
 <head>
 	<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
 
 <link rel="stylesheet" href="../../css/common/common.css">
 <link rel="stylesheet" href="../../css/common/pages.css">
 
+
 <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
 
-<script type="text/javascript" src="../../js/script.js"></script> 
+<script type="text/javascript" src="../../js/jquery.js"></script> 
+<script type="text/javascript" src="../../js/script.js"></script>
 	<title>우리반티셀파 - 서브</title>
 </head>
 
@@ -79,7 +82,6 @@
 							<p class="hashtag">#학급공지 #중요 #7월 30일까지</p>
 							<p class="text">
 								<strong>벚꽃반 알림장</strong>                               
-								내일 방학식 급식 없이 하교합니다. 내일 방학식 급식 없이 하교합니다. 내일 방학식 급식 없이 하교합니다. 방학 생활 계획 생각해오기
 							</p>
 						</a>
 					</div>
@@ -96,7 +98,6 @@
 							<p class="hashtag">#학급공지 #중요 #7월 30일까지</p>
 							<p class="text">
 								<strong>벚꽃반 알림장</strong>                               
-								내일 방학식 급식 없이 하교합니다. 내일 방학식 급식 없이 하교합니다. 내일 방학식 급식 없이 하교합니다. 방학 생활 계획 생각해오기
 							</p>
 						</a>
 					</div>
@@ -113,7 +114,6 @@
 							<p class="hashtag">#학급공지 #중요 #7월 30일까지</p>
 							<p class="text">
 								<strong>벚꽃반 알림장</strong>                               
-								내일 방학식 급식 없이 하교합니다. 내일 방학식 급식 없이 하교합니다. 내일 방학식 급식 없이 하교합니다. 방학 생활 계획 생각해오기
 							</p>
 						</a>
 					</div>
@@ -259,13 +259,18 @@
 								3. 영어 수행평가 - 다음주 수요일 실시<br>
 								4. 화요일 - 아침 방송 조회(8시 45분까지 등교)<br>
 								5. 업사이클 작품 활동 - 학급 티 입기<br>
-								6. 여름철 식중독 조심, 찬 음식이나 음료 많이 먹지 않기<br>
+								6. 여름철 식중독 조심, 찬 음식이나 음료 많이 먹지 않기<
 							</p>
 
 							<div class="img_wrap half"> <!-- 이미지 두개이상일때 .half 추가 -->
 								<figure><img src="../../img/test_img.jpg" alt="test img"></figure>
 								<figure><img src="../../img/test_img2.jpg" alt="test img"></figure>
-							</div>						
+							</div>
+							<!-- 221123 :: add -->
+							<span class="attach">
+								<i class="sprite_comm sp_ico_clip"></i>첨부파일 2개
+							</span>				
+							<!-- /221123 -->					
 						</a>
 					</div>
 
@@ -295,8 +300,8 @@
 					<li class="active"><a href="#none">학급공지</a></li>
 					<li><a href="#none">앨범</a></li>
 					<li><a href="#none">자유게시판</a></li>
-					<li><a href="#none">과제게시판</a></li>
-					<li><a href="#none">설문조사</a></li>
+					<!-- <li><a href="#none">과제게시판</a></li>
+					<li><a href="#none">설문조사</a></li> -->
 					<li><a href="#none">T셀파 학습도구</a></li>
 				</ul>
 			</div>
@@ -307,7 +312,10 @@
 		<!-- sub tab bar -->
 		<div class="sub_tab_bar">
     <ul>
-        <li class="tab_checklist on"><a href="#none"><i class="sprite_comm sp_ico_sub_checklist_off"></i>조사표</a></li>
+        <!-- 221117 :: add -->
+        <li class="tab_home on"><a href="#none"><i class="sprite_comm sp_ico_sub_home_off"></i>홈</a></li>
+        <!-- ./ -->
+        <li class="tab_checklist"><a href="#none"><i class="sprite_comm sp_ico_sub_checklist_off"></i>조사표</a></li>
         <li class="tab_schedule"><a href="#none"><i class="sprite_comm sp_ico_sub_schedule_off"></i>일정추가</a></li>
         <li class="tab_member"><a href="#none"><i class="sprite_comm sp_ico_sub_member_off"></i>구성원</a></li>
         <li class="tab_setting"><a href="#none"><i class="sprite_comm sp_ico_sub_setting_off"></i>설정</a></li>

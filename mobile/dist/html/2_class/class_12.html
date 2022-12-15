@@ -4,14 +4,17 @@
 <head>
 	<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
 
 <link rel="stylesheet" href="../../css/common/common.css">
 <link rel="stylesheet" href="../../css/common/pages.css">
 
+
 <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
 
-<script type="text/javascript" src="../../js/script.js"></script> 
+<script type="text/javascript" src="../../js/jquery.js"></script> 
+<script type="text/javascript" src="../../js/script.js"></script>
 	<title>우리반티셀파 - 서브</title>
 </head>
 
@@ -46,7 +49,9 @@
 							<label for="typeCheck3">학생</label>
 						</div>
 					</div>
-                    <div class="member_list_top">
+
+                    <!-- 221014 :: 접고펼치기 가능 .accordian 추가 -->
+                    <div class="member_list_top accordian">
                         <p class="title">학부모 3명</p>
                     </div>
                     <ul>
@@ -97,7 +102,8 @@
                         </li>
                     </ul>
 
-                    <div class="member_list_top">
+                    <!-- 221014 :: 접고펼치기 가능 .accordian 추가 -->
+                    <div class="member_list_top accordian">
                         <p class="title">학생 3명</p>
                     </div>
                     <ul>
@@ -157,6 +163,13 @@
 	<script>
         $(function () {
 			$("#popReceiver").modal({ show: true })
+
+            // 221014 :: 분류 바 접고펼치기 toggle 추가
+            $(".member_list_top.accordian").on("click", function(e) {
+                e.preventDefault();
+                $(this).next().slideToggle(100);
+                $(this).toggleClass("close");
+            });
         })
 	</script>
 </body>

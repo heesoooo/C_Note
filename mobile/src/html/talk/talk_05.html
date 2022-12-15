@@ -13,6 +13,12 @@
             <a href="#none" class="history_back">뒤로가기</a>
         
             <h2 class="sub_title">상담 시간 설정</h2>
+
+            <!-- 221212 저장 버튼 추가 -->
+            <div class="btn_wrap">
+                <a href="#none">저장</a>
+            </div>
+            <!-- / -->
         </div>
 		<!-- //header -->
 
@@ -38,7 +44,7 @@
                         <div class="set_day">
                             <span class="day">화요일</span>
                             <label class="switch" onclick="timeBoxHide(this)">
-                                <input type="checkbox" checked>
+                                <input type="checkbox">
                                 <span class="slider"></span>
                             </label>
                         </div>
@@ -52,7 +58,7 @@
                         <div class="set_day">
                             <span class="day">수요일</span>
                             <label class="switch" onclick="timeBoxHide(this)">
-                                <input type="checkbox" checked>
+                                <input type="checkbox">
                                 <span class="slider"></span>
                             </label>
                         </div>
@@ -66,7 +72,7 @@
                         <div class="set_day">
                             <span class="day">목요일</span>
                             <label class="switch" onclick="timeBoxHide(this)">
-                                <input type="checkbox" checked>
+                                <input type="checkbox">
                                 <span class="slider"></span>
                             </label>
                         </div>
@@ -80,7 +86,7 @@
                         <div class="set_day">
                             <span class="day">금요일</span>
                             <label class="switch" onclick="timeBoxHide(this)">
-                                <input type="checkbox" checked>
+                                <input type="checkbox">
                                 <span class="slider"></span>
                             </label>
                         </div>
@@ -94,7 +100,7 @@
                         <div class="set_day">
                             <span class="day">토요일</span>
                             <label class="switch" onclick="timeBoxHide(this)">
-                                <input type="checkbox" checked>
+                                <input type="checkbox">
                                 <span class="slider"></span>
                             </label>
                         </div>
@@ -108,7 +114,7 @@
                         <div class="set_day">
                             <span class="day">일요일</span>
                             <label class="switch" onclick="timeBoxHide(this)">
-                                <input type="checkbox" checked>
+                                <input type="checkbox">
                                 <span class="slider"></span>
                             </label>
                         </div>
@@ -140,18 +146,13 @@
     <!-- datetimepicker1 팝업 -->
     <div class="modal" id="timepicker1">
         <div class="calendar modal_content">
-            <div class="form-group">
-                <div class="row">
-                    <div>
-                        <div id="datetimepicker1" class="only_timepicker">
-                            <h3 class="picker_title">상담 시작 시간 설정</h3>
-                        </div>                        
-                    </div>
-
-                    <div class="check_box t_center mb20">
-                        <input type="checkbox" id="check1" checked="">
-                        <label for="check1">모든 요일에 동일 적용하기</label>
-                    </div>
+            <div>
+                <div id="datetimepicker1" class="only_timepicker">
+                    <h3 class="picker_title">상담 시작 시간 설정</h3>
+                </div>
+                <div class="check_box t_center mb20">
+                    <input type="checkbox" id="check1" checked="">
+                    <label for="check1">모든 요일에 동일 적용하기</label>
                 </div>
             </div>
             <div class="modal_btn_half">
@@ -162,21 +163,16 @@
         </div>
     </div>
 
-     <!-- datetimepicker2 팝업 -->
+     <!-- datetimepicker2 팝업 --> 
      <div class="modal" id="timepicker2">
         <div class="calendar modal_content">
-            <div class="form-group">
-                <div class="row">
-                    <div>
-                        <div id="datetimepicker2" class="only_timepicker">
-                            <h3 class="picker_title">상담 마지막 시간 설정</h3>
-                        </div>
-                    </div>
-
-                    <div class="check_box t_center mb20">
-                        <input type="checkbox" id="check1" checked="">
-                        <label for="check1">모든 요일에 동일 적용하기</label>
-                    </div>
+            <div>
+                <div id="datetimepicker2" class="only_timepicker">
+                    <h3 class="picker_title">상담 마지막 시간 설정</h3>
+                </div>
+                <div class="check_box t_center mb20">
+                    <input type="checkbox" id="check1" checked="">
+                    <label for="check1">모든 요일에 동일 적용하기</label>
                 </div>
             </div>
             <div class="modal_btn_half">
@@ -210,16 +206,28 @@
             });
             // 타이틀 텍스트 변경
             $("#datetimepicker1 .separator1, #datetimepicker2 .separator1").text("");
+
+
+            // 221207 add
+            $(".set_day .switch").each(function(e){
+                if( $(this).find("input").is(":checked") ) {
+                    $(this).parent().next(".set_time").fadeIn(200).parent().removeClass("gap_close").find("input").attr("checked", true);
+                } else {
+                    $(this).parent().next(".set_time").hide().parent().addClass("gap_close").find("input").attr("checked", false);
+                }
+            });
+
         });
         
-        // 시간 선택 박스 toggle
+        // // 221207 modify :: 시간 선택 박스 toggle
         function timeBoxHide(e) {
             if( $(e).find("input").is(":checked") ) {
-                $(e).parent().next(".set_time").fadeIn(200).parent().removeClass("gap_close");;
+                $(e).parent().next(".set_time").fadeIn(200).parent().removeClass("gap_close").find("input").attr("checked", true);;
             } else {
-                $(e).parent().next(".set_time").hide().parent().addClass("gap_close");
+                $(e).parent().next(".set_time").hide().parent().addClass("gap_close").find("input").attr("checked", false);;
             }
         }
+        
     </script>
 </body>
 

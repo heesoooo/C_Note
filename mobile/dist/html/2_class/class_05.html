@@ -4,14 +4,17 @@
 <head>
 	<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
 
 <link rel="stylesheet" href="../../css/common/common.css">
 <link rel="stylesheet" href="../../css/common/pages.css">
 
+
 <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
 
-<script type="text/javascript" src="../../js/script.js"></script> 
+<script type="text/javascript" src="../../js/jquery.js"></script> 
+<script type="text/javascript" src="../../js/script.js"></script>
 	<title>우리반티셀파 - 서브</title>
 </head>
 
@@ -254,7 +257,12 @@
 							<div class="img_wrap half"> <!-- 이미지 두개이상일때 .half 추가 -->
 								<figure><img src="../../img/test_img.jpg" alt="test img"></figure>
 								<figure><img src="../../img/test_img2.jpg" alt="test img"></figure>
-							</div>						
+							</div>
+							<!-- 221123 :: add -->
+							<span class="attach">
+								<i class="sprite_comm sp_ico_clip"></i>첨부파일 2개
+							</span>				
+							<!-- /221123 -->
 						</a>
 					</div>
 
@@ -280,7 +288,14 @@
 			<!-- / -->
 
 			<!-- 게시글쓰기 버튼 -->
-			<a href="#none" class="btn_write_page">글쓰기페이지</a>
+			
+			<!-- 학생 생성 버튼 -->
+			<!-- <a href="#none" class="btn_write_page">글쓰기페이지</a> -->
+
+			<!-- 221124 :: 버튼추가 (학생 생성 버튼 이외 모든 페이지 적용) -->
+			<a href="#none" class="btn_write_page2">글쓰기페이지</a> 
+			<!-- / -->
+
 			<div class="list_write_menu sub_expand_tab">
 				<h3>게시판 글쓰기</h3>
 				<ul>
@@ -293,10 +308,24 @@
 				</ul>
 			</div>
 
-			<!-- 자녀 계정 연결 공지 -->
 			<div class="btn_fix_wrap">
-                <a href="#none" class="btn_link_children">자녀와 계정연결 하기</a>
+                <a href="#none" class="btn_link_children">자녀계정연결</a>
             </div>
+
+
+			<!-- 221117 sub tab bar 추가 -->
+			<div class="sub_tab_bar">
+    <ul>
+        <!-- 221117 :: add -->
+        <li class="tab_home on"><a href="#none"><i class="sprite_comm sp_ico_sub_home_off"></i>홈</a></li>
+        <!-- ./ -->
+        <li class="tab_checklist"><a href="#none"><i class="sprite_comm sp_ico_sub_checklist_off"></i>조사표</a></li>
+        <li class="tab_schedule"><a href="#none"><i class="sprite_comm sp_ico_sub_schedule_off"></i>일정추가</a></li>
+        <li class="tab_member"><a href="#none"><i class="sprite_comm sp_ico_sub_member_off"></i>구성원</a></li>
+        <li class="tab_setting"><a href="#none"><i class="sprite_comm sp_ico_sub_setting_off"></i>설정</a></li>
+    </ul>
+</div>
+			<!-- /sub tab bar -->
 
 		</div>
 		<!-- //content -->

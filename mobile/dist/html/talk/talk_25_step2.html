@@ -4,14 +4,17 @@
 <head>
 	<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
 
 <link rel="stylesheet" href="../../css/common/common.css">
 <link rel="stylesheet" href="../../css/common/pages.css">
 
+
 <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
 
-<script type="text/javascript" src="../../js/script.js"></script> 
+<script type="text/javascript" src="../../js/jquery.js"></script> 
+<script type="text/javascript" src="../../js/script.js"></script>
 	<title>T_TALK</title>
 </head>
 
@@ -27,16 +30,22 @@
 		<div class="container">
 			<div class="view_call_wrap">
 				<div class="view_top">
-					<figure class="img_profile">
-						<img src="../../img/img_sample.png" alt="img sample">
-					</figure>
+					<!-- 221208 :: 개별 프로필 이미지 제거 // 기본이미지 통일 -->
+                    <figure class="img_profile">
+                        통화중이미지
+                    </figure>
+                    <!-- / -->
 					<strong class="name">나희도 <em class="badge badge_pink">모</em></strong>
 					<span class="school_info">가산초등학교 1학년 1반</span>
 					<p class="loading_time">00:01:59</p>
 				</div>
 
 				<div class="btn_middle_wrap">
-					<a href="#none" class="btn_call recording on"><i></i> <span>00:00:50</span></a>
+
+					<!-- 221125 두가지만 필요한 경우 필요없는 a태그 지워주시면 됩니다.  -->
+					<!-- 활성화 버튼 .btn_call -> ' .on ' 추가 -->
+
+					<a href="#none" class="btn_call recording on"><i></i> <span>녹음중</span></a>
 					<a href="#none" class="btn_call sound on"><i></i> <span>음소거</span></a>
 					<a href="#none" class="btn_call speaker on"><i></i> <span>스피커폰</span></a>
 				</div>

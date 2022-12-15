@@ -1,20 +1,23 @@
 <div class="calendar">
-    <!-- td.day :: .schedule_info 추가시 일정등록 표기 css확인가능-->
-    <div class="form-group">
-        <div class="row">
-           <div class="col-md-8">
-              <div id="datetimepicker3"></div>
-           </div>
-        </div>
-     </div>
-     <script type="text/javascript">
-        $(function () {
-            $('#datetimepicker3').datetimepicker({
-                inline: true,
-                format: 'L'
-            });
-        });
+     <div id="datepicker3" ></div>
+     <!-- 221123 :: data-date="" 삭제-->
+     <input type="hidden" id="my_hidden_input">
+     <script>
+         $('#datepicker3').datepicker({
+             weekStart: 1,
+             
+         });
+
+         // 221123 :: 오늘 날짜 선택되도록 스크립트 추가
+         $('#datepicker3').datepicker('setDate', 'today');
+
+         $('#datepicker3').on('changeDate', function() {
+             $('#my_hidden_input').val(
+                 $('#datepicker').datepicker('getFormattedDate')
+             );
+         });
      </script>
+ 
     <div class="schedule_list_wrap">
         <ul class="schedule_list">
             <li>
@@ -23,21 +26,49 @@
                     오늘의 생일자 - 김상민, 김지영, 정재훈<br>
                     2교시 과학 수행평가
                 </p>
+                <!-- 221102 :: 일정 수정삭제 아이콘 추가 -->
+                <a href="#none" class="btn_comment_opt" data-target="commentOption">
+                    <i class="sprite_comm sp_ico_more_sm"></i>수정삭제
+                </a>
             </li>
             <li>
                 <span class="date">2022.06.22</span>
                 <p class="content">
-                    유네스코 데이
+                    kjafkjaskfjaskdjf;askjdfl;akjdfkasjdfkajsdkfjaskdjfaksdjfkajdfkadfjaksdfjkajfdkasjfkasjkfadj
                 </p>
+                <!-- 221102 :: 일정 수정삭제 아이콘 추가 -->
+                <a href="#none" class="btn_comment_opt" data-target="commentOption">
+                    <i class="sprite_comm sp_ico_more_sm"></i>수정삭제
+                </a>
             </li>
             <li>
                 <span class="date">2022.06.28</span>
                 <p class="content">
                     오늘의 생일자 - 김상민, 김지영, 정재훈<br>
                 </p>
+                <!-- 221102 :: 일정 수정삭제 아이콘 추가 -->
+                <a href="#none" class="btn_comment_opt" data-target="commentOption">
+                    <i class="sprite_comm sp_ico_more_sm"></i>수정삭제
+                </a>
             </li>
         </ul>
+
         <!-- 일정이 없을 경우 -->
         <p class="empty_msg">금일 일정이 없습니다.</p>
     </div>		
+</div>
+
+
+<!-- 221102 :: 일정 수정삭제 아이콘 클릭시 팝업 -->
+<div class="modal" id="commentOption">
+    <div class="modal_content pt0">
+        <ul class="pop_opt_list">
+            <li>
+                <a href="#none">수정하기</a>
+            </li>
+            <li>
+                <a href="#none">삭제</a>
+            </li>
+        </ul>
+    </div>
 </div>

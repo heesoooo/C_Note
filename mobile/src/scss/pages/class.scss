@@ -58,7 +58,7 @@
 	position: relative;
 	background: $l_blue1;
 	border: 1px solid $l_blue2;
-	height: 11.3rem;
+	//height: 11.3rem;
 	padding: 1.2rem 1.4rem 1.6rem;
 	border-radius: 1rem;
 	box-shadow: 0px 0.25rem .5rem 0 rgba(197, 225, 243, 0.25);
@@ -100,7 +100,7 @@
 		font-size: 1.3rem;
 		line-height: 2rem;
 		color: $black;
-		@include ellipsis(2);
+		@include ellipsis(1);
 	}
 }
 .notice_view_header{
@@ -149,6 +149,13 @@
 			border-bottom: 1px solid $gray_99;
 		}
 	}
+    .btn_scrap {
+        &.on {
+            i {
+                @extend .sp_ico_scrap_on;
+            }
+        }
+    }
 }
 // 설문제출, 과제현황보기 버튼
 .top_btn_wrap {
@@ -157,12 +164,26 @@
         height: 4rem;
         line-height: 4rem;
         font-weight: $font_weight_bold;
+        border-radius: 0.5rem;
         &.blue { background-color: #27baff; }
         &.mint { background-color: #00d0d8; }
+        &.primary { background-color: $primary; }
+    }
+    .arrow {
+        position: relative;
+        &::before {
+            @include posY;
+            content: '';
+            right: 1.5rem;
+            @extend .sprite_comm;
+            @extend .sp_ico_down_w;
+        }
     }
 }
 .notice_view_body {
 	padding: 2rem 0 0;
+    border-bottom: 1px solid $gray_e0;
+    word-break: break-all;
 	.bbs_area {
 		padding: 0 2rem 3rem;
 	}
@@ -179,6 +200,10 @@
 		font-weight: $font_weight_medium;
 		color: $primary;
 		letter-spacing: -0.12px;
+        .reservation {
+            color: $red;
+            margin-right: 0.5rem;
+        }
 	}
 	.notice_title {
 		margin-bottom: .8rem;
@@ -193,9 +218,13 @@
         line-height: 2.3rem;
 		color: $black;
 		letter-spacing: -.14px;
+        word-break: break-all;
 		img {
 			width: 100%;
 		}
+        &:has(img) {
+            margin-bottom: 2em;
+        }
 	}
 	.attach {
 		display: inline-block;
@@ -214,13 +243,22 @@
 		}
 	}
 	.attach_image {
-		margin: -.5rem 0 2rem 0;
+        border-top: 1px solid $gray_e0;
+		margin: 0 0 2rem 0;
+        padding-top: 2rem;
+        h3 {
+            padding: 0 0 1.5rem;
+            font-size: 1.3rem;
+            font-weight: $font_weight_regular;
+            color: $gray_66;
+            line-height: 1
+        }
 		ul {
 			@include flexbox(start, start);
 			flex-wrap: wrap;
 			li {
 				width: calc(25% - .5rem);
-				margin-bottom: 7px;				
+				margin-bottom: .7rem;				
 				margin-right: .65rem;
 
 				img {
@@ -323,6 +361,10 @@
 				max-height: 15.7rem;
 			}
 		}
+
+        + .attach {
+            margin-top: 1.5rem;
+        }
 	}
 }
 .list_view_item {
@@ -338,10 +380,12 @@
 	}
 	.notice_view_body {
 		padding: 1.7rem 0 0;
+        border-bottom: 0;
 		.bbs_area {
 			padding: 0 2rem 2rem;
 		}
 		.content {
+            word-break: break-all;
 			@include ellipsis(4);
 		}
 	}
@@ -350,7 +394,9 @@
 // 관리자 추가, 교사발급계정 버튼
 .btn_write_page,
 .btn_add_manager,
-.btn_add_student {
+.btn_add_student,
+.btn_link_page,
+.btn_link_children {
 	@include btnAdd;
 }
 // 768px 이상일때
@@ -358,19 +404,33 @@
 	.btn_write_page,
 	.btn_select_research,
     .btn_add_manager,
-    .btn_add_student {
+    .btn_add_student,
+    .btn_link_page,
+    .btn_link_children,
+    .btn_write_page2 {
 		right: auto; 
 		left: 50%; margin-left: 300px;
 	}
 }
-
+.btn_select_research,
+.btn_write_page2 {
+    position: fixed;
+	bottom: 8rem; right: 1.4rem;
+	@include ir_pm;
+	@extend .sprite_comm;
+    @extend .sp_btn_pencil;
+}
 // 댓글창
 .reply_wrap {
-	padding: 2rem 2rem 1.2rem;
+    margin-top: -0.1rem;
+	padding: 1.2rem 2rem;
 	border : {
 		top: 1px solid $gray_e0;
 		bottom: 1px solid $gray_e0;
 	}
+    .reply_list {
+        margin-top: 0.8rem;
+    }
 	.reply {
 		margin-bottom: 1.9rem;
 		padding-bottom: 1.5rem;
@@ -419,10 +479,13 @@
 			line-height: 1.8rem;
 			letter-spacing: -0.13px;
 			color: $black;
+            word-break: break-all;
 			&_del {
 				color: $gray_99;
 			}
             .stamp_img {
+                display: block;
+                margin-top: 1rem;
                 max-height: 7rem;
             }
 		}
@@ -486,6 +549,14 @@
 			}
 		}
 	}
+    .reply_list:not([style*="display: block"]) {
+        +.reply_box {
+            .real_comment_box {
+                display: none;
+                margin-top: 0;
+            }
+        }    
+    }
 	.reply_box {
 		.btn_comment {
             @include flexbox(between, center);
@@ -498,8 +569,21 @@
 			border-radius: 2rem;
 			background-color: $gray_fa;
 		}
+		.btn_comment_disabled {
+            @include flexbox(between, center);
+			padding: 0.8rem 1.6rem;
+			min-height: 4rem;
+			line-height: 1.7rem;
+			font-size: 1.3rem;
+			color: $gray_99;
+			letter-spacing: -0.13px;
+			border-radius: 2rem;
+			background-color: $gray_fa;
+		}
+
 		.real_comment_box {
 			display: none;
+            margin-top: 1.2rem;
 
             // 이모티콘 삽입 가능한 박스일때
             .stamp_comment_box {
@@ -676,6 +760,7 @@
         font-size: 1.8rem;
         font-weight: $font_weight_bold;
         position: relative;
+        line-height: 30px;
         &::before {
             content: '';
             @extend .sprite_comm;
@@ -808,6 +893,9 @@
             .check_box input[type=checkbox]+label {
                 padding-left: 3rem;
                 margin-right: 2rem;
+                &:last-child {
+                    margin-right: 0;
+                }
             }
             .btn.deadline {
                 padding: 0 2.5rem;
@@ -875,6 +963,8 @@
                 color: $gray_66;
                 margin-left: 0.7rem;
                 margin-right: 0.8rem;
+                max-width: 80%;
+                @include ellipsis(1);
             }
             .delete {
                 @include ir_pm;
@@ -901,24 +991,12 @@
 } 
 // 자녀 계정 연결 버튼
 .btn_fix_wrap {
-    position: fixed;
-    max-width: $max_width;
-    width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
     .btn_link_children {
-        @include flexbox(center);
-        width: calc(100% - 1rem);
-        height: 4rem;
-        font-size: 1.2rem;
-        color: $white;
-        background-color: $point;
-        border-radius: 0.5rem;
-        text-align: center;
-        margin: 0.5rem
+        bottom: 15rem;
+        @extend .sp_btn_link_children;
     }
 }
+
 // 자녀 계정 연결
 .link_children_wrap {
     .fix_top_bar  {
@@ -957,9 +1035,25 @@
         &:focus { outline: none; border: none; }
     }
     .editor_wrap {
-        padding: 2rem;
-        border-top: 1px solid $gray_e0;
-        border-bottom: 1px solid $gray_e0;
+        width: 100%;
+        // padding: 2rem;
+        // border-top: 1px solid $gray_e0;
+        // border-bottom: 1px solid $gray_e0;
+        .ck-content { font-size: 1.5rem; }
+        .ck.ck-toolbar {
+            border-left: 0;
+            border-right: 0;
+            border-top: 1px solid $gray_e0;
+            border-bottom: 1px solid $gray_e0;
+        }
+        .ck.ck-editor__main>.ck-editor__editable:not(.ck-focused) {
+            border-color: $gray_e0;
+        }
+        .ck.ck-editor__editable_inline {
+            border-left: 0;
+            border-right: 0;
+            border-bottom: 1px solid $gray_e0;
+        }
     }
 }
 // 클래스 일정 추가, 과제 제출하기
@@ -1031,13 +1125,14 @@
 // 클래스 구성원
 .member_list_wrap {
     .sort_type_chk {
-		@include flexbox(start, center);
+		@include flexbox(start, start);
         padding: 3rem 2.5rem;
         letter-spacing: -.05rem;
         .check_box + .check_box { margin-left: 2rem; }
     }
     .member_list_top {
         @include flexbox(between, center);
+        position: relative;
         padding: 0 2rem;
         height: 3.5rem;
         background-color: $gray_f5;
@@ -1061,6 +1156,21 @@
                 background: $gray_99;
             }
         }
+        &.accordian {
+            &::after {
+                position: absolute;
+                content: '';
+                @extend .sprite_comm;
+                @extend .sp_ico_up_g;
+                top: 50%; right: 2.05rem;
+                transform: translateY(-50%);
+            }
+            &.close {
+                &::after {
+                    @extend .sp_ico_down_g;
+                }
+            }
+        }
     }
     
     .submit_status {
@@ -1070,6 +1180,7 @@
         span { line-height: 2.6rem;}
         strong { color: $primary;}
         .unsubmit { float: right;}
+        i {@include inline-block-box; margin-top: -.25rem; margin-left: 0.3rem;}
     }
 
     .member_list {
@@ -1116,6 +1227,10 @@
             margin-bottom: 0.2rem;
             color: $black;
             font-weight: $font_weight_medium;
+            > span {
+                max-width: 8.3rem;
+                @include ellipsis(1);
+            }
         }
         .info {
             font-size: 1.2rem;
@@ -1152,7 +1267,7 @@
 // 조사표
 .research_wrap {
 	.list_research {
-		padding-top: 3rem;
+		padding-top: 2rem;
 		li {
 			a {
 				@include flexbox(between, center);
@@ -1220,9 +1335,7 @@
 		}
 	}
 }
-.btn_select_research {
-	@include btnAdd;
-}
+
 // 조사표 선택 추가하기 팝업
 .select_research {
 	min-height: 30rem;
@@ -1252,12 +1365,24 @@
 					color: $black;
 				}
 			}
-			.btn {
-				color: $white;
+			.btn_delete {
+                padding: .5rem;
+                @include ir_pm;
+				@extend .sprite_comm;
+				@extend .sp_ico_delete_v;
 			}
 		}
 	}
 }
+.select_research_title {
+    padding-top: 3rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: $font_weight_bold;
+    text-align: center;
+    line-height: 1;
+}
+
 // 조사표 만들기
 .create_research_list {
 	@include flexbox(between, start);
@@ -1297,6 +1422,7 @@
 	width: 100%;
 	thead {
 		th {
+            position: relative;
 			&:first-child {
 				text-align: left;
 			}
@@ -1307,6 +1433,20 @@
 			font-weight: $font_weight_regular;
 			letter-spacing: -0.35px;
 			color: $black;
+
+            .btn_batch_select {
+                @include posY;
+                right: 0;
+                width: 6.5rem;
+                height: 2.6rem;
+                line-height: 2.4rem;
+                text-align: center;
+                font-size: 1.2rem;
+                font-weight: $font_weight_regular;
+                color: $point;
+                border: 1px solid $point;
+                border-radius: 1.3rem;
+            }
 		}
 	}
 	tbody {
@@ -1394,13 +1534,18 @@
     padding-top: 0.5rem;
     .survey_question_list {
         .survey_question {
+            word-break: break-all;
             padding : 0 2rem 1.8rem;
             border-bottom: 1px solid $gray_e0;
             .question { 
                 margin-top: 1.5rem;
-                @include flexbox (start, center);
+                @include flexbox (start, start);
                 .tag {
                     font-weight: $font_weight_medium;
+                    padding: 0 0.75rem;
+                    min-width: 3.3rem;
+                    &.tag_pink { min-width: 5.2rem;}
+                    & + .tag { margin-left: 0.5rem;}
                 }
             }
             .q_txt {
@@ -1603,3 +1748,21 @@
 }
 
 
+// 359px 이하에서 리스트 형태 프로필사진 숨기기
+@mixin profileHide {
+    .profile {display: none;}
+}
+
+@media all and (max-width: 359px) {
+    // 미확인자 PUSH
+    .member_list_wrap {
+        .member_list {
+           @include profileHide;
+        }
+    } 
+    .class_list_wrap{
+        .class_list {
+           @include profileHide;
+        }
+    }
+}

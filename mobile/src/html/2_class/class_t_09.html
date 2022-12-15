@@ -30,7 +30,8 @@
                                     <!-- <img src="" alt=""> -->
                                 </span>
                                 <input type="file" class="input_file_button" id="imgEdit">
-                                <label for="imgEdit" class="sprite_comm sp_ico_edit"></label>
+                                <!-- 221024 :: 클릭시 이미지편집 옵션 팝업 노출-->
+                                <label for="imgEdit" class="sprite_comm sp_ico_edit" data-target="imgPop"></label>
                             </div>
                         </div>
                         <div class="info_dec">
@@ -74,9 +75,29 @@
     </div>
     <!-- ./ -->
 
+	<!-- 221024 :: 이미지편집 클릭시 팝업 -->
+	<div class="modal over_modal" id="imgPop">
+		<div class="modal_content pt0">
+			<ul class="pop_opt_list">
+				<li>
+					<a href="#none">카메라</a>
+				</li>
+				<li>
+					<a href="#none">앨범</a>
+				</li>
+				<li>
+					<a href="#none">기본 이미지로 변경</a>
+				</li>
+				<li>
+					<a href="#none">취소</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
     <script>
         $(function () {
-            $("#issuingAccount").modal({ show: true, overlayDrop: false})
+            $("#issuingAccount").modal({ show: true})
         })
     </script>
 </body>

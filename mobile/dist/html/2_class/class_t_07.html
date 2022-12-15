@@ -4,14 +4,17 @@
 <head>
 	<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
 
 <link rel="stylesheet" href="../../css/common/common.css">
 <link rel="stylesheet" href="../../css/common/pages.css">
 
+
 <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
 
-<script type="text/javascript" src="../../js/script.js"></script> 
+<script type="text/javascript" src="../../js/jquery.js"></script> 
+<script type="text/javascript" src="../../js/script.js"></script>
 	<title>우리반티셀파 - 서브</title>
 </head>
 
@@ -138,7 +141,10 @@
         <!-- sub tab bar -->
 		<div class="sub_tab_bar">
     <ul>
-        <li class="tab_checklist on"><a href="#none"><i class="sprite_comm sp_ico_sub_checklist_off"></i>조사표</a></li>
+        <!-- 221117 :: add -->
+        <li class="tab_home on"><a href="#none"><i class="sprite_comm sp_ico_sub_home_off"></i>홈</a></li>
+        <!-- ./ -->
+        <li class="tab_checklist"><a href="#none"><i class="sprite_comm sp_ico_sub_checklist_off"></i>조사표</a></li>
         <li class="tab_schedule"><a href="#none"><i class="sprite_comm sp_ico_sub_schedule_off"></i>일정추가</a></li>
         <li class="tab_member"><a href="#none"><i class="sprite_comm sp_ico_sub_member_off"></i>구성원</a></li>
         <li class="tab_setting"><a href="#none"><i class="sprite_comm sp_ico_sub_setting_off"></i>설정</a></li>
@@ -201,7 +207,7 @@
     
         <script>
             $(function () {
-                $("#parentInfo").modal({ show: true, overlayDrop: false})
+                $("#parentInfo").modal({ show: true})
             })
         </script>
 </body>

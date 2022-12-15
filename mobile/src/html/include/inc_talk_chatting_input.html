@@ -108,6 +108,13 @@
         $(".chatting_input .btn_emoticon").on("touch click", function(){
             $(".emoticon_box").toggle();
             mo_talk.chatContHeight();
+
+            // 221215 이모티콘 버튼 클릭했을때 채팅창 젤 하단으로 이동
+            var chatHeight = $(".chatting_list_wrap").height();
+            $(".chatting_cont").animate({
+                scrollTop: chatHeight
+            }, 0);
+            
         });
 
         // input 클릭시 이모티콘영역 숨기기

@@ -1,6 +1,7 @@
 ﻿// 가입 완료 및 데이터 없을 때 화면
 .empty_box {
     text-align: center;
+    font-size: 1.5rem;
     .empty {
         width: 100%;
         background-repeat: no-repeat;
@@ -52,10 +53,31 @@
         height: 3.4rem;
         line-height: 3.4rem;
     }
+
+    .link_msg {
+        font-size: 1.5rem;
+        line-height: 2.2rem;
+        color: $gray_66;
+        text-align: center;
+        margin-top: 5.5rem;            
+    }
+    .leave_class {
+        @include flexbox(center, center);
+        margin-top: 5.5rem;
+        font-size: 1.3rem;
+        font-weight: $font_weight_medium;
+        color: $black;
+        .leave { 
+            margin-left: 0.5rem;
+            color: $gray_99;
+            border-bottom: 1px solid #999;
+        }
+    }
+
 }
 .empty_msg {
     margin-top: 20rem;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     line-height: 2.1rem;
     color: $gray_66;
     text-align: center;

@@ -7,14 +7,17 @@
     <title>Style Guide & Components</title>
     <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
 
 <link rel="stylesheet" href="../../css/common/common.css">
 <link rel="stylesheet" href="../../css/common/pages.css">
 
+
 <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
 
-<script type="text/javascript" src="../../js/script.js"></script> 
+<script type="text/javascript" src="../../js/jquery.js"></script> 
+<script type="text/javascript" src="../../js/script.js"></script>
     <style type="text/css">
         *{margin:0;padding:0;}
         .components{max-width:768px;margin:0 auto;padding-top:3rem;padding:6rem 1.5rem;font-size:1.6rem;}
@@ -32,10 +35,11 @@
         .components .component-area>h3:first-child{margin-top:0;}
         .components .component-area h3 span{display:inline-block;padding:0 1.5rem 0 0.5rem;font-size:1.5rem;font-weight:500;}
         .components .component-area dl dt{font-size:1.2rem;color:#666666;line-height:2.5rem;margin-bottom:0.5rem}
-        .component-area{margin:0 0 4rem;padding:2rem;background-color:#fbfbfb;}
+        .component-area{margin:0 0 3rem;padding:2rem;background-color:#fbfbfb;}
         .icon_box{display:flex;flex-wrap:wrap;justify-content:space-between;width:100%;}
-        .icon_box li{display:flex;align-items:center;justify-content: space-between; width:calc(50% - 1rem);margin-bottom:1rem;padding:1.5rem;background-color:#ededed;border-radius:1rem;}
-        .icon_box li strong {width:75%; font-size: 1.4rem;}
+        .icon_box li{display:flex; flex-direction:column; align-items:center;justify-content: space-between; width:calc(50% - 0.5rem);margin-bottom:1rem;padding:1.5rem 1rem;background-color:#ededed;border-radius:1rem;}
+        @media (max-width: 400px) { .icon_box li.max { width: 100%;}}
+        .icon_box li strong {width:95%; font-size: 1.3rem; text-align: center; margin-top: 1rem;}
         .flex{display:flex;}
         .flex_start{display:flex;justify-content:flex-start;align-items:flex-start;}
         /* components style */
@@ -284,7 +288,7 @@
         
         <h2 class="tit">Round Button</h2>
         <div class="component-area">
-            <h3>
+            <h3 class="mb0">
                 <span>.btn.round.small</span>
                 <a href="#none" class="btn round small">가입하기</a>
                 <br>
@@ -303,7 +307,7 @@
         <!-- icon -->
         <h2 id="category5" class="categorys">#icon</h2>
         <h2 class="tit">icon</h2>
-        <div class="component-area">
+        <div class="component-area pl10 pr10">
             <h3><span style="color:#6255f6">.sprite_comm</span><span>공통클래스</span></h3>
             <ul class="icon_box">
                 <li><span class="sprite_comm sp_btn_down"></span><strong>.sp_btn_down</strong></li>
@@ -312,11 +316,11 @@
                 <li><span class="sprite_comm sp_dot_blue"></span><strong>.sp_dot_blue</strong></li>
                 <li><span class="sprite_comm sp_dot_orange"></span><strong>.sp_dot_orange</strong></li>
                 <li><span class="sprite_comm sp_ico_add"></span><strong>.sp_ico_add</strong></li>
-                <li><span class="sprite_comm sp_ico_alarm"></span><strong>.sp_ico_alarm</strong></li>
-                <li><span class="sprite_comm sp_ico_alarm_setting"></span><strong>.sp_ico_alarm_setting</strong></li>
                 <li><span class="sprite_comm sp_ico_answer"></span><strong>.sp_ico_answer</strong></li>
-                <li><span class="sprite_comm sp_ico_attached_active"></span><strong>.sp_ico_attached_active</strong></li>
-                <li><span class="sprite_comm sp_ico_attached_disabled"></span><strong>.sp_ico_attached_disabled</strong></li>
+                <li><span class="sprite_comm sp_ico_alarm"></span><strong>.sp_ico_alarm</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_alarm_setting"></span><strong>.sp_ico_alarm_setting</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_attached_active"></span><strong>.sp_ico_attached_active</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_attached_disabled"></span><strong>.sp_ico_attached_disabled</strong></li>
                 <li><span class="sprite_comm sp_ico_back"></span><strong>.sp_ico_back</strong></li>
                 <li><span class="sprite_comm sp_ico_calendar"></span><strong>.sp_ico_calendar</strong></li>
                 <li><span class="sprite_comm sp_ico_call"></span><strong>.sp_ico_call</strong></li>
@@ -331,29 +335,29 @@
                 <li><span class="sprite_comm sp_ico_clear_lg"></span><strong>.sp_ico_clear_lg</strong></li>
                 <li><span class="sprite_comm sp_ico_clip"></span><strong>.sp_ico_clip</strong></li>
                 <li><span class="sprite_comm sp_ico_clip_g"></span><strong>.sp_ico_clip_g</strong></li>
-                <li><span class="sprite_comm sp_ico_clock_setting"></span><strong>.sp_ico_clock_setting</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_clock_setting"></span><strong>.sp_ico_clock_setting</strong></li>
                 <li><span class="sprite_comm sp_ico_close"></span><strong>.sp_ico_close</strong></li>
                 <li><span class="sprite_comm sp_ico_close_g"></span><strong>.sp_ico_close_g</strong></li>
                 <li><span class="sprite_comm sp_ico_close_w"></span><strong>.sp_ico_close_w</strong></li>
                 <li><span class="sprite_comm sp_ico_comment"></span><strong>.sp_ico_comment</strong></li>
-                <li><span class="sprite_comm sp_ico_consult_clock"></span><strong>.sp_ico_consult_clock</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_consult_clock"></span><strong>.sp_ico_consult_clock</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_delete_attach"></span><strong>.sp_ico_delete_attach</strong></li>
                 <li><span class="sprite_comm sp_ico_delete"></span><strong>.sp_ico_delete</strong></li>
-                <li><span class="sprite_comm sp_ico_delete_attach"></span><strong>.sp_ico_delete_attach</strong></li>
                 <li><span class="sprite_comm sp_ico_down"></span><strong>.sp_ico_down</strong></li>
-                <li><span class="sprite_comm sp_ico_down_default"></span><strong>.sp_ico_down_default</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_down_default"></span><strong>.sp_ico_down_default</strong></li>
                 <li><span class="sprite_comm sp_ico_down_g"></span><strong>.sp_ico_down_g</strong></li>
                 <li><span class="sprite_comm sp_ico_down_w"></span><strong>.sp_ico_down_w</strong></li>
                 <li><span class="sprite_comm sp_ico_edit"></span><strong>.sp_ico_edit</strong></li>
                 <li><span class="sprite_comm sp_ico_emoticon"></span><strong>.sp_ico_emoticon</strong></li>
-                <li><span class="sprite_comm sp_ico_error"></span><strong>.sp_ico_error</strong></li>
-                <li><span class="sprite_comm sp_ico_file_download"></span><strong>.sp_ico_file_download</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_file_download"></span><strong>.sp_ico_file_download</strong></li>
                 <li><span class="sprite_comm sp_ico_file_g"></span><strong>.sp_ico_file_g</strong></li>
                 <li><span class="sprite_comm sp_ico_folder"></span><strong>.sp_ico_folder</strong></li>
                 <li><span class="sprite_comm sp_ico_fulldown"></span><strong>.sp_ico_fulldown</strong></li>
                 <li><span class="sprite_comm sp_ico_fulldown_v"></span><strong>.sp_ico_fulldown_v</strong></li>
                 <li><span class="sprite_comm sp_ico_hang_up"></span><strong>.sp_ico_hang_up</strong></li>
                 <li><span class="sprite_comm sp_ico_img_file"></span><strong>.sp_ico_img_file</strong></li>
-                <li><span class="sprite_comm sp_ico_incoming_call"></span><strong>.sp_ico_incoming_call</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_incoming_call"></span><strong>.sp_ico_incoming_call</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_missed_call"></span><strong>.sp_ico_missed_call</strong></li>
                 <li><span class="sprite_comm sp_ico_info"></span><strong>.sp_ico_info</strong></li>
                 <li><span class="sprite_comm sp_ico_info_g"></span><strong>.sp_ico_info_g</strong></li>
                 <li><span class="sprite_comm sp_ico_inp_clear"></span><strong>.sp_ico_inp_clear</strong></li>
@@ -361,12 +365,13 @@
                 <li><span class="sprite_comm sp_ico_kakao"></span><strong>.sp_ico_kakao</strong></li>
                 <li><span class="sprite_comm sp_ico_like"></span><strong>.sp_ico_like</strong></li>
                 <li><span class="sprite_comm sp_ico_list_more"></span><strong>.sp_ico_list_more</strong></li>
+                <li><span class="sprite_comm sp_ico_more_large"></span><strong>.sp_ico_more_large</strong></li>
                 <li><span class="sprite_comm sp_ico_list_more_g"></span><strong>.sp_ico_list_more_g</strong></li>
                 <li><span class="sprite_comm sp_ico_list_more_w"></span><strong>.sp_ico_list_more_w</strong></li>
                 <li><span class="sprite_comm sp_ico_make"></span><strong>.sp_ico_make</strong></li>
                 <li><span class="sprite_comm sp_ico_menu"></span><strong>.sp_ico_menu</strong></li>
-                <li><span class="sprite_comm sp_ico_menu_expand"></span><strong>.sp_ico_menu_expand</strong></li>
-                <li><span class="sprite_comm sp_ico_missed_call"></span><strong>.sp_ico_missed_call</strong></li>
+                <li><span class="sprite_comm sp_ico_error"></span><strong>.sp_ico_error</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_menu_expand"></span><strong>.sp_ico_menu_expand</strong></li>
                 <li><span class="sprite_comm sp_ico_more"></span><strong>.sp_ico_more</strong></li>
                 <li><span class="sprite_comm sp_ico_more_sm"></span><strong>.sp_ico_more_sm</strong></li>
                 <li><span class="sprite_comm sp_ico_more_w"></span><strong>.sp_ico_more_w</strong></li>
@@ -378,11 +383,12 @@
                 <li><span class="sprite_comm sp_ico_my_school"></span><strong>.sp_ico_my_school</strong></li>
                 <li><span class="sprite_comm sp_ico_my_scrap"></span><strong>.sp_ico_my_scrap</strong></li>
                 <li><span class="sprite_comm sp_ico_naver"></span><strong>.sp_ico_naver</strong></li>
+                <li><span class="sprite_comm sp_ico_new"></span><strong>.sp_ico_new</strong></li>
                 <li><span class="sprite_comm sp_ico_no_call"></span><strong>.sp_ico_no_call</strong></li>
-                <li><span class="sprite_comm sp_ico_no_picture"></span><strong>.sp_ico_no_picture</strong></li>
-                <li><span class="sprite_comm sp_ico_no_picture_lg"></span><strong>.sp_ico_no_picture_lg</strong></li>
                 <li><span class="sprite_comm sp_ico_no_video"></span><strong>.sp_ico_no_video</strong></li>
-                <li><span class="sprite_comm sp_ico_outgoing_call"></span><strong>.sp_ico_outgoing_call</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_no_picture"></span><strong>.sp_ico_no_picture</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_no_picture_lg"></span><strong>.sp_ico_no_picture_lg</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_outgoing_call"></span><strong>.sp_ico_outgoing_call</strong></li>
                 <li><span class="sprite_comm sp_ico_pause_off"></span><strong>.sp_ico_pause_off</strong></li>
                 <li><span class="sprite_comm sp_ico_pause_on"></span><strong>.sp_ico_pause_on</strong></li>
                 <li><span class="sprite_comm sp_ico_pdf"></span><strong>.sp_ico_pdf</strong></li>
@@ -391,58 +397,80 @@
                 <li><span class="sprite_comm sp_ico_play_off"></span><strong>.sp_ico_play_off</strong></li>
                 <li><span class="sprite_comm sp_ico_play_on"></span><strong>.sp_ico_play_on</strong></li>
                 <li><span class="sprite_comm sp_ico_plus"></span><strong>.sp_ico_plus</strong></li>
-                <li><span class="sprite_comm sp_ico_plus_round"></span><strong>.sp_ico_plus_round</strong></li>
-                <li><span class="sprite_comm sp_ico_profile_edit"></span><strong>.sp_ico_profile_edit</strong></li>
-                <li><span class="sprite_comm sp_ico_profile_edit2"></span><strong>.sp_ico_profile_edit2</strong></li>
-                <li><span class="sprite_comm sp_ico_profile_group"></span><strong>.sp_ico_profile_group</strong></li>
-                <li><span class="sprite_comm sp_ico_profile_notice"></span><strong>.sp_ico_profile_notice</strong></li>
-                <li><span class="sprite_comm sp_ico_recording_off"></span><strong>.sp_ico_recording_off</strong></li>
-                <li><span class="sprite_comm sp_ico_recording_on"></span><strong>.sp_ico_recording_on</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_plus_round"></span><strong>.sp_ico_plus_round</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_profile_edit"></span><strong>.sp_ico_profile_edit</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_profile_edit2"></span><strong>.sp_ico_profile_edit2</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_profile_group"></span><strong>.sp_ico_profile_group</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_profile_notice"></span><strong>.sp_ico_profile_notice</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_recording_off"></span><strong>.sp_ico_recording_off</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_recording_on"></span><strong>.sp_ico_recording_on</strong></li>
                 <li><span class="sprite_comm sp_ico_reject"></span><strong>.sp_ico_reject</strong></li>
                 <li><span class="sprite_comm sp_ico_resend"></span><strong>.sp_ico_resend</strong></li>
                 <li><span class="sprite_comm sp_ico_reset"></span><strong>.sp_ico_reset</strong></li>
                 <li><span class="sprite_comm sp_ico_save"></span><strong>.sp_ico_save</strong></li>
                 <li><span class="sprite_comm sp_ico_scrap_off"></span><strong>.sp_ico_scrap_off</strong></li>
                 <li><span class="sprite_comm sp_ico_scrap_on"></span><strong>.sp_ico_scrap_on</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_search_clear"></span><strong>.sp_ico_search_clear</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_search_filter"></span><strong>.sp_ico_search_filter</strong></li>
                 <li><span class="sprite_comm sp_ico_search"></span><strong>.sp_ico_search</strong></li>
-                <li><span class="sprite_comm sp_ico_search_clear"></span><strong>.sp_ico_search_clear</strong></li>
-                <li><span class="sprite_comm sp_ico_search_filter"></span><strong>.sp_ico_search_filter</strong></li>
                 <li><span class="sprite_comm sp_ico_search_g"></span><strong>.sp_ico_search_g</strong></li>
                 <li><span class="sprite_comm sp_ico_search_s"></span><strong>.sp_ico_search_s</strong></li>
                 <li><span class="sprite_comm sp_ico_sel_class"></span><strong>.sp_ico_sel_class</strong></li>
                 <li><span class="sprite_comm sp_ico_send_off"></span><strong>.sp_ico_send_off</strong></li>
                 <li><span class="sprite_comm sp_ico_send_on"></span><strong>.sp_ico_send_on</strong></li>
-                <li><span class="sprite_comm sp_ico_setting_b"></span><strong>.sp_ico_setting_b</strong></li>
                 <li><span class="sprite_comm sp_ico_sound_off"></span><strong>.sp_ico_sound_off</strong></li>
                 <li><span class="sprite_comm sp_ico_sound_on"></span><strong>.sp_ico_sound_on</strong></li>
-                <li><span class="sprite_comm sp_ico_speaker_off"></span><strong>.sp_ico_speaker_off</strong></li>
-                <li><span class="sprite_comm sp_ico_speaker_on"></span><strong>.sp_ico_speaker_on</strong></li>
-                <li><span class="sprite_comm sp_ico_sub_checklist_off"></span><strong>.sp_ico_sub_checklist_off</strong></li>
-                <li><span class="sprite_comm sp_ico_sub_checklist_on"></span><strong>.sp_ico_sub_checklist_on</strong></li>
-                <li><span class="sprite_comm sp_ico_sub_member_off"></span><strong>.sp_ico_sub_member_off</strong></li>
-                <li><span class="sprite_comm sp_ico_sub_member_on"></span><strong>.sp_ico_sub_member_on</strong></li>
-                <li><span class="sprite_comm sp_ico_sub_schedule_off"></span><strong>.sp_ico_sub_schedule_off</strong></li>
-                <li><span class="sprite_comm sp_ico_sub_schedule_on"></span><strong>.sp_ico_sub_schedule_on</strong></li>
-                <li><span class="sprite_comm sp_ico_sub_setting_off"></span><strong>.sp_ico_sub_setting_off</strong></li>
-                <li><span class="sprite_comm sp_ico_sub_setting_on"></span><strong>.sp_ico_sub_setting_on</strong></li>
-                <li><span class="sprite_comm sp_ico_tab_class_off"></span><strong>.sp_ico_tab_class_off</strong></li>
-                <li><span class="sprite_comm sp_ico_tab_class_on"></span><strong>.sp_ico_tab_class_on</strong></li>
-                <li><span class="sprite_comm sp_ico_tab_main_off"></span><strong>.sp_ico_tab_main_off</strong></li>
-                <li><span class="sprite_comm sp_ico_tab_main_on"></span><strong>.sp_ico_tab_main_on</strong></li>
-                <li><span class="sprite_comm sp_ico_tab_more_off"></span><strong>.sp_ico_tab_more_off</strong></li>
-                <li><span class="sprite_comm sp_ico_tab_more_on"></span><strong>.sp_ico_tab_more_on</strong></li>
-                <li><span class="sprite_comm sp_ico_tab_schedule_off"></span><strong>.sp_ico_tab_schedule_off</strong></li>
-                <li><span class="sprite_comm sp_ico_tab_schedule_on"></span><strong>.sp_ico_tab_schedule_on</strong></li>
-                <li><span class="sprite_comm sp_ico_tab_talk_off"></span><strong>.sp_ico_tab_talk_off</strong></li>
-                <li><span class="sprite_comm sp_ico_tab_talk_on"></span><strong>.sp_ico_tab_talk_on</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_speaker_off"></span><strong>.sp_ico_speaker_off</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_speaker_on"></span><strong>.sp_ico_speaker_on</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_sub_checklist_off"></span><strong>.sp_ico_sub_checklist_off</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_sub_checklist_on"></span><strong>.sp_ico_sub_checklist_on</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_sub_member_off"></span><strong>.sp_ico_sub_member_off</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_sub_member_on"></span><strong>.sp_ico_sub_member_on</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_sub_schedule_off"></span><strong>.sp_ico_sub_schedule_off</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_sub_schedule_on"></span><strong>.sp_ico_sub_schedule_on</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_sub_setting_off"></span><strong>.sp_ico_sub_setting_off</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_sub_setting_on"></span><strong>.sp_ico_sub_setting_on</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_tab_class_off"></span><strong>.sp_ico_tab_class_off</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_tab_class_on"></span><strong>.sp_ico_tab_class_on</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_tab_main_off"></span><strong>.sp_ico_tab_main_off</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_tab_main_on"></span><strong>.sp_ico_tab_main_on</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_tab_more_off"></span><strong>.sp_ico_tab_more_off</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_tab_more_on"></span><strong>.sp_ico_tab_more_on</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_tab_schedule_off"></span><strong>.sp_ico_tab_schedule_off</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_tab_schedule_on"></span><strong>.sp_ico_tab_schedule_on</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_tab_talk_off"></span><strong>.sp_ico_tab_talk_off</strong></li>
+                <li class="max"><span class="sprite_comm sp_ico_tab_talk_on"></span><strong>.sp_ico_tab_talk_on</strong></li>
                 <li><span class="sprite_comm sp_ico_talk"></span><strong>.sp_ico_talk</strong></li>
-                <li><span class="sprite_comm sp_ico_talk_clip"></span><strong>.sp_ico_talk_clip</strong></li>
                 <li><span class="sprite_comm sp_ico_talk_sm"></span><strong>.sp_ico_talk_sm</strong></li>
-                <li><span class="sprite_comm sp_ico_txt_more"></span><strong>.sp_ico_txt_more</strong></li>
+                <li><span class="sprite_comm sp_ico_talk_clip"></span><strong>.sp_ico_talk_clip</strong></li>
+                <li><span class="sprite_comm sp_ico_setting_b"></span><strong>.sp_ico_setting_b</strong></li>
+                <li><span class="sprite_comm sp_ico_setting_g"></span><strong>.sp_ico_setting_g</strong></li>
                 <li><span class="sprite_comm sp_ico_up_default"></span><strong>.sp_ico_up_default</strong></li>
                 <li><span class="sprite_comm sp_ico_up_g"></span><strong>.sp_ico_up_g</strong></li>
+                <li><span class="sprite_comm sp_ico_txt_more"></span><strong>.sp_ico_txt_more</strong></li>
                 <li><span class="sprite_comm sp_ico_video"></span><strong>.sp_ico_video</strong></li>
                 <li><span class="sprite_comm sp_ico_zip"></span><strong>.sp_ico_zip</strong></li>
+                <li><span class="sprite_comm sp_ico_main_aimath"></span><strong>.sp_main_aimath</strong></li>
+                <li><span class="sprite_comm sp_ico_main_album"></span><strong>.sp_main_album</strong></li>
+                <li><span class="sprite_comm sp_ico_main_hw"></span><strong>.sp_main_hw</strong></li>
+                <li><span class="sprite_comm sp_ico_main_noti"></span><strong>.sp_main_noti</strong></li>
+                <li><span class="sprite_comm sp_ico_main_question"></span><strong>.sp_main_question</strong></li>
+                <li><span class="sprite_comm sp_ico_main_survey"></span><strong>.sp_main_survey</strong></li>
+                <li class="max"><span class="sprite_comm sp_login_before_bg1"></span><strong>.sp_login_before_bg1</strong></li>
+                <li class="max"><span class="sprite_comm sp_login_before_bg2"></span><strong>.sp_login_before_bg2</strong></li>
+                <li class="max"><span class="sprite_comm sp_use_ico_album_off"></span><strong>.sp_use_ico_album_off</strong></li>
+                <li><span class="sprite_comm sp_use_ico_album"></span><strong>.sp_use_ico_album</strong></li>
+                <li><span class="sprite_comm sp_use_ico_call"></span><strong>.sp_use_ico_call</strong></li>
+                <li class="max"><span class="sprite_comm sp_use_ico_call_off"></span><strong>.sp_use_ico_call_off</strong></li>
+                <li><span class="sprite_comm sp_use_ico_hw"></span><strong>.sp_use_ico_hw</strong></li>
+                <li><span class="sprite_comm sp_use_ico_hw_off"></span><strong>.sp_use_ico_hw_off</strong></li>
+                <li class="max"><span class="sprite_comm sp_use_ico_reservation"></span><strong>.sp_use_ico_reservation</strong></li>
+                <li class="max"><span class="sprite_comm sp_use_ico_reservation_off"></span><strong>.sp_use_ico_reservation_off</strong></li>
+                <li class="max"><span class="sprite_comm sp_use_ico_research"></span><strong>.sp_use_ico_research</strong></li>
+                <li><span class="sprite_comm sp_use_ico_notice"></span><strong>.sp_use_ico_notice</strong></li>
+                <li><span class="sprite_comm sp_use_ico_survey"></span><strong>.sp_use_ico_survey</strong></li>
+                <li><span class="sprite_comm sp_use_ico_talk"></span><strong>.sp_use_ico_talk</strong></li>
+                <li><span class="sprite_comm sp_ico_lunch"></span><strong>.sp_ico_lunch</strong></li>
                 
             </ul>
         </div>
@@ -462,31 +490,50 @@
 
         <!-- datepicker -->
         <h2 id="category6" class="categorys">#datePicker</h2>
-
+        
+        <p class="mb20">
+            * 모바일 달력에 시간 선택 기능이 추가되어 <br>
+            &nbsp;&nbsp;시간 선택은 datetimepicker에서 timepicker부분만을 사용했습니다.<br>
+        </p>
         
         <div class="component-area">
             <p class="mb20">td.day :: .schedule_info 추가시 일정등록 표기 css확인가능</p>
 
-            <a href="#none" class="btn" data-target="dateTimePicker1">dateTimePicker1</a>
+            <a href="#none" class="btn" data-target="dateTimePicker11">dateTimePicker1</a>
               <!-- datetimepicker 팝업 -->
-  <div class="modal" id="dateTimePicker1">
+  <div class="modal" id="dateTimePicker11">
     <div class="calendar modal_content">
         <!-- td.day :: .schedule_info 추가시 일정등록 표기 css확인가능-->
-
-        <div class="form-group">
-            <div class="row">
-                <div>
-                    <div id="datetimepicker1"></div>
-                </div>
-            </div>
-        </div>
-        <script type="text/javascript">
-        $(function () {
-            $('#datetimepicker1').datetimepicker({
-                inline: true,
+        <!-- 221123 :: data-date="" 삭제-->
+        <div id="datepicker1"></div>
+        <input type="hidden" id="my_hidden_input">
+        <script>
+            $('#datepicker1').datepicker({
+                weekStart: 1,
             });
-        });
+
+            // 221123 :: 오늘 날짜 선택되도록 스크립트 추가
+            $('#datepicker1').datepicker('setDate', 'today');
+
+            $('#datepicker1').on('changeDate', function() {
+                $('#my_hidden_input').val(
+                    $('#datepicker').datepicker('getFormattedDate')
+                );
+            });
         </script>
+
+        <div id="datetimepicker1"></div>
+        <script>
+            $(function () {
+                    $('#datetimepicker1').datetimepicker({
+                        format: 'LT',
+                        inline: true,
+                        format: 'A hh:mm',
+                    });
+                });
+        </script>
+
+
         <div class="modal_btn_half">
             <a href="#none" class="modal_btn" data-dismiss="modal">닫기</a>
             <!-- 활성화시 .active 추가 / 비활성화시 .disabled 추가 -->
@@ -499,7 +546,6 @@
 <script>
     
     $(function () {
-                
         //datetimepicker 오전 오후 설정
         if( $('.btn.btn-primary').html() == '오전' ) {
             $('.btn.btn-primary').removeClass('pm').addClass('am');
@@ -515,23 +561,24 @@
 <div class="modal" id="datePicker2">
     <div class="calendar modal_content">
         <!-- td.day :: .schedule_info 추가시 일정등록 표기 css확인가능-->
-
-        <div class="form-group">
-            <div class="row">
-                <div>
-                    <div id="datetimepicker2"></div>
-                </div>
-            </div>
-        </div>
-        <script type="text/javascript">
-        $(function () {
-            $('#datetimepicker2').datetimepicker({
-                format: 'L',
-                format: 'YYYY.MM.DD',
-                inline: true
+        <!-- 221123 :: data-date="" 삭제-->
+        <div id="datepicker2"></div>
+        <input type="hidden" id="my_hidden_input">
+        <script>
+            $('#datepicker2').datepicker({
+                weekStart: 1,
             });
-        });
+
+            // 221123 :: 오늘 날짜 선택되도록 스크립트 추가
+            $('#datepicker2').datepicker('setDate', 'today');
+
+            $('#datepicker2').on('changeDate', function() {
+                $('#my_hidden_input').val(
+                    $('#datepicker').datepicker('getFormattedDate')
+                );
+            });
         </script>
+
         <div class="modal_btn_full mt0">
             <!-- 활성화시 .active 추가 / 비활성화시 .disabled 추가 -->
             <a href="#none" class="modal_btn disabled">확인</a>
@@ -547,22 +594,25 @@
 </script>
 
             <div class="calendar">
-    <!-- td.day :: .schedule_info 추가시 일정등록 표기 css확인가능-->
-    <div class="form-group">
-        <div class="row">
-           <div class="col-md-8">
-              <div id="datetimepicker3"></div>
-           </div>
-        </div>
-     </div>
-     <script type="text/javascript">
-        $(function () {
-            $('#datetimepicker3').datetimepicker({
-                inline: true,
-                format: 'L'
-            });
-        });
+     <div id="datepicker3" ></div>
+     <!-- 221123 :: data-date="" 삭제-->
+     <input type="hidden" id="my_hidden_input">
+     <script>
+         $('#datepicker3').datepicker({
+             weekStart: 1,
+             
+         });
+
+         // 221123 :: 오늘 날짜 선택되도록 스크립트 추가
+         $('#datepicker3').datepicker('setDate', 'today');
+
+         $('#datepicker3').on('changeDate', function() {
+             $('#my_hidden_input').val(
+                 $('#datepicker').datepicker('getFormattedDate')
+             );
+         });
      </script>
+ 
     <div class="schedule_list_wrap">
         <ul class="schedule_list">
             <li>
@@ -571,48 +621,77 @@
                     오늘의 생일자 - 김상민, 김지영, 정재훈<br>
                     2교시 과학 수행평가
                 </p>
+                <!-- 221102 :: 일정 수정삭제 아이콘 추가 -->
+                <a href="#none" class="btn_comment_opt" data-target="commentOption">
+                    <i class="sprite_comm sp_ico_more_sm"></i>수정삭제
+                </a>
             </li>
             <li>
                 <span class="date">2022.06.22</span>
                 <p class="content">
-                    유네스코 데이
+                    kjafkjaskfjaskdjf;askjdfl;akjdfkasjdfkajsdkfjaskdjfaksdjfkajdfkadfjaksdfjkajfdkasjfkasjkfadj
                 </p>
+                <!-- 221102 :: 일정 수정삭제 아이콘 추가 -->
+                <a href="#none" class="btn_comment_opt" data-target="commentOption">
+                    <i class="sprite_comm sp_ico_more_sm"></i>수정삭제
+                </a>
             </li>
             <li>
                 <span class="date">2022.06.28</span>
                 <p class="content">
                     오늘의 생일자 - 김상민, 김지영, 정재훈<br>
                 </p>
+                <!-- 221102 :: 일정 수정삭제 아이콘 추가 -->
+                <a href="#none" class="btn_comment_opt" data-target="commentOption">
+                    <i class="sprite_comm sp_ico_more_sm"></i>수정삭제
+                </a>
             </li>
         </ul>
+
         <!-- 일정이 없을 경우 -->
         <p class="empty_msg">금일 일정이 없습니다.</p>
     </div>		
 </div>
 
 
+<!-- 221102 :: 일정 수정삭제 아이콘 클릭시 팝업 -->
+<div class="modal" id="commentOption">
+    <div class="modal_content pt0">
+        <ul class="pop_opt_list">
+            <li>
+                <a href="#none">수정하기</a>
+            </li>
+            <li>
+                <a href="#none">삭제</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
             <p class="mb10 mt30">기간설정</p>
-            <div class="calendar_wrap">
-                <input class="inp_datepicker" placeholder="22.08.29" id='datetimepicker4'>
+            <div class="calendar_wrap input-group input-daterange">
+                <input class="inp_datepicker form-control" placeholder="22.10.12" id='datePicker4'>
                 <span>~</span>
-                <input class="inp_datepicker" placeholder="22.08.30" id='datetimepicker5'>
+                <input class="inp_datepicker form-control" placeholder="22.10.13" id='datePicker5'>
             </div>   
             <script>
             $(function () {
-                $('#datetimepicker4').datetimepicker({
-                    format: 'L',
-                    format: 'YY.MM.DD',
+                $('#datePicker4').datepicker({
+                    weekStart: 1,
+                    format: "yy.mm.dd",
+                    toggleActive: true,
+                    changeMonth: true,
+                    changeYear: true,
                 });
-                $('#datetimepicker5').datetimepicker({
-                    useCurrent: false, //Important! See issue #1075
-                    format: 'L',
-                    format: 'YY.MM.DD',
+                $('#datePicker5').datepicker({
+                    weekStart: 1,
+                    format: "yy.mm.dd",
+                    toggleActive: true,
+                    changeMonth: true,
+                    changeYear: true,
                 });
-                $("#datetimepicker4").on("dp.change", function (e) {
-                    $('#datetimepicker5').data("DateTimePicker").minDate(e.date);
-                });
-                $("#datetimepicker5").on("dp.change", function (e) {
-                    $('#datetimepicker4').data("DateTimePicker").maxDate(e.date);
+                $('.input-daterange input').each(function() {
+                    $(this).datepicker('clearDates');
                 });
             });
             </script>
